@@ -1,0 +1,55 @@
+.no_modify a {
+text-decoration:none;
+color:#000;
+}
+
+.modify a {
+color:#000;
+text-decoration:none;
+}
+
+.modify a:hover {
+color:blue;
+}
+
+.selected_expression {
+background-color:#FFC0CB;
+}
+
+#feedback {
+font-size:1.4em;
+}
+
+#selectable li {
+font-size:8pt;
+height:auto;
+margin:3px;
+padding:.4em;
+}
+
+#action_modal_selected_item li {
+font-size:8pt;
+height:24px;
+margin:3px;
+padding:.4em;
+}
+
+#selectable .ui-selecting,#action_modal_selected_item .ui-selecting {
+background:#FECA40;
+}
+
+#selectable .ui-selected,#action_modal_selected_item .ui-selected {
+background:#F39814;
+color:#FFF;
+}
+
+#selectable,#action_modal_selected_item {
+list-style-type:none;
+width:100%;
+margin:0;
+padding:0;
+}
+
+#selectable li a,#action_modal_selected_item li a {
+text-decoration:none;
+}

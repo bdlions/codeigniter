@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scene depth="4" desc="" eventsnippetid="41" extheight="480" extwidth="800" extx="-32" exty="-32" format="2.1" gravx="-0.0" gravy="55.0" height="416" id="0" name="First" revision="" savecount="0" tiled="1" tileh="32" tilew="32" type="standard" width="736">
+    <layers>
+        <layer color="255,200,0" id="4" name="Layer 4" order="0"/>
+        <layer color="255,0,0" id="3" name="Layer 3" order="1"/>
+        <layer color="100,168,234" id="0" name="Layer 0" order="3"/>
+        <layer color="255,175,175" id="2" name="Layer 2" order="4"/>
+    </layers>
+    <grad-bg b1="255" b2="255" g1="204" g2="255" r1="153" r2="255"/>
+    <backgrounds/>
+    <foregrounds/>
+    <joints/>
+    <regions/>
+    <terrainRegions/>
+    <actors>
+        <actor a="0.0" aid="137" c="false" group="3" id="25" name="Instructions 137" sx="1.0" sy="1.0" x="471" y="3" z="0"/>
+        <actor a="42.050537" aid="1" c="true" group="3" id="0" name="Turret 1" sx="1.0" sy="1.0" x="42" y="241" z="3">
+            <snippets>
+                <s enabled="true" id="17">
+                    <prop id="1" list="0" val="fire"/>
+                    <prop id="2147483647" list="0" val="thisactor"/>
+                </s>
+                <s enabled="true" id="2">
+                    <prop id="1" list="0" val="2"/>
+                    <prop id="8" list="0" val="0"/>
+                    <prop id="9" list="0" val="0"/>
+                    <prop id="10" list="0" val="0"/>
+                    <prop id="11" list="0" val="0"/>
+                    <prop id="12" list="0" val="900"/>
+                    <prop id="13" list="0" val="13"/>
+                    <prop id="2147483647" list="0" val="thisactor"/>
+                </s>
+                <s enabled="true" id="15">
+                    <prop id="1" list="0" val="0"/>
+                    <prop id="2" list="0" val="0"/>
+                    <prop id="3" list="0" val="0"/>
+                    <prop id="4" list="0" val="90"/>
+                    <prop id="2147483647" list="0" val="thisactor"/>
+                </s>
+            </snippets>
+        </actor>
+        <actor a="0.0" aid="139" c="false" group="4" id="4" name="Balloon 139" sx="1.0" sy="1.0" x="352" y="224" z="0"/>
+        <actor a="0.0" aid="138" c="false" group="4" id="4" name="Balloon 138" sx="1.0" sy="1.0" x="320" y="224" z="0"/>
+        <actor a="0.0" aid="141" c="false" group="4" id="4" name="Balloon 141" sx="1.0" sy="1.0" x="352" y="256" z="0"/>
+        <actor a="0.0" aid="140" c="false" group="4" id="4" name="Balloon 140" sx="1.0" sy="1.0" x="320" y="256" z="0"/>
+        <actor a="0.0" aid="143" c="false" group="4" id="4" name="Balloon 143" sx="1.0" sy="1.0" x="384" y="224" z="0"/>
+        <actor a="0.0" aid="142" c="false" group="4" id="4" name="Balloon 142" sx="1.0" sy="1.0" x="288" y="224" z="0"/>
+        <actor a="0.0" aid="129" c="false" group="4" id="4" name="Balloon 129" sx="1.0" sy="1.0" x="382" y="128" z="0"/>
+        <actor a="0.0" aid="128" c="false" group="4" id="4" name="Balloon 128" sx="1.0" sy="1.0" x="382" y="32" z="0"/>
+        <actor a="0.0" aid="131" c="false" group="4" id="4" name="Balloon 131" sx="1.0" sy="1.0" x="286" y="128" z="0"/>
+        <actor a="0.0" aid="130" c="false" group="4" id="4" name="Balloon 130" sx="1.0" sy="1.0" x="382" y="160" z="0"/>
+        <actor a="0.0" aid="132" c="false" group="4" id="4" name="Balloon 132" sx="1.0" sy="1.0" x="286" y="160" z="0"/>
+        <actor a="0.0" aid="17" c="false" group="3" id="6" name="Cursor 17" sx="1.0" sy="1.0" x="17" y="297" z="4"/>
+        <actor a="0.0" aid="85" c="false" group="4" id="4" name="Balloon 85" sx="1.0" sy="1.0" x="254" y="96" z="0"/>
+        <actor a="0.0" aid="84" c="false" group="3" id="19" name="Reset Button 84" sx="1.0" sy="1.0" x="667" y="346" z="4"/>
+        <actor a="0.0" aid="86" c="false" group="4" id="4" name="Balloon 86" sx="1.0" sy="1.0" x="286" y="64" z="0"/>
+        <actor a="0.0" aid="83" c="false" group="3" id="17" name="HUD 83" sx="1.0" sy="1.0" x="0" y="360" z="3"/>
+        <actor a="0.0" aid="144" c="false" group="4" id="4" name="Balloon 144" sx="1.0" sy="1.0" x="384" y="192" z="0"/>
+        <actor a="0.0" aid="145" c="false" group="4" id="4" name="Balloon 145" sx="1.0" sy="1.0" x="288" y="192" z="0"/>
+        <actor a="0.0" aid="146" c="false" group="4" id="4" name="Balloon 146" sx="1.0" sy="1.0" x="320" y="96" z="0"/>
+        <actor a="0.0" aid="147" c="false" group="4" id="4" name="Balloon 147" sx="1.0" sy="1.0" x="352" y="96" z="0"/>
+        <actor a="0.0" aid="94" c="false" group="4" id="4" name="Balloon 94" sx="1.0" sy="1.0" x="382" y="96" z="0"/>
+        <actor a="0.0" aid="148" c="false" group="3" id="8" name="Happy Cloud 148" sx="1.0" sy="1.0" x="7" y="13" z="2"/>
+        <actor a="0.0" aid="89" c="false" group="4" id="4" name="Balloon 89" sx="1.0" sy="1.0" x="382" y="64" z="0"/>
+        <actor a="0.0" aid="149" c="false" group="4" id="4" name="Balloon 149" sx="1.0" sy="1.0" x="224" y="160" z="0"/>
+        <actor a="0.0" aid="150" c="false" group="4" id="4" name="Balloon 150" sx="1.0" sy="1.0" x="448" y="160" z="0"/>
+        <actor a="0.0" aid="91" c="false" group="4" id="4" name="Balloon 91" sx="1.0" sy="1.0" x="286" y="96" z="0"/>
+        <actor a="0.0" aid="151" c="false" group="3" id="27" name="pedestal 151" sx="1.0" sy="1.0" x="15" y="314" z="0"/>
+        <actor a="0.0" aid="90" c="false" group="4" id="4" name="Balloon 90" sx="1.0" sy="1.0" x="414" y="96" z="0"/>
+        <actor a="0.0" aid="101" c="false" group="4" id="4" name="Balloon 101" sx="1.0" sy="1.0" x="286" y="256" z="0"/>
+        <actor a="0.0" aid="110" c="false" group="4" id="4" name="Balloon 110" sx="1.0" sy="1.0" x="414" y="256" z="0"/>
+        <actor a="0.0" aid="111" c="false" group="4" id="15" name="Green Balloon 111" sx="1.0" sy="1.0" x="414" y="128" z="0"/>
+        <actor a="0.0" aid="109" c="false" group="4" id="4" name="Balloon 109" sx="1.0" sy="1.0" x="382" y="288" z="0"/>
+        <actor a="0.0" aid="106" c="false" group="4" id="4" name="Balloon 106" sx="1.0" sy="1.0" x="286" y="288" z="0"/>
+        <actor a="0.0" aid="104" c="false" group="4" id="4" name="Balloon 104" sx="1.0" sy="1.0" x="382" y="256" z="0"/>
+        <actor a="0.0" aid="105" c="false" group="4" id="4" name="Balloon 105" sx="1.0" sy="1.0" x="254" y="256" z="0"/>
+        <actor a="0.0" aid="116" c="false" group="4" id="15" name="Green Balloon 116" sx="1.0" sy="1.0" x="254" y="160" z="0"/>
+        <actor a="0.0" aid="115" c="false" group="4" id="15" name="Green Balloon 115" sx="1.0" sy="1.0" x="254" y="128" z="0"/>
+        <actor a="0.0" aid="112" c="false" group="4" id="15" name="Green Balloon 112" sx="1.0" sy="1.0" x="414" y="160" z="0"/>
+        <actor a="0.0" aid="127" c="false" group="4" id="4" name="Balloon 127" sx="1.0" sy="1.0" x="286" y="32" z="0"/>
+        <actor a="0.0" aid="126" c="false" group="4" id="15" name="Green Balloon 126" sx="1.0" sy="1.0" x="254" y="32" z="0"/>
+        <actor a="0.0" aid="125" c="false" group="4" id="15" name="Green Balloon 125" sx="1.0" sy="1.0" x="254" y="64" z="0"/>
+        <actor a="0.0" aid="124" c="false" group="4" id="15" name="Green Balloon 124" sx="1.0" sy="1.0" x="414" y="32" z="0"/>
+        <actor a="0.0" aid="123" c="false" group="4" id="15" name="Green Balloon 123" sx="1.0" sy="1.0" x="414" y="64" z="0"/>
+        <actor a="0.0" aid="121" c="false" group="4" id="15" name="Green Balloon 121" sx="1.0" sy="1.0" x="350" y="288" z="0"/>
+        <actor a="0.0" aid="120" c="false" group="4" id="15" name="Green Balloon 120" sx="1.0" sy="1.0" x="318" y="288" z="0"/>
+    </actors>
+    <snippets>
+        <s enabled="true" id="34">
+            <prop id="1" list="0" val="24"/>
+        </s>
+        <s enabled="true" id="21">
+            <prop id="1" list="0" val="0"/>
+        </s>
+        <s enabled="true" id="40">
+            <prop id="1" list="0" val="false"/>
+        </s>
+    </snippets>
+    <terrain/>
+</scene>
