@@ -55,7 +55,7 @@ body div#user-nav ul li {
     position: relative;
 }
 body div#user-nav ul li {
-    background: url("imagesvertical-line-nav-separator.png") no-repeat scroll right center transparent;
+    background: url("../images/vertical-line-nav-separator.png") no-repeat scroll right center transparent;
     padding: 0 10px;
 }
 body div#user-nav ul li:first-child {
@@ -66,7 +66,7 @@ body div#user-nav ul li.fb-logged-in-image a {
     padding-left: 35px;
 }
 body div#user-nav ul li.fb-logged-out-image a {
-    background-image: url("imagesconnect_light_small_short.png");
+    background-image: url("..images/connect_light_small_short.png");
     background-size: 16px 16px;
     padding-left: 25px;
 }
@@ -432,7 +432,7 @@ body.channel_election_dance #wwrap #wrap #election-dance-index-post div.candidat
     width: 100%;
 }
 body.channel_election_dance #wwrap #wrap #election-dance-index-post p#other-banner {
-    background: url("../../images/election/election-other-banner.png") repeat scroll 0 0 transparent;
+    background: url("../images/election/election-other-banner.png") repeat scroll 0 0 transparent;
     color: white;
     font-family: 'Open Sans',sans-serif;
     font-size: 14px;
@@ -498,7 +498,7 @@ body.holidays body.channel_holidays #wrap {
     position: relative;
 }
 body.holidays body.channel_holidays #wwrap {
-    background: url("images/background.png") repeat scroll center top #00BFCE;
+    background: url("../images/background.png") repeat scroll center top #00BFCE;
 }
 body.holidays body.store__register #wwrap, body.holidays body.store__show_product_options #wwrap, body.holidays body.store__email #wwrap, body.holidays body.store__enter_shipping_address #wwrap, body.holidays body.store__choose_shipping_options #wwrap, body.holidays body.store__enter_billing_info #wwrap, body.holidays body.store__display_order_receipt #wwrap, body.holidays body.store__purchase_video #wwrap, body.holidays body.store__purchase #wwrap, body.holidays body.store__save_shipping_address #wwrap, body.holidays body.channel_holidays.sendables__template.next_gen_channel #wwrap {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -559,7 +559,7 @@ body.holidays .wide_wrap_right {
     margin-left: 747px;
 }
 body.holidays .send_free {
-    background: url("images/sendfree_banner.png") repeat scroll 0 0 transparent;
+    background: url("../images/sendfree_banner.png") repeat scroll 0 0 transparent;
     height: 338px;
     margin-bottom: 9px;
     width: 223px;
@@ -568,7 +568,7 @@ body.holidays .get_started {
     margin-left: 3px;
 }
 body.holidays .get_started a.button {
-    background: url("images/started.png") no-repeat scroll -214px 0 transparent;
+    background: url("../images/started.png") no-repeat scroll -214px 0 transparent;
     height: 98px;
     width: 214px;
 }
@@ -625,7 +625,7 @@ body.holidays .cards:before, body.holidays .cards:after, body.holidays .cards .i
     background: none repeat scroll 0 0 #00BFCE;
     border-radius: 56px 56px 56px 56px;
     box-shadow: 0 0 15px gray;
-    content: url("images/inset-border.png");
+    content: url("../images/inset-border.png");
     display: block;
     height: 56px;
     position: absolute;
@@ -738,7 +738,7 @@ body.holidays .bottom_banner a {
     font-family: 'Varela Round',sans-serif;
 }
 body.holidays.channel_holidays .bottom_banner {
-    background: url("images/still_looking.png") repeat scroll 0 0 transparent;
+    background: url("../images/still_looking.png") repeat scroll 0 0 transparent;
     height: 58px;
     margin: 0 auto 50px;
     overflow: hidden;
@@ -2427,7 +2427,7 @@ body.index .simple .sample img {
     width: 300px;
 }
 body.index .simple .sample span {
-    background: url("imagesimage_mask.gif") no-repeat scroll left top transparent;
+    background: url("../images/image_mask.gif") no-repeat scroll left top transparent;
     display: block;
     height: 250px;
     left: 0;
@@ -2663,7 +2663,7 @@ body.channel_halloween #wwrap {
     background-color: #000000;
 }
 body.channel_holidays.index__landing #wwrap, body.channel_holidays #wwrap {
-    background: url("images/background.png") repeat scroll center top #00BFCE;
+    background: url("../images/background.png") repeat scroll center top #00BFCE;
 }
 body.channel_st_patricks_day.categories__show.category_st_patricks_day #wrap .cat_head_wrap {
     background-image: url("http://aka.zero.jibjab.com/files/production/st-pats-bg-3.gif");

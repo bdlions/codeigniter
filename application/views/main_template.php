@@ -3,8 +3,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
   <?php echo $css?>"
   <title></title>
 </head>
@@ -37,8 +35,12 @@
       </div>
     </div>
   </div><!-- menu end-->
+  
   <div id="wwrap">
     <div id="wrap">
+	  <div id="jibjab-member-text">
+        <p class="non-member-header"></p>
+      </div>
                   <?php
                 if(empty($main_content))
                 {

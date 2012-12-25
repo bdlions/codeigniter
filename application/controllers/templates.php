@@ -62,14 +62,14 @@ class Templates extends CI_Controller
         $this->data['publish_code'] = $publish_code;        
         
         $base = base_url(); 
-        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
-        $this->template->set('css', $css);
+        //$css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
+        //$this->template->set('css', $css);
         $this->template->set('base', $base);
         if ($this->ion_auth->logged_in())
         {
             $this->template->set('is_logged_in', 'true');
         }
-        $this->template->load("main_template","templates/template1", $this->data);
+        $this->template->load("second_template","templates/template", $this->data);
     }
     
     public function template2()
@@ -303,5 +303,21 @@ class Templates extends CI_Controller
             redirect('templates', 'refresh');
         }
         
+    }
+	public function temp()
+    {
+        //if (!$this->ion_auth->logged_in())
+        {
+            //redirect them to the login page
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
+            $this->template->set('css', $css);
+            $this->template->set('base', $base);
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("second_template","templates/template");
+        }        
     }
 }
