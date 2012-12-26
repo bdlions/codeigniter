@@ -1,0 +1,2911 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+body {
+    background-color: #404040;
+    color: #535353;
+    font-family: Arial,Helvetica,'Helvetica Neue',sans-serif;
+    font-size: 62.5%;
+    padding: 0;
+}
+body a img, body *:link img, body *:visited img {
+    border: 0 none;
+}
+body ol, body ul {
+    list-style: none outside none;
+}
+
+body #wrap {
+    margin: 14px 0;
+}
+
+body div#user-nav {
+    border: 0 none;
+    display: block;
+    float: right;
+    height: 37px;
+    margin: 15px 0 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-indent: 0;
+    width: auto;
+}
+body div#user-nav ul {
+    border: 0 none;
+    display: block;
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+body div#user-nav ul li {
+    display: block;
+    float: right;
+    position: relative;
+}
+body div#user-nav ul li {
+    background: url("imagesvertical-line-nav-separator.png") no-repeat scroll right center transparent;
+    padding: 0 10px;
+}
+body div#user-nav ul li:first-child {
+    background: none repeat scroll 0 0 transparent;
+}
+body div#user-nav ul li.fb-logged-in-image a {
+    background-size: 26px 26px;
+    padding-left: 35px;
+}
+body div#user-nav ul li.fb-logged-out-image a {
+    background-image: url("imagesconnect_light_small_short.png");
+    background-size: 16px 16px;
+    padding-left: 25px;
+}
+body div#user-nav ul li.fb-logged-out-image.no-text a {
+    padding-left: 17px;
+}
+body div#user-nav ul li a {
+    background-position: left center;
+    background-repeat: no-repeat;
+    border: 0 none;
+    color: #C4C4C4;
+    display: block;
+    float: right;
+    font-family: Arial,Helvetica,'Helvetica Neue',sans-serif;
+    font-size: 11px;
+    font-size-adjust: none;
+    font-style: normal;
+    font-weight: 400;
+    height: 37px;
+    letter-spacing: normal;
+    line-height: 37px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    text-transform: none;
+    word-spacing: 0;
+}
+body div#user-nav ul li a:hover {
+    color: #66CAFC;
+    text-decoration: underline;
+}
+body #channel_birthdays_sidebar {
+    position: fixed;
+}
+
+body #wrap {
+    font-size: 1.2em;
+    margin: 0 auto;
+    width: 100%;
+}
+
+body #footer {
+    background: none repeat scroll 0 0 #404040;
+    color: #AAAAAA;
+    font-size: 1.2em;
+    margin: 10px auto 0;
+    min-height: 270px;
+    padding: 17px 0 0;
+    width: 960px;
+}
+body #footer .membership_price_note {
+    border-top: 1px solid #676767;
+    padding-top: 15px;
+}
+body #footer span.not_semantic {
+    background: none repeat scroll 0 0 transparent;
+    height: 0;
+}
+body #footer a {
+    color: #AAAAAA;
+}
+body #footer div {
+    min-height: 270px;
+}
+body #footer div.payment_info {
+    min-height: 0;
+}
+body #footer span.not_semantic {
+    clear: both;
+    display: block;
+    height: 17px;
+}
+body #footer h4 {
+    background-repeat: no-repeat;
+    font-family: Georgia,Times,serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-indent: -9999px;
+    text-transform: uppercase;
+}
+body #footer .tier2 {
+    padding-left: 10px;
+}
+body #footer .logo {
+    background: url("../images/footer/logo.png") no-repeat scroll 70px 70px transparent;
+    border-right: 1px solid #676767;
+    float: left;
+    height: 270px;
+    position: relative;
+    text-indent: -9999px;
+    width: 203px;
+}
+body #footer .logo a {
+    height: 116px;
+    left: 74px;
+    position: absolute;
+    top: 70px;
+    width: 101px;
+}
+body #footer .logo .fb_like {
+    left: 80px;
+    min-height: 0;
+    position: absolute;
+    text-indent: 0;
+    top: 200px;
+}
+body #footer .footer_links {
+    border-right: 1px solid #676767;
+    float: left;
+    padding: 0 15px;
+    width: 215px;
+}
+body #footer .footer_links h4 {
+    background-image: url("../images/footer/site_links.png");
+    height: 12px;
+}
+body #footer .footer_links ul {
+    float: left;
+    width: 105px;
+}
+body #footer .footer_links ul li {
+    margin-bottom: 5px;
+}
+body #footer .footer_links ul li ul {
+    margin: 5px 0 0 10px;
+}
+body #footer .copyright {
+    border-right: 1px solid #D4D4D4;
+    float: left;
+    padding: 0 15px;
+    width: 185px;
+}
+body #footer .support {
+    float: left;
+    margin-left: 15px;
+    width: 259px;
+}
+body #footer .support h4 {
+    background-image: url("../images/footer/customer_support.png");
+}
+body #footer .copyright {
+    border-color: #676767;
+}
+body #footer .copyright h4 {
+    background-image: url("../images/footer/copyright_and_privacy.png");
+}
+body #footer .copyright ul li {
+    float: left;
+    margin-bottom: 5px;
+    width: 92px;
+}
+body #footer .copyright ul li.ft_wd {
+    clear: both;
+    line-height: 1.5em;
+    width: 184px;
+}
+body #footer .copyright .privacy {
+    background: url("../images/footer/lock.png") no-repeat scroll 5px 30px transparent;
+    border-top: 1px solid #676767;
+    clear: both;
+    margin-top: 65px;
+    padding: 30px 15px 0 50px;
+}
+body #footer .support li {
+    margin-bottom: 5px;
+}
+body #footer .support .payment_info {
+    border-top: 1px solid #676767;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+body #footer .support .payment_info h4 {
+    background-image: url("../images/footer/payment_info.png");
+}
+body #footer .support .payment_info ul {
+    background: url("../images/footer/payment.png") no-repeat scroll 0 0 transparent;
+    height: 28px;
+    margin: 10px 0 20px;
+    text-indent: -9999px;
+    width: 259px;
+}
+body #hwrap, body #wwrap, body #fwrap {
+    width: 100%;
+}
+body #hwrap {
+    height: 100px;
+    position: relative;
+    z-index: 99;
+}
+body #wwrap {
+    background-color: #FFFFFF;
+    padding: 0;
+}
+body #header {
+    background: none repeat scroll 0 0 #3B3B3B;
+    height: 100px;
+    margin: 0 auto;
+}
+body #header #logo {
+    background: url("../images/jibjab_logo.png") repeat scroll 0 0 transparent;
+    float: left;
+    height: 89px;
+    left: 0;
+    position: relative;
+    text-indent: -9999px;
+    top: 10px;
+    width: 112px;
+    z-index: 3;
+}
+body #header #logo_wrap {
+    margin: 0 auto;
+    width: 976px;
+}
+body #main_nav_wrap {
+    background-color: #212121;
+    bottom: 0;
+    height: 37px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+body #main_nav {
+    height: 37px;
+    margin: 0 auto;
+    position: relative;
+    width: 976px;
+}
+body #main_nav li.menu_all {
+    border-left: 0 solid transparent;
+}
+body #main_nav li {
+    border-left: 1px solid #2A2A2A;
+    display: inline;
+    float: left;
+    padding-left: 20px;
+    padding-right: 0;
+    position: relative;
+    z-index: 11;
+}
+body #main_nav li.last {
+    border-right: 1px solid #2A2A2A;
+}
+body #main_nav li a {
+    color: #CECECE;
+    display: block;
+    font-family: Georgia;
+    font-size: 14px;
+    font-weight: normal;
+    height: 37px;
+    line-height: 37px;
+    margin-right: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+body #main_nav li.active a, body #main_nav li:hover a {
+    color: #FFFFFF;
+}
+body #main_nav li.active, body #main_nav li:hover {
+    background-color: #606060;
+}
+body #main_nav li.first {
+    margin-left: 120px;
+}
+body #ie7_detect {
+    height: 0;
+}
+body #my_nav {
+    float: none;
+    margin: 0;
+    padding: 26px 5px 12px 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+body #my_nav li {
+    border-color: #666666;
+    display: inline;
+    float: left;
+    padding: 0 9px;
+}
+body #my_nav li a, body #my_nav li span {
+    color: #C4C4C4;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+body #my_nav li a:hover {
+    color: #66CAFC;
+    text-decoration: underline;
+}
+body #my_nav_wrap {
+    margin: 0 auto;
+    position: relative;
+    width: 976px;
+    z-index: 10;
+}
+
+body.ecards {
+}
+body.ecards #wwrap {
+    padding-top: 0;
+}
+body.channel_halloween.categories__show #wwrap {
+    background: none repeat scroll 0 0 white;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post {
+    background-color: transparent;
+    background-image: url("../images/election/post-landing.png");
+    display: none;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post p#title {
+    background: url("../images/election/post-presidential.png") no-repeat scroll left bottom transparent;
+    height: 20px;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-indent: -9999px;
+    width: 284px;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post p#winner-obama {
+    background: url("../images/election/post-obama-won.png") no-repeat scroll left bottom transparent;
+    height: 58px;
+    margin: 0 auto;
+    text-indent: -9999px;
+    width: 607px;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post p#winner-mitt {
+    background: url("../images/election/post-mitt-won.png") no-repeat scroll left bottom transparent;
+    height: 57px;
+    margin: 0 auto;
+    text-indent: -9999px;
+    width: 546px;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post div.candidate {
+    display: block;
+    height: 365px;
+    margin: 0 auto;
+    width: 290px;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post div#dance-obama.candidate {
+    background: url("../images/election/election-obama-dance.png") no-repeat scroll 0 0 transparent;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post div#dance-obama.candidate .button {
+    background: url("../images/election/election-obama-button.png") no-repeat scroll left bottom transparent;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post div#dance-obama.candidate .button:hover {
+    background-position: right bottom;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post div#dance-mitt.candidate {
+    background: url("../images/election/election-mitt-dance.png") no-repeat scroll 0 0 transparent;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post div#dance-mitt.candidate .button {
+    background: url("../images/election/election-mitt-button.png") no-repeat scroll left bottom transparent;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post div#dance-mitt.candidate .button:hover {
+    background-position: right bottom;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post div.candidate .button {
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post p#other-banner {
+    background: url("../../images/election/election-other-banner.png") repeat scroll 0 0 transparent;
+    color: white;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 14px;
+    height: 45px;
+    margin: 5px auto 0;
+    padding-top: 12px;
+    text-align: center;
+    width: 358px;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post p#other-banner a {
+    color: white;
+}
+body.channel_election_dance #wwrap #wrap #election-dance-index-post .fb_like_button {
+    float: right;
+    margin: -95px auto 0;
+    overflow: hidden;
+    padding-right: 50px;
+    width: 80px;
+}
+body.holidays #wwrap #wrap {
+    width: 980px;
+}
+body.holidays #wwrap #wrap .share_wrapper .share_nav {
+    width: 953px;
+}
+body.holidays .clear {
+    clear: both;
+    display: block;
+}
+body.holidays a {
+    color: #686868;
+}
+body.holidays a.click:hover, body.holidays a.click:focus {
+    opacity: 0.5;
+}
+body.holidays span.em {
+    font-style: italic;
+}
+body.holidays input:focus {
+    outline: medium none;
+}
+body.holidays #holiday_landing, body.holidays .wide_wrap {
+    width: 976px;
+}
+body.holidays body.channel_holidays #wrap {
+    width: 976px;
+}
+body.holidays body.view__next_gen_post_share #wrap, body.holidays body.store__show_video_overview #wrap, body.holidays body.view__next_gen_share #wrap, body.holidays body.next_gen_channel #wrap {
+    width: 956px;
+}
+body.holidays body.index__landing #wrap {
+    width: 981px;
+}
+body.holidays .cards_wrap {
+    width: 981px;
+}
+body.holidays body.channel_holidays #wrap {
+    background: none repeat scroll 0 0 transparent;
+    clear: both;
+    font-size: 1.2em;
+    margin: 0 auto;
+    padding-bottom: 19px;
+    position: relative;
+}
+body.holidays body.channel_holidays #wwrap {
+    background: url("images/background.png") repeat scroll center top #00BFCE;
+}
+body.holidays body.store__register #wwrap, body.holidays body.store__show_product_options #wwrap, body.holidays body.store__email #wwrap, body.holidays body.store__enter_shipping_address #wwrap, body.holidays body.store__choose_shipping_options #wwrap, body.holidays body.store__enter_billing_info #wwrap, body.holidays body.store__display_order_receipt #wwrap, body.holidays body.store__purchase_video #wwrap, body.holidays body.store__purchase #wwrap, body.holidays body.store__save_shipping_address #wwrap, body.holidays body.channel_holidays.sendables__template.next_gen_channel #wwrap {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+body.holidays body.index__landing #wwrap {
+    margin: 0;
+    padding: 0;
+}
+body.holidays body.channel_holidays #wwrap {
+    background-size: 100% auto;
+}
+body.holidays .psss {
+    background-size: 100% auto;
+}
+body.holidays body.channel_holidays #wrap, body.holidays input, body.holidays textarea, body.holidays .radio label, body.holidays .modal_holiday {
+    font-family: 'Varela Round',sans-serif;
+    font-style: normal;
+}
+body.holidays body.channel_holidays #footer {
+    font-family: Arial,Helvetica,sans-serif;
+}
+body.holidays body.channel_holidays h1, body.holidays body.channel_holidays h2, body.holidays body.channel_holidays h3 {
+    font-weight: normal;
+}
+body.holidays body.channel_holidays #hwrap #header #logo_wrap {
+    z-index: 10;
+}
+body.holidays body.channel_holidays #hwrap #header #main_nav_wrap {
+    z-index: 0;
+}
+body.holidays body.channel_holidays .new_preview_modal {
+}
+body.holidays #holiday_landing {
+    clear: both;
+    height: 482px;
+}
+body.holidays .wide_wrap_left, body.holidays .wide_wrap_right {
+    margin: 0;
+    padding: 0;
+}
+body.holidays .wide_wrap_left {
+    clear: left;
+    float: left;
+    margin: 33px 0 0 12px;
+    position: relative;
+    width: 681px;
+}
+body.holidays .wwleft_fbimg {
+    height: 55px;
+    position: absolute;
+    right: 25px;
+    top: 23px;
+    width: 55px;
+}
+body.holidays .wide_wrap_right {
+    float: none;
+    font-size: 1.667em;
+    margin-left: 747px;
+}
+body.holidays .send_free {
+    background: url("images/sendfree_banner.png") repeat scroll 0 0 transparent;
+    height: 338px;
+    margin-bottom: 9px;
+    width: 223px;
+}
+body.holidays .get_started {
+    margin-left: 3px;
+}
+body.holidays .get_started a.button {
+    background: url("images/started.png") no-repeat scroll -214px 0 transparent;
+    height: 98px;
+    width: 214px;
+}
+body.holidays a.button, body.holidays a.sbutton {
+    display: block;
+}
+body.holidays a.button {
+    text-indent: -9999px;
+}
+body.holidays a.sbutton, body.holidays a.premium {
+    font-size: 1.949em;
+}
+body.holidays a.sbutton {
+    padding-top: 25px;
+    text-decoration: none;
+    text-indent: 78px;
+}
+body.holidays .wide_wrap_right a, body.holidays a.premium {
+    color: #FFFFFF;
+}
+body.holidays .espanol a {
+    display: block;
+    font-style: italic;
+    padding: 0.85em 0 0;
+    text-align: center;
+}
+body.holidays a.premium {
+    padding: 0 0 45px 40px;
+    text-decoration: none;
+}
+body.holidays a.premium:hover, body.holidays a.premium:focus {
+    text-decoration: underline;
+}
+body.holidays .cards, body.holidays #rounded_box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 4px 30px 3px rgba(0, 0, 0, 0.35) inset;
+    overflow: auto;
+}
+body.holidays body.sendables__casting #rounded_box {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+body.holidays .cards {
+    border: medium none;
+    font-family: 'Varela Round',sans-serif;
+    font-size: 1.75em;
+    margin-bottom: 32px;
+    margin-top: 45px;
+    overflow: hidden;
+    padding: 33px 0 33px 47px;
+    position: relative;
+}
+body.holidays .cards:before, body.holidays .cards:after, body.holidays .cards .insetBorderBottom:before, body.holidays .cards .insetBorderBottom:after {
+    background: none repeat scroll 0 0 #00BFCE;
+    border-radius: 56px 56px 56px 56px;
+    box-shadow: 0 0 15px gray;
+    content: url("images/inset-border.png");
+    display: block;
+    height: 56px;
+    position: absolute;
+    width: 56px;
+}
+body.holidays .cards:before {
+    left: -28px;
+    top: -28px;
+}
+body.holidays .cards:after {
+    right: -28px;
+    top: -28px;
+}
+body.holidays .cards .insetBorderBottom:before {
+    bottom: -28px;
+    left: -28px;
+}
+body.holidays .cards .insetBorderBottom:after {
+    bottom: -28px;
+    right: -28px;
+}
+body.holidays .premium2 {
+    margin-bottom: -26px;
+}
+body.holidays .premium3 {
+    margin: 0 auto -70px;
+    padding-top: 20px;
+    position: relative;
+    width: 698px;
+    z-index: 9999;
+}
+body.holidays .cards_left {
+    float: left;
+    font-weight: 100;
+    margin: 20px 30px 0 -11px;
+    position: relative;
+    width: 206px;
+}
+body.holidays .cards_left h2 a, body.holidays .cards_left h3 {
+    font-weight: normal;
+}
+body.holidays .cards_left p {
+    color: #AFAFAF;
+    line-height: 1.5em;
+    margin-top: 15px;
+}
+body.holidays .cards_left h2 a {
+    color: #2A993D;
+    font-size: 52px;
+    letter-spacing: -0.05em;
+}
+body.holidays .cards_left h3 {
+    color: #6B6B6B;
+    font-size: 1.42857em;
+}
+body.holidays .cards_tag {
+    border: 3px double #B6B6B6;
+    bottom: 46px;
+    color: #B6B6B6;
+    left: 46px;
+    overflow: auto;
+    padding: 0.2em 0.35em;
+    position: absolute;
+}
+body.holidays .cards_right {
+    padding-left: 225px;
+}
+body.holidays .box {
+    float: left;
+    font-size: 2em;
+    margin: 0 20px 30px 0;
+    position: relative;
+    text-align: center;
+}
+body.holidays .fix {
+    width: 195px;
+}
+body.holidays .fix img, body.holidays .fix embed {
+    margin-bottom: 15px;
+}
+body.holidays .short {
+    margin: 0 17px 21px 0;
+}
+body.holidays .box a.start, body.holidays .box a.play {
+    display: block;
+    height: 282px;
+    left: 0;
+    top: 0;
+    width: 195px;
+}
+body.holidays .box.long a.play {
+    width: 636px;
+}
+body.holidays .box:hover a.start, body.holidays .box:hover a.play {
+    display: block;
+}
+body.holidays .short:hover span, body.holidays .short:focus span {
+    left: 20px;
+    margin-right: 17px;
+    top: 40px;
+}
+body.holidays .bottom_banner {
+    border: medium none;
+    display: block;
+    font-family: 'Varela Round',sans-serif;
+}
+body.holidays .bottom_banner a {
+    border: medium none;
+    display: block;
+    font-family: 'Varela Round',sans-serif;
+}
+body.holidays.channel_holidays .bottom_banner {
+    background: url("images/still_looking.png") repeat scroll 0 0 transparent;
+    height: 58px;
+    margin: 0 auto 50px;
+    overflow: hidden;
+    padding: 35px 60px;
+    text-decoration: none;
+    width: 861px;
+}
+body.holidays.channel_holidays .bottom_banner a {
+    border: medium none;
+    color: #FFFFFF;
+    font-size: 25px;
+    height: 128px;
+    text-decoration: none;
+    width: 981px;
+}
+body.holidays.channel_holidays .bottom_banner a h2 {
+    color: #00DC58;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+body.holidays .bottom_banner p {
+    padding: 0;
+    text-decoration: underline;
+}
+body.holidays #rounded_box {
+    margin-bottom: 20px;
+}
+body.holidays .role_box {
+    padding: 40px 40px 50px;
+    width: 874px;
+}
+body.holidays .role_head {
+    display: block;
+    margin-bottom: 36px;
+    padding: 0 0 36px;
+}
+body.holidays .role_head h1, body.holidays .role_head h2 {
+    float: left;
+}
+body.holidays h1.s_h_red, body.holidays .role_left {
+    float: left;
+}
+body.holidays h1.h_red {
+    font-size: 2.638em;
+}
+body.holidays h1.s_h_red {
+    font-size: 1.67em;
+    margin: 2px 0 0;
+    padding: 0;
+}
+body.holidays h1.h_red {
+    color: #C70003;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+body.holidays h3.h_red, body.holidays h1.s_h_red {
+    color: #C70003;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+body.holidays h2.h_grey {
+    color: #8C8C8C;
+    font-size: 2em;
+    letter-spacing: -0.05em;
+    margin-top: 4px;
+}
+body.holidays h3.h_red {
+    font-size: 1.5716em;
+}
+body.holidays .role_right {
+    padding-left: 584px;
+}
+body.holidays .role_right img {
+    margin-bottom: 8px;
+}
+body.holidays.sendables__casting .personal_box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 20px 0 8px;
+    width: 954px;
+}
+body.holidays .personal_flash {
+    margin: 0 auto;
+    width: 620px;
+}
+body.holidays .personal_head {
+    margin: 10px 0;
+    text-align: center;
+}
+body.holidays ul.steps {
+    border: medium none;
+    display: inline;
+    font-size: 1.333em;
+    margin: 0;
+    padding-bottom: 0;
+    padding-right: 4em;
+    text-transform: uppercase;
+}
+body.holidays ul.steps li {
+    border: medium none;
+    color: #CFCFCF;
+    display: inline;
+    list-style: none outside none;
+    margin-left: 0;
+    padding-left: 2em;
+}
+body.holidays ul.steps li:before {
+    color: #CFCFCF;
+    content: ">";
+    padding-right: 2em;
+}
+body.holidays ul.steps li.first:before {
+    content: " ";
+    margin-left: 0;
+    padding-left: 0;
+}
+body.holidays ul.steps li.active {
+    color: #6B6A6A;
+}
+body.holidays .help_video_wrap {
+    color: #FFFFFF;
+    font-size: 1.0916em;
+    height: 32px;
+    margin: 0 auto 20px;
+    padding: 16px 17px;
+    width: 238px;
+}
+body.holidays .help_video_wrap img {
+    float: left;
+    margin-right: 10px;
+}
+body.holidays .help_video_wrap a {
+    color: #FF0000;
+}
+body.holidays .banner {
+    display: block;
+    height: 197px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 37px;
+    width: 882px;
+}
+body.holidays .plain {
+    margin-bottom: 20px;
+}
+body.holidays .dvdimg {
+    margin: 15px 30px 0 36px;
+}
+body.holidays .phoneimg, body.holidays .storeimg {
+    float: right;
+}
+body.holidays .phoneimg {
+    margin: 34px 33px 0 80px;
+}
+body.holidays .storeimg {
+    margin: 25px 0;
+}
+body.holidays .banner h2 {
+    font-size: 3.9em;
+}
+body.holidays .banner h3 {
+    font-size: 3.35em;
+}
+body.holidays .banner h2, body.holidays .banner h3 {
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin: 29px 0 15px;
+}
+body.holidays .banner p {
+    color: #FF0000;
+    font-size: 1.8916em;
+    padding-top: 5px;
+}
+body.holidays .links {
+    margin: 35px 0 33px;
+    overflow: auto;
+}
+body.holidays .url, body.holidays .embed, body.holidays .url label, body.holidays .embed label, body.holidays .dvdimg {
+    float: left;
+}
+body.holidays .url label, body.holidays .embed label {
+    color: #FF0000;
+    font-size: 1.375em;
+    padding: 6px 9px 0 12px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+body.holidays .url input, body.holidays .embed input {
+    background: none repeat scroll 0 0 transparent;
+    border: 1px solid #FF0000;
+    color: #FFFFFF;
+    font-size: 1.25em;
+    padding: 0.25em;
+    width: 370px;
+}
+body.holidays .url input {
+    margin-right: 33px;
+}
+body.holidays .share_nav, body.holidays .psss_nav {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+body.holidays .share_nav {
+    box-shadow: 0 -14px 18px rgba(229, 229, 229, 0.7) inset;
+    height: 57px;
+}
+body.holidays .share_nav a {
+    display: block;
+    font-size: 1.5em;
+    padding: 20px 0 0 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+body.holidays .psss_nav a {
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+body.holidays .share_nav a {
+    color: #797979;
+    display: block;
+    padding: 20px 0 0 30px;
+}
+body.holidays .share_nav a:hover {
+    text-decoration: underline;
+}
+body.holidays .psss_nav a:hover {
+    text-decoration: underline;
+}
+body.holidays .share_nav a:before, body.holidays .psss_nav a:before {
+    content: "< ";
+}
+body.holidays .share, body.holidays .psss, body.holidays .share_head {
+    position: relative;
+}
+body.holidays .stamp_pull, body.holidays .share_head span, body.holidays .share_center, body.holidays .view_fb, body.holidays .signin_center {
+    position: absolute;
+}
+body.holidays .share, body.holidays .psss {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 20px;
+    overflow: auto;
+    padding: 30px 16px 57px 33px;
+}
+body.holidays .stamp_pull {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    z-index: 10;
+}
+body.holidays .share input, body.holidays .share textarea {
+    border: 1px solid #DEDEDE;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1) inset;
+    color: #8D8B8B;
+    padding: 0.75em;
+}
+body.holidays .email_nl, body.holidays .modal_holiday input {
+    border: 1px solid #DEDEDE;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1) inset;
+    color: #8D8B8B;
+    padding: 0.75em;
+}
+body.holidays input.e_error, body.holidays textarea.e_error {
+    border: 2px solid #FF3B3B;
+}
+body.holidays .share h1 {
+    font-size: 3em;
+}
+body.holidays .blue {
+    color: #597EB6;
+}
+body.holidays .red {
+    color: #FF0000;
+}
+body.holidays .green {
+    color: #53CC01;
+}
+body.holidays .share h2 {
+    color: #686868;
+    font-size: 2em;
+}
+body.holidays a.dred {
+    color: #870000;
+}
+body.holidays .sample {
+    float: left;
+    margin: 0 0 0 10px;
+    width: 438px;
+}
+body.holidays .img_drop {
+    border: 2px solid #DEDEDE;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    text-align: center;
+}
+body.holidays .img_drop a.red {
+    padding-bottom: 30px;
+}
+body.holidays .spacer68 {
+    margin: 35px 0 30px;
+}
+body.holidays .img_drop a.red {
+    display: block;
+    text-align: center;
+}
+body.holidays .newmember_left {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 340px;
+}
+body.holidays .newmember_left img {
+    margin-bottom: 25px;
+}
+body.holidays .newmember_left a.red {
+    font-size: 1.5em;
+}
+body.holidays .newmember_right {
+    padding-left: 370px;
+}
+body.holidays .newmember_right p {
+    font-size: 1.5em;
+}
+body.holidays .newmember_right h1 {
+    font-size: 4.2625em;
+}
+body.holidays .newmember_right p {
+    margin: 11px 0;
+}
+body.holidays .newmember_right p.small {
+    font-size: 1.25em;
+}
+body.holidays .newmember_right img {
+    margin-bottom: 45px;
+}
+body.holidays .newmember_right a {
+    color: #5D5C5C;
+}
+body.holidays .psss_nav {
+    background-color: #FF0000;
+    box-shadow: 0 -14px 18px rgba(220, 0, 0, 0.8) inset;
+    color: #000000;
+    height: 170px;
+    overflow: hidden;
+    padding: 22px 0 0 40px;
+}
+body.holidays .psss_nav_left {
+    float: left;
+}
+body.holidays .psss_nav_left object {
+    float: left;
+}
+body.holidays .psss_nav_right, body.holidays .share_equal, body.holidays .f_left {
+    float: left;
+}
+body.holidays .psss_nav_left {
+    border-right: 1px solid #D40000;
+    display: block;
+    height: 155px;
+    margin-bottom: 10px;
+    width: 660px;
+}
+body.holidays .psss_nav_left a {
+    color: #000000;
+    display: block;
+    margin-bottom: 40px;
+    text-decoration: none;
+}
+body.holidays .psss_nav_left h1 {
+    color: #FFFFFF;
+    font-size: 3.5em;
+    letter-spacing: -0.02em;
+}
+body.holidays .psss_nav_left img {
+    float: left;
+    margin-right: 20px;
+}
+body.holidays .psss_nav_right, body.holidays .psss h1 {
+    text-align: center;
+}
+body.holidays .psss_nav_right {
+    padding-left: 20px;
+    width: 175px;
+}
+body.holidays .psss_nav_right a {
+    text-align: center;
+}
+body.holidays a.psss_nav_right, body.holidays .psss_nav_right a {
+    color: #000000;
+    font-size: 1.735em;
+    font-weight: bold;
+    padding-left: 20px;
+    text-transform: none;
+}
+body.holidays a.psss_nav_right:before, body.holidays .psss_nav_right a:before {
+    content: " ";
+}
+body.holidays .psss {
+    margin-bottom: 30px;
+    padding: 0 132px 40px 167px;
+    width: 658px;
+}
+body.holidays .psss h1 {
+    font-size: 2.1425em;
+    margin: 30px 0;
+}
+body.holidays .share_equal {
+    margin-top: 40px;
+    overflow: auto;
+    text-align: center;
+    width: 48%;
+}
+body.holidays .equal_b {
+    border-right: 1px solid #B5B5B5;
+}
+body.holidays .share h1.green {
+    font-size: 3.42em;
+    letter-spacing: -0.03em;
+    padding-top: 20px;
+}
+body.holidays .share_equal h2 {
+    font-size: 3.00116em;
+    text-align: center;
+}
+body.holidays .f_left {
+    margin: 24px 18px 0 26px;
+}
+body.holidays .join_left {
+    float: left;
+}
+body.holidays .join_right .j_card input, body.holidays .join_right .j_email input, body.holidays .join_right fieldset.j_expire {
+    float: left;
+}
+body.holidays .radio input {
+    float: left;
+}
+body.holidays .join_left {
+    text-align: center;
+}
+body.holidays .join_left p, body.holidays .join_left h1, body.holidays .join_left h2 {
+    text-align: center;
+}
+body.holidays #left_promo.join_left h1, body.holidays #left_promo.join_left h2 {
+    text-align: left;
+}
+body.holidays .join_left h1 {
+    font-size: 3.43667em;
+}
+body.holidays .join_left h2 {
+    font-size: 1.7683em;
+    padding: 12px 0 37px;
+}
+body.holidays .join_left p {
+    font-size: 1.1667em;
+    padding-top: 22px;
+    text-transform: uppercase;
+}
+body.holidays .modal_holiday {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 10px 10px 10px 10px;
+    color: #686868;
+    font-size: 1.2em;
+}
+body.holidays .modal_holiday.login {
+    height: 320px;
+    padding: 11px 11px 28px 58px;
+    width: 486px;
+}
+body.holidays .modal_holiday.login.jjacct {
+    height: 320px;
+}
+body.holidays .modal_holiday .red {
+    margin: -12px 0 0;
+    padding: 0 0 2px 10px;
+}
+body.holidays .fl_error {
+    margin-top: -14px;
+}
+body.holidays .modal_holiday.login.jjacct .fl_error {
+    margin-top: 24px;
+}
+body.holidays .modal_holiday.promo {
+    height: 135px;
+    padding: 11px 11px 40px 27px;
+    width: 518px;
+}
+body.holidays .modal_holiday.promo label.hidden {
+    margin-bottom: 4px;
+    margin-top: -10px;
+}
+body.holidays .modal_holiday.promo p {
+    clear: both;
+}
+body.holidays .modal_holiday.promo p.red {
+    margin-top: 10px;
+    padding-left: 0;
+}
+body.holidays .modal_holiday.signin {
+    height: 363px;
+    width: 556px;
+}
+body.holidays .modal_holiday a {
+    color: #4C77C5;
+}
+body.holidays a.popup {
+    color: #4C77C5;
+}
+body.holidays .modal_holiday.signin {
+    text-align: center;
+}
+body.holidays .modal_holiday.signin p, body.holidays .modal_holiday.signin h4 {
+    text-align: center;
+}
+body.holidays .signin_foot {
+    text-align: center;
+}
+body.holidays .modal_holiday, body.holidays .modal_holiday_header, body.holidays .modal_holiday.signin .header {
+    position: relative;
+}
+body.holidays .modal_holiday_header {
+    height: 82px;
+}
+body.holidays .x_circle, body.holidays .x_red_circle, body.holidays .login .modal_holiday_header_logo, body.holidays .promo .modal_holiday_header_logo, body.holidays .signin_center {
+    position: absolute;
+}
+body.holidays .x_circle, body.holidays .x_red_circle, body.holidays .x_circle a, body.holidays .x_red_circle a {
+    display: block;
+    height: 37px;
+    text-indent: -9999px;
+    width: 37px;
+}
+body.holidays .x_circle {
+    right: 8px;
+    top: 7px;
+}
+body.holidays .x_red_circle {
+    background: url("../images/elfyourself/x-red.png") no-repeat scroll 0 0 transparent;
+    right: -10px;
+    top: -4px;
+}
+body.holidays .modal_holiday h2 {
+    color: #686868;
+    font-size: 1.493em;
+    padding-top: 25px;
+}
+body.holidays .login .modal_holiday_header_logo, body.holidays .promo .modal_holiday_header_logo {
+    bottom: -7px;
+}
+body.holidays .login .modal_holiday_header_logo {
+    right: 71px;
+}
+body.holidays .promo .modal_holiday_header_logo {
+    left: 290px;
+}
+body.holidays .jjacct .modal_holiday_header_logo {
+    top: 63px;
+}
+body.holidays .modal_holiday label, body.holidays .promo input {
+    float: left;
+}
+body.holidays .modal_holiday fieldset.select, body.holidays .modal_holiday .b_submit {
+    float: left;
+}
+body.holidays .modal_holiday fieldset.select label {
+    color: #B1B1B1;
+    display: block;
+    padding: 6px 8px;
+}
+body.holidays .login input {
+    width: 410px;
+}
+body.holidays .promo input {
+    border-radius: 15px 15px 15px 15px;
+    font-size: 1.1667em;
+    padding: 1em;
+    width: 362px;
+}
+body.holidays .modal_holiday_terms {
+    clear: both;
+}
+body.holidays .promo .b_submit {
+    padding-top: 0.5em;
+}
+body.holidays .modal_holiday.signin .header {
+    margin: 9px 8px 0 0;
+}
+body.holidays .modal_holiday.signin h4 {
+    color: #B5B5B5;
+    font-size: 1.7em;
+    padding: 51px 0 7px;
+}
+body.holidays .modal_holiday.signin p {
+    font-size: 1.15083em;
+    margin-top: 1em;
+}
+body.holidays .fb_signin {
+    margin: 10px auto 44px;
+    width: 299px;
+}
+body.holidays .signin_center {
+    background: none repeat scroll 0 0 #FDFDFD;
+    font-size: 1.167em;
+    left: 260px;
+    padding: 5px 25px;
+    text-transform: uppercase;
+    top: 200px;
+    z-index: 10;
+}
+body.holidays .signin_foot {
+    height: 119px;
+    margin: 0 55px;
+    padding-top: 41px;
+    width: 446px;
+}
+body.holidays .head_join {
+    color: #FFFFFF;
+    font-size: 1.083em;
+    padding-top: 13px;
+    text-align: center;
+    text-transform: uppercase;
+}
+body.holidays .elf_header {
+    background-color: #F8F8F8;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 23px 20px 27px 40px;
+    width: 893px;
+}
+body.holidays .elf_header h1 {
+    font-size: 2.85em;
+    letter-spacing: -0.04em;
+}
+body.holidays .elf_landing {
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+    height: 363px;
+    padding: 53px 40px 33px;
+    width: 873px;
+}
+body.holidays .elf_landing_left {
+    float: left;
+}
+body.holidays .elf_landing_left p {
+    margin-top: 29px;
+}
+body.holidays .elf_landing_right {
+    padding-left: 600px;
+}
+body.holidays .elf_landing_right p {
+    font-size: 1.8333em;
+    margin: 7px 0 34px;
+}
+body.holidays .elf_landing_right .red {
+    font-size: 2em;
+    letter-spacing: -0.02em;
+    margin-bottom: 55px;
+}
+body.holidays .landing_mid {
+    color: #FFFFFF;
+    font-size: 1.949em;
+    padding: 1em 0;
+    text-align: center;
+}
+body.holidays .preview_holiday, body.holidays .elf_landing_normal, body.holidays .elf_landing_expanded_right {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) inset;
+}
+body.holidays .preview_holiday, body.holidays .elf_landing_normal {
+    overflow: auto;
+}
+body.holidays .preview_holiday {
+    margin-bottom: 17px;
+    overflow: hidden;
+    padding: 17px 0 17px 37px;
+}
+body.holidays a.v_play {
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+body.holidays a.v_play:hover, body.holidays a.v_play:focus {
+    opacity: 0.4;
+}
+body.holidays .vidbox {
+    float: left;
+    margin-right: 12px;
+    position: relative;
+}
+body.holidays .preview_swf {
+    z-index: 0;
+}
+body.holidays .vidbox .hover_play {
+    display: none;
+    height: 199px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -2000em;
+    top: 0;
+    width: 137px;
+    z-index: 9999;
+}
+body.holidays .vidbox:hover .hover_play {
+    display: block;
+    z-index: 9999;
+}
+body.holidays .vidbox.current_video .hover_play {
+    background: url("../images/elfyourself/current.png") no-repeat scroll 0 0 transparent;
+    display: block;
+}
+body.holidays .elf_landing_normal {
+    color: #FFFFFF;
+    padding: 27px 35px 23px 27px;
+}
+body.holidays.subscribe__purchase .elf_landing_normal, body.holidays.subscribe__purchase .elf_landing_expanded {
+    font-size: 1.2em;
+    margin: 0 auto;
+}
+body.holidays.subscribe__purchase .elf_landing_normal {
+    width: 894px;
+}
+body.holidays .elf_landing_video {
+    float: right;
+}
+body.holidays .elf_landing_normal h1, body.holidays .elf_landing_normal p {
+    letter-spacing: -0.04em;
+}
+body.holidays .elf_landing_normal h1 {
+    font-size: 2.4em;
+}
+body.holidays .elf_landing_normal p {
+    font-size: 1.6em;
+    margin-bottom: 0.75em;
+}
+body.holidays .elf_landing_normal ul {
+    color: #FF0000;
+    width: 625px;
+}
+body.holidays .elf_landing_normal li {
+    display: block;
+    float: left;
+    padding: 0.25em 0;
+    width: 155px;
+}
+body.holidays .elf_landing_expanded {
+    position: relative;
+}
+body.holidays.subscribe__purchase .elf_landing_expanded {
+    width: 956px;
+}
+body.holidays .elf_landing_expanded_left {
+    background-color: #D40C00;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    color: #FFFFFF;
+    float: left;
+    padding: 60px 16px 70px 21px;
+    width: 238px;
+}
+body.holidays.subscribe__purchase .elf_landing_expanded_left {
+    padding-bottom: 124px;
+}
+body.holidays .elf_landing_expanded_left h1 {
+    font-size: 2.4em;
+    margin-bottom: 0.25em;
+}
+body.holidays .elf_landing_expanded_left h2 {
+    color: #FFFFFF;
+    font-size: 1.6583em;
+}
+body.holidays .elf_landing_expanded_left ul {
+    list-style-position: inside;
+    list-style-type: disc;
+    margin: 24px 0;
+}
+body.holidays .elf_landing_expanded_left li {
+    padding: 0.5em 0;
+}
+body.holidays .elf_landing_expanded_left small {
+    font-size: 0.8333em;
+}
+body.holidays .elf_landing_expanded_right {
+    padding: 29px 0;
+}
+body.holidays .elf_landing_expanded_right img {
+    margin-left: 20px;
+}
+body.holidays .ppc_left {
+    float: left;
+    padding: 36px 10px 5px 38px;
+    width: 785px;
+}
+body.holidays .ppc_left h1, body.holidays .ppc_left h2, body.holidays .ppc_left p {
+    color: #FFFFFF;
+}
+body.holidays .ppc_left h1 {
+    font-size: 4.183em;
+    letter-spacing: -0.075em;
+}
+body.holidays .ppc_left h2 {
+    font-size: 1.91667em;
+    letter-spacing: -0.05em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+body.holidays .ppc_left h2 span {
+    color: #510000;
+    float: left;
+    margin-right: 7px;
+}
+body.holidays .ppc_left p {
+    font-size: 2em;
+    margin: 8px 0 16px;
+}
+body.holidays .ppc_right {
+    padding: 22px 0 0 833px;
+}
+body.holidays fieldset.checkbox input, body.holidays fieldset.button input {
+    height: auto;
+    width: auto;
+}
+body.holidays .done a.button, body.holidays .skip a.button, body.holidays .b_post a.button, body.holidays .fb_share a.sbutton, body.holidays .email a.sbutton, body.holidays .download a.sbutton, body.holidays .b_submit a.button {
+    float: left;
+}
+body.holidays .modal_holiday input {
+    margin: 0 0 0.5em 1em;
+}
+body.holidays .done a.button, body.holidays .skip a.button, body.holidays .b_post a.button {
+    height: 61px;
+    margin-top: 27px;
+    width: 112px;
+}
+body.holidays .fb_share a.sbutton, body.holidays .email a.sbutton, body.holidays .download a.sbutton {
+    display: block;
+    height: 67px;
+    margin-right: 124px;
+    text-transform: none;
+    width: 68px;
+}
+body.holidays .fb_share a, body.holidays .email a, body.holidays .download a {
+    color: #688B92;
+}
+body.holidays .b_dvd a.button {
+    width: 224px;
+}
+body.holidays .b_dl a.button, body.holidays .b_store a.button {
+    width: 221px;
+}
+body.holidays .b_free a.button {
+    height: 84px;
+    margin-bottom: 13px;
+    width: 193px;
+}
+body.holidays .b_submit a.button, body.holidays .b_signin a.button, body.holidays .b_submit input, body.holidays .b_signin input {
+    height: 40px;
+    width: 110px;
+}
+body.holidays .b_submit a.button, body.holidays .b_submit input {
+    background: url("../images/ecards_2012/common/b_submit.png") no-repeat scroll -110px 0 transparent;
+}
+body.holidays .b_signin a.button {
+    background: url("../images/ecards_2012/common/b_submit.png") no-repeat scroll -110px 0 transparent;
+    margin: 20px auto 0;
+}
+body.holidays .b_signin input {
+    background: url("../images/ecards_2012/common/b_submit.png") no-repeat scroll -110px 0 transparent;
+    cursor: pointer;
+    margin: 20px auto 0;
+    text-indent: -9999px;
+}
+body.holidays .b_submit input {
+    cursor: pointer;
+    text-indent: -9999px;
+}
+body.holidays .b_return a.button {
+    height: 40px;
+    width: 219px;
+}
+body.holidays .b_create a.button {
+    height: 30px;
+    width: 237px;
+}
+body.holidays .b_member a.button {
+    background: url("../images/elfyourself/b_member.png") no-repeat scroll -270px 0 transparent;
+    height: 61px;
+    width: 270px;
+}
+body.holidays .b_join a.button {
+    background: url("../images/elfyourself/b_join.png") no-repeat scroll -216px 0 transparent;
+    height: 49px;
+    width: 216px;
+}
+body.holidays .b_dvd a.button, body.holidays .b_dl a.button, body.holidays .b_store a.button {
+    float: right;
+    height: 69px;
+}
+body.holidays .b_199, body.holidays .b_free_make, body.holidays .b_return a.button, body.holidays .b_create a.button {
+    margin: 0 auto;
+}
+body.holidays .b_199 {
+    width: 206px;
+}
+body.holidays .b_free_make {
+    width: 330px;
+}
+body.holidays .b_go a.button {
+    height: 56px;
+    margin: 20px auto;
+    width: 85px;
+}
+body.holidays .b_post a.button {
+    background: url("../images/holidays_2011/b_post.png") no-repeat scroll -112px 0 transparent;
+    margin-top: 81px;
+}
+body.holidays .b_dvd a.button {
+    background: url("../images/holidays_2011/b_dvd.png") no-repeat scroll -224px 0 transparent;
+    margin-right: 10px;
+}
+body.holidays .b_dl a.button {
+    background: url("../images/holidays_2011/b_dl.png") no-repeat scroll -221px 0 transparent;
+    margin-left: 30px;
+}
+body.holidays .b_store a.button {
+    background: url("../images/holidays_2011/b_store.png") no-repeat scroll -221px 0 transparent;
+    margin: 93px 13px 35px 20px;
+}
+body.holidays .fb_share a.sbutton {
+    background: url("../images/holidays_2011/icon_fb.png") no-repeat scroll -68px 0 transparent;
+}
+body.holidays .email a.sbutton {
+    background: url("../images/holidays_2011/icon_email.png") no-repeat scroll -68px 0 transparent;
+}
+body.holidays .download a.sbutton {
+    background: url("../images/holidays_2011/icon_dl.png") no-repeat scroll -68px 0 transparent;
+}
+body.holidays a.button:hover, body.holidays a.button:focus {
+    background-position: 0 0;
+}
+body.holidays a.sbutton:hover, body.holidays a.sbutton:focus {
+    background-position: 0 0;
+}
+body.holidays .b_submit input:hover, body.holidays .b_signin input:hover {
+    background-position: 0 0;
+}
+body.holidays .dl_sub input {
+    top: 92px;
+    width: 25px;
+}
+body.holidays fieldset.radio input {
+    border: 0 none;
+    box-shadow: none;
+    padding: 2px;
+}
+body.holidays .premium_text {
+    color: #FFFFFF;
+    display: inline;
+    font-size: 1.949em;
+    padding: 0 0 45px 40px;
+    text-decoration: none;
+}
+body.channel_holidays #jibjab-member-text {
+    height: 22px;
+    padding-top: 10px;
+    position: relative;
+    width: 100%;
+}
+body.channel_holidays #jibjab-member-text p {
+    color: white;
+    font-family: 'Varela Round',sans-serif;
+    font-size: 22px;
+    text-align: center;
+}
+body.channel_holidays #jibjab-member-text p.non-member-header {
+    margin-top: 0.75em;
+}
+body.channel_holidays #jibjab-member-text p:before, body.channel_holidays #jibjab-member-text p:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 200px;
+}
+body.channel_holidays #jibjab-member-text p:before {
+    left: 3%;
+    top: 50%;
+}
+body.channel_holidays #jibjab-member-text p:after {
+    right: 3%;
+    top: 50%;
+}
+body.channel_holidays #holiday_landing1 {
+    background: url("../images/hdm/hdm_feature.png") repeat scroll 0 0 transparent;
+    height: 475px;
+    margin: 0 auto 20px;
+    position: relative;
+    width: 927px;
+}
+body.channel_holidays #holiday_landing1 .hdm-promo-banner {
+    background: url("../images/hdm/new_banner.png") repeat scroll 0 0 transparent;
+    height: 129px;
+    left: 50px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 57px;
+    width: 129px;
+}
+body.channel_holidays #holiday_landing1 .hdm-promo-banner.free-banner {
+    background: url("../images/hdm/free_banner.png") repeat scroll 0 0 transparent;
+}
+body.channel_holidays #holiday_landing1 p#message {
+    float: right;
+    font-family: 'Varela Round',sans-serif;
+    font-size: 22px;
+    margin: 315px 80px 0 0;
+    position: relative;
+    width: 350px;
+}
+body.channel_holidays #holiday_landing1 a#get-started {
+    display: block;
+    height: 100%;
+    position: absolute;
+    text-indent: -9999px;
+    width: 100%;
+}
+body.channel_holidays #modal-backdrop {
+    background-color: #000000;
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+body.channel_holidays .ac_results {
+    border-bottom: 1px solid lightgray;
+    margin-top: -8px;
+    z-index: 200;
+}
+body.channel_holidays .ac_results li {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: white;
+    border-color: lightgray lightgray -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    color: gray;
+    cursor: pointer;
+    height: 40px;
+    padding: 10px;
+    width: 243px;
+}
+body.channel_holidays .ac_results li.ac_over {
+    background: none repeat scroll 0 0 #3B5998;
+    color: white;
+}
+body.channel_holidays .ac_results li img {
+    height: 40px;
+    width: 40px;
+}
+body.channel_holidays .ac_results li p {
+    font-size: 14px;
+    line-height: 14px;
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 27px;
+    text-overflow: ellipsis;
+    width: 193px;
+}
+body.channel_holidays .ac_results li img, body.channel_holidays .ac_results li p {
+    float: left;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine {
+    min-height: 600px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #hdm-addmessage {
+    display: block;
+    margin: 0;
+    z-index: 2;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #hdm-addbackground {
+    height: 540px;
+    margin: 20px 0 40px -12px;
+    position: absolute;
+    top: 37px;
+    width: 956px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .make_another_link {
+    color: white;
+    display: block;
+    font-size: 17px;
+    text-align: center;
+    text-decoration: underline;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .make_another_link.message_page {
+    padding-left: 450px;
+    position: absolute;
+    top: 600px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .make_another_link.cvp_page {
+    margin-top: -35px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #hdm-post-share {
+    background: url("../images/hdm/post-share.png") repeat scroll 0 0 transparent;
+    color: #0094A5;
+    height: 850px;
+    margin: 20px auto 40px;
+    position: relative;
+    text-align: center;
+    width: 956px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #hdm-post-share .header {
+    font-family: 'Cutive',serif;
+    font-size: 40px;
+    padding-top: 40px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #hdm-post-share p {
+    color: gray;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #hdm-post-share #preview-templates {
+    margin: 0 auto;
+    width: 675px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #hdm-post-share #preview-templates .preview-template {
+    float: left;
+    height: 310px;
+    padding: 15px;
+    width: 195px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #hdm-post-share #preview-templates .preview-template p {
+    color: gray;
+    font-family: 'Cutive',serif;
+    font-size: 15px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .pencil {
+    background: url("../images/hdm/pencil.png") repeat scroll 0 0 transparent;
+    height: 30px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 30px;
+    z-index: 3;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .overlay {
+    background: none repeat scroll 0 0 rgba(253, 255, 136, 0.6);
+    color: #4B4B4B;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout {
+    background: url("../images/hdm/background.png") repeat scroll 0 0 transparent;
+    height: 540px;
+    margin: 20px auto 40px;
+    position: relative;
+    width: 956px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header {
+    height: 60px;
+    margin: 0 auto;
+    padding-top: 30px;
+    position: relative;
+    width: 850px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad {
+    height: 100%;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad.dash-border {
+    border: 1px dashed gray;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad .overlay {
+    line-height: 60px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad .title-text {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #0094A5;
+    font-family: 'Cutive',serif;
+    font-size: 40px;
+    height: 100%;
+    line-height: 60px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad span.title-text {
+    position: relative;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad input {
+    width: 100%;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad input:focus {
+    outline: medium none;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad span {
+    padding: 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad span:before, body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad span:after {
+    background-image: url("../images/hdm/accent.png");
+    content: "";
+    display: block;
+    height: 42px;
+    position: absolute;
+    width: 62px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad span:before {
+    left: -72px;
+    top: 7px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .header #titlepad span:after {
+    background-position: 62px 0;
+    right: -72px;
+    top: 7px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content {
+    height: 400px;
+    padding: 20px;
+    position: relative;
+    width: 920px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .left {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    width: 500px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .left #new-background {
+    -moz-user-select: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../images/hdm/sidenote.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: 126px 123px;
+    color: white;
+    cursor: pointer;
+    float: left;
+    font-family: 'Quicksand',sans-serif;
+    height: 53px;
+    line-height: 17px;
+    margin-right: -26px;
+    margin-top: 125px;
+    padding: 35px 25px;
+    position: relative;
+    transform: rotate(-4deg);
+    width: 76px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .left #new-background:hover {
+    text-decoration: underline;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .left #player {
+    float: right;
+    height: 398px;
+    position: relative;
+    width: 398px;
+    z-index: 98;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right {
+    float: left;
+    padding: 25px 5px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #notepad {
+    background: url("../images/hdm/notepad.png") repeat scroll 0 0 transparent;
+    height: 320px;
+    transform: rotate(-2deg);
+    width: 334px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #notepad .pencil {
+    transform: rotate(2deg);
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #notepad .overlay {
+    line-height: 282px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #notepad #note {
+    height: 282px;
+    left: 14px;
+    position: relative;
+    top: 15px;
+    width: 298px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #notepad #note textarea {
+    border: 1px dashed gray;
+    padding: 2px 5px;
+    width: 264px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #notepad #note #chars-left {
+    color: gray;
+    display: none;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #notepad #note .message-text {
+    background: none repeat scroll 0 0 transparent;
+    color: black;
+    font-family: 'Architects Daughter',cursive;
+    font-size: 23px;
+    height: 230px;
+    left: 11px;
+    line-height: 46px;
+    position: relative;
+    top: 15px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #notepad #note div.message-text {
+    overflow: hidden;
+    padding: 3px;
+    width: 270px;
+    word-wrap: break-word;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right input[type="submit"] {
+    background: url("../images/hdm/save.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    height: 41px;
+    margin-left: 50px;
+    text-indent: -9999px;
+    width: 224px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #like-div {
+    font-family: 'Quicksand',sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    width: 310px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #like-div p {
+    float: left;
+    margin: 3px 0 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 210px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #like-div .fb_like_button {
+    float: right;
+    overflow: hidden;
+    width: 90px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #share-buttons {
+    height: 66px;
+    margin: -10px auto 0;
+    padding-right: 10px;
+    width: 225px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #share-buttons .share-button a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #share-buttons #email-button.share-button {
+    background-position: -120px 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #share-buttons #email-button.share-button:hover {
+    background-position: -180px 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #share-buttons #facebook-button.share-button {
+    background-position: 0 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #share-buttons #facebook-button.share-button:hover {
+    background-position: -60px 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #share-buttons #twitter-button.share-button {
+    background-position: -240px 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .postcard-layout .content .right #share-buttons #twitter-button.share-button:hover {
+    background-position: -300px 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .share-modal {
+    background: none repeat scroll 0 0 white;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    display: none;
+    left: 50%;
+    position: absolute;
+    top: 240px;
+    z-index: 102;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .share-modal .close-button {
+    background: url("../images/hdm/close.png") no-repeat scroll center center transparent;
+    height: 52px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 52px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .share-modal .header {
+    color: #0094A5;
+    font-family: 'Cutive',serif;
+    font-size: 30px;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .share-modal .header p {
+    margin: 15px 0 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .share-modal .submit-button {
+    border: medium none;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+    height: 36px;
+    text-indent: -9999px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .share-modal .submit-button:disabled {
+    cursor: default;
+    opacity: 0.3;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .share-modal input {
+    vertical-align: middle;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine .share-modal input:focus, body.channel_holidays #wwrap #wrap div.holiday-dance-machine .share-modal textarea:focus {
+    border-color: #9ECAED;
+    box-shadow: 0 0 10px #9ECAED;
+    outline: medium none;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal {
+    height: 360px;
+    margin-left: -305px;
+    width: 610px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form {
+    margin: 20px 0 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table {
+    margin: 0 auto;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr {
+    margin: 0 auto;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td {
+    margin: 0 auto;
+    padding: 5px;
+    vertical-align: top;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td label {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    padding-top: 5px;
+    text-align: right;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td input, body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td textarea {
+    background: linear-gradient(to bottom, white 0%, lightgray 100%) repeat scroll 0 0 transparent;
+    border: 1px solid lightgray;
+    border-radius: 10px 10px 10px 10px;
+    color: gray;
+    font-size: 12px;
+    height: 25px;
+    padding: 10px;
+    width: 280px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td input.error, body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td textarea.error {
+    border: 1px solid red !important;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td input {
+    line-height: 12px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td textarea {
+    height: 90px;
+    resize: none;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td p, body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td a {
+    color: #535353;
+    font-family: Montserrat,sans-serif;
+    font-size: 11px;
+    margin: 0;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td a {
+    text-decoration: none;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td a:hover {
+    text-decoration: underline;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td #chars-left {
+    font-size: 12px;
+    font-weight: bold;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form table tr td:last-child {
+    padding-top: 15px;
+    width: 80px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #email-modal.share-modal form .submit-button {
+    background: url("../images/hdm/send-now.png") repeat scroll 0 0 transparent;
+    margin: 10px auto;
+    width: 195px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal {
+    height: 290px;
+    margin-left: -290px;
+    width: 580px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content {
+    margin-top: 15px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-left {
+    border-right: 1px dashed lightgray;
+    float: left;
+    height: 210px;
+    margin-left: 10px;
+    padding-right: 10px;
+    width: 240px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-left img {
+    border: 5px solid #0094A5;
+    display: block;
+    height: 100px;
+    margin: 20px auto 0;
+    width: 100px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-left #my-wall {
+    background: url("../images/hdm/post-my.png") repeat scroll 0 0 transparent;
+    margin: 20px auto;
+    width: 195px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content p {
+    background: none repeat scroll 0 0 white;
+    color: gray;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    margin-left: -10px;
+    position: relative;
+    top: 80px;
+    width: 20px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-right {
+    float: left;
+    height: 210px;
+    width: 300px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-right #friend-text {
+    color: gray;
+    font-family: 'Montserrat-Regular',sans-serif;
+    font-size: 15px;
+    height: 30px;
+    margin: 20px 10px 10px 0;
+    text-align: center;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-right .input-holder, body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-right #fbfriendinput {
+    border-radius: 10px 10px 10px 10px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-right .input-holder {
+    background: linear-gradient(to bottom, white 0%, lightgray 100%) repeat scroll 0 0 transparent;
+    height: 45px;
+    margin: 0 auto;
+    width: 265px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-right #fbfriendinput {
+    background: url("../images/hdm/search.png") no-repeat scroll 10px 12px transparent;
+    border: 1px solid lightgray;
+    color: gray;
+    font-size: 14px;
+    height: 34px;
+    line-height: 14px;
+    padding-left: 40px;
+    padding-top: 7px;
+    width: 222px;
+}
+body.channel_holidays #wwrap #wrap div.holiday-dance-machine #facebook-modal.share-modal .content #facebook-right #friend-wall {
+    background: url("../images/hdm/post-friend.png") repeat scroll 0 0 transparent;
+    margin: 45px auto;
+    width: 239px;
+}
+body.index h2 {
+    color: #558800;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+body.index h3 {
+    color: #0066CC;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+body.index .simple {
+    margin: 10px 10px 100px;
+    width: 940px;
+}
+body.index .simple form, body.index .simple .simple_content {
+    padding: 15px 0 15px 15px;
+}
+body.index .simple .text input {
+    padding: 4px;
+    width: 17em;
+}
+body.index .simple .button {
+    margin-bottom: 30px;
+}
+body.index .simple h1 {
+    color: #0066CC;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+body.index .simple_content div {
+    margin-bottom: 20px;
+}
+body.index .simple_content p {
+    line-height: 1.5em;
+    margin-bottom: 10px;
+}
+body.index .simple_content h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+body.index .simple h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+body.index .simple_content .box {
+    background: url("../images/backgrounds/bg_box_514_bottom.png") no-repeat scroll left bottom transparent;
+    padding-bottom: 1px;
+    width: 514px;
+}
+body.index .simple_content em {
+    color: #568100;
+    font-weight: bold;
+}
+body.index .simple_content .box .box_top {
+    background: url("../images/backgrounds/bg_box_514_top.png") no-repeat scroll left top transparent;
+    display: block;
+    height: 11px;
+}
+body.index .simple_content .box div {
+    margin: 4px 15px 0;
+    width: 484px;
+}
+body.index .upgrade {
+    background: url("../images/backgrounds/bg_upgrade.png") no-repeat scroll 0 0 transparent;
+    height: 200px;
+    margin-bottom: 15px;
+    position: relative;
+    text-indent: -9999px;
+    width: 519px;
+}
+body.index .upgrade a {
+    display: block;
+    height: 32px;
+    left: 194px;
+    position: absolute;
+    top: 83px;
+    width: 127px;
+}
+body.index .simple .primary {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    float: right;
+    margin-right: 5px;
+    width: 590px;
+}
+body.index .simple .secondary {
+    float: left;
+    margin-left: 15px;
+    width: 300px;
+}
+body.index .simple .sample {
+    height: 250px;
+    position: relative;
+    width: 300px;
+}
+body.index .simple .sample img {
+    height: 250px;
+    width: 300px;
+}
+body.index .simple .sample span {
+    background: url("imagesimage_mask.gif") no-repeat scroll left top transparent;
+    display: block;
+    height: 250px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 300px;
+}
+body.index .secondary .checklist {
+    margin: 20px 0 0 10px;
+}
+body.index .secondary .checklist li {
+    background: url("../images/icons/checkmark_green.png") no-repeat scroll left center transparent;
+    color: #999999;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+body.index .secondary .checklist li strong {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+body.index .simple .primary h1 {
+    margin-bottom: 10px;
+    position: relative;
+}
+body.index .simple .primary h1 span.already_registered {
+    font-size: 0.55em;
+    font-weight: normal;
+    position: absolute;
+    right: 2px;
+    top: 5px;
+}
+body.index .simple .primary .tb {
+    background: url("../images/backgrounds/bg_box_590_top.png") no-repeat scroll left top transparent;
+    display: block;
+    height: 11px;
+}
+body.index .simple .primary form {
+    background: url("../images/backgrounds/bg_box_590_bottom.png") no-repeat scroll left bottom transparent;
+    margin-bottom: 25px;
+    padding-bottom: 1px;
+    padding-top: 5px;
+}
+body.index .simple .primary .form_split {
+    background: url("../images/backgrounds/bg_box_590_bottom_and_top.png") no-repeat scroll left bottom transparent;
+    margin-left: -15px;
+    padding-bottom: 20px;
+    position: relative;
+    width: 590px;
+}
+body.index .simple .primary .form_split fieldset {
+    margin-left: 15px;
+}
+body.index h2.one {
+    background: url("../images/icons/number_1.png") no-repeat scroll 0 18px transparent;
+    font-size: 1.2em;
+    line-height: 3em;
+    margin-top: -18px;
+    padding: 10px 0 10px 35px;
+}
+body.index h2.two {
+    background: url("../images/icons/number_2.png") no-repeat scroll 0 18px transparent;
+    font-size: 1.2em;
+    line-height: 3em;
+    margin-top: -25px;
+    padding: 10px 0 10px 35px;
+}
+body.index h2.two input {
+    left: 5px;
+    position: relative;
+    top: 8px;
+}
+body.index .promo_2008 {
+    background: url("../images/backgrounds/election_2008.jpg") no-repeat scroll 0 0 transparent;
+    font-size: 0.9em;
+    height: 509px;
+    position: relative;
+}
+body.index .promo_2008 #player {
+    height: 319px;
+    left: 98px;
+    position: relative;
+    top: 73px;
+    width: 425px;
+}
+body.index .promo_2008 a {
+    bottom: 25px;
+    color: #FFFFFF;
+    left: 184px;
+    position: absolute;
+    text-align: center;
+    width: 23em;
+}
+body.index .promo_2008 #player p {
+    font-size: 1.3em;
+    padding: 135px 20px 0;
+    text-align: center;
+}
+body.index .promo_2008 #player p a {
+    color: #006ABC;
+    position: static;
+    text-align: left;
+    width: auto;
+}
+body.index .promo_2008 .button {
+    display: block;
+    height: 35px;
+    left: 129px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 416px;
+    width: 171px;
+}
+body.index .promo_2008 .email {
+    left: 322px;
+}
+body.index #gigya_container {
+    height: 300px;
+    left: 110px;
+    position: absolute;
+    top: 82px;
+    width: 400px;
+}
+body.index .promo_2008_2 {
+    font-size: 0.9em;
+    height: 509px;
+    position: relative;
+    width: 620px;
+}
+body.index .promo_3 {
+    background: url("../images/backgrounds/election_2008_promo_3.jpg") no-repeat scroll left top transparent;
+    font-size: 0.9em;
+    height: 509px;
+    position: relative;
+    width: 620px;
+}
+body.index .promo_3 .email {
+    left: 223px;
+}
+body.index .mark_mod {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    border-color: -moz-use-text-color #CBCBCB #CBCBCB -moz-use-text-color;
+    border-image: none;
+    border-right: 1px solid #CBCBCB;
+    border-style: none solid solid none;
+    border-width: medium 1px 1px medium;
+    height: 381px;
+    padding: 3px;
+    width: 612px;
+}
+body.index .home_content {
+    margin: 0 auto;
+    width: 936px;
+}
+body.index .main {
+    height: 299px;
+    margin-bottom: 15px;
+    position: relative;
+}
+body.index .sub_wrap {
+    border-top: 1px solid #D6D6D6;
+    float: left;
+    margin-right: 19px;
+    padding-top: 4px;
+    width: 615px;
+}
+body.index .sub {
+    border-left: 1px solid #D6D6D6;
+    float: left;
+    height: 248px;
+    padding: 0 7px;
+    position: relative;
+    width: 195px;
+}
+body.index .sub_1 {
+    border: medium none;
+    padding-left: 0;
+}
+body.index .sub_3 {
+    padding-right: 0;
+}
+body.index .sub h2 {
+    margin: 0;
+}
+body.index .sub a {
+    display: block;
+    left: -3px;
+    position: relative;
+}
+body.index .sub .sub_thumb {
+    border-bottom: 1px solid #ACACAC;
+    left: 0;
+    margin-bottom: 12px;
+}
+body.index .sub p {
+    font-family: Georgia,'Times New Roman',Times,serif;
+    font-size: 0.95em;
+    line-height: 1.7em;
+    margin: 0 auto;
+    width: 166px;
+}
+body.index .home_content iframe {
+    border: 1px solid #CCCCCC;
+}
+body.index .channel_halloween.index__landing #wwrap {
+    background-color: black;
+}
+
+
+
+
+body.display-download-info div.dlic_mktg_points_container div.dlic_mktg_point:last-child {
+    border-right: medium none;
+}
+body.channel_ecards.categories__show.category_random #wrap .cat_head_wrap {
+    background-color: #98488D;
+}
+body.channel_ecards.categories__show.category_random #preview_modal_header {
+    background-color: #98488D;
+}
+body.category_page.category_baby #wrap .cat_head_wrap, body.channel_ecards.categories__show.category_you_rock #wrap .cat_head_wrap {
+    background-color: #B6CCD7;
+}
+body.category_page.category_baby #preview_modal_header, body.channel_ecards.categories__show.category_you_rock #preview_modal_header {
+    background-color: #B6CCD7;
+}
+body.channel_halloween #wwrap {
+    background-color: #000000;
+}
+body.channel_holidays.index__landing #wwrap, body.channel_holidays #wwrap {
+    background: url("images/background.png") repeat scroll center top #00BFCE;
+}
+body.channel_st_patricks_day.categories__show.category_st_patricks_day #wrap .cat_head_wrap {
+    background-image: url("http://aka.zero.jibjab.com/files/production/st-pats-bg-3.gif");
+}
+body.channel_st_patricks_day.categories__show.category_st_patricks_day #preview_modal_header {
+    background-image: url("http://aka.zero.jibjab.com/files/production/st-pats-bg-3.gif");
+}
+body.category_winter_fun_sy #wwrap {
+    background-color: #B6CCD7;
+}
+body.categories__show #wrap .cat_head_wrap {
+    background-color: #B6CCD7;
+}
+body.categories__show.category_soul_train #wrap .cat_head_wrap, body.categories__show.category_soul_train #preview_modal_header {
+    background-color: #DCBF14;
+}
+body.index__politics #wwrap.wwrap #wrap {
+    width: 980px;
+}
+body.index__politics #wwrap.wwrap #wrap #politics-wrapper {
+    padding-top: 20px;
+}
+body.index__politics #wwrap.wwrap #wrap #politics-wrapper h2 {
+    margin-top: 0;
+    padding-top: 20px;
+}
+body.index__politics #wwrap.wwrap #wrap #politics-wrapper h2 span {
+    display: inline;
+}
+body.index__politics #wwrap.wwrap #wrap #politics-wrapper h3 span {
+    display: inline;
+}
+body.index__politics #wwrap.wwrap #wrap #politics-wrapper p {
+    line-height: 18px;
+}
+body.channel_ecards.categories__show #preview_modal {
+    width: 750px !important;
+}
+body.channel_ecards.store__show_video_overview #wwrap #wrap #postcard_layout {
+    margin-bottom: 20px;
+}
+body.channel_ecards.category_dances.template_arabian_nights #wwrap {
+    background-color: #70C0E5;
+}
+body.channel_ecards.category_dances.template_arabian_nights #wwrap #wrap {
+    padding-top: 20px;
+    width: 960px;
+}
+body.channel_ecards.category_dances.template_arabian_nights #postcard_layout.cvp .header h1 {
+    color: #70C0E5;
+}
+body.channel_ecards.category_dances.template_arabian_nights #postcard_layout.email .primary .header h1 {
+    color: #70C0E5;
+}
+body.channel_ecards.category_dances.template_arabian_nights #postcard_layout.email_upsell .content .header h1 {
+    color: #70C0E5;
+}
+body.channel_ecards.category_dances.template_arabian_nights #postcard_layout.template .header h1 {
+    color: #70C0E5;
+}
+body.channel_ecards.category_dances.template_arabian_nights #postcard_layout.template .template_secondary .template_title {
+    color: #70C0E5;
+}
+body.channel_ecards.category_dances.template_arabian_nights .cvp_promo p {
+    color: #70C0E5;
+}
+body.channel_ecards.category_dances.template_arabian_nights .cvp_promo a.red {
+    color: #70C0E5;
+}
+body.channel_birthday_alert.birthday_alert__index #wwrap #wrap, body.channel_birthday_alert #wwrap #wrap {
+    width: 980px;
+}
+body.channel_holidays.categories__show #wwrap #wrap {
+    background: none repeat scroll 0 0 white;
+}
+
+
+body.ecards.pages #postcard_layout.casting {
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    height: 500px;
+    margin: 0 auto 15px;
+    padding: 20px 20px 33px;
+    width: 916px;
+}
+body.ecards.common #postcard_layout {
+    background-color: #FFFFFF;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+body.ecards.pages #postcard_layout.casting .header {
+    font-family: 'Varela Round',sans-serif;
+    font-size: 12px;
+    width: 100%;
+}
+body.ecards.common #postcard_layout .header {
+    position: absolute;
+    text-align: center;
+}
+body.ecards.common #postcard_layout .header ul.steps {
+    font-size: 1.333em;
+    margin: 0;
+    padding-bottom: 0;
+    padding-right: 4em;
+    text-transform: uppercase;
+}
+body.ecards.common #postcard_layout .header ul.steps {
+    border: medium none;
+    display: inline;
+    font-family: 'Varela Round',sans-serif;
+    font-size: 16px;
+    padding-left: 16px;
+}
+body ol, body ul {
+    list-style: none outside none;
+}
+
+
+body.holidays .cards:after {
+    right: -28px;
+    top: -28px;
+}
+body.holidays .cards:before, body.holidays .cards:after, body.holidays .cards .insetBorderBottom:before, body.holidays .cards .insetBorderBottom:after {
+    background: none repeat scroll 0 0 #00BFCE;
+    border-radius: 56px 56px 56px 56px;
+    box-shadow: 0 0 15px gray;
+    content: url("images/inset-border.png");
+    display: block;
+    height: 56px;
+    position: absolute;
+    width: 56px;
+}
+body.holidays .cards:before {
+    left: -28px;
+    top: -28px;
+}
+body.holidays .cards:before, body.holidays .cards:after, body.holidays .cards .insetBorderBottom:before, body.holidays .cards .insetBorderBottom:after {
+    background: none repeat scroll 0 0 #00BFCE;
+    border-radius: 56px 56px 56px 56px;
+    box-shadow: 0 0 15px gray;
+    content: url("images/inset-border.png");
+    display: block;
+    height: 56px;
+    position: absolute;
+    width: 56px;
+}
+body.holidays .cards {
+    border: medium none;
+    font-family: 'Varela Round',sans-serif;
+    font-size: 1.75em;
+    margin-bottom: 32px;
+    margin-top: 45px;
+    overflow: hidden;
+    padding: 33px 0 33px 47px;
+    position: relative;
+}
+body.holidays .cards, body.holidays #rounded_box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 4px 30px 3px rgba(0, 0, 0, 0.35) inset;
+    overflow: auto;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+body #wrap {
+    font-size: 1.2em;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+}
+body {
+    color: #535353;
+    font-family: Arial,Helvetica,'Helvetica Neue',sans-serif;
+    font-size: 62.5%;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+}
+body.ecards.common #postcard_layout .header ul.steps li.first:before {
+    content: " ";
+    margin-left: 0;
+    padding-left: 0;
+}
+body.ecards.common #postcard_layout .header ul.steps li:before {
+    color: #CFCFCF;
+    content: ">";
+    padding-right: 2em;
+}
+body.ecards.common #postcard_layout .header ul.steps li.active {
+    color: #6B6A6A;
+}
+body.ecards.common #postcard_layout .header ul.steps li {
+    color: #CFCFCF;
+    list-style: none outside none;
+    margin-left: 0;
+    padding-left: 2em;
+}
+body.ecards.common ul.steps li {
+    border: medium none;
+    display: inline;
+    font-family: 'Varela Round',sans-serif;
+    font-size: 16px;
+    padding-left: 16px;
+}
+
+body.sendables__personalize #wwrap, body.sendables__finalize #wwrap, body.sendables__template #wwrap, body.sendables__casting #wwrap, body.sendables__add_message #wwrap, body.slim_header #wwrap {
+    padding-top: 20px;
+}
