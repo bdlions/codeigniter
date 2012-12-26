@@ -45,7 +45,7 @@
 	   <div class="casting" id="postcard_layout">
         <div class="header">
           <ul class="steps">
-            <li class="first active">Build the cards</li>
+            <li class="first active"></li>
           </ul>
         </div>
 		 <?php
