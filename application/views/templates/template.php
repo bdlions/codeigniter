@@ -30,7 +30,7 @@
 										template1ImageCanvasContext.drawImage(template1Image, 0, 0, template1Image.width, template1Image.height);
 										
 									};									
-									template1Image.src = '../../images/template1.png';
+									template1Image.src = '../../images/template'+template_id+'.png';
 								}
 							}
 						</script>
