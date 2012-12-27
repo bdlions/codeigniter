@@ -77,7 +77,7 @@ body div#user-nav ul li a {
     background-position: left center;
     background-repeat: no-repeat;
     border: 0 none;
-    color: #C4C4C4;
+    color: #00FF00;
     display: block;
     float: right;
     font-family: Arial,Helvetica,'Helvetica Neue',sans-serif;
@@ -191,6 +191,10 @@ body #footer .footer_links ul {
 }
 body #footer .footer_links ul li {
     margin-bottom: 5px;
+}
+body #footer .footer_links ul li a{
+    margin-bottom: 5px;  
+    color: #00FF00;
 }
 body #footer .footer_links ul li ul {
     margin: 5px 0 0 10px;
@@ -313,7 +317,7 @@ body #main_nav li.last {
     border-right: 1px solid #2A2A2A;
 }
 body #main_nav li a {
-    color: #CECECE;
+    color: #00FF00;
     display: block;
     font-family: Georgia;
     font-size: 14px;

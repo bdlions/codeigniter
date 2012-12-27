@@ -1,0 +1,2358 @@
+/* @group top banner */
+@font-face {
+    font-family: 'HTPasticceriaRegular';
+    src: url('../../images/birthdays_2012/htpasticceria-webfont.eot');
+}
+
+@font-face {
+    font-family: 'HTPasticceriaRegular';
+    src: url('../../images/birthdays_2012/htpasticceria-webfont.svg#HTPasticceriaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.slideshow{ 
+	position:relative;
+}
+.facebook_banner_container.not_facebook{
+	position: relative;
+	top: -1px;
+	background: url('../../images/birthdays_2012/header-bg.png') repeat-x;
+	/*width: 956px;*/
+	width: 100%;
+}
+.facebook_banner_container.facebook{
+	background: none repeat scroll 0 0 #2B7AB0;
+ /*width: 956px;*/
+	width: 100%;
+	background-image: url('../../images/birthdays_2012/shadow_band3.png');
+	background-repeat: repeat-x;
+	background-position: 0% 131%;
+}
+.birthdays_banner_facebook_not_connteced{
+  width:956px;
+  height: 343px;
+	margin-bottom: 20px;
+	position: relative;
+	top: -20px;
+}
+.facebook_connect_info .facebook_connect_button{
+	width: 315px;
+	height: 76px;
+}
+.facebook_connect_info .no_thanks_link{
+	margin-left: 180px;
+	padding-bottom: 40px;
+	margin-top: 0px;
+	padding-top: 47px;
+	height: 0px;
+}
+
+.facebook_connect_info .white_header{
+	color: white;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 25px;
+  line-height:40%;
+  letter-spacing: -1px;
+}
+.facebook_connect_info .blue_header{
+	color: #43BCF5;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 25px;
+  line-height:40%;
+  letter-spacing: -1px;
+}
+.facebook_connect_info .facebook_connect_button{
+	padding-top: 30px;
+}
+.birthdays_banner_facebook_connected{
+	width: 956px;
+	background:#2B7AB0;
+	color: white;
+	/*margin-bottom: 20px;*/
+	letter-spacing: -1px;
+	overflow: hidden;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.border_bottom_image_container{
+	/*background:url('../../images/birthdays_2012/shadowledge.png') repeat-x;*/
+	height: 15px;
+}
+#birthdays_today{
+
+}
+#birthdays_today #birthdays_today_list{
+}
+.birthdays_banner_facebook_connected #birthdays_today .birthday_date_section_today{
+  background:url('../../images/birthdays_2012/calendar_day.png') no-repeat;
+	width: 52px;
+	height: 61px;
+	float: left;
+	margin-left: 2px;
+	margin-top: 13px;
+	margin-right: 10px;
+}
+.birthdays_banner_facebook_connected #birthdays_today .birthday_date_section_today .birthday_date_section_today_date{
+	margin-top: 2px;
+	margin-left: 1px;
+	font-size: 37px;
+	font-weight: bold;
+	color: #6DC7F9;
+	padding-left: 3px;
+}
+.birthdays_banner_facebook_connected #birthdays_today .birthday_date_section_today .birthday_date_section_today_month{
+	margin-top: 2px;
+	margin-left: 2px;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding-top: 1px;
+	padding-left: 12px;
+	letter-spacing: 0.9px;
+	color: white;
+}
+.birthdays_banner_facebook_connected #birthdays_today .todays_header .todays_heading{
+	color: white;
+	display: block;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 30px;
+	letter-spacing: -1px;
+	position: relative;
+	top: 15px;
+}
+.birthdays_banner_facebook_connected #birthdays_today #birthdays_today_list .todays_header{
+	margin-top: 50px;
+	float: left;
+}
+
+.birthdays_banner_facebook_connected #birthdays_today #birthdays_today_list .schedule_ecard{
+	color: #6EC7F9;
+	text-decoration: underline;
+	font-size: 13px;
+	display: block;
+	font-family: 'Varela Round', sans-serif;
+	letter-spacing: -1px;
+}
+
+.birthdays_banner_facebook_connected #birthdays_today #bd_cal{
+	width: 254px;
+	float: left;
+	text-decoration: none;
+}
+.birthdays_banner_facebook_connected #birthdays_today #bd_cal .todays_birthdays_more{
+	color: white;
+	position: relative;
+	top: 100px;
+	left: 66px;
+}
+.birthdays_banner_facebook_connected #birthdays_today #bd_cal .todays_birthdays_more a{
+	color: white;
+	text-decoration:none;
+	color: #6EC7F9;
+	text-decoration: underline;
+	font-size: 13px;
+	display: block;
+	font-family: 'Varela Round', sans-serif;
+	letter-spacing: -1px;
+}
+.birthdays_banner_facebook_connected #birthdays_upcoming #bd_cal_upcoming{
+	width: 254px;
+	float: left;
+}
+.birthdays_banner_facebook_connected #birthdays_upcoming #bd_cal_upcoming .birthday_date_section_upcoming{
+	background:url('../../images/birthdays_2012/calendar.png') no-repeat;
+	text-decoration: none;
+	color: white;
+	height: 65px;
+	width: 52px;
+	float: left;
+	margin-left: 2px;
+	margin-top: 13px;
+	font-size: 11px;
+	text-transform: uppercase;
+	padding-top: 3px;
+	padding-left: 10px;
+	letter-spacing: 0.9px;
+}
+.birthdays_banner_facebook_connected #birthdays_upcoming #bd_cal_upcoming .birthday_date_section_upcoming_text{
+	color: white;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 30px;
+  margin-top: 9px;
+  letter-spacing: -1px;
+  margin-top: 17px;
+}
+.birthdays_banner_facebook_connected #birthdays_today #birthdays_today_list {
+	float: left;
+}
+.birthdays_banner_facebook_connected #birthdays_upcoming #birthdays_upcoming_list {
+	float: left;
+
+}
+.birthdays_banner_facebook_connected #birthdays_upcoming #bd_cal_upcoming .birthday_date_section_upcoming_no_bdays{
+  background: url('../../images/birthdays_2012/calendar_day.png') no-repeat;
+	text-decoration: none;
+	color: white;
+	height: 65px;
+	width: 52px;
+	float: left;
+	margin-left: 2px;
+	margin-top: 13px;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding-top: 3px;
+	padding-left: 12px;
+	letter-spacing: 0.9px;
+}
+.birthdays_banner_facebook_connected #birthdays_upcoming #birthdays_upcoming_list .no_birthdays{
+	color: #2EA8D6;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 28px;
+	position: relative;
+	left: 10px;
+	top: 30px;
+}
+.birthdays_banner_facebook_connected #birthdays_today #birthdays_today_list .birthdays_today_container_0,
+.birthdays_banner_facebook_connected #birthdays_today #birthdays_today_list .birthdays_today_container_1,
+.birthdays_banner_facebook_connected #birthdays_today #birthdays_today_list .birthdays_today_container_2{
+	width: 80px;
+	float: left;
+	margin-right: 60px;
+	margin-top: 11px;
+}
+
+.birthdays_banner_facebook_connected #birthdays_today #birthdays_today_list .fb_bday_image_0,
+.birthdays_banner_facebook_connected #birthdays_today #birthdays_today_list .fb_bday_image_1,
+.birthdays_banner_facebook_connected #birthdays_today #birthdays_today_list .fb_bday_image_2
+{
+	background:url('../../images/birthdays_2012/bday_stamp.png') no-repeat;
+	width: 71px;
+	height: 64px;
+	padding: 8px;
+	cursor: pointer;
+}
+.birthdays_banner_facebook_connected #birthdays_upcoming #birthdays_upcoming_list .birthdays_upcoming_container_0,
+.birthdays_banner_facebook_connected #birthdays_upcoming #birthdays_upcoming_list .birthdays_upcoming_container_1{
+	width:100px;
+	height:100px;
+	float: left;
+  margin-right: 60px;
+}
+.birthdays_banner_facebook_connected #birthdays_upcoming #birthdays_upcoming_list .schedule_ecard{
+	color: #6EC7F9;
+	text-decoration: underline;
+	font-size: 13px;
+	font-family: 'Varela Round', sans-serif;
+	letter-spacing: -1px;
+}
+.birthdays_banner_facebook_connected #birthdays_upcoming #birthdays_upcoming_list .fb_bday_image_0,
+.birthdays_banner_facebook_connected #birthdays_upcoming #birthdays_upcoming_list .fb_bday_image_1,
+.birthdays_banner_facebook_connected #birthdays_upcoming #birthdays_upcoming_list .fb_bday_image_2
+{
+	background:url('../../images/birthdays_2012/bday_stamp.png') no-repeat;
+	width: 71px;
+	height: 63px;
+	padding: 8px;
+	cursor: pointer;
+}
+
+.birthdays_banner_facebook_connected .bd_see_all_section{
+	height: 100px;
+	width: 100px;
+	float: left;
+	margin-top: 11px;
+	
+}
+.birthdays_banner_facebook_connected .bd_see_all_section .seeall_name_bday_today a{
+	color: white;
+	text-decoration: none;
+  /*font-size: 14px;*/
+	font-family: 'Varela Round', sans-serif;
+	letter-spacing: -1px;
+	color: #6EC7F9;
+	text-decoration: underline;
+	font-size: 12px;
+}
+.birthdays_banner_facebook_connected .select_wish_container{
+	width: 956px;
+	float: left;
+}
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_left{
+	float: left ;
+	width: 560px;
+	margin-top: 76px;
+	margin-left: 30px;
+}
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_left .recipient_header{
+	display: block;
+	font-size: 44px;
+  font-family: 'Varela Round', sans-serif;
+  line-height: 38px;
+}
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_left .tones_header{
+	background:url('../../images/birthdays_2012/change_tones.png') no-repeat;
+	width: 200px;
+	height: 118px;
+	position: relative;
+	/*top: 67px;*/
+	top:31px;
+	left: 11px;
+}
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_left .tabs_header{
+	background: url('../../images/birthdays_2012/change_type.png') no-repeat;
+	width: 345px;
+	height: 104px;
+	position: relative;
+	left: 230px;
+	top: -97px;
+	/*top: -54px;*/
+}
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_left .select_wish_container_him_left_step{
+	font-family: 'Varela Round', sans-serif;
+  font-size: 42px;
+  color: #25A5D7;
+  display: block;
+  padding-bottom: 10px;
+}
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_right{
+	float: left ;
+	width: 356px;
+}
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_right .envelope_layout_small{
+	width: 283px;
+	height: 305px;
+	background:url('../../images/birthdays_2012/envelope.png') no-repeat;
+	
+}
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_right .envelope_layout_small .img_on_envelope{
+	position: relative;
+	left: 222px;
+	top: 60px;
+}
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_right .envelope_layout_small .name_on_envelope{
+  position: relative;
+  font-family: 'HTPasticceriaRegular',sans-serif; 
+  top: 184px;
+  color: #747474;
+  font-size: 39px;
+  text-align: center;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.birthdays_banner_facebook_connected .select_wish_container_him .select_wish_container_him_left{
+	float: left;
+	border: 1px white;
+	padding-top: 114px;
+	padding-left: 15px;
+}
+.birthdays_banner_facebook_connected .select_wish_container_him .select_wish_container_him_left .select_wish_container_him_left_step{
+  font-family: 'Varela Round', sans-serif;
+  font-size: 42px;
+  color: #25A5D7;
+  display: block;
+  padding-bottom: 10px;
+}
+.birthdays_banner_facebook_connected .select_wish_container_him .select_wish_container_him_left .select_wish_container_him_left_header{
+  font-size: 42px;
+  color: white;
+  display: block;
+  font-family: 'Varela Round', sans-serif;
+  line-height: 38px;
+}
+.birthdays_banner_facebook_connected .select_wish_container_him .select_wish_container_him_envelope{
+	float: left;
+	width: 283px;
+	height: 305px;
+	background:url('../../images/birthdays_2012/envelope.png') no-repeat;
+	margin-left: 35px;
+	margin-top: 30px;
+}
+.birthdays_banner_facebook_connected .select_wish_container_him .select_wish_container_him_envelope .not_connected_image{
+	position: relative;
+	left: 225px;
+	top: 111px;
+	width: 40px;
+	height: 40px;
+}
+.birthdays_banner_facebook_connected .select_wish_container_him .select_wish_container_him_envelope .name_field{
+	position: relative;
+	top: 137px;
+	left: 14px;
+	text-align: center;
+	width: 254px;
+	border: none;
+	background: none;
+	color: #747474;
+	font-size: 39px;
+  outline:none;
+  font-family: 'HTPasticceriaRegular',sans-serif !important; 
+}
+.facebook_banner_container.not_facebook .birthday_banner_header{
+	color: white;
+	font-family: 'Varela Round', sans-serif;
+  font-size: 45px;
+  padding-left: 48px;
+  padding-top: 10px;
+  letter-spacing: -2px;
+	width: 956px;
+	margin: 0 auto;
+}
+.facebook_banner_container.not_facebook .birthday_banner_header .no_thanks_link{
+	float: right;
+	top: 10px;
+	position: relative;
+	right: 29px;
+}
+.facebook_banner_container.not_facebook .birthday_banner_header .blue{
+	color: #43BCF5;
+  letter-spacing: -2px;
+}
+.birthdays_banner_facebook_connected .select_wish_container_him .select_wish_container_him_right{
+	float: left;
+	position: relative;
+	top: 180px;
+	left: 37px;
+}
+.birthdays_banner_facebook_connected .bd_see_all_section .seeall_img_bday_today{
+	height: 78px;
+}
+.birthdays_banner_facebook_connected .send_wish_him_her{
+	float: right;
+	border-left: 2px dotted #104c6f;
+}
+.birthdays_banner_facebook_connected .send_wish_him_her .send_wish_container{
+	height: 111px;
+	width: 216px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 13px;
+}
+.birthdays_banner_facebook_connected .send_wish_him_her .send_wish_container .send_wish_header{
+	font-family: 'Varela Round', sans-serif;
+  font-size: 19px;
+  display: block;
+  color: #2EA8D6;
+  margin-bottom: 4px;
+}
+.birthdays_banner_facebook_connected .send_wish_him_her .send_wish_container .send_wish_start_here{
+	display: block;
+	font-size: 17px;
+	font-family: 'Varela Round', sans-serif;
+	color: white;
+  margin-bottom: 11px;
+	line-height: 10px;
+	padding-bottom: 10px;
+}
+.birthdays_banner_facebook_connected .send_wish_him_her .send_wish_container .for_him{
+	text-decoration: none;
+}
+.birthdays_banner_facebook_connected .send_wish_him_her .send_wish_container .for_her{
+	margin-left: 5px;
+}
+.facebook_connect_info{
+	height: 316px;
+	width: 270px;
+	position: relative;
+	top: 26px;
+	left: 628px;
+	padding-top: 20px;
+	font-size: 14px;
+	color: white;
+}
+#slide_1, #slide_2, #slide_3{
+	width:686px; 
+	height:358px;
+	position:absolute; 
+	left:0;
+	top:0;
+}
+#slide_1{
+	background: url('../../images/birthdays_2012/blockade-1.png') no-repeat;
+}
+#slide_2{
+	background: url('../../images/birthdays_2012/blockade-2.png') no-repeat;
+}
+#slide_3{
+	background: url('../../images/birthdays_2012/blockade-3.png') no-repeat;
+}
+.birthdays_banner_facebook_connected .featured_banner_template{
+}
+.birthdays_banner_facebook_connected .featured_banner_template{
+  padding-top: 156px;
+}
+.featured_banner_template{
+  top: 57px;
+}
+.featured_banner_template .birthday_banner_left .birthday_banner_headers{
+	color: white;
+	font-family: 'Varela Round', sans-serif;
+  font-size: 45px;
+  padding-left: 10px;
+  letter-spacing: -2px;
+  float: left;
+  padding-top: 55px;
+  padding-right: 10px;
+}
+.featured_banner_template .birthday_banner_left .birthday_banner_headers .blue{
+	color: #43BCF5;
+  letter-spacing: -2px;
+}
+ .featured_banner_template .birthday_banner_left .blue_too{
+	color: #43BCF5;
+	display: block;
+	text-transform: uppercase;
+	font-size: 13px;
+	letter-spacing: 0px;
+	text-align: right;
+}
+.featured_banner_template .birthday_banner_left .white{
+  display: block;	
+ 	color: white;
+  font-size: 13px;
+  letter-spacing: 0px;
+	text-align: right;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+.featured_banner_template .birthday_banner_center{
+	float: left;
+  width: 304px;
+  padding-left: 62px;
+	padding-right: 16px;
+	margin-top: 17px;
+}
+.featured_banner_template .birthday_banner_center .new_img{
+	background: url('../../images/birthdays_2012/bday-new-tag.png') no-repeat;
+	width: 71px;
+	height: 93px;
+	position: relative;
+	top: 29px;
+	left: -49px;
+}
+.featured_banner_template .birthday_banner_center .featured_template_placeholder{
+	width:338px;
+	height:193px;
+	background: url('../../images/birthdays_2012/bday-new-blank.png') no-repeat;
+	position: relative;
+	top: -62px;
+	left: -1px;
+}
+.featured_banner_template .birthday_banner_center img{
+ 	transform:skew(-7deg,0deg);
+	-ms-transform:skew(-7deg,0deg); /* IE 9 */
+	-moz-transform:skew(-7deg,0deg); /* Firefox */
+	-webkit-transform:skew(-7deg,0deg); /* Safari and Chrome */
+	-o-transform:skew(-7deg,0deg); /* Opera */
+  position: relative;
+  top: 7px;
+	left: 18px;
+	background: white;
+	padding: 3px;
+	cursor: pointer;
+}
+.featured_banner_template .birthday_banner_right{
+	float: left;
+	padding-top: 52px;
+	width: 250px;
+}
+.featured_banner_template .birthday_banner_right .new_this_week{
+	display: block;
+	text-transform: uppercase;
+	color: #43BCF5;
+	font-size: 14px;
+	font-family: 'Varela Round', sans-serif;
+	padding-bottom: 6px;
+}
+.featured_banner_template .birthday_banner_right .new_this_week_name{
+  display: block;
+	color: white;
+	font-size: 16px;
+	padding-bottom: 6px;
+	font-family: 'Varela Round', sans-serif;
+}
+.featured_banner_template .birthday_banner_right .new_this_week_type{
+	display: block;
+	color: white;
+	font-size: 14px;
+	padding-bottom: 6px;
+	font-family: 'Varela Round', sans-serif;
+}
+.featured_banner_template .birthday_banner_right .new_this_week_text1.multiline{
+	display: block;
+	color: #43BCF5;
+	font-size: 14px;
+	font-family: 'Varela Round', sans-serif;
+	height: 103px;
+	overflow: hidden;
+	white-space: normal;
+}
+
+/* @end */
+/* @group birthdays add_message styles */
+body.channel_birthdays.sendables__add_message #wwrap{
+	margin: 0px;
+	padding: 0px;
+	background: #2b7ab0;
+	background-image: url('../../images/birthdays_2012/shadow_band_no_lip.png');
+	background-repeat: repeat-x;
+	background-position: 0% 100%;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message{
+	height: 472px;
+  width: 956px;
+  margin: 0 auto 75px auto;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .primary{
+	background: url('../../images/birthdays_2012/envelope16-9.png') no-repeat;
+	width: 630px;
+	height: 576px;
+	position: absolute;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .primary .header{
+	position: relative;
+	left: 200px;
+	top: 30px;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .primary .player{
+	position: relative;
+	top: 122px;
+	left: 24px;
+	height: 319px;
+	width: 567px;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .primary .player .video_player{
+	height: 319px;
+	width: 567px;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .primary .player .video_player object{
+	background: white;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .primary .player .still_player object{
+	background: white;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .primary .player .still_player{
+	position: relative;
+	top: -55px;
+	margin: 48px auto;
+	text-align: center;
+	width: 482px;
+	margin-left: 31px;
+	background: white;
+	left: 7px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .primary .player .still_player object{
+	background: white;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .secondary{
+	position: relative;
+	left: 0;
+	top: 68px;
+	width: 285px;
+	background-color: #5FA2C7;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	padding: 10px;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message  .left_arrow{
+	width: 19px;
+	height: 53px;
+	background: url('../../images/birthdays_2012/sidebar_arrow.png') no-repeat;
+	position: relative;
+	left: 623px;
+	top: 290px;
+}
+
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .secondary h2{
+	font-family: 'Architects Daughter', cursive;
+	font-size: 26px;
+	color: #112F56;
+	padding: 6px;
+	
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .secondary .add_char{
+	color: white;
+	padding-left: 8px;
+	font-size: 11px;
+	
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .secondary .message_area{
+	position: relative;
+	left: 0px;
+	top: 13px;
+	background: url('../../images/birthdays_2012/ruled_bg.png') no-repeat;
+	display: block;
+	height: 221px;
+	width: 264px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	background-color: transparent;
+	font-family: 'Architects Daughter', cursive;
+	font-size: 24px;
+	color: #535353;
+	border: none;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: auto;
+}
+
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .secondary .secondary_footer .skip a.button {
+	position: relative;
+	left: 0px;
+	top: 25px;
+	background: url('../../images/birthdays_2012/button_skip.png') no-repeat; 
+	margin-right: 28px; 
+	margin-left: 6px; 
+	cursor:pointer;
+	width: 134px;
+	height: 45px;
+	margin-top: 7px;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .secondary .secondary_footer{
+	padding-top: 2px;
+}
+body.channel_birthdays.sendables__add_message #envelope_layout.add_message .secondary .secondary_footer .done input.button{
+	position: relative;
+	left: 139px;
+  bottom: 27px;
+	background: url('../../images/birthdays_2012/button_done_off.png') no-repeat; 
+	margin-right: 28px; 
+	margin-left: 6px; 
+	cursor:pointer;
+	width: 134px;
+	height: 45px;
+	margin-top: 7px;
+	color: transparent;
+	border: 0px;
+}
+/* @end */
+/* @group birthdays cvp page styles */
+.top_bar_forced_container{
+	width: 100%;
+	height: 35px;
+	background:#FFD541;
+	position: absolute;
+	top: 37px;
+}
+.top_bar_forced{
+  width: 956px;
+	margin: 0px auto;
+}
+.top_bar_forced .header{
+	color: #DD7005;
+	font-size: 15px;
+	float: left;
+	padding-left: 150px;
+	padding-top: 8px;
+}
+.top_bar_forced a{
+	float: left;
+	padding: 3px;
+	margin-left: 100px;
+}
+body.channel_birthdays.view__index #wwrap{
+	padding: 0px;
+	background: #2b7ab0;
+	background-image: url('../../images/birthdays_2012/shadow_band_no_lip.png');
+	background-repeat: repeat-x;
+	background-position: 0% 100%;
+}
+body.channel_birthdays.view__index #wrap{
+
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message
+{
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+  box-shadow: none;
+  height:622px;
+	width: 988px;
+	background: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .header,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .header{
+	display: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .primary{
+	background: url('../../images/birthdays_2012/bg_env.png') no-repeat; 
+  width: 613px;
+  height: 579px;
+	top: 50px;
+	border-right: 0px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .primary{
+	background: url('../../images/birthdays_2012/bg_env.png') no-repeat; 
+  width: 613px;
+  height: 579px;
+  postion: relative;
+  top: 0px;
+}
+body.channel_birthdays.view__index .download_promo.cvp_promo{
+	display: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .primary .video_player{
+	position: relative;
+	top: 123px;
+	background: white;
+}
+
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .primary .video_player{
+	top: 78px;
+	position: relative;
+	background-color: white;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .primary .still_player{
+	margin: 48px auto;
+	text-align: center;
+	width: 498px;
+	margin-left: 31px;
+	background: white;
+	position: relative;
+	top: -55px;
+	left: 28px;
+	padding-right: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .primary .still_player{
+	margin: 48px auto;
+	text-align: center;
+	width: 498px;
+	margin-left: 31px;
+	background: white;
+	position: relative;
+	top: -55px;
+	left: 28px;
+	padding-right: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.hardgoods_store_promo.cvp_promo{
+	display: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary{
+	right: 80px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .left_arrow,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .left_arrow{
+	width: 19px;
+	height: 53px;
+	background: url('../../images/birthdays_2012/sidebar_arrow.png') no-repeat;
+	position: relative;
+	left: -19px;
+	top: 200px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary{
+  right: 180px;
+}
+
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .footer .birthdays_recipient_link .skip.still .recipient_link{
+	border: none;
+	background: none;
+	text-decoration: underline;
+	color: gray;
+	font-size: 13px;
+	cursor: pointer;
+	position: relative;
+	top: -47px;
+	left: 9px;
+  font-style:italic;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .footer .birthdays_recipient_link .skip.still .recipient_link{
+	border: none;
+	background: none;
+	text-decoration: underline;
+	color: gray;
+	font-size: 13px;
+	cursor: pointer;
+	position: relative;
+	top: -45px;
+	left: -172px;
+  font-style:italic;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .footer .birthdays_recipient_link .skip.video .recipient_link{
+	border: none;
+	background: none;
+	text-decoration: underline;
+	color: gray;
+	font-size: 13px;
+	cursor: pointer;
+	position: relative;
+	top: -53px;
+	left: 16px;
+	 font-style:italic;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .footer .birthdays_recipient_link .skip.video .recipient_link{
+	border: none;
+	background: none;
+	text-decoration: underline;
+	color: gray;
+	font-size: 13px;
+	cursor: pointer;
+	position: relative;
+	top: -51px;
+	left: -168px;
+  font-style:italic;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .message{
+	display: none;
+	
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary #birthdays_cvp_share,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary #birthdays_cvp_share{
+	width: 260px;
+	height: 400px;
+	left: 10px;
+	position: relative;
+	top: -50px;
+	left: 0px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary #birthdays_cvp_share .content,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary #birthdays_cvp_share .content{
+  height: 361px;
+	position: relative;
+	top: 48px;
+  background-color: #6AA1C6;
+	border-bottom-right-radius:10px;	
+	border-bottom-left-radius:10px;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright:10px;
+}
+
+
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary #birthdays_cvp_share #email_birthdays.active,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary #birthdays_cvp_share #email_birthdays.active{
+	float: left;
+	 display: block;
+	border-top-right-radius:10px;	
+	border-top-left-radius:10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright:10px;
+	height: 28px;
+	width: 103px;
+	padding: 0 12px 24px;
+	background-color: #6AA1C6;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 21px;
+	text-align: center;
+	color: white;
+	margin-right: 6px;
+	letter-spacing: -1px;
+}
+
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary #birthdays_cvp_share #facebook_birthdays.active,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary #birthdays_cvp_share #facebook_birthdays.active
+{
+	float: left;
+	 display: block;
+	border-top-right-radius:10px;	
+	border-top-left-radius:10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright:10px;
+	height: 28px;
+	width: 103px;
+	padding: 0 12px 24px;
+	background-color: #6AA1C6;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 21px;
+	color: white;
+	margin-left: 6px;
+	text-align: center;
+	letter-spacing: -1px;
+}
+
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary #birthdays_cvp_share #facebook_birthdays.inactive,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary #birthdays_cvp_share #email_birthdays.inactive,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary #birthdays_cvp_share #facebook_birthdays.inactive,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary #birthdays_cvp_share #email_birthdays.inactive{
+	float: left;
+	display: block;
+	border-top-right-radius:10px;	
+	border-top-left-radius:10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright:10px;
+	height: 28px;
+	width: 103px;
+	padding: 0 12px 24px;
+	background-color: #296193;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 21px;
+	color: #193761;
+	letter-spacing: -1px;
+		text-align: center;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary #birthdays_cvp_share #facebook_birthdays,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary #birthdays_cvp_share #email_birthdays,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary #birthdays_cvp_share #facebook_birthdays,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary #birthdays_cvp_share #email_birthdays{
+	text-decoration: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents_recipient,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents_recipient{
+	position: relative;
+	height: 346px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents_recipient .bluetext,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents_recipient .bluetext{
+  color: #0A395D;
+  display: block;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 20px;
+	margin-left: 79px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents_recipient .image_container,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents_recipient .image_container{
+	background: url('../../images/birthdays_2012/bday_stamp.png') no-repeat;
+	width: 71px;
+	height: 71px;	
+  margin-left: 116px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+	padding-left: 8px;
+	padding-top: 8px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents_recipient .post_button,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents_recipient .post_button{
+	margin-left: 79px;
+	color: #0A395D;
+  display: block;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 14px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents_recipient .change_recipient,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents_recipient .change_recipient{
+	margin-left: 98px;
+	display: block;
+  color: #0A395D;
+	margin-top: 36px;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 14px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .not_loggedin_email_content, 
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .not_loggedin_email_content{
+	width: 266px;
+  background: white;
+	margin-left: 13px;
+	font-family: 'Varela Round', sans-serif;
+  font-size: 13px;
+	position: relative;
+	top: 10px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	padding-top: 3px;
+	padding-left: 4px;
+	color: #ACACAC;
+	text-align: center;
+	height: 335px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .not_loggedin_email_content P, 
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .not_loggedin_email_content P{
+	font-size: 15px;
+	position: relative;
+	top: -37px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .not_loggedin_email_content input, 
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .not_loggedin_email_content input{
+	width: 249px;
+	border: 1px solid #ACACAC;
+	color: #ACACAC;
+	font-size: 1.25em;
+	position: relative;
+	top: -37px;
+	
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .not_loggedin_email_content ul, 
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .not_loggedin_email_content ul{
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+	position: relative;
+	top: -8px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .not_loggedin_email_content li, 
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .not_loggedin_email_content li{
+  background-image: url('../../images/birthdays_2012/check_small.png');
+  background-repeat: no-repeat;
+  padding-left: 26px;
+  padding-bottom: 10px;
+	position: relative;
+	top: -37px;
+  text-align: left;
+  left: 66px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .not_loggedin_email_content .copy_url, 
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .not_loggedin_email_content .copy_url{
+	background: url(../../images/birthdays_2012/button_copy_off.png);
+	width: 88px;
+	height: 36px;
+	text-indent: -9999px;
+	display: block;
+	margin: 10px auto 40px auto;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .not_loggedin_email_content .jjstext1,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .not_loggedin_email_content .jjstext1{
+	position: relative;
+	top: -28px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .not_loggedin_email_content .jjstext2,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .not_loggedin_email_content .jjstext2{
+	position: relative;
+  top: -43px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .not_loggedin_email_content .create_account, 
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .not_loggedin_email_content .create_account{
+	position: relative;
+	top: -30px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents {
+	position: relative;
+  height: 346px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents #friend_search,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents #friend_search{
+	width: 248px;
+  height: 30px;
+	margin-left: 20px;
+	font-family: 'Varela Round', sans-serif;
+  font-size: 14px;
+	position: relative;
+	top: -40px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	color: #535353;
+	padding-top: 3px;
+	padding-left: 4px;
+	letter-spacing: -1px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents .fb_friends #friendslist,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents .fb_friends #friendslist{
+	overflow: auto;
+	overflow-x: hidden;
+	height: 276px;
+	width: 256px;
+	margin-left: 21px;
+	margin-top: -24px;
+	background: white;
+
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents .fb_friends #friendslist .friend,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents .fb_friends #friendslist .friend{
+	border-bottom: 1px solid silver;
+	width: 200px;
+	padding-left:12px;
+	padding-right:12px;
+	padding-top:14px;
+	padding-bottom:10px;
+	height: 58px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents .fb_friends #friendslist .friend .friend_img,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents .fb_friends #friendslist .friend .friend_img{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents .center,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents .center{
+	margin:0;
+	padding-left:72px;
+	color: white;
+	font-size: 20px;
+  font-family: 'Varela Round', sans-serif;
+  letter-spacing: -1px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents .center.blues,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents .center.blues{
+	margin:0;
+	padding-left:72px;
+	color: #193761;
+	font-size: 20px;
+  font-family: 'Varela Round', sans-serif;
+  letter-spacing: -1px;
+  padding-top: 15px;
+	padding-bottom: 30px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents .fb_connect,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents .fb_connect{
+	padding-left: 50px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents .fb_friends #friendslist .friend .friend_info,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents .fb_friends #friendslist .friend .friend_info{
+	padding-left:20px;
+	width:120px;
+	overflow:hidden;
+	float: left;
+	font-size: 12px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #facebook_contents .fb_friends #friendslist .friend .friend_info .friend_birthday,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #facebook_contents .fb_friends #friendslist .friend .friend_info .friend_birthday{
+	display: block;
+	color: #838383;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .header .stamp {
+	display: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .footer{
+
+}
+body.channel_birthdays.view__index #related_make_templates{
+	display: none;
+}
+body.channel_birthdays.view__index .cvp_share_links{
+	display: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .contents{
+
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .e_form_details,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .e_form_details{
+	display: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .email_form_foot,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .email_form_foot{
+	display: block;
+	margin-left: 17px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .email_form_foot .e_radio,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .email_form_foot .e_radio{
+ width: 19px;
+  height: 25px;
+  padding: 0 5px 0 0;
+  background: url('../../images/birthdays_2012/radio_off.png') no-repeat;
+  display: block;
+  clear: left;
+  float: left;
+	margin-right: 3px;
+	margin-top: -1px;
+}
+
+
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .contents .e_from_label,.e_to_label,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .contents .e_from_label,.e_to_label{
+	width: 200px;
+  color: #012D54;
+  font-size: 14px;
+  font-family: 'Varela Round', sans-serif;
+  margin-left: 17px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .contents .e_from,.e_to,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .contents .e_from,.e_to{
+	width: 223px;
+	margin-left: 17px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .contents .e_from_label,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .contents .e_from_label{
+	position: relative;
+	top: -40px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .contents .e_from,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .contents .e_from{
+	position: relative;
+	top: -35px;
+	height: 35px;
+	font-family: varela-round;
+	font-size: 13px;
+	color: #717171;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .contents .e_to_label,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .contents .e_to_label{
+	position: relative;
+	top: -29px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content #email_contents .contents .e_to,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content #email_contents .contents .e_to{
+	position: relative;
+	top: -20px;
+  height:64px;
+	font-size: 12px;
+	border: none;
+	overflow: none;
+	resize: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content .email_form_foot .email_send,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content .email_form_foot .email_send{
+	border-bottom: 1px dotted silver;
+	padding-bottom: 17px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content .email_form_foot .email_send_later,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content .email_form_foot .email_send_later{
+	padding-top: 20px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.with_message .secondary .content .send_it,
+body.channel_birthdays.view__index #postcard_layout.cvp.owner_view.without_message .secondary .content .send_it{
+	position: relative;
+	left: 0;
+	padding-left: 25px;
+	top: 12px;
+}
+
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message,
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.without_message{
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+  box-shadow: none;
+  width: 956px;
+  height: 630px;
+  left: -16px;
+  top: -27px;
+	background: url('../../images/birthdays_2012/envelope16-9.png') no-repeat;
+	background-position: center;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .header,
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.without_message .header{
+	display: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .footer,
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.without_message .footer{
+	display: none;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .secondary{
+	left: 720px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .primary{
+	border: none;
+	position: relative;
+	top: 51px;
+	left: 150px;
+	height: 579px;
+  z-index:98;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.without_message .primary {
+	z-index:1;
+	height: 579px;
+	position: relative;
+	top: 0px;
+	left: 158px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .primary .video_player{
+	background: white;
+	position: relative;
+	top: 98px;
+	left: 17px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.without_message .primary .video_player{
+	background: white;
+	position: relative;
+	top: 154px;
+	left: -157px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .primary .still_player{
+	top: 76px;
+	left: 20px;
+	margin: 48px auto;
+	text-align: center;
+	padding: 13px;
+	width: 482px;
+	margin-left: 53px;
+	background: white;
+	position: relative;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .primary .still_player object{
+	background: white;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.without_message .primary .still_player object{
+	background: white;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.without_message .primary .still_player{
+	padding: 13px;
+	width: 482px;
+	text-align: center;
+	margin: 48px auto;
+	margin-left: 53px;
+	background: white;
+	position: relative;
+	top: 82px;
+	left: 15px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .secondary .message{
+	background: url('../../images/birthdays_2012/paper_3.png') no-repeat;
+	width: 218px;
+	height: 309px;
+	position: relative;
+	top: 149px;
+	left: 65px;
+	font-family: 'Architects Daughter', cursive;
+	font-size: 22px;
+	z-index: 2;
+	-webkit-transform: rotate(7deg);
+	/* Firefox */
+	-moz-transform: rotate(7deg);
+	/* IE */
+  -ms-transform: rotate(7deg);
+	/* Opera */
+	-o-transform: rotate(7deg);
+	/* Internet Explorer */
+}
+
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .secondary .message.still{
+	background: url('../../images/birthdays_2012/paper_fix_2.png') no-repeat;
+	width: 218px;
+	height: 274px;
+	position: relative;
+	top: 223px;
+	left: 22px;
+	font-family: 'Architects Daughter', cursive;
+	font-size: 22px;
+	z-index: 2;
+	-webkit-transform: rotate(7deg);
+	/* Firefox */
+	-moz-transform: rotate(7deg);
+	/* IE */
+  -ms-transform: rotate(7deg);
+	/* Opera */
+	-o-transform: rotate(7deg);
+	/* Internet Explorer */
+}
+
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .secondary .message.video{
+	background: url('../../images/birthdays_2012/paper_fix_2.png') no-repeat;
+	width: 218px;
+	height: 274px;
+	position: relative;
+	top: 213px;
+	left: 48px;
+	font-family: 'Architects Daughter', cursive;
+	font-size: 17px;
+	z-index: 2;
+	-webkit-transform: rotate(7deg);
+	/* Firefox */
+	-moz-transform: rotate(7deg);
+	/* IE */
+  -ms-transform: rotate(7deg);
+	/* Opera */
+	-o-transform: rotate(7deg);
+	/* Internet Explorer */
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .secondary .message p{
+  padding-left: 34px;
+  padding-right:9px;
+	padding-top: 1px;
+	line-height: 32px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .secondary .tell_someone{
+	background: url('../../images/birthdays_2012/bluenote.png') no-repeat;
+	width: 159px;
+	height: 184px;
+  position: relative;
+  left: -706px;
+  bottom: 175px;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 13px;
+  padding:26px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.without_message .secondary .tell_someone{
+	background: url('../../images/birthdays_2012/bluenote.png') no-repeat;
+	width: 159px;
+	height: 184px;
+  position: relative;
+	font-family: 'Architects Daughter', cursive;
+  font-size: 13px;
+  left: -761px;
+  top: 123px;
+  padding: 22px;
+}
+
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.with_message .secondary #fb_like_wrapper{
+	position: relative;
+	left: -680px;
+	bottom: 336px;
+}
+body.channel_birthdays.view__index #postcard_layout.cvp.recipient_view.without_message .secondary #fb_like_wrapper{
+	position: relative;
+	left: -743px;
+	top: -34px;
+}
+/* @end */
+
+
+/* birthdays home page - listing */
+.channel_birthdays.index__landing.category_birthdays #wwrap {
+	/*background: #2B7AB0;*/
+	background: #fff;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+.channel_birthdays.sendables__casting #wwrap{
+	background: #2B7AB0;	
+	background-image: url('../../images/birthdays_2012/shadow_band_no_lip.png');
+	background-repeat: repeat-x;
+	background-position: 0% 100%;
+}
+
+.channel_birthdays.index__landing.category_birthdays #wrap{
+	width: 100%;
+}
+body.channel_birthdays #channel_birthdays_tabs{
+  padding-left: 20px;
+	width: 936px;
+	overflow: hidden;
+	height: 50px;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar,
+body.channel_birthdays #channel_birthdays_content{
+  float: left;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar{
+  margin-left: 26px;
+  width: 180px;
+  overflow: hidden;
+  font-size: 1.5em;
+  font-family: 'Varela Round', sans-serif;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar img.selected,
+body.channel_birthdays #channel_birthdays_sidebar img.not_selected {
+  width: 18px;
+  height: 18px;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar .selected {
+  background: url(../../images/birthdays_2012/radio_on.png) no-repeat 0px 0px;  
+  color: #000;
+
+	display: none;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar .not_selected {
+  background: url(../../images/birthdays_2012/radio_off.png) no-repeat 0px 0px;  
+	display: none;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar label {
+  line-height: 18px;
+  display: block;
+  padding-left: 26px;
+}
+
+body.channel_birthdays #channel_birthdays_content{
+  background: #fff;
+  width: 750px;
+	min-height: 800px;
+	-webkit-box-shadow: 0 8px 6px 4px #ccc;
+	-moz-box-shadow: 0 8px 6px 4px #ccc;
+	box-shadow: 0 8px 6px 4px #ccc;
+	float:right;
+}
+
+body.channel_birthdays #channel_birthdays_tabs li{
+	float: left;
+	padding: 0px 15px;
+	margin-right: 10px;
+	font-size: 22px;
+	padding-top: 14px;
+	height: 37px;
+	text-align: center;
+	color: #104575;
+	font-family: 'Varela Round', sans-serif;
+}
+
+body.channel_birthdays .card{
+  float: left;
+  height: 288px;
+  width: 285px;
+  border-top: 1px dashed #ccc;
+  padding: 34px 0 60px 0;
+	text-align: center;
+}
+
+body.channel_birthdays .card .item{
+	min-height: 324px;
+	margin-bottom: 10px;
+	position: relative;
+	width: 271px;
+	padding: 6px 9px 10px 9px;
+	cursor: pointer;
+}
+
+body.channel_birthdays .card .item:hover{
+	background: #f4f4f4;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar h2{
+  font-size: 15px;
+  color: #a3a3a3;
+  float: left;
+  background: #fff;
+  width: 100%;
+  padding: 17px 24px;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar .labels_for_recipient,
+body.channel_birthdays #channel_birthdays_sidebar .labels_for_theme{
+  border-bottom: 1px solid #dddddd;
+  padding: 14px;
+  background: #f9f9f9;
+  color: #a3a3a3;
+  width: 150px;
+  float: right;
+  font-size: 1em;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar div input[type="radio"] {
+    margin-right: 5px;
+}
+
+body.channel_birthdays #channel_birthdays_sidebar div.last{
+  border-bottom: 3px solid #c3c3c3;  
+}
+
+
+body.channel_birthdays a.show_more_link {
+  background: url("../../images/ecats/show_next_button.png") no-repeat scroll 0 0 transparent;
+  float: left;
+  color: #535353;
+  display: none;
+  font-size: 12px;
+  height: 50px;
+  margin: 20px auto;
+  padding-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #FFFFFF;
+  width: 100%;
+  background-position: center;
+	width: 363px;
+	margin-left: 180px;
+}
+
+body.channel_birthdays #show_next {
+	display: block;
+	text-align: center;
+}
+
+body.channel_birthdays #show_loading{
+	display: none;
+	text-align: center;
+}
+
+body.channel_birthdays .show_loading{
+	display: none;
+	font-size: 4em;
+	margin-top: 200px;
+	text-align: center;
+}
+
+body.channel_birthdays #channel_birthdays_tabs ul{
+	cursor: pointer;
+	float: right;
+}
+
+body.channel_birthdays #preview_modal_content #card{
+	width: 400px;
+	margin-right: 50px;
+	font-family: 'Varela Round', sans-serif;
+}
+
+body.channel_birthdays #preview_modal_content #side{
+	width: 290px;
+	padding-top: 127px;
+}
+
+body.channel_birthdays #preview_modal_content #card,
+body.channel_birthdays #preview_modal_content #side{
+	float: left;
+}
+
+body.channel_birthdays #preview_modal_content{
+	overflow: hidden;
+	width: 965px;
+	padding: 0 35px 40px 35px;
+	background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.9);
+	color: #ccc;
+	opacity: 1;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px
+}
+
+body.channel_birthdays #preview_modal {
+	width: auto !important;
+}
+
+body.channel_birthdays #preview_modal_content h2{
+	color: #00A6D8;
+	font-size: 2em;
+	font-family: 'Varela Round', sans-serif;
+}
+
+body.channel_birthdays #preview_modal_content #type{
+	font-size: 2em;
+	margin-bottom: 20px;
+	font-family: 'Varela Round', sans-serif;
+}
+
+body.channel_birthdays #preview_modal_content #description {
+	margin-bottom: 20px;
+	min-height: 200px;
+	font-family: 'Varela Round', sans-serif;
+	line-height: 20px;
+}
+
+body.channel_birthdays #preview_modal_content #make_button{
+	margin-bottom: 38px;
+}
+
+body.channel_birthdays #preview_modal_content #modal_nav div{
+	float: left;
+}
+
+body.channel_birthdays #preview_modal_content #card{
+	/*background: url('../../images/birthdays_2012/envelope4-3.png') no-repeat 0 0;*/
+	background: url('../../images/birthdays_2012/CHenvelopefix.png') no-repeat 0 0;
+	width: 615px;	
+	height: 619px;
+}
+
+body.channel_birthdays #preview_modal_content #primary{
+	width: 570px;
+	float: left;
+}
+
+body.channel_birthdays #player_container {
+	/* outline: 1px solid red; */
+	width: 498px;
+	/*margin-top: 100px;*/
+	margin-top: 187px;
+	margin-left: 42px;
+	background: white;
+	/*padding: 6px 16px;*/
+	padding: 13px;
+}
+
+body.channel_birthdays #card.video #player_container {
+	width: 528px;
+	height: 344px;
+}
+
+body.channel_birthdays #card.still #player_container {
+	width: 433px;
+	margin: 118px 0 0 89px;
+}
+
+body.channel_birthdays #preview_modal_content #modal_nav .item{
+	cursor: pointer;
+	position: relative;
+	width: 84px;
+}
+
+body.channel_birthdays #preview_modal_content #modal_nav .item span {
+	position: absolute;
+	top: 30px;
+	font-size: 1.5em;
+	color: white;
+	z-index: 999;
+}
+
+body.channel_birthdays #preview_modal_content #modal_nav .item#preview_prev span{
+	left: 20px;
+}
+
+body.channel_birthdays #preview_modal_content #modal_nav .item#preview_next span{
+	left: 43px;
+}
+
+body.channel_birthdays #preview_modal_content #modal_nav .item img{
+	border: 1px solid;
+}
+
+body.channel_birthdays #preview_next {
+	border-left: 1px solid;
+	padding: 0 16px;
+	margin-left: 25px;
+}
+
+body.channel_birthdays #ecard_preview_swf{
+	/*background: #000;*/
+	background: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+body.channel_birthdays #shim {
+	position: absolute;
+	width: 102px;
+	height: 85px;
+	background: black;
+	top: 0;
+	opacity: 0.5;
+	/*-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);*/
+}
+
+body.channel_birthdays #search_bar{
+	width: 720px;
+	overflow: hidden;
+	margin-top: 52px;
+	display: none;
+    margin-bottom: 30px;
+}
+
+body.channel_birthdays #search_bar input{
+	font-size: 4em;
+	padding: 7px;
+	width: 498px;
+	margin-left: 52px;
+	float: left;
+	height: 62px;
+  color: #a6a6a6;
+  font-family: 'Varela Round', sans-serif;
+	border: none;
+	box-shadow:0 0 10px #666 inset;
+	-webkit-box-shadow:0 0 10px #666 inset;
+	-moz-box-shadow:0 0 10px #666 inset;
+}
+
+body.channel_birthdays #search_go {
+	background: url('../../images/birthdays_2012/button_search_off.png') no-repeat 0 0;
+	float: left;
+	width: 122px;
+	height: 76px;
+	float: left;
+	cursor: pointer;
+}
+
+body.channel_birthdays #filter_all{
+	background: url('../../images/birthdays_2012/tab_allcards_off.png') no-repeat 0 0;
+	width: 145px;
+	height: 52px;
+}
+
+body.channel_birthdays #filter_all.active{
+	background: url('../../images/birthdays_2012/tab_allcards_on.png') no-repeat 0 0;
+}
+
+body.channel_birthdays #filter_quicksend{
+	background: url('../../images/birthdays_2012/tab_quicksend_off.png') no-repeat 0 0;
+	width: 145px;
+	height: 52px;
+}
+
+body.channel_birthdays #filter_quicksend.active{
+	background: url('../../images/birthdays_2012/tab_quicksend_on.png') no-repeat 0 0;
+}
+
+body.channel_birthdays #filter_starringyou{
+	background: url('../../images/birthdays_2012/tab_starring_off.png') no-repeat 0 0;
+	width: 145px;
+	height: 52px;
+}
+
+body.channel_birthdays #filter_starringyou.active{
+	background: url('../../images/birthdays_2012/tab_starring_on.png') no-repeat 0 0;
+}
+
+body.channel_birthdays #filter_search{
+	background: url('../../images/birthdays_2012/search_2_off.png') no-repeat 0 0;
+	width: 145px;
+	height: 52px;
+}
+
+body.channel_birthdays #filter_search.active{
+	background: url('../../images/birthdays_2012/search_2_on.png') no-repeat 0 0;
+}
+
+body.channel_birthdays #channel_birthdays_tabs ul{
+	overflow:hidden;
+	width: 750px;
+}
+
+body.channel_birthdays #channel_birthdays_container{
+	background: #fff;
+	overflow: hidden;
+	width: 956px;
+	margin: 0 auto;
+/*  margin-bottom: -12px;
+*/	/*margin-top: -1px;*/
+}
+
+body.channel_birthdays #template_list{
+	margin: 27px 0 0 50px;
+}
+
+body.channel_birthdays #result_stats{
+	font-size: 17px;
+	margin-left: 45px;
+	margin-top: 20px;
+	color: #999;
+  font-family: 'Varela Round', sans-serif;
+}
+
+body.channel_birthdays #result_stats span{
+	color: #2B7AB0;
+	font-weight: bold;
+}
+
+body.channel_birthdays .card.right{
+	border-left: 1px dashed #ccc;
+	padding-left: 35px;
+}
+
+body.channel_birthdays .card.left{
+	padding-right: 35px;
+}
+
+body.channel_birthdays .card.top{
+	border-top: none;
+	padding-top: 0px;
+}
+
+body.channel_birthdays .item h4{
+	color: #00A6D8;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+body.channel_birthdays .item h4 span{
+	font-weight: normal;
+}
+
+body.channel_birthdays .item h3 a{
+	color: #6A6A6A;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+body.channel_birthdays em.free{
+	background: url('../../images/ecats/free.png') no-repeat;
+	position: absolute;
+	width: 72px;
+	text-indent: -9999px;
+	height: 73px;
+}
+
+body.channel_birthdays .preview:hover{
+	background-color: rgba(0, 0, 0, 0.05);
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+body.channel_birthdays .item_sub{
+	text-align: left;
+	margin-left: 6px;
+}
+
+body.channel_birthdays .item_sub h3{
+	font-size: 10px;
+	margin: 5px 0;
+}
+
+body.channel_birthdays .item_sub h4{
+	font-size: 14px;
+	margin: 0 0 5px;
+}
+
+body.channel_birthdays .item_sub p{
+	font-size: 13px;
+	margin-top: 3px;
+}
+
+body.channel_birthdays .preview:hover .vid{
+	background: rgba(0, 0, 0, 0.5) url('../../images/ecats/preview_video_icon.png') no-repeat 240px 7px;
+}
+
+body.channel_birthdays #make_button a{
+	background: url('../../images/birthdays_2012/button_make_off.png') no-repeat 0 0;
+	text-indent: -9999px;
+	width: 219px;
+	height: 48px;
+	display: block;
+}
+
+body.channel_birthdays #preview_modal_content .closeAllModals,
+body.channel_birthdays #success_modal .closeAllModals{
+	background: url('../../images/birthdays_2012/button_x.png') no-repeat 0 0;
+	position: absolute;
+	top: 24px;
+	right: 29px;
+	cursor: pointer;
+	display: block;
+	width: 58px;
+	height: 57px;
+}
+
+body.channel_birthdays .card .item img{
+	margin-bottom: 10px;
+}
+/* @end */
+
+
+/* post share success modals */
+
+body.channel_birthdays #success_modal {
+	overflow: hidden;
+	width: 875px !important;
+	background: #000 !important;
+}
+
+body.channel_birthdays #success_modal h2{
+	color: #fff;
+	font-size: 2em;
+	font-family: 'Varela Round', sans-serif;
+	line-height: 28px;
+}
+
+body.channel_birthdays #success_modal h3{
+	color: #2B7AB0;
+	font-size: 2em;
+	font-family: 'Varela Round', sans-serif;
+	line-height: 24px;
+	
+}
+
+body.channel_birthdays #success_modal #primary,
+body.channel_birthdays #success_modal #secondary{
+	margin: 50px 0 50px 0;
+	
+}
+
+body.channel_birthdays #success_modal #primary {
+	float: left;
+	margin-left: 76px;
+	background: url('../../images/birthdays_2012/stamp.png') no-repeat 0 0;
+	padding-left: 90px;
+	background-position: left center;
+	width: 200px;
+	height: 284px;
+	padding-top: 15px;
+}
+
+body.channel_birthdays #success_modal #secondary {
+	float: left;
+	border-left: 1px dotted;
+	padding-left: 60px;
+	margin-left: 60px;
+	padding-top: 32px;
+	height: 237px;
+}
+
+body.channel_birthdays #success_modal #card{
+	background: white;
+	width: 186px;
+	text-align: center;
+	height: 85px;
+	padding-top: 52px;
+	font-size: 2.3em;
+	position: relative;
+	margin-top: 16px;
+	font-family: 'HTPasticceriaRegular',sans-serif;
+}
+
+body.channel_birthdays #success_modal #success_card_stamp{
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	border: 1px solid;
+	padding: 1px;
+} 
+
+body.channel_birthdays #success_modal #see_friends{
+	background: url('../../images/birthdays_2012/bday_calendar.png') no-repeat 0 0;
+	color: #fff;
+	font-size: 1.5em;
+	width: 290px;
+	padding: 15px 0 17px 95px;
+	margin: 72px 0 15px 0;
+}
+
+body.channel_birthdays #success_modal #return_to_bday {
+	background: url('../../images/birthdays_2012/bday_ecards.jpg') no-repeat 0 0;
+	color: #fff;
+	font-size: 1.5em;
+	width: 290px;
+	padding: 25px 0 32px 95px;
+}
+
+body.channel_birthdays #success_modal #return_to_bday a,
+body.channel_birthdays #success_modal #see_friends a{
+	text-decoration: underline;
+	color: #fff !important;
+}
+
+body.channel_birthdays #success_modal #return_to_bday a:hover,
+body.channel_birthdays #success_modal #see_friends a:hover{
+	text-decoration: none;
+}
+
+body.channel_birthdays .not_logged_in {
+	display: none;
+	/*background: url('../../images/birthdays_2012/fb_banner.png') no-repeat 0 0;*/
+	background: #1b7aaf;
+	/*width: 956px;*/
+	width: 100%;
+	height: 94px;
+	cursor: pointer;
+	text-align: center;
+	padding-top:10px;
+}
+
+body.channel_birthdays #result_stats.center{
+	margin-left: 0px;
+	text-align: center;
+}
+
+body.channel_birthdays #more_birthdays_container .fb_birthday{
+	float: left;
+	margin-right: 14px;
+	color: #fff;
+	margin-top: 20px;
+}
+
+body.channel_birthdays #more_birthdays_container .fb_photo #more_birthdays{
+	overflow: hidden;
+	width: 300px;
+}
+
+body.channel_birthdays #more_birthdays_container .fb_photo{
+	background: url('../../images/birthdays_2012/bday_stamp.png') no-repeat 0 0;
+	text-align: center;
+	padding-top: 8px;
+	width: 66px;
+	height: 66px;
+}
+
+body.channel_birthdays #template_list.search {
+	margin-top: 10px;
+}
+
+body.channel_birthdays .item_image{
+	width: 272px;
+}
+
+body.channel_birthdays .ui-widget-overlay.doNotClose{
+	background: #000 !important;
+	width: 100%;
+	opacity: .7; 
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; 
+	filter: alpha(opacity=70);					
+	zoom:1;
+}
+
+body.channel_birthdays .modal#success_modal{
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+body.channel_birthdays .modal#preview_modal{
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background: transparent !important;
+}
+
+body.channel_birthdays #filter_search{
+	width: 135px;
+	padding-left: 0px !important;
+}
+.channel_birthdays.store__show_video_overview #wwrap{
+	background: #2B7AB0;	
+}
+
+body.channel_birthdays .radioContainer{
+	overflow: hidden;
+	width: 191px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background: #F9F9F9;
+}
+
+body.channel_birthdays #banner_inner_content,
+body.channel_birthdays #inner_content{
+	width: 956px;
+	margin: 0 auto;
+	overflow:hidden;
+}
+
+body.channel_birthdays #inner_content{
+/*  margin-bottom: -12px;
+*/}
+/* @end */
+
+
+
+
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_right{
+	margin-left: 75px;
+	width: 285px;
+}
+
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_left{
+	margin-left: 0px;
+}
+
+.birthdays_banner_facebook_connected .select_wish_container .select_wish_container_left {
+	margin-top:80px;
+}
+
+body.channel_birthdays #email_contents .contents input{
+	font-family: arial !important;
+	padding: 5px;
+	font-size: 1.7em !important;
+	width: 245px !important;
+}
+
+body.channel_birthdays #email_contents .contents textarea{
+	color: #717171;
+	font-family: arial !important;
+	padding: 5px;
+	width: 250px !important;
+	font-size: 1.7em !important;
+}
+
+body.channel_birthdays #email_contents .email_send label,
+body.channel_birthdays #email_contents .email_send_later label{
+	font-size: 1.6em !important;
+	color: #193761 !important;
+	margin-right: 6px;
+}
+
+
+body.channel_birthdays #birthdays_cvp_share a#email_birthdays{
+	width: 123px !important;
+	font-size: 21px !important;
+}
+
+body.channel_birthdays #birthdays_cvp_share a#facebook_birthdays{
+	width: 119px !important;
+	font-size: 21 !important;
+}
+
+body.channel_birthdays #birthdays_cvp_share {
+	width: 296px !important;
+}
+
+body.channel_birthdays #email_contents .send_it{
+/*  left: 65px !important;
+  top: 16px !important;
+*/}
+
+#success_card_recipient_name{
+	color: #747474;
+	overflow: hidden;
+	display: block;
+}
+
+#success_card_recipient_name.active{
+	background: url('../../images/birthdays_2012/envelope_squiggle.png') 0 0 no-repeat;
+	background-position: center bottom;
+	height: 57px;
+}
+
+body.channel_birthdays.view__index #email_contents label.selected{
+	background: url('../../images/birthdays_2012/email_radio_on.png') no-repeat 0px 0px;
+	padding-left: 26px;
+	height: 25px;
+	padding-top: 2px;
+	
+	display: none;
+}
+
+body.channel_birthdays.view__index #email_contents label.not_selected{
+	background: url('../../images/birthdays_2012/email_radio_off.png') no-repeat 0px 0px;
+	padding-left: 26px;
+	height: 25px;
+	padding-top: 2px;
+	
+	display: none;
+}
+
+body.channel_birthdays #email_contents .contents .e_from_label{
+	top: -40px !important;
+}
+
+body.channel_birthdays #email_contents .contents .e_to_label{
+	top: -25px !important;
+}
+
+body.channel_birthdays #email_contents .email_send.labels_for_send_schedule_option{
+	width: 263px !important;
+	border-bottom: 1px dashed !important;
+}
+
+body.channel_birthdays #email_contents .email_send.labels_for_send_schedule_option span,
+body.channel_birthdays #email_contents .email_send_later.labels_for_send_schedule_option span{
+	font-size: 1.6em !important;
+	color: #193761 !important;
+	margin-right: 6px;
+}
+
+body.channel_birthdays #email_contents select{
+	font-size: 15px !important;
+}
+
+body.channel_birthdays #success_modal #not_fb_connected_post_share{
+	width: 300px;
+	margin-top: -34px;
+	font-family: "Valera Round", sans-serif;
+	display: none;
+}
+
+body.channel_birthdays #success_modal #not_fb_connected_post_share h3{
+	margin-bottom: 30px;
+}
+
+body.channel_birthdays #fb_facepile_header{
+	width: auto;
+	overflow:hidden;
+	display:none;
+}
+
+body.channel_birthdays #facepile_container{
+	overflow:hidden;
+	width: auto;
+	background: #333;
+	padding: 15px;
+	margin-left: 22px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+body.channel_birthdays #fb_facepile_header h2{
+	font-family: 'Varela Round', sans-serif;
+	font-size: 2.3em;
+	letter-spacing: 0px;
+	margin-bottom: 3px;
+}
+
+body.channel_birthdays #fb_facepile_header h2 span{
+	color: #43BCF5;
+}
+
+body.channel_birthdays #facepile{
+	width: auto;
+	margin-right: 15px;
+}
+
+body.channel_birthdays #fb_facepile_header h2#welcome{
+	margin-top:10px;
+}
+
+.leftey{
+	float: left;
+}
+
+.rightey{
+	float:right;
+}
+
+
+body.channel_birthdays #facebook_contents #fb_friends #friendslist .friend .friend_info p a {
+  padding-left: 0;
+  line-height: 14px;
+  height: 26px;  
+}

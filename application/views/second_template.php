@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link type="text/css" rel="stylesheet" media="screen" href="<?php echo base_url();?>css/main--.css" />
-  <link type="text/css" rel="stylesheet" media="screen" href="http://aka.zero.jibjab.com/stylesheets/channels/birthdays.css" />
+  <link type="text/css" rel="stylesheet" media="screen" href="<?php echo $base?>css/birthdays.css" />
   <link href="<?php echo base_url()?>css/jquery-ui.css" rel="stylesheet"/>
   <link href="<?php echo base_url()?>css/filebrowser.css" rel="stylesheet"/>
   <script data-main="<?php echo base_url()?>scripts/main" src="<?php echo base_url()?>scripts/require-jquery.js"></script>
@@ -17,8 +17,7 @@
       <div id="main_nav_wrap">
         <div id="main_nav">
           <ul>
-            <li class="first active"><a href="<?php echo $base?>index.php/templates/template1" class="holidays">Template 1</a></li>
-
+            <li class="first"><a href="<?php echo $base?>index.php/templates/template1" class="holidays">Template 1</a></li>
             <li class=""><a href="<?php echo $base?>index.php/templates/template2" class="year_in_review">Template 2</a></li>
           </ul>
         </div>
@@ -70,13 +69,10 @@
         <h4>Site Links</h4>
 
         <ul>
-          <li class="tier1"><a title="Home" href="http://locahost/ecards">Home</a></li>
-        </ul>
-
-        <ul>
-          <li class="tier1"><a title="eCard Categories" href=
-          "http://localhost/ecards">eCard Categories</a></li>
-        </ul>
+          <li class="tier1"><a title="About" href="<?php echo $base?>index.php/templates/about">About</a></li>
+          <li class="tier1"><a title="Copyright" href="<?php echo $base?>index.php/templates/copyright">Copyright</a></li>
+          <li class="tier1"><a title="Privacy" href="<?php echo $base?>index.php/templates/privacy">Privacy</a></li>
+        </ul>  
       </div><span class="not_semantic">&nbsp;</span>
     </div>
   </div>

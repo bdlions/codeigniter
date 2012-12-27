@@ -13,6 +13,26 @@
 require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader"], function($, Common, TextCreator, headshowcase, FileUploader) {
     
 	$(function() {		
+                var liCounter = 1;
+                $("li", $("#main_nav")).each(function ()
+                {
+                    if(liCounter == 1)
+                    {
+                        $(this).attr("class","first");
+                    }
+                    if(liCounter == template_id)
+                    {
+                        if(liCounter == 1)
+                        {
+                            $(this).attr("class","first active");
+                        }
+                        else
+                        {
+                            $(this).attr("class","active");
+                        }
+                    }
+                    liCounter++;
+                });
                 if(project_id == "")
                 {
                     $("#buttonCreateHead").hide();

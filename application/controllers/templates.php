@@ -111,6 +111,42 @@ class Templates extends CI_Controller
         }
         $this->template->load("second_template","templates/template", $this->data);
     }
+    public function about()
+    {
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
+        $this->template->set('css', $css);
+        $this->template->set('base', $base);
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template","auth/about");
+    }
+    public function copyright()
+    {
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
+        $this->template->set('css', $css);
+        $this->template->set('base', $base);
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template","auth/copyright");
+    }
+    public function privacy()
+    {
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
+        $this->template->set('css', $css);
+        $this->template->set('base', $base);
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template","auth/privacy");
+    }
     
     public function create_resources($template_id, $project_id)
     {
@@ -304,7 +340,7 @@ class Templates extends CI_Controller
         }
         
     }
-	public function temp()
+    public function temp()
     {
         //if (!$this->ion_auth->logged_in())
         {

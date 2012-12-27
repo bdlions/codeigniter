@@ -13,9 +13,10 @@
       <div id="main_nav_wrap">
         <div id="main_nav">
           <ul>
-            <li class="first active"><a href="<?php echo $base?>index.php/templates/template1" class="holidays">Template 1</a></li>
-
+            <li class="first"><a href="<?php echo $base?>index.php/templates/template1" class="holidays">Template 1</a></li>
             <li class=""><a href="<?php echo $base?>index.php/templates/template2" class="year_in_review">Template 2</a></li>
+            <li class=""><a href="<?php echo $base?>index.php/templates/about" class="year_in_review">About</a></li>
+            
           </ul>
         </div>
       </div>
@@ -62,13 +63,10 @@
         <h4>Site Links</h4>
 
         <ul>
-          <li class="tier1"><a title="Home" href="http://locahost/ecards">Home</a></li>
-        </ul>
-
-        <ul>
-          <li class="tier1"><a title="eCard Categories" href=
-          "http://localhost/ecards">eCard Categories</a></li>
-        </ul>
+          <li><a title="About" href="<?php echo $base?>index.php/templates/about">About</a></li>
+          <li><a title="Copyright" href="<?php echo $base?>index.php/templates/copyright">Copyright</a></li>
+          <li><a title="Privacy" href="<?php echo $base?>index.php/templates/privacy">Privacy</a></li>
+        </ul>        
       </div><span class="not_semantic">&nbsp;</span>
     </div>
   </div>
