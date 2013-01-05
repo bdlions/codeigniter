@@ -1,4 +1,4 @@
-define(["jquery", "Circle", "Common", "FileUploader"], function($, Circle, Common, FileUploader) 
+define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader) 
 {
 	
 	function TextCreator(div)

@@ -45,12 +45,12 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
 		{
 			beforeSubmit: function() 
 			{
-				var fileType = file.name.substring(file.name.lastIndexOf(".") + 1);
-				if( file.size / (1024 * 1024) > 3 || fileType != "jpg")
+				var fileType = file.name.substring(file.name.lastIndexOf(".") + 1).toLowerCase();
+				if( file.size / (1024 * 1024) > 3 || (fileType != "jpg" && fileType != "png"))
 				{
-					if(fileType != "jpg")
+					if(fileType != "jpg" && fileType != "png")
 					{
-						alert("File type is not jpg");
+						alert("File type is not jpg/png");
 					}
 					else if( (file.size / (1024 * 1024)) > 3)
 					{

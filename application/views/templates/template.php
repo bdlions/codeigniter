@@ -42,7 +42,7 @@
 			</tr>
 			<tr align="center">
 				<td>
-                                    <?php echo form_open("templates/template1");?>
+                                    <?php echo form_open("templates/template".$template_id);?>
                                     <input type = "hidden" name = "buttonPreprocessTemplate" id="buttonPreprocessTemplate" value=""/>
                                     <input type = "submit" name = "makeyourowntemplate" id="makeyourowntemplate" value="Make Your Own!"/>
                                     <?php echo form_close();?>
