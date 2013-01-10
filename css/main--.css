@@ -190,11 +190,13 @@ body #footer .footer_links ul {
     width: 105px;
 }
 body #footer .footer_links ul li {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 body #footer .footer_links ul li a{
     margin-bottom: 5px;  
     color: #00FF00;
+    font-size: 15px;
+    font-family:"Times New Roman", Times, serif;
 }
 body #footer .footer_links ul li ul {
     margin: 5px 0 0 10px;
@@ -2912,4 +2914,49 @@ body.ecards.common ul.steps li {
 
 body.sendables__personalize #wwrap, body.sendables__finalize #wwrap, body.sendables__template #wwrap, body.sendables__casting #wwrap, body.sendables__add_message #wwrap, body.slim_header #wwrap {
     padding-top: 20px;
+}
+
+.custombutton
+{    
+    margin: 0;
+    border: 0;
+    height: 25px;      
+    color: black;
+    font-family: Verdana, Arial
+}
+.custombuttonlightgreen
+{
+    background: url("../images/light_green.jpg");
+    background-repeat:repeat-x;
+}
+.custombuttonlightred
+{
+    background: url("../images/light_red.jpg");
+    background-repeat:repeat-x;
+}
+
+#mylogo {
+    background: url("../images/jibjab_logo.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 58px;
+    left: 0;
+    position: relative;
+    text-indent: -9999px;
+    top: 10px;
+    width: 91px;
+    z-index: 3;
+}
+.logintextinput
+{
+    width: 410px;
+    margin-bottom: 14px;
+    font-family: segoe ui,Arial,sans-serif;
+    font-size: 1em;
+    color: #535353;
+    font-style: normal;
+    border: 1px solid #DEDEDE;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1) inset;
+    font-size: 0.9em !important;
+    padding: 0.75em;
 }

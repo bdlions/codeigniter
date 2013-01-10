@@ -195,6 +195,8 @@ body #footer .footer_links ul li {
 body #footer .footer_links ul li a{
     margin-bottom: 5px;  
     color: #00FF00;
+    font-size: 15px;
+    font-family:"Times New Roman", Times, serif;
 }
 body #footer .footer_links ul li ul {
     margin: 5px 0 0 10px;

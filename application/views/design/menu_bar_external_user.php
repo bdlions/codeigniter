@@ -1,3 +1,3 @@
 <ul id="nav">
-    <li><?php echo anchor('auth/login', 'Home'); ?></li>
+    <li><?php echo anchor('auth', 'Home'); ?></li>
 </ul>

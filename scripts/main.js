@@ -10,7 +10,7 @@
 		});
     });
 });*/
-require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader"], function($, Common, TextCreator, headshowcase, FileUploader) {
+require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Login"], function($, Common, TextCreator, headshowcase, FileUploader, Login) {
     
 	$(function() {		
                 var liCounter = 1;
@@ -35,6 +35,7 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader"], fun
                 });
                 if(project_id == "")
                 {
+                    $("#buttonCreateText").hide();
                     $("#buttonCreateHead").hide();
                     $("#buttonCreateCloud").hide();
                     $("#buttonPreviewTemplate").hide();
@@ -43,8 +44,16 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader"], fun
                 }
                 else
                 {
+                    $("#buttonCreateText").show();
                     $("#buttonCreateHead").show();
-                    $("#buttonCreateCloud").show();
+                    if(template_id == 1)
+                    {
+                        $("#buttonCreateCloud").hide();
+                    }
+                    else
+                    {
+                        $("#buttonCreateCloud").show();
+                    }                    
                     $("#buttonPreviewTemplate").show();
                     $("#buttonPublishTemplate").show();
                     $("#makeyourowntemplate").hide();
@@ -58,7 +67,17 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader"], fun
 		headshowcase.init("headshowcase");	
 		//headshowcase.setWorkspace();
 		var fileUploader = new FileUploader("fileUploaderDiv");
-		$("#buttonCreateHead").click(function()
+		$("#lnkLogin").click(function()
+		{
+                    login = new Login("loginDiv");
+                    login.load();
+		});
+                $("#buttonCreateText").click(function()
+		{
+                    textCreator = new TextCreator("textCreatorDiv");
+                    textCreator.load("sprite-26-0.png", "images/");                    
+		});
+                $("#buttonCreateHead").click(function()
 		{
 			Common.setUploadCategory("head");
                         FileUploader.show();
