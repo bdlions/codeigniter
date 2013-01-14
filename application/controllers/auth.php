@@ -368,13 +368,29 @@ class Auth extends CI_Controller
                 'id' => 'email',
             );
             //set any errors and display the form
-            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            /*$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
             //$this->load->view('auth/forgot_password', $this->data);
             $base = base_url();
             $css = "<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
             //$this->template->set('css', $css);
             $this->template->set('main_content', "auth/forgot_password");
-            $this->template->load("default_template", 'auth/forgot_password', $this->data);
+            $this->template->load("default_template", 'auth/forgot_password', $this->data);*/
+            
+            $this->data['message'] = "";
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_external_user');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template", 'auth/forgot_password', $this->data);
         }
         else
         {
@@ -469,7 +485,7 @@ class Auth extends CI_Controller
             $this->template->set('css', $css);
             $this->template->set('js', $js);
             $this->template->set('base', $base);
-            $this->template->set('menu_bar', 'design/menu_bar_member_demo');
+            $this->template->set('menu_bar', 'design/menu_bar_external_user');
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
@@ -687,7 +703,7 @@ class Auth extends CI_Controller
                 $this->data['countries'][$country['iso']] = $country['printable_name'];
             }
             
-            $base = base_url(); 
+            /*$base = base_url(); 
             $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
             $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
             $css = $css."<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
@@ -700,7 +716,23 @@ class Auth extends CI_Controller
             {
                 $this->template->set('is_logged_in', 'true');
             }
-            $this->template->load("main_template",'auth/create_user', $this->data);
+            $this->template->load("main_template",'auth/create_user', $this->data);*/
+            
+            $this->data['message'] = "";
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_external_user');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template", 'auth/create_user', $this->data);
         }
     }
     

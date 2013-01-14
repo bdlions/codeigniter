@@ -20,7 +20,7 @@
     {
         background: none repeat scroll 0 0 lightgray;
         border: 0px solid #000000;
-        height: 210px;
+        height: 170px;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -77,19 +77,7 @@
                 <div class="tabular-row">
                     <div class="tabular-cell"></div>
                     <div class="tabular-cell"><?php echo form_submit('submit', 'Login'); ?></div>
-                </div>
-                <div class="tabular-row">
-                    <div class="tabular-cell"></div>
-                    <div class="tabular-cell"><?php echo anchor('admin/create_user', 'Create an account', 'title="Create an account"');?></div>
-                </div>
-                <div class="tabular-row">
-                    <div class="tabular-cell"></div>
-                    <div class="tabular-cell"><?php echo anchor('admin/forgot_password', 'Forgot password', 'title="Forgot password"');?></div>
-                </div>
-                <div class="tabular-row">
-                    <div class="tabular-cell"></div>
-                    <div class="tabular-cell"><?php echo anchor('admin/forgot_user_name', 'Forgot user name', 'title="Forgot user name"');?></div>
-                </div>
+                </div>                
             </div>
             <?php echo form_close(); ?>
         </div>

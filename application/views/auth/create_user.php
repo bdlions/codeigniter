@@ -1,49 +1,104 @@
-<div class='box'>
+<style type="text/css">
+    #outer
+    {
+        height:100%;
+        width:100%;
+        display:table;
+        vertical-align:middle;
+    }
+    #container
+    {
+        text-align:center;
+        position:relative;
+        vertical-align:middle;
+        display:table-cell;
+        height:468px;
+        width:300px;
+    }
 
-    <h1>Create User</h1>
-    <p>Please enter the users information below.</p>
+    #inner
+    {
+        background: none repeat scroll 0 0 lightgray;
+        border: 0px solid #000000;
+        height: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 500px;
+        padding-top: 20px;
+    }
 
-    <div id="infoMessage"><?php echo $message; ?></div>
+    div .tabular
+    {
+        display: table; 
+        border:#505050 solid 0px;
+        padding: 5px;
+        width:100%;
+    }
+    div .tabular-row
+    {
+        display: table-row;
+        width:100%;
+    }
+    div .tabular-cell
+    {
+        display: table-cell; 
+        border:#737373 solid 0px;
+        padding: 5px;
+        vertical-align: top;
+        text-align: left;
+    }
+    label
+    {
+        float:right;
+    }
+    .p
+    {
+        font-size: 12px;
+    }
 
-    <?php echo form_open("auth/create_user"); ?>
-
-    <fieldset>
-        <legend>User creation information</legend>
-        <table border="0" width="100%" >
-            <tr>
-                <td width="16%"><label>User Name:</label></td>
-                <td width="84%"> <?php echo form_input($user_name); ?></td>
-            </tr>
-            <tr>
-                <td><label>First Name:</label></td>
-                <td><?php echo form_input($first_name); ?></td>
-            </tr>
-            <tr>
-                <td><label>Last Name: </label></td>
-                <td><?php echo form_input($last_name); ?></td>
-            </tr>
-            <tr>
-                <td><label>Email:</label></td>
-                <td><?php echo form_input($email); ?></td>
-            </tr>
-            <tr>
-                <td><label>Password:</label></td>
-                <td><?php echo form_input($password); ?></td>
-            </tr>
-            <tr>
-                <td><label>Confirm Password: </label></td>
-                <td><?php echo form_input($password_confirm); ?></td>
-            </tr>
-            <tr>
-                <td><label>Country:</label></td>
-                <td><?php echo form_dropdown('countries', $countries); ?></td>
-            </tr>
-        </table>
-        <?php echo form_submit('submit', 'Create User'); ?>
-    </fieldset>
-
-
-
-    <?php echo form_close(); ?>
-
+</style>
+<div id="outer">          
+    <div id="container">         
+        <div style="color:red"><?php echo $message; ?></div>
+        <div id="inner">
+            <p>Please enter the users information below</p> 
+            <?php echo form_open("auth/create_user"); ?>
+            <div class ="tabular">                
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>User Name:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($user_name); ?></div>
+                </div>   
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>First Name:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($first_name); ?></div>
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>Last Name:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($last_name); ?></div>
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>Email:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($email); ?></div>
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>Password:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($password); ?></div>
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>Confirm Password:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($password_confirm); ?></div>
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>Country:</label></div>
+                    <div class="tabular-cell"><?php echo form_dropdown('countries', $countries); ?></div>
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"></div>
+                    <div class="tabular-cell"><?php echo form_submit('submit', 'Submit'); ?></div>
+                </div>                              
+            </div>
+            <?php echo form_close(); ?>
+        </div>
+    </div>
 </div>
