@@ -452,13 +452,29 @@ class Auth extends CI_Controller
                 'value' => $this->form_validation->set_value('email'),
             );
             //set any errors and display the form
-            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            /*$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
             //$this->load->view('auth/forgot_password', $this->data);
             $base = base_url();
             $css = "<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
             //$this->template->set('css', $css);
             $this->template->set('main_content', "auth/forgot_user_name");
-            $this->template->load("default_template", 'auth/forgot_user_name', $this->data);
+            $this->template->load("default_template", 'auth/forgot_user_name', $this->data);*/
+            
+            $this->data['message'] = "";
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_member_demo');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template", 'auth/forgot_user_name', $this->data);
         }
     }
 
@@ -1176,7 +1192,7 @@ class Auth extends CI_Controller
         print_r(json_encode($result)); 
     }
     
-    function link_login()
+    function signin()
     {
             $this->data['message'] = '';
             $identity = "";

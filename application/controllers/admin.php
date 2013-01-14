@@ -1132,5 +1132,53 @@ class Admin extends CI_Controller
             $this->template->set('menu_bar', 'design/menu_bar_member_demo');
             $this->template->load("default_template", "auth/delete_project_confirmation", $this->data);
         }
-    }    
+    }   
+    function signin()
+    {
+            $this->data['message'] = '';
+            $identity = "";
+            $password = "";
+            $remember = false;
+            if (get_cookie('identity'))
+            {
+                $identity = get_cookie('identity');
+                //delete_cookie('identity');
+            }
+            if (get_cookie('u_p'))
+            {
+                $password = get_cookie('u_p');                
+            }
+            if (get_cookie('is_remember'))
+            {
+                $remember = true;                
+            }
+            $this->data['identity'] = array('name' => 'identity',
+                'id' => 'identity',
+                'type' => 'text',
+                'value' => $identity,
+            );
+            $this->data['password'] = array('name' => 'password',
+                'id' => 'password',
+                'type' => 'password',
+                'value' => $password,
+            );
+            $this->data['remember'] = $remember;
+            //$this->template->set('main_content', 'auth/login');
+            //$this->template->load("default_template", 'auth/login', $this->data);
+            
+            
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template","auth/admin_login", $this->data);
+        
+    }
 }
