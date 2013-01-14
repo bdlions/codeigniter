@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class MyTemplates extends CI_Controller
+class Mytemplates extends CI_Controller
 {
     function __construct()
     {
