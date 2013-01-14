@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Templates extends CI_Controller
+class MyTemplates extends CI_Controller
 {
     function __construct()
     {
@@ -21,15 +21,35 @@ class Templates extends CI_Controller
         {
             //redirect them to the login page
             $base = base_url(); 
-            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
             $this->template->set('css', $css);
+            $this->template->set('js', $js);
             $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_member_demo');
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
             }
             $this->template->load("main_template","templates/index");
         }        
+    }
+    public function load_template()
+    {
+        if(isset($_POST['selectedTemplateId']))
+        {
+            if($_POST['selectedTemplateId'] == 1)
+            {
+                redirect('mytemplates/template1', 'refresh');
+                //$this->template1();
+            }
+            else if($_POST['selectedTemplateId'] == 2)
+            {
+                redirect('mytemplates/template2', 'refresh');
+                //$this->template2();
+            }
+        }
     }
     public function template1()
     {
@@ -62,14 +82,18 @@ class Templates extends CI_Controller
         $this->data['publish_code'] = $publish_code;        
         
         $base = base_url(); 
-        //$css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
-        //$this->template->set('css', $css);
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $js = "";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
         $this->template->set('base', $base);
         if ($this->ion_auth->logged_in())
         {
             $this->template->set('is_logged_in', 'true');
         }
         $this->template->load("second_template","templates/template", $this->data);
+        
     }
     
     public function template2()
@@ -102,8 +126,11 @@ class Templates extends CI_Controller
         $this->data['publish_code'] = $publish_code;        
         
         $base = base_url(); 
-        //$css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
-        //$this->template->set('css', $css);
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $js = "";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
         $this->template->set('base', $base);
         if ($this->ion_auth->logged_in())
         {
@@ -355,5 +382,10 @@ class Templates extends CI_Controller
             }
             $this->template->load("second_template","templates/template");
         }        
+    }
+    
+    public function redirect_path()
+    {
+        $this->template->load("default_template","templates/error_content");
     }
 }

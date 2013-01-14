@@ -1,22 +1,33 @@
 <IfModule mod_rewrite.c>
-	# Turn on URL rewriting
-	RewriteEngine On
+ # Turn on URL rewriting
+ RewriteEngine On
 
-	# let it as it is
-	RewriteBase /e_codeigniter/
+ # let it as it is
+ RewriteBase /e_codeigniter/
 
-	# Protect application and system files from being viewed when the index.php is missing
-	RewriteCond $1 ^(application|system|private|logs)
+ # Protect application and system files from being viewed when the index.php is missing
+ RewriteCond $1 ^(application|system|private|logs)
 
-	# Rewrite to index.php/access_denied/URL
-	RewriteRule ^(.*)$ index.php/access_denied/$1 [PT,L]
+ # Rewrite to index.php/access_denied/URL
+ RewriteRule ^(.*)$ index.php/access_denied/$1 [PT,L]
 
-	# Allow these directories and files to be displayed directly:
-	RewriteCond $1 ^(index\.php|robots\.txt|opensearch\.xml|favicon\.ico|assets|forums|js|css|images|scripts|templates|upload)
+ # Allow these directories and files to be displayed directly:
+ RewriteCond $1 ^(index\.php|robots\.txt|opensearch\.xml|favicon\.ico|assets|forums|js|css|images|scripts|templates|upload)
 
-	# No rewriting
-	RewriteRule ^(.*)$ - [PT,L]
+ # No rewriting
+ RewriteRule ^(.*)$ - [PT,L]
 
-	# Rewrite to index.php/URL
-	RewriteRule ^(.*)$ index.php/$1 [PT,L]
+ # Rewrite to index.php/URL
+ RewriteRule ^(.*)$ index.php/$1 [PT,L]
 </IfModule>
+<files admin>
+# Enable Basic Authentication
+AuthType Basic
+# This is what will be displayed to the user on the login dialog.
+AuthName "http://localhost/e_codeigniter"
+# This you must edit.  It is the absolute path to the .htpasswd file.
+AuthUserFile "C:/xampp/htdocs/e_codeigniter/.htpasswd"
+# This allows any user from inside the .htpasswd file to access the
+# content if they provide the proper username and password.
+Require valid-user
+</files>

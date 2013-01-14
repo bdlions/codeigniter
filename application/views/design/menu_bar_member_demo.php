@@ -1,11 +1,5 @@
-<ul id="nav">
-    <li>
-        <a href="#">Project</a>
-        <ul>
-            <?php
-                echo anchor('project/create_project', 'Create Project');
-            ?>
-        </ul>
-    </li>
-    <li><?php echo anchor('auth/logout', 'Logout'); ?></li>
+<ul>
+    <li class="first"><a href="<?php echo $base ?>mytemplates/template1" class="holidays">Template 1</a></li>
+    <li class=""><a href="<?php echo $base ?>mytemplates/template2" class="year_in_review">Template 2</a></li>
+    <li class=""><a href="<?php echo $base ?>mytemplates/about" class="year_in_review">About</a></li>
 </ul>

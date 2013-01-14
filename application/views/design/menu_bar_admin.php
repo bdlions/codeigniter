@@ -1,12 +1,4 @@
-<ul id="nav">
-    <li>
-        <a href="#">Users</a>
-        <ul>
-            <?php
-            echo anchor('auth/load_search', 'Search');
-            echo anchor('auth', 'Show');
-            ?>
-        </ul>
-    </li>
-    <li><?php echo anchor('auth/logout', 'Logout'); ?></li>
+<ul>
+    <li><?php echo anchor('admin', 'Show'); ?></li>
+    <li><?php echo anchor('admin/load_search', 'Search User'); ?></li> 
 </ul>

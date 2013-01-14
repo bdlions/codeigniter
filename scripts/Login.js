@@ -9,20 +9,11 @@ define(["jquery", "Common"], function($, Common)
 			title: "Login",
 			modal: true,
 			autoOpen: false,
-			height: 410,
-			width: 400,
+			height: 320,
+			width: 560,
 			buttons: 
 			{
-				'Cancel': function() 
-				{
-					$(this).dialog('destroy');
-				}
-				,
-				'Continue': function() 
-				{
-					$(this).dialog('destroy');					
-                                        
-				}
+				
 			},
 			open: function() 
 			{
@@ -32,9 +23,33 @@ define(["jquery", "Common"], function($, Common)
 		loginDiv.dialog(dialogOpts);		
 		Login.prototype.load = function()
 		{
-			loginDiv.dialog(dialogOpts);
-			loginDiv.dialog("open");
+                    loginDiv.dialog(dialogOpts);
+                    loginDiv.dialog("open");
+                    
+                    $("#button_login_submit").click(function(event)
+                    {
+			$('#loginForm').submit();			
+                    });
 		};		
 	};
+        
+        $('#loginForm').submit(function() { 
+            // submit the form 
+            $(this).ajaxSubmit(
+            {
+                beforeSubmit: function() 
+                {
+
+                },
+                success: function(resp) 
+                {
+                    var result = JSON.parse(resp);
+                    alert("success: user name:"+result.userName+" and password:"+result.password);                    
+                    
+                }
+            }); 
+            return false; 
+	});
+        
 	return Login;
 });

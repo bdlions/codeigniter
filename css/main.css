@@ -258,6 +258,7 @@ body #footer .support .payment_info ul {
 }
 body #hwrap, body #wwrap, body #fwrap {
     width: 100%;
+    height: 450px;
 }
 body #hwrap {
     height: 100px;
@@ -2669,7 +2670,7 @@ body.channel_halloween #wwrap {
     background-color: #000000;
 }
 body.channel_holidays.index__landing #wwrap, body.channel_holidays #wwrap {
-    background: url("../images/background.png") repeat scroll center top #00BFCE;
+    background-color: #2B7AB0;    
 }
 body.channel_st_patricks_day.categories__show.category_st_patricks_day #wrap .cat_head_wrap {
     background-image: url("http://aka.zero.jibjab.com/files/production/st-pats-bg-3.gif");

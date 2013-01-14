@@ -1,0 +1,46 @@
+.prev {
+	background-image: url("../images/promo_left_arrow.png");
+	background-repeat: no-repeat;
+	height: 50px;
+	left: 0;
+	position: absolute;
+	text-indent: -9999px;
+	top: 160px;
+	width: 29px;
+}
+.next {
+	background-image: url("../images/promo_right_arrow.png");
+	background-repeat: no-repeat;
+	height: 50px;
+	position: absolute;
+	right: 0;
+	text-indent: -9999px;
+	top: 160px;
+	width: 29px;
+}
+.slider {
+	height: 410px;
+	left: 0;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+	width: 900px;
+}
+.carousel
+{
+	height: 410px;
+	margin-left: 50px;
+	overflow: hidden;
+	padding-top: 14px;
+	position: relative;
+	width: 800px;
+}
+.carousel ul
+{
+	width: 6580px; 
+	left: 0px;
+}
+.carousel ul li
+{
+	overflow: hidden; float: left; width: 800px; height: 410px;
+}

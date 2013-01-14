@@ -1,0 +1,267 @@
+#mylogo {
+    background: url("../images/jibjab_logo.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 89px;
+    left: 0;
+    position: relative;
+    text-indent: -9999px;
+    top: 10px;
+    width: 112px;
+    z-index: 3;
+}
+.custombutton
+{    
+    margin: 0;
+    border: 0;
+    height: 25px;      
+    color: black;
+    font-family: Verdana, Arial;
+    font-size: 15px;
+}
+.custombuttonlightgreen
+{
+    background: url("../images/light_green.jpg");
+    background-repeat:repeat-x;
+}
+.custombuttonlightred
+{
+    background: url("../images/light_red.jpg");
+    background-repeat:repeat-x;
+}
+
+.login_modal_content
+{
+    height: 270px;
+    padding: 0 40px;
+    text-align: left;
+    width: 460px;
+    
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    vertical-align: baseline;
+    
+    color: #312E25;
+}
+
+.login_modal_header
+{
+    height: 65px;
+    
+    position: relative;
+    
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    
+    text-align: left;
+    
+    color: #312E25;
+}
+
+.login_h2
+{
+    color: #558800;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+    left: 0;
+    position: relative;
+    top: 0;
+    
+    border: 0 none;
+    font-family: inherit;
+    font-style: inherit;
+    line-height: 1;
+    padding: 0;
+    vertical-align: baseline;
+    
+    text-align: left;
+}
+
+.login_p
+{
+    color: #686868;
+    font-size: 1em;
+    padding: 0;
+    text-align: left;
+    
+    margin: 0;
+    
+    line-height: 1.2em;
+    
+    border: 0 none;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    vertical-align: baseline;
+}
+
+.login_a
+{
+    color: #4C77C5;
+    
+    outline: medium none;
+    
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    
+    text-align: left;
+}
+
+.login_modal_header_logo
+{
+    top: 10px;
+    
+    right: 30px;
+    
+    bottom: 1px;
+    
+    position: absolute;
+    
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    
+    text-align: left;
+    
+    color: #312E25;
+}
+
+.login_placeholdered_text
+{
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    
+    text-align: left;
+    
+    color: #312E25;
+    
+    
+}
+
+.login_fieldset
+{
+    margin-bottom: 0;
+    
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    
+    text-align: left;
+    
+    color: #312E25;
+    
+    
+}
+
+.login_label
+{
+    color: #B1B1B1;
+    display: block;
+    font-weight: bold;
+    
+    float: left;
+    
+    margin-bottom: 5px;
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    line-height: 1;
+    padding: 0;
+    vertical-align: baseline;
+    text-align: left;
+}
+
+.login_input
+{
+    width: 410px;
+    margin-bottom: 14px;
+    font-family: segoe ui,Arial,sans-serif;
+    font-size: 1.5em;
+    color: #535353;
+    font-style: normal;
+    
+    border: 1px solid #DEDEDE;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1) inset;
+    font-size: 0.9em !important;
+    padding: 0.75em;
+}
+
+.login_b_signin
+{
+    display: inline;
+    text-align: left;
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    color: #312E25;
+    
+}
+
+.login_submit
+{
+    background: url("../images/b_submit.png") no-repeat scroll -110px 0 transparent;
+    cursor: pointer;
+    margin: 20px auto 0;
+    text-indent: -9999px;
+    
+    height: 40px;
+    width: 110px;
+    
+    font-family: segoe ui,Arial,sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    
+    border: 1px solid #DEDEDE;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1) inset;
+    color: #8D8B8B;
+    font-size: 0.9em !important;
+    padding: 0.75em;
+}

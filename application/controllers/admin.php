@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller
+class Admin extends CI_Controller
 {
 
     function __construct()
@@ -24,59 +24,17 @@ class Auth extends CI_Controller
         if (!$this->ion_auth->logged_in())
         {
             //redirect to the login page
-            redirect('auth/login', 'refresh');
+            redirect('admin/login', 'refresh');
         }        
         else
         {
-            if($this->ion_auth->is_member())
+            if($this->ion_auth->is_admin())
             {
-                $base = base_url(); 
-                $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
-                $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
-                $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
-                $this->template->set('css', $css);
-                $this->template->set('js', $js);
-                $this->template->set('base', $base);
-                $this->template->set('menu_bar', 'design/menu_bar_member_demo');
-                if ($this->ion_auth->logged_in())
-                {
-                    $this->template->set('is_logged_in', 'true');
-                }
-                $this->template->load("main_template","templates/index");
-                
-                /*$base = base_url();        
-                $css ="<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />";
-                $this->template->set('css', $css);
-                $this->template->set('menu_bar', 'design/menu_bar_member_demo');
-                $this->data['projects'] = $this->ion_auth->where('users.id',$this->session->userdata('user_id'))->projects()->result();
-                $this->template->load("default_template", "auth/project", $this->data);*/
-            }
-            else if($this->ion_auth->is_demo())
-            {
-                $base = base_url(); 
-                $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
-                $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
-                $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
-                $this->template->set('css', $css);
-                $this->template->set('js', $js);
-                $this->template->set('base', $base);
-                $this->template->set('menu_bar', 'design/menu_bar_member_demo');
-                if ($this->ion_auth->logged_in())
-                {
-                    $this->template->set('is_logged_in', 'true');
-                }
-                $this->template->load("main_template","templates/index");
-            
-                /*$base = base_url();        
-                $css ="<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
-                $this->template->set('css', $css);
-                $this->template->set('menu_bar', 'design/menu_bar_member_demo');
-                $this->data['projects'] = $this->ion_auth->where('users.id',$this->session->userdata('user_id'))->projects()->result();
-                $this->template->load("default_template", "auth/project", $this->data);*/
+                $this->user_render_pagination($this->config->item('pagination_page_range', 'ion_auth'),0);
             }
             else
             {
-                redirect('auth/login', 'refresh');
+                redirect('admin/login', 'refresh');
             }
             
         }
@@ -159,12 +117,28 @@ class Auth extends CI_Controller
 
         $this->data['pagination'] = $this->pagination->create_links();
         
-        $base = base_url();
+        /*$base = base_url();
         $css ="<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
         $this->template->set('css', $css);        
         $this->template->set('menu_bar', 'design/menu_bar_admin');
         $this->template->set('main_content', "auth/index");
-        $this->template->load("default_template", "auth/index", $this->data);
+        $this->template->load("default_template", "auth/index", $this->data);*/
+        
+        
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+        $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
+        $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_admin');
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template","auth/index", $this->data);
     }
 
     //log the user in
@@ -186,7 +160,7 @@ class Auth extends CI_Controller
                 //if the login is successful
                 //redirect to the main page
                 $this->session->set_flashdata('message', $this->ion_auth->messages());
-                redirect("auth/index", 'refresh');
+                redirect("admin/index", 'refresh');
 
             }
             else
@@ -218,7 +192,7 @@ class Auth extends CI_Controller
                     //if the login was un-successful
                     //redirect them back to the login page
                     $this->session->set_flashdata('message', $this->ion_auth->errors());
-                    redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
+                    redirect('admin/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
                 }
             }
         }
@@ -272,7 +246,7 @@ class Auth extends CI_Controller
             {
                 $this->template->set('is_logged_in', 'true');
             }
-            $this->template->load("main_template","auth/login", $this->data);
+            $this->template->load("main_template","auth/admin_login", $this->data);
             //$this->load->view('auth/login', $this->data);
         }
     }
@@ -286,7 +260,7 @@ class Auth extends CI_Controller
         $logout = $this->ion_auth->logout();
 
         //redirect them back to the page they came from
-        redirect('auth/login', 'refresh');
+        redirect('admin/login', 'refresh');
     }
 
     //change password
@@ -298,7 +272,7 @@ class Auth extends CI_Controller
 
         if (!$this->ion_auth->logged_in())
         {
-            redirect('auth/login', 'refresh');
+            redirect('admin/login', 'refresh');
         }
 
         $user = $this->ion_auth->user()->row();
@@ -384,12 +358,12 @@ class Auth extends CI_Controller
             if ($forgotten)
             { //if there were no errors
                 $this->session->set_flashdata('message', $this->ion_auth->messages());
-                redirect("auth/login", 'refresh'); //we should display a confirmation page here instead of the login page
+                redirect("admin/login", 'refresh'); //we should display a confirmation page here instead of the login page
             }
             else
             {
                 $this->session->set_flashdata('message', $this->ion_auth->errors());
-                redirect("auth/forgot_password", 'refresh');
+                redirect("admin/forgot_password", 'refresh');
             }
         }
     }
@@ -470,7 +444,7 @@ class Auth extends CI_Controller
         if ($reset)
         {  //if the reset worked then send them to the login page
             $this->session->set_flashdata('message', $this->ion_auth->messages());
-            redirect("auth/login", 'refresh');
+            redirect("admin/login", 'refresh');
         }
         else
         { //if the reset didnt work then send them back to the forgot password page
@@ -670,21 +644,25 @@ class Auth extends CI_Controller
             {
                 $this->data['countries'][$country['iso']] = $country['printable_name'];
             }
-            
-            $base = base_url(); 
-            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
-            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
-            $css = $css."<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
-            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
-            $this->template->set('css', $css);
-            $this->template->set('js', $js);
-            $this->template->set('base', $base);
-            $this->template->set('menu_bar', 'design/menu_bar_external_user');
-            if ($this->ion_auth->logged_in())
+
+            $base = base_url();
+            //loading admin menu bar
+            if ($this->ion_auth->is_admin())
             {
-                $this->template->set('is_logged_in', 'true');
+                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
+                $this->template->set('css', $css);
+                $this->template->set('menu_bar', 'design/menu_bar_admin');
             }
-            $this->template->load("main_template",'auth/create_user', $this->data);
+            else
+            {
+                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
+                $this->template->set('css', $css);
+                $this->template->set('menu_bar', 'design/menu_bar_external_user');
+            }
+            $this->template->set('main_content', "auth/create_user");
+            $this->template->load("default_template", 'auth/create_user', $this->data);
+
+            //$this->load->view('auth/create_user', $this->data);
         }
     }
     
@@ -987,7 +965,7 @@ class Auth extends CI_Controller
     {
         if (!$this->ion_auth->logged_in())
         {
-            redirect('auth/login', 'refresh');
+            redirect('admin/login', 'refresh');
         }
         //only admin can delete a user
         if($this->ion_auth->is_admin())
@@ -1125,7 +1103,7 @@ class Auth extends CI_Controller
     {
         if (!$this->ion_auth->logged_in())
         {
-            redirect('auth/login', 'refresh');
+            redirect('admin/login', 'refresh');
         }
         
         if ($this->input->post('delete_project_yes'))
@@ -1154,75 +1132,5 @@ class Auth extends CI_Controller
             $this->template->set('menu_bar', 'design/menu_bar_member_demo');
             $this->template->load("default_template", "auth/delete_project_confirmation", $this->data);
         }
-    }
-    
-    function check_login()
-    {
-        $remember = false;
-        if ($this->ion_auth->login($_POST['modal_login_profile_email'], $_POST['modal_login_profile_password'], $remember))
-        { 
-            //$this->session->set_flashdata('message', $this->ion_auth->messages());
-            redirect("auth/index", 'refresh');
-
-        }
-        else
-        {
-            
-        }
-        $result = new StdClass();
-        $result->userName = $_POST['modal_login_profile_email'];
-        $result->password = $_POST['modal_login_profile_password'];
-        
-        print_r(json_encode($result)); 
-    }
-    
-    function link_login()
-    {
-            $this->data['message'] = '';
-            $identity = "";
-            $password = "";
-            $remember = false;
-            if (get_cookie('identity'))
-            {
-                $identity = get_cookie('identity');
-                //delete_cookie('identity');
-            }
-            if (get_cookie('u_p'))
-            {
-                $password = get_cookie('u_p');                
-            }
-            if (get_cookie('is_remember'))
-            {
-                $remember = true;                
-            }
-            $this->data['identity'] = array('name' => 'identity',
-                'id' => 'identity',
-                'type' => 'text',
-                'value' => $identity,
-            );
-            $this->data['password'] = array('name' => 'password',
-                'id' => 'password',
-                'type' => 'password',
-                'value' => $password,
-            );
-            $this->data['remember'] = $remember;
-            //$this->template->set('main_content', 'auth/login');
-            //$this->template->load("default_template", 'auth/login', $this->data);
-            
-            
-            $base = base_url(); 
-            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
-            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
-            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
-            $this->template->set('css', $css);
-            $this->template->set('js', $js);
-            $this->template->set('base', $base);
-            if ($this->ion_auth->logged_in())
-            {
-                $this->template->set('is_logged_in', 'true');
-            }
-            $this->template->load("main_template","auth/login", $this->data);
-            //$this->load->view('auth/login', $this->data);
-        
-    }
+    }    
 }

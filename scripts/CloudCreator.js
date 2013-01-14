@@ -54,9 +54,8 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
 			//the image that will be edited
 			var headImage = new Image();
                         cloudImage = new Image();
-                        var cloudImagePath = "../../templates/"+Common.getTemplateId()+"/assets/graphics/1x/"+Common.getProjectId()+"/sprite-9-0.png";
-                        
-			cloudCreatorDiv.dialog(dialogOpts);
+                        var cloudImagePath = "../templates/"+Common.getTemplateId()+"/assets/graphics/1x/"+Common.getProjectId()+"/sprite-9-0.png";
+                        cloudCreatorDiv.dialog(dialogOpts);
 			cloudCreatorDiv.dialog("open");
 			if(cloudCroppedCanvas.getContext)
 			{
@@ -69,10 +68,7 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
 					
 				};				
 				//set the image
-				cloudImage.src = cloudImagePath;
-				
-				
-				
+				cloudImage.src = cloudImagePath+"?"+new Date().getTime();				
 			}
 			if(cloudCreatorCanvas.getContext)
 			{
@@ -121,7 +117,7 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
 				};
 				
 				//set the image
-				headImage.src = "../../"+imagePath + imageName;
+				headImage.src = "../"+imagePath + imageName;
 				
 				$("#"+cloudCreatorCanvas.id).mousemove(function(event)
 				{

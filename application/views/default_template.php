@@ -2,16 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>
-            <?php
-                if(empty($title))
-                {
-                    echo "Language processing";
-                }
-                else
-                {
-                    echo $title;
-                }
-            ?>
+            
         </title>
         <link rel="stylesheet" href="<?php echo base_url();?>css/template_style.css" />
         <?php
@@ -47,30 +38,8 @@
                 <div class="Border">
                     <div class="Header">
                         <div class="HeaderTitle">
-                            <h1>
-                                <?php
-                                if(empty($first_header))
-                                { 
-                                    echo "CREATE YOUR OWN ECARDS";
-                                }
-                                else
-                                {
-                                    echo $first_header;
-                                }
-                                ?>
-                            </h1>
-                            <h2>
-                                <?php
-                                    if(empty($second_header))
-                                    {
-                                        echo "";
-                                    }
-                                    else
-                                    {
-                                        echo $second_header;
-                                    }
-                                  ?>
-                            </h2>
+                            
+                            
                         </div>
                     </div>
                     <div class="Menu">
@@ -110,7 +79,7 @@
                         <!-- End of main div -->
                     </div>
                     <div class="Footer">
-                        All rights reserved and &copy; 2012
+                        
                     </div>
                     <span class="BackLink"></span>
                 </div>

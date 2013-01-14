@@ -30,7 +30,7 @@
                                 template1ImageCanvasContext.drawImage(template1Image, 0, 0, template1Image.width, template1Image.height);
 										
                             };									
-                            template1Image.src = '../../images/template'+template_id+'.png';
+                            template1Image.src = '../images/template'+template_id+'.png';
                         }
                     }
                 </script>
@@ -42,7 +42,7 @@
     </tr>
     <tr align="center"  class="custombutton">
         <td>
-            <?php echo form_open("templates/template" . $template_id); ?>
+            <?php echo form_open("mytemplates/template" . $template_id); ?>
             <input type = "hidden" name = "buttonPreprocessTemplate" id="buttonPreprocessTemplate" value=""/>
             <input type = "submit" name = "makeyourowntemplate" id="makeyourowntemplate" value="Make Your Own!" class="custombuttonlightgreen"/>
             <?php echo form_close(); ?>
@@ -62,12 +62,12 @@
 
         </td>
         <td  style="float:right;">	    
-            <?php echo form_open_multipart("templates/publishtemplate/" . $publish_code, array('id' => 'publishForm', 'name' => 'publishForm')); ?>
+            <?php echo form_open_multipart("mytemplates/publishtemplate/" . $publish_code, array('id' => 'publishForm', 'name' => 'publishForm')); ?>
             <input type = "submit" name = "buttonPublishTemplate" id="buttonPublishTemplate" value="Publish" class="custombuttonlightred"/>
             <?php echo form_close(); ?>
         </td>
         <td  style="float:right;">	    
-            <?php echo form_open_multipart("templates/previewtemplate/" . $template_id, array('id' => 'previewForm', 'name' => 'previewForm')); ?>
+            <?php echo form_open_multipart("mytemplates/previewtemplate/" . $template_id, array('id' => 'previewForm', 'name' => 'previewForm')); ?>
             <input type = "hidden" name = "buttonPreviewTemplateProjectId" id="buttonPreviewTemplateProjectId" value=""/>
             <input type = "hidden" name = "buttonPreviewTemplateMessage" id="buttonPreviewTemplateMessage" value=""/>
             <input type = "submit" name = "buttonPreviewTemplate" id="buttonPreviewTemplate" value="Preview" class="custombuttonlightred"/>
@@ -75,7 +75,7 @@
         </td>
 
     </tr>
-    <tr>
+    <!--<tr>
         <td colspan="4">
             <div id="balloonslist" class="headshowcase" style="border: 1px black solid; height: 70px;display: block; margin-left: auto; margin-right: auto;">
                 <ul style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1;  left: -340px;">
@@ -86,7 +86,7 @@
             </div>
         </td>
 
-    </tr>
+    </tr>-->
 </table>
 <div style="visibility: hidden; height:0px;">
     <div id="textCreatorDiv" style="border: 1px black solid; display: block;">				
@@ -116,7 +116,7 @@
         </table>	
     </div> 
     <div id="fileUploaderDiv" title="Basic dialog">
-        <?php echo form_open_multipart('templates/upload', array('id' => 'fileUploadForm', 'name' => 'fileUploadForm')); ?>
+        <?php echo form_open_multipart('mytemplates/upload', array('id' => 'fileUploadForm', 'name' => 'fileUploadForm')); ?>
         <table>
             <tr>
                 <td colspan="3">
@@ -135,7 +135,7 @@
             </tr>
         </table>
         <?php echo form_close(); ?>
-        <div id="displayer"><label>loading...</label><img src="../../images/loader.gif" width="80" height="40" alt="loader"/></div>
+        <div id="displayer"><label>loading...</label><img src="../images/loader.gif" width="80" height="40" alt="loader"/></div>
     </div>
 
     <div id="headCreatorDiv" style="border: 1px black solid; display: block;">
@@ -148,10 +148,29 @@
                 <td><input type="radio" id="yellowballoon" name="image" value="yellowballoon" /><label for="image2">Yellow</label></td>
                 <td><input type="radio" id="greenballon" name="image" value="greenballon" /><label for="image3">Green</label></td>
 
-                <td><input id="buttonClockwiseRotation" type="image" src="../../images/clockwiserotate.jpg"/></td>
-                <td><input id="buttonAntiClockwiseRotation" type="image" src="../../images/anticlockwise.jpg"/></td>
-                <td><input id="buttonZoomIn" type="image" src="../../images/zoomin.jpg"/></td>
-                <td><input id="buttonZoomOut" type="image" src="../../images/zoomout.jpg"/></td>
+                <td><input id="buttonClockwiseRotation" type="image" src="../images/clockwiserotate.jpg"/></td>
+                <td><input id="buttonAntiClockwiseRotation" type="image" src="../images/anticlockwise.jpg"/></td>
+                <td><input id="buttonZoomIn" type="image" src="../images/zoomin.jpg"/></td>
+                <td><input id="buttonZoomOut" type="image" src="../images/zoomout.jpg"/></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <canvas id="head1CroppedCanvas"> 
+                        Sorry, your browser doesn't support HTML5.
+                    </canvas>
+                </td>
+                <td>
+                    <canvas id="head2CroppedCanvas"> 
+                        Sorry, your browser doesn't support HTML5.
+                    </canvas>
+                </td>
+                <td>
+                    <canvas id="head3CroppedCanvas"> 
+                        Sorry, your browser doesn't support HTML5.
+                    </canvas>
+                </td>
             </tr>
         </table>
     </div>
@@ -163,40 +182,7 @@
             Sorry, your browser doesn't support HTML5.
         </canvas>
     </div>
-    <div id="loginDiv">
-        <table>
-            <tr>
-                <td style="color:green;">
-                    Sign in to your JibJab Account
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    (Forgot your password? <a id="forgotPassword" href='#' name="forgotPassword">Click Here</a>)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Email Address
-                </td>
-            </tr>
-            <tr>
-                <td class="logintextinput">
-                    <input type="text" name="userName" id="userName">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Password
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Email Address
-                </td>
-            </tr>
-        </table>
-    </div>
+    
 </div>
 <canvas id="croppedImageCanvas" style="visibility: hidden;"> 
     Sorry, your browser doesn't support HTML5.

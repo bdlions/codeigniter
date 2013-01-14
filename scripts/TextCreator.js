@@ -78,7 +78,7 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
 					textCreatorContext.drawImage(textImage, imageStartX, imageStartY, textImage.width, textImage.height);
 				};				
 				//set the image
-				textImage.src = "../../"+imagePath + imageName;	
+				textImage.src = "../"+imagePath + imageName;	
 			}
 		};		
 	};

@@ -20,8 +20,7 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
 			'Upload': function() 
 			{   
 				//$("form").submit();
-                                $('#fileUploadForm').submit();
-				$(this).dialog('destroy');
+                                $('#fileUploadForm').submit();				
 			},
 			'Cancel': function() 
 			{
@@ -92,6 +91,7 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
 				
 				$("#displayer").hide();
 				$("#fileName").val("");
+                                $(this).dialog('destroy');
 			}
 		}); 
 		return false; 

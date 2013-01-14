@@ -45,7 +45,7 @@ define(["jquery"], function($){
 		{
 			if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			{
-				var div = $("#balloonslist");
+				/*var div = $("#balloonslist");
                                 var ul = $("ul", div);
                                 var li = $("li", ul);
                                 li.each(function()
@@ -56,7 +56,7 @@ define(["jquery"], function($){
                                         image.src = "../."+Common.get1xPath()+Common.getProjectId()+"/"+imageName+".png?"+new Date().getTime();
                                     }
                                 });
-                                console.log("completed");
+                                console.log("completed");*/
 			}
 		}
 		xmlhttp.open("POST","save/",true);

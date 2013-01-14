@@ -39,7 +39,7 @@
 */
 
 //$route['default_controller'] = "auth/login";
-$route['default_controller'] = "templates";
+$route['default_controller'] = "mytemplates";
 $route['404_override'] = '';
 
 

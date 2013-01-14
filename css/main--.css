@@ -2916,34 +2916,15 @@ body.sendables__personalize #wwrap, body.sendables__finalize #wwrap, body.sendab
     padding-top: 20px;
 }
 
-.custombutton
-{    
-    margin: 0;
-    border: 0;
-    height: 25px;      
-    color: black;
-    font-family: Verdana, Arial
-}
-.custombuttonlightgreen
-{
-    background: url("../images/light_green.jpg");
-    background-repeat:repeat-x;
-}
-.custombuttonlightred
-{
-    background: url("../images/light_red.jpg");
-    background-repeat:repeat-x;
-}
-
 #mylogo {
     background: url("../images/jibjab_logo.png") no-repeat scroll 0 0 transparent;
     float: left;
-    height: 58px;
+    height: 89px;
     left: 0;
     position: relative;
     text-indent: -9999px;
     top: 10px;
-    width: 91px;
+    width: 112px;
     z-index: 3;
 }
 .logintextinput
