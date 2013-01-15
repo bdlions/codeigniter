@@ -465,7 +465,7 @@ class Admin extends CI_Controller
         {
             //redirect them to the auth page
             $this->session->set_flashdata('message', $this->ion_auth->messages());
-            redirect("auth", 'refresh');
+            redirect("admin", 'refresh');
         }
         else
         {
@@ -491,10 +491,23 @@ class Admin extends CI_Controller
             $this->data['csrf'] = $this->_get_csrf_nonce();
             $this->data['user'] = $this->ion_auth->user($id)->row();
 
-            $this->template->set('main_content', 'auth/deactivate_user');
-            $this->template->load("default_template", 'auth/deactivate_user', $this->data);
-
-            //$this->load->view('auth/deactivate_user', $this->data);
+            $base = base_url();
+            if ($this->ion_auth->is_admin())
+            {
+                $this->template->set('menu_bar', 'design/menu_bar_admin');
+            }            
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template",'auth/deactivate_user', $this->data);
         }
         else
         {
@@ -515,7 +528,7 @@ class Admin extends CI_Controller
             }
 
             //redirect them back to the auth page
-            redirect('auth', 'refresh');
+            redirect('admin', 'refresh');
         }
     }
 
@@ -783,32 +796,25 @@ class Admin extends CI_Controller
             
             //redirect('auth', 'refresh');
             //loading user update confirmation page
-            $this->data['user_id'] = $user_id;
+            $this->data['user_id'] = $user_id;            
+            
             $base = base_url();
-            $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;;
-            $this->template->set('css', $css);        
-            $this->template->set('menu_bar', 'design/menu_bar_admin');
-            $this->template->set('main_content', "auth/index");
-            $this->template->load("default_template", "auth/edit_user_successful", $this->data);
-
-            /*//list the users
-            $this->data['users'] = $this->ion_auth->users()->result();
-            foreach ($this->data['users'] as $k => $user)
+            if ($this->ion_auth->is_admin())
             {
-                $this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
-            }
-            //$this->template->set('menu_bar', 'design/log_out_menu');
-            $base = base_url();
-            //$css = "<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
-            //$this->template->set('css', $css);
-            
-            $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+                $this->template->set('menu_bar', 'design/menu_bar_admin');
+            }            
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
             $this->template->set('css', $css);
-            $this->template->set('menu_bar', 'design/menu_bar_admin');
-            
-            $this->template->set('main_content', "auth/index");
-            $this->template->load("default_template", "auth/index", $this->data);
-            */
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template","auth/edit_user_successful", $this->data);
         }
         else
         { //display the create user form
@@ -852,16 +858,22 @@ class Admin extends CI_Controller
             $this->data['selected_group'] = $user_group[0]->id;
             
             $base = base_url();
-            
-            //$css = "<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
-            //$this->template->set('css', $css);
-            
-            $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
+            if ($this->ion_auth->is_admin())
+            {
+                $this->template->set('menu_bar', 'design/menu_bar_admin');
+            }            
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
             $this->template->set('css', $css);
-            $this->template->set('menu_bar', 'design/menu_bar_admin');
-            
-            $this->template->set('main_content', "auth/edit_user");
-            $this->template->load("default_template", 'auth/edit_user', $this->data);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template",'auth/edit_user', $this->data);
         }
     }
     
@@ -925,17 +937,24 @@ class Admin extends CI_Controller
             $this->data['countries'][$country['iso']] = $country['printable_name'];
         }
         $this->data['selected_country'] = $user_info['country'];
-
+        
         $base = base_url();
-        $css = "<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+        if ($this->ion_auth->is_admin())
+        {
+            $this->template->set('menu_bar', 'design/menu_bar_admin');
+        }            
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+        $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
         $this->template->set('css', $css);
-        
-        $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
-        $this->template->set('css', $css);
-        $this->template->set('menu_bar', 'design/menu_bar_admin');            
-        
-        $this->template->set('main_content', "auth/show_user");
-        $this->template->load("default_template", 'auth/show_user', $this->data);        
+        $this->template->set('js', $js);
+        $this->template->set('base', $base);
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template",'auth/show_user', $this->data);
     }
 
     function _get_csrf_nonce()
@@ -1127,8 +1146,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->is_admin())
             {
                 $this->template->set('menu_bar', 'design/menu_bar_admin');
-            }
-            
+            }            
             $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
             $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
             $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;

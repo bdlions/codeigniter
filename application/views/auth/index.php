@@ -48,7 +48,7 @@
                             <?php echo $group->name; ?><br />
                         <?php endforeach ?>
                     </td>
-                    <td><?php echo ($user->active) ? anchor("admin/deactivate/" . $user->id, 'Active') : anchor("auth/activate/" . $user->id, 'Inactive'); ?></td>
+                    <td><?php echo ($user->active) ? anchor("admin/deactivate/" . $user->id, 'Active') : anchor("admin/activate/" . $user->id, 'Inactive'); ?></td>
                     <td><?php echo anchor("admin/show_user/" . $user->id, 'Show'); ?></td>
                     <td><?php echo anchor("admin/edit_user/" . $user->id, 'Edit'); ?></td>
                     <td><?php echo anchor("admin/delete_user/" . $user->id, 'Delete'); ?></td>
