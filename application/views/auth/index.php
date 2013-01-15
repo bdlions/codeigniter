@@ -5,7 +5,7 @@
     <table align="right" border="1" style="border-collapse:collapse" >
         <tr align="right" style="color:green">
             <td>
-                 <?php echo form_open("auth/user_render_pagination/0");?>
+                 <?php echo form_open("admin/user_render_pagination/0");?>
                     <fieldset>
                         <label>Sort by status: </label>
                         <?php echo form_checkbox('status', 'accept', $sort_by_status);?>  
@@ -63,7 +63,7 @@
             echo $pagination; 
         }
     ?>
-    <?php echo anchor('auth/user_render_pagination/0',"All")?><br />
-    <p><a href="<?php echo site_url('auth/create_user'); ?>">Create a new user</a></p>
+    <?php echo anchor('admin/user_render_pagination/0',"All")?><br />
+    <p><a href="<?php echo site_url('auth/adduser'); ?>">Create a new user</a></p>
 
 </div>

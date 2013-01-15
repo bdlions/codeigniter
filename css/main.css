@@ -460,6 +460,7 @@ body.channel_election_dance #wwrap #wrap #election-dance-index-post .fb_like_but
     width: 80px;
 }
 body.holidays #wwrap #wrap {
+    padding-top: 12px;
     width: 980px;
 }
 body.holidays #wwrap #wrap .share_wrapper .share_nav {
