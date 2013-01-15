@@ -10,7 +10,7 @@
 		});
     });
 });*/
-require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Login"], function($, Common, TextCreator, headshowcase, FileUploader, Login) {
+require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Login","JoinToday"], function($, Common, TextCreator, headshowcase, FileUploader, Login, JoinToday) {
     
     $(function() {		
         function isBrowserCanvasCompatible()
@@ -54,19 +54,26 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         }
         else
         {
-            $("#buttonCreateText").show();
-            $("#buttonCreateHead").show();
+            $("#buttonCreateText").attr("style", "visibility: visible");
+            //$("#buttonCreateText").show();
+            $("#buttonCreateHead").attr("style", "visibility: visible");
+            //$("#buttonCreateHead").show();
             if(template_id == 1)
             {
-                $("#buttonCreateCloud").hide();
+                $("#buttonCreateCloud").attr("style", "visibility: hidden");
+                //$("#buttonCreateCloud").hide();
             }
             else
             {
-                $("#buttonCreateCloud").show();
+                $("#buttonCreateCloud").attr("style", "visibility: visible");
+                //$("#buttonCreateCloud").show();
             }                    
-            $("#buttonPreviewTemplate").show();
-            $("#buttonPublishTemplate").show();
-            $("#makeyourowntemplate").hide();
+            $("#buttonPreviewTemplate").attr("style", "visibility: visible");
+            //$("#buttonPreviewTemplate").show();
+            $("#buttonPublishTemplate").attr("style", "visibility: visible");
+            //$("#buttonPublishTemplate").show();
+            $("#makeyourowntemplate").attr("style", "visibility: hidden");
+            //$("#makeyourowntemplate").hide();
             textCreator = new TextCreator("textCreatorDiv");
             textCreator.load("sprite-26-0.png", "images/");
         }
@@ -114,7 +121,9 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         {
             if(Common.getPublishCode() == "")
             {
-                alert("Please log in to publish");
+                joinToday = new JoinToday("joinTodayDiv");
+                joinToday.load();
+                //alert("Please log in to publish");
                 return false;
             }
             else

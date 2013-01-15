@@ -48,13 +48,13 @@
             <?php echo form_close(); ?>
         </td>
         <td>	    
-            <input type = "button" name = "buttonCreateText" id="buttonCreateText" value="Step 1: Add text" class="custombuttonlightgreen"/>
+            <input style="visibility:hidden" type = "button" name = "buttonCreateText" id="buttonCreateText" value="Step 1: Add text" class="custombuttonlightgreen"/>
         </td>
         <td>	    
-            <input type = "button" name = "buttonCreateHead" id="buttonCreateHead" value="Step 2: Create New Head" class="custombuttonlightgreen"/>
+            <input style="visibility:hidden" type = "button" name = "buttonCreateHead" id="buttonCreateHead" value="Step 2: Create New Head" class="custombuttonlightgreen"/>
         </td>
         <td>	    
-            <input type = "button" name = "buttonCreateCloud" id="buttonCreateCloud" value="Step 3: Create New Cloud" class="custombuttonlightgreen"/>
+            <input style="visibility:hidden" type = "button" name = "buttonCreateCloud" id="buttonCreateCloud" value="Step 3: Create New Cloud" class="custombuttonlightgreen"/>
         </td>
     </tr>
     <tr>
@@ -63,14 +63,14 @@
         </td>
         <td  style="float:right;">	    
             <?php echo form_open_multipart("mytemplates/publishtemplate/" . $publish_code, array('id' => 'publishForm', 'name' => 'publishForm')); ?>
-            <input type = "submit" name = "buttonPublishTemplate" id="buttonPublishTemplate" value="Publish" class="custombuttonlightred"/>
+            <input style="visibility:hidden" type = "submit" name = "buttonPublishTemplate" id="buttonPublishTemplate" value="Publish" class="custombuttonlightred"/>
             <?php echo form_close(); ?>
         </td>
         <td  style="float:right;">	    
             <?php echo form_open_multipart("mytemplates/previewtemplate/" . $template_id, array('id' => 'previewForm', 'name' => 'previewForm')); ?>
             <input type = "hidden" name = "buttonPreviewTemplateProjectId" id="buttonPreviewTemplateProjectId" value=""/>
             <input type = "hidden" name = "buttonPreviewTemplateMessage" id="buttonPreviewTemplateMessage" value=""/>
-            <input type = "submit" name = "buttonPreviewTemplate" id="buttonPreviewTemplate" value="Preview" class="custombuttonlightred"/>
+            <input style="visibility:hidden" type = "submit" name = "buttonPreviewTemplate" id="buttonPreviewTemplate" value="Preview" class="custombuttonlightred"/>
             <?php echo form_close(); ?>
         </td>
 
@@ -182,7 +182,39 @@
             Sorry, your browser doesn't support HTML5.
         </canvas>
     </div>
-    
+    <div id="joinTodayDiv">
+        <div class="share_wrapper">
+            <div class="share">
+                <div id="left_promo" class="join_left">
+                    <h1 class="red">Join Today!</h1>
+                    <h2>To send this card</h2>
+                    <div id="ecard_preview_container_294673637">
+                        <img width="300" height="225" alt="template_thumb" src="http://aka.media.jibjab.com/assets/06/44/03/73/30h0qw.png">
+                    </div>
+                    <br>
+                </div>
+                <div class="divider"></div>
+                <div class="join_right animated_container">
+                    <div id="right_container" class="register">              
+                        <div id="two_ways" class="right_pane modal_holiday signin">
+                            <div class="signin_foot">
+                                <div class="b_create">
+                                    <a class="button create_account_link" href='<?php echo $base ?>auth/create_user'>Create an account on JibJab</a>
+                                </div>
+                                <p>
+                                (already have a JibJab account?
+                                <a class="log_in_link" rel="nofollow" title="Log In" href='<?php echo $base ?>auth/signin'>Log in</a>
+                                )
+                                </p>
+                            </div>                         
+                        </div>        
+                        <div id="create_account" class="right_pane login" style="display: none;"></div>
+                        <div id="sign_in" class="right_pane login" style="display: none;"></div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <canvas id="croppedImageCanvas" style="visibility: hidden;"> 
     Sorry, your browser doesn't support HTML5.

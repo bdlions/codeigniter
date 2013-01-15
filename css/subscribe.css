@@ -1,0 +1,1204 @@
+/* --- Holidays 2011 CSS --- */
+.clear {
+	clear: both;
+	display: block;
+}
+a.click:hover, a.click:focus {
+	zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+body #wrap, .channel_halloween #wrap { 
+	background-color: transparent; 
+	background:none; 
+	width: 956px; 
+	position: relative;
+	padding-bottom: 19px;
+	margin: 0 auto;
+	font-size: 1.2em;
+	clear: both;	
+	}	
+
+body.channel_holidays #wwrap, body.channel_valentines #wwrap, .psss {
+	background-size: 100%;
+	-moz-background-size: 100%;	
+}
+body #wwrap, #wwrap input, #wwrap textarea, #wwrap .radio label, .modal_holiday { 
+	font-family: 'Varela Round', sans-serif; 
+	font-style: normal;
+}
+
+.channel_holidays #wwrap {
+  background: url('../images/holidays_2012/background.png') repeat scroll center top #00bfce;
+}
+
+form .radio label {
+	display: block;
+}
+body h1, body h2, body h3 { font-weight: normal; }
+
+/* --- Landing Page - Free Section --- */
+#holiday_landing { height: 482px; clear: both; }
+.wide_wrap_left, .wide_wrap_right { margin: 0; padding: 0; }
+.wide_wrap_left {
+	width: 681px;
+	float: left;
+	margin: 33px 0 0 12px;
+	clear: left;
+	position: relative;
+}
+	.wwleft_fbimg {
+		position: absolute;
+		top: 23px;
+		right: 25px;
+		width: 55px;
+		height: 55px;
+	}
+.wide_wrap_right {
+	margin-left: 747px;
+	float: none;
+	font-size: 1.667em;
+}
+.send_free {
+	background: url('../images/ecards_2012/common/sendfree_banner.png');
+	width: 223px; 
+	height: 338px;
+	margin-bottom: 9px;
+	}
+.get_started { margin-left: 3px; }	
+	.get_started a.button {
+		background: url(../images/ecards_2012/common/started.png) no-repeat -214px 0;
+		width: 214px;
+		height: 98px;
+	}
+a.button, a.sbutton { display: block;}
+a.button { text-indent: -9999px; }
+a.sbutton, a.premium  { font-size: 1.949em; } /* 23.39px/12px */ 
+a.sbutton {
+	text-indent: 78px;
+	padding-top: 25px;
+	text-decoration: none;
+	}
+.wide_wrap_right a, a.premium { color: #FFF; }
+	.espanol a {	
+		font-style: italic;
+		display: block; 
+		text-align: center;
+		padding: .85em 0 0 0;
+		}
+	a.premium { 
+		padding: 0 0 45px 40px;	
+		text-decoration: none; 
+	}
+a.premium:hover, a.premium:focus { text-decoration: underline; }
+
+/* --- Landing Page - Member eCards Section --- */
+.cards, #rounded_box {
+	overflow: auto;
+	background-color: #FFF;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	-webkit-box-shadow: inset 2px 2px 3px 2px rgba(0,0,0,0.2);
+	  -moz-box-shadow: inset 2px 2px 3px 2px rgba(0,0,0,0.2);
+		box-shadow: inset 2px 2px 3px 2px rgba(0,0,0,0.2);
+}
+.cards {
+	width: 929px;
+	font-size: 1.75em; /* 21px/12px */
+	position: relative;
+	margin-bottom: 32px;
+	margin-top: 45px;
+	padding: 33px 0 33px 47px;
+	border: 2px solid #b3b3b3;
+}
+.cards_left {
+	float: left;
+	width: 206px;
+	margin: 20px 30px 0 0;
+	position: relative;
+}
+	.cards_left p { line-height: 1.5em; }
+	.cards_left h2 a { 
+		font-size: 45px;
+		color: #c70003;
+	}
+	.cards_left h3 { font-size: 1.42857em; } /* 30px/21px */
+	.cards_left h3, .cards_tag { color: #6b6b6b; }
+.cards_tag {
+	border: 3px double #b6b6b6;
+	padding: .2em .35em;
+	overflow: auto;
+	position: absolute;
+	left: 46px;
+	bottom: 46px;
+}
+.cards_right { padding-left: 225px; }
+
+/* --- Landing Page - Indiviual eCards (with Play button) --- */
+.box, a.play{
+	display:block;
+	position:relative;
+}
+a.play { z-index: 100; }
+a.play:hover, a.play:focus {
+	zoom: 1;
+	filter: alpha(opacity=20);
+	opacity: 0.2;
+}
+.box:hover span, .box:focus span {	
+	display:block;
+	position:absolute;
+	top:80px;
+	left:50px;
+	width:95px;
+	height:95px;	
+	background: url('../images/ecards_2012/common/play_button.png') no-repeat; 
+}
+.short:hover span, .short:focus span { 
+	top:40px;
+	left:20px;
+	margin-right: 17px;
+}
+.long:hover span { left: 260px; }
+.box {
+	float: left;
+	margin: 0 20px 30px 0;
+	font-size: 2em;
+	text-align: center;
+}
+	.fix { width: 195px; }
+	.short { margin: 0 17px 21px 0; }
+
+/* --- Landing Page - Browse eCards Banner --- */
+.bottom_banner { 
+	overflow: hidden;
+	background: url('../images/ecards_2012/common/still_looking.png'); 
+	display: block;
+	width: 861px;
+	height: 58px;
+	padding: 35px 60px;
+	margin: 0px auto 50px auto;
+}
+	.bottom_banner h2 {	
+		font-size: 2.5358em; /* 30.43px/12px */
+		color: #ff0000;
+	}
+	.bottom_banner a {
+		font-size: 2.12em; /* 25.44px/12px */
+		color: #FFF;
+	}
+
+/* --- Role Selection --- */
+#rounded_box { margin-bottom: 75px; }
+.role_box { 
+	width: 874px; 
+	padding: 40px 40px 50px 40px;	
+	}
+.role_head { 
+	display: block; 
+	padding: 0 0 36px 0;
+	margin-bottom: 36px;
+}
+	.role_head h1, .role_head h2, h1.s_h_red, .role_left { float: left; }
+h1.h_red { font-size: 2.638em; /* 31.66px/12px */ }
+h1.s_h_red { 
+	font-size: 1.67em; /* 20px/12px */
+	margin: 2px 0 0 0;
+	padding: 0;
+} 
+h1.h_red, h3.h_red, h1.s_h_red {
+	margin-right: 10px;
+	color: #c70003;	
+	text-transform: uppercase;
+}
+h2.h_grey { 
+	margin-top: 4px;
+	font-size: 2em; /* 24px/12px */
+	letter-spacing: -.05em;
+	color: #8c8c8c;	
+}
+h3.h_red { font size: 1.5716em; } /* 18.86px/12px */
+.role_right { padding-left: 584px; }
+	.role_right img { margin-bottom: 8px; }
+
+/* --- Add A Message & CVP pages --- */
+.add_box {
+	background: url(../images/ecards_2012/channels/holidays/holiday_card.png) top center no-repeat;
+	padding: 20px 20px 33px 20px;	
+	margin: 0 auto 75px auto;
+	width: 913px;
+	height: 472px;
+}
+	.boxbanner { margin-bottom: 19px; }
+.add_left, .add_left_head, .like, .seal, .fb_user { float: left; }
+.add_left { 
+	width: 626px;
+	border-right: 2px solid #e5e5e5;
+}
+.add_left, .centered { height: 472px; }
+.add_left_head { text-align: center; }
+	.cvp_title { margin-left: 20px; width: 600px; }
+	h1.s_h_red { 
+	  font-size: 1.67em; /* 20px/12px */
+	  float: left;
+	  margin: 2px 10px 0 0;
+	  padding: 0;
+	  color: #c70003;	
+	  text-transform: uppercase;	  
+	} 
+.add_left_mid {
+	width: 567px;
+	height: 319px;
+	}
+.make_mid { width: 570px; }	
+.add_left_mid, .make_mid { margin: 55px auto 0px auto;}	
+.add_left_foot { margin: 33px 0 0 15px; }
+.cvp_title, .seal { display: block; }
+.seal { margin: 0 26px 0 0; }
+.add_left_foot h3, .add_left_foot p { 
+	float: left; 
+	padding-top: 28px;
+	}
+.add_left_foot a { 
+	color: #535353; 
+	text-transform: uppercase;
+}	
+.add_right { padding-left: 638px; }
+.add_right_head, .center_head { position: relative; }
+.add_char { 
+	padding: 80px 0 15px 5px; 
+	font-size: 1.33em; /* 16px/12px */
+	}
+.add_right_mid {
+	width: 243px;
+	font-family: 'Architects Daughter', cursive;	
+	font-size: 2em;
+	padding: 123px 10px 12px 12px;	
+}
+	.note_b {
+		border: 2px dashed #e5e5e5;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+		padding: 10px;
+	}
+	.add_right_mid p { line-height: 1.35em; }	
+.center_head { width: 913px; }
+.center_mid, .cvp_left_mid { height: 319px; }
+.center_mid {
+	width: 566px;
+	margin: 0 auto;
+	padding-top: 46px;
+}	
+.center_foot, .center_foot2 {
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 32px;
+}
+.center_foot { width: 580px; }	
+
+/* --- Personalization --- */
+.personal_box { width: 954px; }
+.personal_box { padding: 20px 0 8px 0; }
+.personal_flash {
+	width: 620px;
+	margin: 0 auto;
+	}
+.personal_head { 
+	text-align: center;	
+	margin-bottom: 25px;	
+}
+ul.steps, ul.steps li {
+	display: inline;	
+	border: none;	
+	}
+ul.steps {
+	font-size: 1.333em; /* 16px/12px */
+	margin: 0;
+	padding-right: 4em;
+	text-transform: uppercase;
+	} 
+ul.steps li {
+	color: #cfcfcf;
+	margin-left: 0;
+	padding-left: 2em;
+	list-style: none;
+	}
+	ul.steps li:before  {
+		content: ">";
+		padding-right: 2em;	
+		color: #cfcfcf;		
+		}
+	ul.steps li.first:before {
+		content: " ";
+		padding-left: 0;
+		margin-left: 0;	
+		}	
+	ul.steps li.active { color: #6b6a6a; }	
+
+/* --- Lower Banners --- */
+.banner { 
+	overflow: hidden;
+	display: block;
+	width: 882px;
+	height: 197px;
+	margin: 0 auto;
+	padding: 0 37px;
+}
+	.dvd { background: url('../images/ecards_2012/channels/holidays/gift_back.png') no-repeat; }
+	.plain { background: url('../images/ecards_2012/channels/holidays/banner_back.png') no-repeat; }
+	.dvdimg { margin: 15px 30px 0 36px; }
+	.phoneimg, .storeimg { float: right; }
+	.phoneimg { margin: 34px 33px 0 80px; }
+	.storeimg { margin: 25px 0; }
+.banner h2 { font-size: 3.9em; } /* 50.36px/12px */
+.banner h3 { font-size: 3.35em; } /* 41.95px/12px */
+.banner h2, .banner h3 {	
+	color: #fff;
+	margin: 29px 0 15px 0;
+	letter-spacing: -.02em;
+}
+.banner p {
+	font-size: 1.8916em; /* 22.7px/12px */
+	color: #ff0000;
+	padding-top: 5px;
+}
+.links { 
+	overflow: auto;
+	margin: 35px 0 33px 0; 
+	}
+.url, .embed, .url label, .embed label, .dvdimg { float: left; }
+.url label, .embed label {
+	color: #ff0000;
+	font-size: 1.375em; /* 16.5px/12px */
+	padding: 6px 9px 0 12px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.url input, .embed input { 
+	width: 370px; 
+	background: transparent;
+	border: 1px solid #ff0000;
+	color: #FFF;
+	font-size: 1.25em; /* 15px/12px */
+	padding: .25em;
+	}
+.url input { margin-right: 33px; }
+
+
+/* --- Download It! --- */
+.share_nav, .psss_nav, .elf_header {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+.share_nav {
+	background: #f8f8f8 url(../images/ecards_2012/common/card_bg_top.png) no-repeat top center;
+	width: 953px;
+	height: 57px;
+}
+	.share_nav a, .psss_nav a {
+		font-size: 1.5em; /* 18px/12px */
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	.share_nav a { color: #797979; }
+		.share_nav a:hover, .psss_nav a:hover { text-decoration: underline; }
+		.share_nav a:before, .psss_nav a:before { content: "< "; }
+.share, .psss, .share_head { position: relative; }
+.share, .psss {
+	background: #FFF url(../images/ecards_2012/common/card_bg.png) no-repeat bottom center;
+	background-size: 100%;
+	padding: 30px 15px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;	
+	overflow: auto;
+}
+
+.share_wrapper {	
+	-moz-border-radius: 20px;
+		-webkit-border-radius: 10px;
+			border-radius: 20px;
+	-webkit-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
+		-moz-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
+			box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);		
+  width: 953px;
+}
+
+.sub_purch_section { 
+	position: relative;
+	padding: 23px 0 23px 23px;
+	margin-right: 30px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.1);
+	  -moz-box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.1);
+		box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.1);
+	}
+
+	.stamp_pull {
+		top: 30px;
+		right: 0px;
+		z-index: 10;
+		position: absolute;
+	}
+	.share input, .share textarea, .email_nl, .modal_holiday input {
+		color: #8d8b8b;
+		padding: .75em;
+		border: 1px solid #dedede;
+		-moz-border-radius: 7px; 
+		border-radius: 7px;
+		-webkit-box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.1);
+		  -moz-box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.1);
+			box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.1);	
+	}
+	input.e_error, textarea.e_error, select.e_error { border: 2px solid #ff3b3b; }
+	
+.share h1 {	font-size: 3em; 	font-family: 'Varela Round', sans-serif; }
+	.blue { color: #597eb6; }
+	.red { color: #ff0000; }
+	.green { color: #53cc01; }
+.share h2 {
+	color: #686868;
+	font-size: 2em; /* 24px/12px */
+}
+a.dred { color: #870000; }
+.sample {
+	width: 438px;
+	margin: 0 0 0 10px;
+	float: left;
+}
+
+/* --- Congratulations --- */
+.img_drop {		
+	border: 2px solid #dedede;
+	padding: 8px;
+	text-align: center;
+	-webkit-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
+	  -moz-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
+		box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
+		background-color: #fff;
+}
+	.img_drop a.red { padding-bottom: 30px;  }
+.spacer68 { margin: 35px 0 30px 0; }
+.img_drop a.red, .newmember_left { 
+	display: block; 
+	text-align: center;
+}
+.newmember_left {
+	float: left;
+	width: 340px;
+}
+	.newmember_left img { margin-bottom: 25px; }
+	.newmember_left a.red, .newmember_right p { font-size: 1.5em; }
+.newmember_right { padding-left: 370px; }
+	.newmember_right h1 { font-size: 4.2625em; } /* 51.15px/12px */
+	.newmember_right p { margin: 11px 0; }
+	.newmember_right p.small { font-size: 1.25em; }
+	.newmember_right img { margin-bottom: 45px; }
+	.newmember_right a { color: #5d5c5c; }
+	
+/* --- PSSS --- */
+.psss_nav {
+	background-color: #ff0000;
+	padding: 22px 40px 0px 40px;
+	height: 159px;
+	color: #000;
+	overflow: hidden;
+}
+.psss_nav_left, .psss_nav_left img, .psss_nav_right, .share_equal, .f_left { float: left; }
+.psss_nav_left {
+	border-right: 1px solid #d40000;
+	display: block;
+	width: 660px;
+	height: 155px;
+	margin-bottom: 10px;
+}
+	.psss_nav_left a {
+		color: #000;
+		text-decoration: none;
+		display: block;
+		margin-bottom: 40px;
+	}
+	.psss_nav_left h1{
+		font-size: 3.5433em; /* 42.52px/12px */
+		letter-spacing: -.02em;
+		color: #fff;
+	}
+	.psss_nav_left img {
+		margin-right: 20px;
+		padding-top: 5px;
+	}
+.psss_nav_right, .psss h1 { text-align: center; }
+.psss_nav_right {
+	width: 175px;
+	margin-left: 34px;
+	font-size: 1.735em; /* 20.82px/12px */
+}	
+	.psss_nav_right img {
+	margin-top: 10px;
+}
+	.psss_nav_right a { 
+		text-transform: none;
+		color: #000;
+	}
+	.psss_nav_right a:before { content: " "; }
+.psss { 
+	background: url(../images/ecards_2012/channels/holidays/snow_back.png) repeat-y top center;
+	width: 646px;
+	padding: 0 155px 40px 155px;
+	margin-bottom: 30px;
+}	
+	.psss h1 { 
+	font-size: 2.1425em; /* 25.71px/12px */
+	margin: 30px 0;
+	}
+.share_equal { 
+	width: 49%;
+	text-align: center;
+	overflow: auto;
+	margin-top: 40px;
+}
+	.equal_b { border-right: 1px solid #b5b5b5; }
+.share h1.green {
+	font-size: 3.42em; /* 41.08px/12px */
+	letter-spacing: -.03em;
+	padding-top: 20px;
+	}
+.share_equal h2 { 
+	font-size: 3.00116em; /* 36.14px/12px */
+	text-align: center;
+}
+.f_left { margin: 24px 18px 0 26px; }
+
+/* --- Join Page --- */
+#left_promo{
+	position: relative;
+}
+.join_left {
+	width: 385px;
+	padding-right: 23px;
+}
+.join_left, .join_right .j_card input, .join_right .j_email input, .join_right fieldset.j_expire, .radio input { float: left; }
+	.join_left, .join_left p, .join_left h1, .join_left h2 { text-align: center; }
+	.join_left h1 { 
+		font-size: 3.43667em; /* 41.24px/12px */
+		margin: 0px;
+		}	
+	.join_left h2 { 
+		font-size: 1.7683em; /* 21.22px/12px */
+		padding: 12px 0 37px 0;
+		margin: 0px;
+		}
+	.join_left p {
+		font-size: 1.1667em; /* 14px/12px */
+		text-transform: uppercase;
+		padding-top: 22px;	
+	}
+.join_right { 
+	width: 496px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+	.join_right h2 { 
+		font-size: 1.5575em; /* 18.69px/12px */
+		margin-bottom: 20px;
+		text-align: left;
+		}
+		.join_right h2 img { margin-bottom: -7px; }
+		.j_terms {
+			display: block;
+			margin-top: 15px;
+			font-style: italic;
+		}
+		.sub_purch_section .errors_general {
+		        background: #c00;
+		        color: #fff;
+		        font-size: 1.0em;
+		        font-weight: bold;
+		        padding: 5px 10px;
+		        text-shadow: #600700;
+				-moz-border-radius: 8px;
+		        border-radius: 8px;
+		        width: 350px;
+		        line-height: 1.5em;
+				
+		}
+			.sub_purch_section fieldset.radio .with_promo, .sub_purch_section fieldset.radio .without_promo {  
+				
+				
+			}
+			.sub_purch_section fieldset.radio {
+				position: relative;
+				margin: 0px 0 30px 0;
+				padding: 0;
+				display: block; 
+			}
+			.sub_purch_section fieldset.radio a.have_a_promo_code { 
+				position: absolute; 
+				bottom: -20px;
+				}
+		.j_terms a {
+			color: #535353;
+		}
+		
+		.radio input, input.radio { 
+			border: 0; 
+			padding: 2px;
+			box-shadow: none;
+			}
+		.radio label { 
+			padding: 2px 0 0 30px; 
+			font-size: 1.25em;
+			}
+	.join_right .j_name input { width: 400px; }
+	.join_right .error {
+		display: block;
+		font-size: .8em; /* 9px/12px */
+		margin: 0 0 4px 7px;
+	}		
+	.join_right .j_card input, .join_right .j_email input  { width: 19em; }
+		.join_right .j_card img, .b_submit a.button, span.cvn { margin-left: 13px; }
+	.join_right fieldset.j_expire {  padding: .5em 1em 0 0; }
+	.join_right .j_ccvn input { width: 5em; }
+	.join_right fieldset.j_email { float: left; }
+		.join_right .j_email input { margin-right: 1em; }
+		.join_right fieldset.j_email { float: left; }
+		form#email_confirmation_form { 
+			width: 450px;
+			/* background-color: #f1f1f1; */
+			margin: 0 auto;
+			padding: 6px 6px 0px 6px;
+			height: 60px;
+			overflow: hidden;
+			}
+		#email_confirmation_form #profile_email { 
+			float: left; 
+			width: 300px;
+			margin: .25em .5em 0 0;
+			}
+		
+	
+
+.join_right #right_container {
+	position: relative;
+	margin-top: 60px;
+	padding: 40px 0 0 20px;
+	width: auto;
+}
+	.join_right #right_container .warning { margin: 0 2em; }
+	.join_right #right_container p.note { margin-top: 115px; }
+		.join_right #right_container p.note strong { font-weight: bold; }
+		.join_right #right_container h2, .join_right #right_container p, .join_right #right_container h4 { text-align: left; }
+		.join_right #right_container p.note, .join_right #two_ways h4, .join_right #two_ways p { text-align: center; }
+		.join_right #right_container h2 { 
+			font-weight: bold;
+			font-size: 1.3em; 
+			margin-bottom: 18px;
+		}	
+		#right_container .gray_box .warning p, #right_container .gray_box .warning a, #right_container .gray_box h2 { text-align: center; }	
+
+#right_container {
+	width: 1026px;
+	height: 906px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.divider {
+	position: absolute;
+	left: 434px;
+	top: 80px;
+	height: 325px;
+	border-right: 1px solid #b5b5b5;
+}
+
+.right_pane {
+	width: 513px;
+	height: 453px;
+}
+
+.register #two_ways {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: transparent;
+}
+
+.register #create_account {
+	position: absolute;
+	top: 0px;
+	left: 514px;
+	padding-left: 30px;
+}
+
+.register #sign_in {
+	position: absolute;
+	top: 454px;
+	left: 0px;
+	padding-left: 30px;
+}
+
+/* --- Modals --- */
+.modal_holiday {
+	color: #686868;
+	-moz-border-radius: 10px;
+	border-radius: 10px;	
+}
+	.modal_holiday.login {
+		width: 486px;
+		height: 320px;
+		padding: 11px 11px 28px 58px;
+	}
+
+	.modal_holiday.promo {
+		width: 518px;
+		height: 123px;
+		padding: 11px 11px 40px 27px;	
+	}
+	.modal_holiday.signin { 
+		width: 496px;
+		height: 300px; 
+	}
+	.modal_holiday a, a.popup { color: #4c77c5; }	
+.modal_holiday.signin, .modal_holiday.signin p, .modal_holiday.signin h4, .signin_foot p { text-align: center; }
+.modal_holiday, .modal_holiday_header, .modal_holiday.signin .header { position: relative; }
+.modal_holiday_header { width: 300px; }
+.promo .modal_holiday_header { height: 82px; }
+	.x_circle, .x_red_circle, .login .modal_holiday_header_logo, .promo .modal_holiday_header_logo, .signin_center { position: absolute; }
+	.x_circle, .x_red_circle, .x_circle a, .x_red_circle a {
+		width: 37px;
+		height: 37px;
+		display: block;
+		text-indent: -9999px;
+	}
+	.x_circle {
+		background: url('../images/ecards_2012/modals/x.png') no-repeat;
+		top: 7px;
+		right: 8px;	
+	}
+	.x_red_circle {
+		background: url('../images/ecards_2012/modals/x-red.png') no-repeat;
+		top: -4px;
+		right: -10px;			
+	}
+	.modal_holiday_header h2 {
+		font-size: 1.492em;
+		color: #686868;
+		padding-top: 25px;
+		font-weight: bold;
+		margin-bottom: 5px;
+		text-align: left;
+	}
+		.right_pane .modal_holiday_header h2 { padding-top: 0; }
+	
+	.modal_holiday h2 { 
+		font-size: 1.493em; /* 17.92px/12px */
+		color: #686868;
+		padding-top: 25px;
+	}
+	.login .modal_holiday_header_logo, .promo .modal_holiday_header_logo { bottom: -2px; }
+	.login .modal_holiday_header_logo { right: 71px; }
+	.promo .modal_holiday_header_logo { left: 270px; }
+.modal_holiday fieldset.select label, .promo input, .modal_holiday fieldset.select, .modal_holiday .b_submit { float: left; }
+.modal_holiday fieldset.select label {
+	display: block;
+	color: #b1b1b1;
+	padding: 4px 0;
+}
+
+.login fieldset.select label {
+	display: inline;
+	color: #b1b1b1;
+	padding: 6px 8px;
+}
+
+	.login input { width: 410px; }
+	.login input[type=checkbox] {width: 20px;}
+	.promo input { 
+		width: 362px; 
+		padding: 1em;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+		font-size: 1.1667em;  /* 14px/12px */
+		}
+.modal_holiday_terms { clear: both; color: #686868; padding-top: 15px; margin-left: 10px; }
+
+.modal_holiday.signin .header {
+	margin: 9px 8px 0 0;
+}
+	.modal_holiday.signin h4 { 
+		font-size: 1.76833em; /* 21.22px/12px */
+		color: #b5b5b5;
+		text-align: center;
+		padding: 0px; 
+	}
+	
+	.modal_holiday.signin h3 { 
+		color: #b5b5b5;
+		text-align: center;
+	}
+	
+	.modal_holiday.signin p { font-size: 1.15083em; margin-top: 1em; } /* 13.81px/12px */
+.fb_signin {
+	margin: 10px auto 44px auto;
+	width: 299px;
+}
+
+.fb_signin_sm {
+	margin: 10px auto 18px auto;
+	width: 239px;
+}
+
+#two_ways .facepile {
+	margin: 0 auto 26px auto;
+    /*position: absolute;
+	top: 125px;*/
+}
+
+.signin_or {
+    position: relative;
+}
+.signin_or .signin_or_text {
+    width: 440px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-top: 0px;
+}
+
+.signin_foot {
+	width: 446px;
+	height: 119px;
+	margin: 0 24px;
+	padding-top: 38px;
+}
+
+/* --- Elf Yourself --- */
+.head_join {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.083em; /* 13px/12px */
+	color: #fff;
+	padding-top: 13px;
+}
+.elf_header {
+	background-color: #f8f8f8;
+	padding: 23px 20px 27px 40px;
+	width: 893px;
+}
+	.elf_header h1 { 
+		font-size: 2.945em; /* 35.34/12px */
+		letter-spacing: -.02em;
+		} 
+.elf_landing {
+	background: url(../images/ecards_2012/channels/holidays/holiday_card.png) bottom center no-repeat;
+	padding: 53px 40px 33px 40px;	
+	width: 873px;
+	height: 363px;
+	-moz-box-shadow: 0 -5px 10px rgba(0,0,0,0.2);
+	  -webkit-box-shadow: 0 -5px 10px rgba(0,0,0,0.2);
+		box-shadow: 0 -5px 10px rgba(0,0,0,0.2);	
+}
+
+.elf_landing_left {
+	float: left;
+}
+.elf_landing_left p {
+	margin-top: 29px;
+}
+.elf_landing_right {
+	padding-left: 600px;
+}
+.elf_landing_right p {
+	font-size: 1.8333em; /* 22px/12px */
+	margin: 7px 0 34px 0;
+}
+.elf_landing_right .red { 
+	font-size: 2.15em;
+	letter-spacing: -.02em;
+	margin-bottom: 55px;
+	}
+.landing_mid { 
+	font-size: 1.949em;
+	color: #fff;
+	text-align: center;
+	padding: 1em 0;
+}
+.preview_holiday, .elf_landing_normal, .elf_landing_expanded_right {
+	background-color:rgba(0,0,0,0.3);
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: inset 0 5px 10px rgba(0,0,0,0.2);
+	  -webkit-box-shadow: inset 0 5px 10px rgba(0,0,0,0.2);
+		box-shadow: inset 0 5px 10px rgba(0,0,0,0.2);	
+}
+.preview_holiday, .elf_landing_normal {	overflow: auto; }
+.preview_holiday { 
+	padding: 17px 0 17px 22px; 
+	margin-bottom: 17px;
+	}
+	.vidbox, a.v_play{
+		display:block;
+		position:relative;
+	}
+	a.v_play { z-index: 100; }
+	a.v_play:hover, a.v_play:focus {
+		zoom: 1;
+		filter: alpha(opacity=40);
+		opacity: 0.4;
+	}
+	.vidbox:hover span, .vidbox:focus span, .current span, .current:hover span, .current:focus span {
+		display:block;
+		position:absolute;	
+	}
+	.vidbox:hover span, .vidbox:focus span { 
+		top:40px;
+		left:20px;
+		width:95px;
+		height:95px;	
+		background: url('../images/ecards_2012/common/play_button.png') no-repeat; 
+	}
+	.current span, .current:hover span, .current:focus span {
+		top: 0px;
+		left: 0px;		
+		width: 137px;
+		height: 200px;
+		background: url('../images/elfyourself/current.png') no-repeat; 
+		z-index: 100;
+	}
+	.vidbox {
+		float: left;
+		margin-right: 17px;
+		font-size: 2em;
+		text-align: center;
+	}
+	
+.elf_landing_normal {
+	padding: 27px 35px 23px 27px; 
+	color: #fff;
+}
+	.elf_landing_video { float: right; }
+	.elf_landing_normal h1, .elf_landing_normal p { letter-spacing: -.02em; }
+	.elf_landing_normal h1 {
+		font-size: 2.47em; /* 29.64px/12px */
+	}
+	.elf_landing_normal p {
+		font-size: 1.6583em; /* 19.9px/12px */
+		margin-bottom: .75em;
+	}
+	.elf_landing_normal ul { 
+		width: 625px; 
+		color: #ff0000;
+	}
+	.elf_landing_normal li {
+		float: left;
+		display: block;
+		width: 155px;
+		padding: .25em 0;
+	}
+.elf_landing_expanded {
+	position: relative;
+}	
+.elf_landing_expanded_left {
+	color: #fff;
+	background-color: #d40c00;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	width: 238px;
+	padding: 60px 16px 70px 21px;
+	float: left;
+}
+	.elf_landing_expanded_left h1 {
+		font-size: 2.4em;
+		margin-bottom: .25em;
+	}
+	.elf_landing_expanded_left h2 {
+		font-size: 1.6583em; /* 19.9px/12px */
+		color: #fff;
+	}
+	.elf_landing_expanded_left ul {
+		margin: 24px 0;
+		list-style-position: inside;
+		list-style-type: disc;
+	}
+	.elf_landing_expanded_left li {
+		padding: .5em 0;
+	}
+	.elf_landing_expanded_left small {
+		font-size: .8333em; /* 10px/12px */
+	}	
+.elf_landing_expanded_right {
+	padding: 29px 0 29px 0px;
+}
+.elf_landing_expanded_right img { margin-left: 20px; }
+
+/* --- Buttons --- */
+.done a.button, .skip a.button, .b_post a.button, .fb_share a.sbutton, .email a.sbutton, .download a.sbutton, .b_submit a.button { float: left; }
+.done a.button, .skip a.button, .b_post a.button  {
+	width: 112px;
+	height: 61px;
+	margin-top: 27px;
+}
+.fb_share a.sbutton, .email a.sbutton, .download a.sbutton {
+	display: block;
+	width: 68px;
+	height: 67px;
+	margin-right: 124px;
+	text-transform: none;
+}
+.fb_share a, .email a, .download a { color: #688b92; }
+.b_dvd a.button { width: 224px; }
+.b_dl a.button, .b_store a.button { width: 221px; }
+.b_send a.button { 
+	width: 163px; 
+	height: 58px;
+	background: url(../images/ecards_2012/common/b_send.png) no-repeat -163px 0;	
+	position: absolute;
+	right: 44px;
+	bottom: 72px;
+	}
+.b_free a.button { 
+	width: 193px; 
+	height: 84px;
+	margin-bottom: 13px;
+	background: url(../images/ecards_2012/common/b_create_free.png) no-repeat -193px 0;	
+	}		
+.b_submit a.button, .b_submit input { 
+	width: 110px !important; 
+	height: 40px !important;
+	background: url(../images/ecards_2012/common/b_submit.png) no-repeat -110px 0;	
+	text-indent: -9999px;
+	padding-right: .5em;
+	border: 0;
+	}
+	.modal_holiday .b_submit input { margin: 0 0 .5em .5em; }
+	.gray_box form#email_confirmation_form .b_submit input{
+		display: block;
+		padding: 0px;
+		margin: 0px;
+	}
+#create_account form .b_submit, #sign_in .b_signin { 
+	display: block;
+	float: right;
+	width: 175px;
+	}
+#create_account form .b_submit a.back_link, #sign_in .b_signin a.back_link { float: left; margin-top: 1em; }	
+#sign_in .b_signin a.back_link { padding-top: 2em; }
+#create_account form .b_submit input, #sign_in .b_signin input { float: right; border: 0; }
+
+.join_right .b_signin, #create_account form .b_submit {
+	float: right;
+	margin: 10px 80px 0 0;
+}
+.sub_purch_section .b_submit { 
+	margin: -15px 30px 20px 0px;
+	float: right; 
+	}
+.b_signin input {
+	width: 110px;
+	height: 40px;
+	background: url(../images/ecards_2012/modals/b_signin.png) no-repeat -110px 0;
+	margin: 20px auto 0;
+	text-indent: -9999px;
+	border: 0;
+}
+	
+.b_signin input:hover, .b_submit input:hover { 
+	background-position: 0 0;
+	cursor: pointer; 
+}
+
+
+.sub_purch_section fieldset.radio label {
+	letter-spacing: -.02em;
+	font-size: 1.2em;
+	font-weight: normal;
+}
+.sub_purch_section fieldset.radio label a {
+	font-size: 0.8em;
+	margin: 1em 0 2em;
+	color: #7C7C7C;
+	display: block;
+	font-style: italic;
+}
+
+.b_return a.button { 
+	width: 219px; 
+	height: 40px;
+	background: url(../images/ecards_2012/common/b_return.png) no-repeat -219px 0;	
+	}	
+.b_create a.button { 
+	width: 237px; 
+	height: 30px;
+	background: url(../images/b_create.png) no-repeat -237px 0;	
+	}
+.b_member a.button { 
+	width: 270px; 
+	height: 61px;
+	background: url(../images/elfyourself/b_member.png) no-repeat -270px 0;	
+	}	
+.b_join a.button { 
+	width: 216px; 
+	height: 49px;
+	background: url(../images/elfyourself/b_join.png) no-repeat -216px 0;	
+	}
+.b_dvd a.button, .b_dl a.button, .b_store a.button {
+	height: 69px;
+	float: right;
+	}
+.b_199, .b_free_make, .b_return a.button, .b_create a.button { margin: 0 auto; }
+.b_199 { width: 206px; }
+.b_free_make { width: 330px; }
+.b_go a.button {
+	width: 85px;
+	height: 56px;
+	margin: 20px auto;
+	background: url(../images/ecards_2012/common/b_go.png) no-repeat -85px 0;
+}
+.skip a.button { background: url(../images/ecards_2012/common/b_skip.png) no-repeat -112px 0; margin-right: 28px; }
+.done a.button { background: url(../images/ecards_2012/common/b_done.png) no-repeat -112px 0; }
+.b_post a.button { background: url(../images/ecards_2012/common/b_post.png) no-repeat -112px 0; margin-top: 81px; }
+.b_dvd a.button { background: url(../images/ecards_2012/common/b_dvd.png) no-repeat -224px 0; margin-right: 10px;}
+.b_dl a.button { background: url(../images/ecards_2012/common/b_dl.png) no-repeat -221px 0; margin-left: 30px; }
+.b_store a.button { background: url(../images/ecards_2012/common/b_store.png) no-repeat -221px 0; margin: 93px 13px 35px 30px; }
+.fb_share a.sbutton { background: url(../images/ecards_2012/common/icon_fb.png) no-repeat -68px 0; }
+.email a.sbutton { background: url(../images/ecards_2012/common/icon_email.png) no-repeat -68px 0; }
+.download a.sbutton { background: url(../images/ecards_2012/common/icon_dl.png) no-repeat -68px 0; }
+
+.subscribe__email .join_right { height: 453px; }
+
+.placeholdered_input fieldset {position: relative;}
+.placeholdered_input { position: relative; }
+.placeholdered_input label { color: #ccc; pointer-events: none; z-index: 99; font-weight: normal;}
+.placeholdered_input label.active { color: #eee; }
+.placeholdered_input label.hidden { position: absolute; top: 15px; left: 12px; }
+.placeholdered_input input { z-index: 100; }
+
+.right_pane .placeholdered_input input{
+	margin-bottom: 13px;
+}
+
+.right_pane .placeholdered_input fieldset {
+	margin: 0px;
+}
+
+.animated_container { height: 350px; }
+.animated_container .modal_holiday_header { height: auto; }
+.animated_container #right_container h2 { margin-bottom: 5px; }
+
+input:focus { outline: none; }
+.error_box { 
+	width: 395px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	padding: 5px 15px 2px; 
+	margin:-10px 0px 10px 0px; 
+}
+
+/* --- Keep on bottom for proper stacking order --- */
+a.button:hover, a.button:focus, a.sbutton:hover, a.sbutton:focus { background-position: 0 0; }
+
+body.subscribe__confirmation span.email_address { color: #FF0000; }
+

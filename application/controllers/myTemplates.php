@@ -84,6 +84,7 @@ class Mytemplates extends CI_Controller
         $base = base_url(); 
         $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
         $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/subscribe.css'/>" ;
         $js = "";
         $this->template->set('css', $css);
         $this->template->set('js', $js);
@@ -128,6 +129,7 @@ class Mytemplates extends CI_Controller
         $base = base_url(); 
         $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
         $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/subscribe.css'/>" ;
         $js = "";
         $this->template->set('css', $css);
         $this->template->set('js', $js);
