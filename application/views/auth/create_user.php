@@ -12,7 +12,7 @@
         position:relative;
         vertical-align:middle;
         display:table-cell;
-        height:468px;
+        height:auto;
         width:300px;
     }
 
@@ -20,7 +20,7 @@
     {
         background: none repeat scroll 0 0 lightgray;
         border: 0px solid #000000;
-        height: 320px;
+        height: autox;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -60,8 +60,8 @@
 </style>
 <div id="outer">          
     <div id="container">         
-        <div style="color:red"><?php echo $message; ?></div>
         <div id="inner">
+            <div style="color:red"><?php echo $message; ?></div>
             <p>Please enter the users information below</p> 
             <?php echo form_open("auth/create_user"); ?>
             <div class ="tabular">                

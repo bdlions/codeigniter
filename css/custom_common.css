@@ -265,3 +265,9 @@
     font-size: 0.9em !important;
     padding: 0.75em;
 }
+
+.user_message
+{
+    color: white;
+    font-size: 20px;
+}

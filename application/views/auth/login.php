@@ -80,7 +80,7 @@
                 </div>
                 <div class="tabular-row">
                     <div class="tabular-cell"></div>
-                    <div class="tabular-cell"><?php echo anchor('auth/create_user', 'Create an account', 'title="Create an account"');?></div>
+                    <div class="tabular-cell"><?php echo anchor('auth/adduser', 'Create an account', 'title="Create an account"');?></div>
                 </div>
                 <div class="tabular-row">
                     <div class="tabular-cell"></div>

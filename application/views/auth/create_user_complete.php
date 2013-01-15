@@ -1,5 +1,3 @@
-<div class='box'>
+<div class="user_message"><?php echo $message; ?></div>
 
-    <div id="infoMessage"><h3><?php echo $message; ?></h3></div>
-</div>
 

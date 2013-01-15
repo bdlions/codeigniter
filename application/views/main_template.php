@@ -36,7 +36,7 @@
                 <div id="my_nav_wrap">
                     <div id="user-nav">
                         <ul>
-                            <li><a href='<?php echo $base ?>auth/create_user'>Become a Member</a></li>
+                            <li><a href='<?php echo $base ?>auth/adduser'>Become a Member</a></li>
                             <?php if (empty($is_logged_in)) { ?>
                                 <!--<li><a rel="nofollow" id="lnkLogin" href='#' name="lnkLogin">Login</a></li>-->
                                 <li><a rel="nofollow" id="lnkLogin" href='<?php echo $base ?>auth/signin' name="lnkLogin">Login</a></li>
@@ -52,9 +52,6 @@
 
         <div id="wwrap">
             <div id="wrap">
-                <div id="jibjab-member-text">
-                    <p class="non-member-header"></p>
-                </div>
                 <?php
                 if (empty($main_content)) {
                     $this->load->view("templates/index");

@@ -19,7 +19,7 @@
 	width: 29px;
 }
 .slider {
-	height: 410px;
+	height: auto;
 	left: 0;
 	margin: 0 auto;
 	position: relative;
@@ -28,7 +28,7 @@
 }
 .carousel
 {
-	height: 410px;
+	height: auto;
 	margin-left: 50px;
 	overflow: hidden;
 	padding-top: 14px;
@@ -42,5 +42,5 @@
 }
 .carousel ul li
 {
-	overflow: hidden; float: left; width: 800px; height: 410px;
+	overflow: hidden; float: left; width: 800px; height: auto;
 }

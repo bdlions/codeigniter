@@ -656,8 +656,23 @@ class Auth extends CI_Controller
                 $this->template->set('menu_bar', 'design/menu_bar_external_user');
             }
             $this->data['message'] = "User account successfully created. An email has been sent to you to activate your account.";                
-            $this->template->set('main_content', "auth/create_user_complete");            
-            $this->template->load("default_template", 'auth/create_user_complete', $this->data);
+            //$this->template->set('main_content', "auth/create_user_complete");            
+            //$this->template->load("default_template", 'auth/create_user_complete', $this->data);
+            
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_external_user');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template", 'auth/create_user_complete', $this->data);
         }
         else
         { //display the create user form
@@ -718,7 +733,7 @@ class Auth extends CI_Controller
             }
             $this->template->load("main_template",'auth/create_user', $this->data);*/
             
-            $this->data['message'] = "";
+            //$this->data['message'] = "";
             $base = base_url(); 
             $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
             $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
@@ -734,6 +749,61 @@ class Auth extends CI_Controller
             }
             $this->template->load("main_template", 'auth/create_user', $this->data);
         }
+    }
+    
+    function adduser()
+    {
+        $this->data['title'] = "Create User";
+        $this->data['user_name'] = array('name' => 'user_name',
+            'id' => 'user_name',
+            'type' => 'text',
+            'value' => $this->form_validation->set_value('user_name'),
+        );
+        $this->data['first_name'] = array('name' => 'first_name',
+            'id' => 'first_name',
+            'type' => 'text',
+            'value' => $this->form_validation->set_value('first_name'),
+        );
+        $this->data['last_name'] = array('name' => 'last_name',
+            'id' => 'last_name',
+            'type' => 'text',
+            'value' => $this->form_validation->set_value('last_name'),
+        );
+        $this->data['email'] = array('name' => 'email',
+            'id' => 'email',
+            'type' => 'text',
+            'value' => $this->form_validation->set_value('email'),
+        );            
+
+        $this->data['password'] = array('name' => 'password',
+            'id' => 'password',
+            'type' => 'password',
+            'value' => $this->form_validation->set_value('password'),
+        );
+        $this->data['password_confirm'] = array('name' => 'password_confirm',
+            'id' => 'password_confirm',
+            'type' => 'password',
+            'value' => $this->form_validation->set_value('password_confirm'),
+        );
+
+        $countries = $this->ion_auth->order_by('printable_name','asc')->get_all_countries()->result_array();
+        $this->data['countries'] = array();
+        foreach ($countries as $key => $country)
+        {
+            $this->data['countries'][$country['iso']] = $country['printable_name'];
+        }
+
+        $this->data['message'] = "";
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+        $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
+        $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_external_user');
+        $this->template->load("main_template", 'auth/create_user', $this->data);        
     }
     
     //load user info to edit user

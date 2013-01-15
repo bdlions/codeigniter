@@ -258,7 +258,7 @@ body #footer .support .payment_info ul {
 }
 body #hwrap, body #wwrap, body #fwrap {
     width: 100%;
-    height: 450px;
+    height: auto;
 }
 body #hwrap {
     height: 100px;
