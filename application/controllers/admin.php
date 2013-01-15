@@ -585,18 +585,9 @@ class Admin extends CI_Controller
             {
                 $this->session->set_flashdata('message', "User account successfully created.");
             
-                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
-                $this->template->set('css', $css);
                 $this->template->set('menu_bar', 'design/menu_bar_admin');
             }
-            else
-            {
-                $this->session->set_flashdata('message', "");
             
-                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
-                $this->template->set('css', $css);
-                $this->template->set('menu_bar', 'design/menu_bar_external_user');
-            }
             $this->data['message'] = "User account successfully created. An email has been sent to you to activate your account.";                
             
             $base = base_url(); 
@@ -662,11 +653,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->is_admin())
             {
                 $this->template->set('menu_bar', 'design/menu_bar_admin');
-            }
-            else
-            {
-                $this->template->set('menu_bar', 'design/menu_bar_external_user');
-            }           
+            }                      
             
             $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
             $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
@@ -679,7 +666,7 @@ class Admin extends CI_Controller
             {
                 $this->template->set('is_logged_in', 'true');
             }
-            $this->template->load("main_template", 'auth/create_user', $this->data); 
+            $this->template->load("main_template", 'auth/admin_create_user', $this->data); 
         }
     }
     
@@ -994,28 +981,52 @@ class Admin extends CI_Controller
 
                 //loading user deletion confirmation page
                 $this->data['user_id'] = $user_id;
+                
                 $base = base_url();
-                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;;
-                $this->template->set('css', $css);        
-                $this->template->set('menu_bar', 'design/menu_bar_admin');
-                $this->template->set('main_content', "auth/index");
-                $this->template->load("default_template", "auth/delete_user_successful", $this->data);
+                if ($this->ion_auth->is_admin())
+                {
+                    $this->template->set('menu_bar', 'design/menu_bar_admin');
+                }            
+                $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+                $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+                $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+                $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+                $this->template->set('css', $css);
+                $this->template->set('js', $js);
+                $this->template->set('base', $base);
+                if ($this->ion_auth->logged_in())
+                {
+                    $this->template->set('is_logged_in', 'true');
+                }
+                $this->template->load("main_template","auth/delete_user_successful", $this->data);
             }
             else if ($this->input->post('delete_user_no'))
             {
                 //loading admin dashboard
-                redirect("auth", 'refresh');
+                redirect("admin", 'refresh');
             }
             else
             {
                 //loading user deletion confirmation page
-                $this->data['user_id'] = $user_id;
+                $this->data['user_id'] = $user_id;                
+                
                 $base = base_url();
-                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;;
-                $this->template->set('css', $css);        
-                $this->template->set('menu_bar', 'design/menu_bar_admin');
-                $this->template->set('main_content', "auth/index");
-                $this->template->load("default_template", "auth/delete_user_confirmation", $this->data);
+                if ($this->ion_auth->is_admin())
+                {
+                    $this->template->set('menu_bar', 'design/menu_bar_admin');
+                }            
+                $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+                $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+                $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+                $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+                $this->template->set('css', $css);
+                $this->template->set('js', $js);
+                $this->template->set('base', $base);
+                if ($this->ion_auth->logged_in())
+                {
+                    $this->template->set('is_logged_in', 'true');
+                }
+                $this->template->load("main_template","auth/delete_user_confirmation", $this->data);
             }   
         }    
     }
@@ -1086,12 +1097,20 @@ class Admin extends CI_Controller
             $base = base_url();
             if ($this->ion_auth->is_admin())
             {
-                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;;
-                $this->template->set('css', $css);
                 $this->template->set('menu_bar', 'design/menu_bar_admin');
+            }            
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
             }
-            $this->template->set('main_content', "auth/show_searched_user");
-            $this->template->load("default_template", "auth/show_searched_user", $this->data);
+            $this->template->load("main_template","auth/show_searched_user", $this->data);
            
         }
         else
@@ -1107,12 +1126,21 @@ class Admin extends CI_Controller
             $base = base_url();
             if ($this->ion_auth->is_admin())
             {
-                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
-                $this->template->set('css', $css);
                 $this->template->set('menu_bar', 'design/menu_bar_admin');
             }
-            $this->template->set('main_content', "auth/search_user");
-            $this->template->load("default_template", 'auth/search_user', $this->data);
+            
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template",'auth/search_user', $this->data);
         }
     }
     

@@ -1,8 +1,8 @@
-<div class='box'>
+<div style="height: 468px">
     <h1>Search User</h1>
     <p>Please select User Name / Last Name / Email and then type your text to search users</p>
     <div id="infoMessage"><?php echo $message; ?></div>
-    <?php echo form_open("auth/load_search"); ?>
+    <?php echo form_open("admin/load_search"); ?>
         <fieldset>
             <legend>User search information</legend>
             <table border="0" width="100%" >
