@@ -598,8 +598,20 @@ class Admin extends CI_Controller
                 $this->template->set('menu_bar', 'design/menu_bar_external_user');
             }
             $this->data['message'] = "User account successfully created. An email has been sent to you to activate your account.";                
-            $this->template->set('main_content', "auth/create_user_complete");            
-            $this->template->load("default_template", 'auth/create_user_complete', $this->data);
+            
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template", 'auth/create_user_complete', $this->data);
         }
         else
         { //display the create user form
@@ -649,20 +661,25 @@ class Admin extends CI_Controller
             //loading admin menu bar
             if ($this->ion_auth->is_admin())
             {
-                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
-                $this->template->set('css', $css);
                 $this->template->set('menu_bar', 'design/menu_bar_admin');
             }
             else
             {
-                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
-                $this->template->set('css', $css);
                 $this->template->set('menu_bar', 'design/menu_bar_external_user');
+            }           
+            
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
             }
-            $this->template->set('main_content', "auth/create_user");
-            $this->template->load("default_template", 'auth/create_user', $this->data);
-
-            //$this->load->view('auth/create_user', $this->data);
+            $this->template->load("main_template", 'auth/create_user', $this->data); 
         }
     }
     
@@ -1018,7 +1035,7 @@ class Admin extends CI_Controller
         //only admin can edit an user within same session
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
         {
-            redirect('auth', 'refresh');
+            redirect('admin', 'refresh');
         }
         
         $username = true;

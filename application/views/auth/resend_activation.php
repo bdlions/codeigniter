@@ -1,4 +1,4 @@
-<div class='box'>
+<div style="height: 468px">
 
     <h1>Account Inactive</h1>
     <p>Please activate your account first</p>

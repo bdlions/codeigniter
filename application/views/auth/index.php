@@ -64,6 +64,6 @@
         }
     ?>
     <?php echo anchor('admin/user_render_pagination/0',"All")?><br />
-    <p><a href="<?php echo site_url('auth/adduser'); ?>">Create a new user</a></p>
+    <p><a href="<?php echo site_url('admin/create_user'); ?>">Create a new user</a></p>
 
 </div>
