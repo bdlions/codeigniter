@@ -198,12 +198,24 @@ class Auth extends CI_Controller
     function logout()
     {
         $this->data['title'] = "Logout";
-
-        //log the user out
+        $is_admin = false;
+        if($this->ion_auth->is_admin())
+        {
+            $is_admin = true;
+        }
+        //log the user out        
         $logout = $this->ion_auth->logout();
 
         //redirect them back to the page they came from
-        redirect('auth/login', 'refresh');
+        if($is_admin)
+        {
+            redirect('admin/signin', 'refresh');
+        }
+        else
+        {
+            redirect('auth/signin', 'refresh');
+        }
+        
     }
 
     //change password
