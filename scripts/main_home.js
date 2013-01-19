@@ -17,7 +17,19 @@ require(["jquery", "Jcarousellite", "TemplateSelector","Login"], function($, Jca
             templateSelector = new TemplateSelector("displaySelectedTemplateDiv");
             templateSelector.load("template1.png", "images/"); 
         });
+        $("#menu_bar_home_template1").click(function()
+        {
+            document.getElementById('selectedTemplateId').value = 1;
+            templateSelector = new TemplateSelector("displaySelectedTemplateDiv");
+            templateSelector.load("template1.png", "images/"); 
+        });
         $("#template2_home").click(function()
+        {
+            document.getElementById('selectedTemplateId').value = 2;
+            templateSelector = new TemplateSelector("displaySelectedTemplateDiv");
+            templateSelector.load("template2.png", "images/");
+        });
+        $("#menu_bar_home_template2").click(function()
         {
             document.getElementById('selectedTemplateId').value = 2;
             templateSelector = new TemplateSelector("displaySelectedTemplateDiv");

@@ -1400,6 +1400,30 @@ class Ion_auth_model extends CI_Model {
         return $this;
     }
 
+    public function check_project()
+    {
+        if (isset($this->_ion_where)) {
+            foreach ($this->_ion_where as $where) {
+                $this->db->where($where);
+            }
+            $this->_ion_where = array();
+        }
+        $this->response = $this->db->select('*')->from($this->tables['PROJECT_INFO'])->join($this->tables['USERS_PROJECTS'], 'project_info.project_id = users_projects.project_id')->get();
+        return $this;
+    }
+    
+    public function project_list()
+    {
+        if (isset($this->_ion_where)) {
+            foreach ($this->_ion_where as $where) {
+                $this->db->where($where);
+            }
+            $this->_ion_where = array();
+        }
+        $this->response = $this->db->select('*')->from($this->tables['PROJECT_INFO'])->join($this->tables['USERS_PROJECTS'], 'project_info.project_id = users_projects.project_id')->get();
+        return $this;
+    }
+    
     public function create_project($additional_data = array()) {
         //$additional_data['project_content'] = '<li class="ui-widget-content">Click here to edit block</li>';
         //$additional_data['project_content_backup'] = '<li class="ui-widget-content">Click here to edit block</li>';
@@ -1412,7 +1436,7 @@ class Ion_auth_model extends CI_Model {
             'user_id' => $this->session->userdata('user_id'),
             'project_id' => $id
         );
-        $this->db->insert($this->tables['USER_PROJECTS'], $data);
+        $this->db->insert($this->tables['USERS_PROJECTS'], $data);
         return (isset($id)) ? $id : FALSE;
     }
 
@@ -1466,7 +1490,6 @@ class Ion_auth_model extends CI_Model {
             foreach ($this->_ion_where as $where) {
                 $this->db->where($where);
             }
-
             $this->_ion_where = array();
         }
         $this->response = $this->db->select('*')->from($this->tables['VARIABLE_LIST_TABLE'])->join($this->tables['VARIABLES_PROJECTS'], 'variable_list.variable_id = variables_projects.variable_id')->get();

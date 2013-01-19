@@ -23,8 +23,12 @@
         <div id="main_nav_wrap">
         <div id="main_nav">
           <ul>
-            <li class="first"><a href="<?php echo $base?>mytemplates/template1" class="holidays">Template 1</a></li>
-            <li class=""><a href="<?php echo $base?>mytemplates/template2" class="year_in_review">Template 2</a></li>
+            <?php
+                if(!empty($menu_bar))
+                {
+                    $this->load->view($menu_bar);
+                }
+            ?>
           </ul>
         </div>
       </div>

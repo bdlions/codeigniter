@@ -41,20 +41,20 @@
         </td>
     </tr>
     <tr align="center"  class="custombutton">
+        <td style="float:left;">	    
+            <input style="visibility:hidden" type = "button" name = "buttonCreateText" id="buttonCreateText" value="Step 1: Prepare your text" class="custombuttonlightgreen"/>
+        </td>
+        <td style="float:left;">	    
+            <input style="visibility:hidden" type = "button" name = "buttonCreateHead" id="buttonCreateHead" value="Step 2: Create new head - upload file" class="custombuttonlightgreen"/>
+        </td>
+        <td style="float:left;">	    
+            <input style="visibility:hidden" type = "button" name = "buttonCreateCloud" id="buttonCreateCloud" value="Step 3: Create new cloud - upload file" class="custombuttonlightgreen"/>
+        </td>
         <td>
             <?php echo form_open("mytemplates/template" . $template_id); ?>
             <input type = "hidden" name = "buttonPreprocessTemplate" id="buttonPreprocessTemplate" value=""/>
             <input type = "submit" name = "makeyourowntemplate" id="makeyourowntemplate" value="Make Your Own!" class="custombuttonlightgreen"/>
             <?php echo form_close(); ?>
-        </td>
-        <td>	    
-            <input style="visibility:hidden" type = "button" name = "buttonCreateText" id="buttonCreateText" value="Step 1: Add text" class="custombuttonlightgreen"/>
-        </td>
-        <td>	    
-            <input style="visibility:hidden" type = "button" name = "buttonCreateHead" id="buttonCreateHead" value="Step 2: Create New Head" class="custombuttonlightgreen"/>
-        </td>
-        <td>	    
-            <input style="visibility:hidden" type = "button" name = "buttonCreateCloud" id="buttonCreateCloud" value="Step 3: Create New Cloud" class="custombuttonlightgreen"/>
         </td>
     </tr>
     <tr>

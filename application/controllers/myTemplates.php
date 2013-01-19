@@ -27,9 +27,10 @@ class Mytemplates extends CI_Controller
             $this->template->set('css', $css);
             $this->template->set('js', $js);
             $this->template->set('base', $base);
-            $this->template->set('menu_bar', 'design/menu_bar_member_demo');
+            $this->template->set('menu_bar', 'design/menu_bar_unregistered_user');
             if ($this->ion_auth->logged_in())
             {
+                $this->template->set('menu_bar', 'design/menu_bar_member_demo');
                 $this->template->set('is_logged_in', 'true');
             }
             $this->template->load("main_template","templates/index");
@@ -37,44 +38,56 @@ class Mytemplates extends CI_Controller
     }
     public function load_template()
     {
+        $template_id = "";
+        $project_id = ""; 
+        $publish_code = "";    
+        $template_name = "";
+        
         if(isset($_POST['selectedTemplateId']))
         {
             if($_POST['selectedTemplateId'] == 1)
             {
-                redirect('mytemplates/template1', 'refresh');
-                //$this->template1();
+                $template_id = "1";
+                $template_name = "Template1";
             }
             else if($_POST['selectedTemplateId'] == 2)
             {
-                redirect('mytemplates/template2', 'refresh');
-                //$this->template2();
+                $template_id = "2";
+                $template_name = "Template2";
             }
-        }
-    }
-    public function template1()
-    {
-        $template_id = "1";
-        $project_id = ""; 
-        $publish_code = "";        
-        if(isset($_POST['buttonPreprocessTemplate']))
-        {            
+            
             if ($this->ion_auth->logged_in())
             {
-                $template_name = "Template1";                
-                $publish_code = uniqid(); 
-                $additional_data = array(
-                    'template_id' => $template_id,
-                    'template_name' => $template_name,
-                    'publish_code' => $publish_code,
-                );
-                $project_id = $this->ion_auth->create_project($additional_data);
-                $this->session->set_userdata('project_id', $project_id);
+                $where['users_projects.user_id'] = $this->session->userdata('user_id');
+                $where['project_info.template_id'] = $template_id;
+                $project_template_infos = $this->ion_auth->where($where)->check_project()->result_array();
+                if(count($project_template_infos) == 0)
+                {
+                    $publish_code = uniqid();                     
+                    $datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
+                    $time = time();
+                    $created_date = mdate($datestring, $time);
+                    
+                    $additional_data = array(
+                        'template_id' => $template_id,
+                        'template_name' => $template_name,
+                        'publish_code' => $publish_code,
+                        'created_date' => $created_date,
+                    );
+                    $project_id = $this->ion_auth->create_project($additional_data);
+                    $this->session->set_userdata('project_id', $project_id);
+                    $this->create_resources($template_id, $project_id);
+                }
+                else
+                {
+                    $project_id = $project_template_infos[0]['project_id'];
+                }
             }
             else
             {
-                $project_id = "external_".uniqid();   
-            } 
-            $this->create_resources($template_id, $project_id);
+                $project_id = "external_".uniqid();  
+                $this->create_resources($template_id, $project_id);
+            }
         }
        
         $this->data['template_id'] = $template_id;  
@@ -89,12 +102,77 @@ class Mytemplates extends CI_Controller
         $this->template->set('css', $css);
         $this->template->set('js', $js);
         $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_unregistered_user');
         if ($this->ion_auth->logged_in())
         {
+            $this->template->set('menu_bar', 'design/menu_bar_member_demo');
             $this->template->set('is_logged_in', 'true');
         }
         $this->template->load("second_template","templates/template", $this->data);
+    }
+    public function template1()
+    {
+        $template_id = "1";
+        $project_id = ""; 
+        $publish_code = "";        
+        if(isset($_POST['buttonPreprocessTemplate']))
+        {            
+            if ($this->ion_auth->logged_in())
+            {
+                $where['users_projects.user_id'] = $this->session->userdata('user_id');
+                $where['project_info.template_id'] = 1;
+                $project_template_infos = $this->ion_auth->where($where)->check_project()->result_array();
+                if(count($project_template_infos) == 0)
+                {
+                    $template_name = "Template1";                
+                    $publish_code = uniqid(); 
+                    
+                    $datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
+                    $time = time();
+                    $created_date = mdate($datestring, $time);
+                    
+                    $additional_data = array(
+                        'template_id' => $template_id,
+                        'template_name' => $template_name,
+                        'publish_code' => $publish_code,
+                        'created_date' => $created_date,
+                    );
+                    $project_id = $this->ion_auth->create_project($additional_data);
+                    $this->session->set_userdata('project_id', $project_id);
+                    $this->create_resources($template_id, $project_id);
+                }
+                else
+                {
+                    $project_id = $project_template_infos[0]['project_id'];
+                }
+            }
+            else
+            {
+                $project_id = "external_".uniqid();  
+                $this->create_resources($template_id, $project_id);
+            } 
+            
+        }
+       
+        $this->data['template_id'] = $template_id;  
+        $this->data['project_id'] = $project_id;
+        $this->data['publish_code'] = $publish_code;        
         
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/subscribe.css'/>" ;
+        $js = "";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
+        $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_unregistered_user');
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('menu_bar', 'design/menu_bar_member_demo');
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("second_template","templates/template", $this->data);
     }
     
     public function template2()
@@ -106,18 +184,37 @@ class Mytemplates extends CI_Controller
         {            
             if ($this->ion_auth->logged_in())
             {
-                $template_name = "Template2";                
-                $publish_code = uniqid(); 
-                $additional_data = array(
-                    'template_id' => $template_id,
-                    'template_name' => $template_name,
-                    'publish_code' => $publish_code,
-                );
-                $project_id = $this->ion_auth->create_project($additional_data);
+                $where['users_projects.user_id'] = $this->session->userdata('user_id');
+                $where['project_info.template_id'] = 2;
+                $project_template_infos = $this->ion_auth->where($where)->check_project()->result_array();
+                if(count($project_template_infos) == 0)
+                {
+                    $template_name = "Template2";                
+                    $publish_code = uniqid(); 
+                    
+                    $datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
+                    $time = time();
+                    $created_date = mdate($datestring, $time);
+                    
+                    $additional_data = array(
+                        'template_id' => $template_id,
+                        'template_name' => $template_name,
+                        'publish_code' => $publish_code,
+                        'created_date' => $created_date,
+                    );
+                    $project_id = $this->ion_auth->create_project($additional_data);
+                    $this->session->set_userdata('project_id', $project_id);
+                    $this->create_resources($template_id, $project_id);
+                }
+                else
+                {
+                    $project_id = $project_template_infos[0]['project_id'];
+                }
             }
             else
             {
-                $project_id = "external_".uniqid();   
+                $project_id = "external_".uniqid();  
+                $this->create_resources($template_id, $project_id);
             } 
             $this->create_resources($template_id, $project_id);
         }
@@ -134,47 +231,13 @@ class Mytemplates extends CI_Controller
         $this->template->set('css', $css);
         $this->template->set('js', $js);
         $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_unregistered_user');
         if ($this->ion_auth->logged_in())
         {
+            $this->template->set('menu_bar', 'design/menu_bar_member_demo');
             $this->template->set('is_logged_in', 'true');
         }
         $this->template->load("second_template","templates/template", $this->data);
-    }
-    public function about()
-    {
-        $base = base_url(); 
-        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
-        $this->template->set('css', $css);
-        $this->template->set('base', $base);
-        if ($this->ion_auth->logged_in())
-        {
-            $this->template->set('is_logged_in', 'true');
-        }
-        $this->template->load("main_template","auth/about");
-    }
-    public function copyright()
-    {
-        $base = base_url(); 
-        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
-        $this->template->set('css', $css);
-        $this->template->set('base', $base);
-        if ($this->ion_auth->logged_in())
-        {
-            $this->template->set('is_logged_in', 'true');
-        }
-        $this->template->load("main_template","auth/copyright");
-    }
-    public function privacy()
-    {
-        $base = base_url(); 
-        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
-        $this->template->set('css', $css);
-        $this->template->set('base', $base);
-        if ($this->ion_auth->logged_in())
-        {
-            $this->template->set('is_logged_in', 'true');
-        }
-        $this->template->load("main_template","auth/privacy");
     }
     
     public function create_resources($template_id, $project_id)
@@ -320,55 +383,6 @@ class Mytemplates extends CI_Controller
         echo $file;
     }
     
-    public function publishtemplate($publish_code)
-    {
-        $project_id = "";
-        $template_id = "";
-        $user_projects = $this->ion_auth->projects()->result();
-        foreach ($user_projects as $user_project):
-            if($publish_code == $user_project->publish_code)
-            {
-                $project_id = $user_project->project_id;
-                $template_id = $user_project->template_id;
-                $this->data['template_id'] = $template_id;
-                $this->data['project_id'] = $project_id;
-                $this->data['template_message'] = $user_project->template_message;
-                $this->load->view("publish/template", $this->data);
-            }
-        endforeach;        
-    }
-    
-    public function previewtemplate($template_id)
-    {
-        
-        //$template_id = $_POST['buttonPreviewTemplateTemplateId'];
-        if(isset($_POST['buttonPreviewTemplateProjectId']))
-        {
-            $project_id = $_POST['buttonPreviewTemplateProjectId'];
-        
-            //print_r("template_id".$template_id);
-            //print_r("project_id".$project_id);
-            $this->data['template_id'] = $template_id;
-            $this->data['project_id'] = $project_id;
-            $this->data['template_message'] = "";
-            if(isset($_POST['buttonPreviewTemplateMessage']))
-            {
-                $this->data['template_message'] = $_POST['buttonPreviewTemplateMessage'];
-            }
-            $this->load->view("publish/template", $this->data);
-
-            /*$base = base_url(); 
-            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />" ;
-            $this->template->set('css', $css);
-            $this->template->set('base', $base);
-            $this->template->load("main_template","publish/template", $this->data);*/
-        }
-        else
-        {
-            redirect('templates', 'refresh');
-        }
-        
-    }
     public function temp()
     {
         //if (!$this->ion_auth->logged_in())
@@ -390,4 +404,129 @@ class Mytemplates extends CI_Controller
     {
         $this->template->load("default_template","templates/error_content");
     }
+    
+    public function templates()
+    {
+        if ($this->ion_auth->logged_in())
+        {
+            $where['users_projects.user_id'] = $this->session->userdata('user_id');
+            $this->data['template_list'] = $this->ion_auth->where($where)->check_project()->result();
+            
+            $this->data['message'] = "";
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_member_demo');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template","auth/template_list", $this->data);
+        }
+    }
+    
+    /////////////////////Publish and Preview start////////////////////////////////
+    public function publishtemplate($publish_code)
+    {
+        $project_id = "";
+        $template_id = "";
+        $user_projects = $this->ion_auth->projects()->result();
+        foreach ($user_projects as $user_project):
+            if($publish_code == $user_project->publish_code)
+            {
+                $project_id = $user_project->project_id;
+                $template_id = $user_project->template_id;
+                $this->data['template_id'] = $template_id;
+                $this->data['project_id'] = $project_id;
+                $this->data['template_message'] = $user_project->template_message;
+                $this->load->view("publish/template", $this->data);
+            }
+        endforeach;        
+    }
+    
+    public function previewtemplate($template_id)
+    {
+        
+        if(isset($_POST['buttonPreviewTemplateProjectId']))
+        {
+            $project_id = $_POST['buttonPreviewTemplateProjectId'];
+        
+            $this->data['template_id'] = $template_id;
+            $this->data['project_id'] = $project_id;
+            $this->data['template_message'] = "";
+            if(isset($_POST['buttonPreviewTemplateMessage']))
+            {
+                $this->data['template_message'] = $_POST['buttonPreviewTemplateMessage'];
+            }
+            $this->load->view("publish/template", $this->data);
+        }
+        else
+        {
+            redirect('templates', 'refresh');
+        }
+        
+    }
+    ////////////////////Publish and Preview end///////////////////////////////////
+    
+    /////////////////////Footer links start////////////////////////////////
+    public function about()
+    {
+        $this->data['message'] = "";
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+        $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
+        $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_footer');   
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template","auth/about", $this->data);
+    }
+    public function copyright()
+    {
+        $this->data['message'] = "";
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+        $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
+        $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_footer');   
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template","auth/copyright", $this->data);
+    }
+    public function privacy()
+    {
+        $this->data['message'] = "";
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+        $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
+        $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_footer');   
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template","auth/privacy", $this->data);
+    }
+    /////////////////////Footer links ends////////////////////////////////
 }

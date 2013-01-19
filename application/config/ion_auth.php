@@ -25,7 +25,7 @@
 	$config['tables']['users_groups']    = 'users_groups';
         $config['tables']['VARIABLE_LIST_TABLE']    = 'variable_list';
         $config['tables']['PROJECT_INFO']    = 'project_info';
-        $config['tables']['USER_PROJECTS']    = 'users_projects';
+        $config['tables']['USERS_PROJECTS']    = 'users_projects';
         $config['tables']['VARIABLES_PROJECTS']    = 'variables_projects';
         $config['tables']['country']    = 'country';
 	
