@@ -7,6 +7,10 @@
                     template_id = '<?php echo $template_id ?>';
                     project_id = '<?php echo $project_id ?>';
                     publish_code = '<?php echo $publish_code ?>';
+                    base = '<?php echo $base ?>'; 
+                    from = '<?php echo $from ?>'; 
+                    to = '<?php echo $to ?>'; 
+                    message = '<?php echo $message ?>'; 
                                                     
                     var template1ImageCanvas = null;
                     var template1Image = null;

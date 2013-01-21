@@ -1679,4 +1679,37 @@ class Ion_auth_model extends CI_Model {
         $identity = $this->config->item('identity', 'ion_auth');
         return (bool) $this->session->userdata($identity);
     }
+    
+    public function get_user_info()
+    {
+        $this->trigger_events('get_user_info');
+
+        if (isset($this->_ion_select)) {
+            foreach ($this->_ion_select as $select) {
+                $this->db->select($select);
+            }
+            $this->_ion_select = array();
+        }
+        if (isset($this->_ion_where)) {
+            foreach ($this->_ion_where as $where) {
+                $this->db->where($where);
+            }
+            $this->_ion_where = array();
+        }
+
+        if (isset($this->_ion_limit) && isset($this->_ion_offset)) {
+            $this->db->limit($this->_ion_limit, $this->_ion_offset);
+            $this->_ion_limit = NULL;
+            $this->_ion_offset = NULL;
+        }
+
+        if (isset($this->_ion_order_by) && isset($this->_ion_order)) {
+            $this->db->order_by($this->_ion_order_by, $this->_ion_order);
+            $this->_ion_order = NULL;
+            $this->_ion_order_by = NULL;
+        }
+
+        $this->response = $this->db->select('*')->from($this->tables['users'])->get();
+        return $this;
+    }
 }

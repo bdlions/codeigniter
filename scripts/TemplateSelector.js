@@ -33,7 +33,7 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
         TemplateSelector.prototype.load = function( imageName, imagePath )
         {
             templateSelectorDiv.dialog(dialogOpts);
-            templateSelectorDiv.dialog("open");            
+            templateSelectorDiv.dialog("open");    
             if(templateSelectorCanvas.getContext)
             {
                 templateSelectorContext = templateSelectorCanvas.getContext("2d")				
@@ -47,7 +47,7 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
                     templateSelectorContext.drawImage(templateSelectorImage, imageStartX, imageStartY, templateSelectorImage.width, templateSelectorImage.height);
                 };				
                 //set the image
-                templateSelectorImage.src = imagePath + imageName;	
+                templateSelectorImage.src = Common.getBaseUrl()+imagePath + imageName+"?"+new Date().getTime();	
             }
         };		
     };

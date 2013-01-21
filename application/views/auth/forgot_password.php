@@ -60,8 +60,8 @@
 </style>
 <div id="outer">          
     <div id="container">         
-        <div style="color:red"><?php echo $message; ?></div>
         <div id="inner">
+            <div style="color:red"><?php echo $message; ?></div>        
             <p>Forgot Password?</p> 
             <?php echo form_open("auth/forgot_password"); ?>
             <div class ="tabular">                

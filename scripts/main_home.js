@@ -1,4 +1,4 @@
-require(["jquery", "Jcarousellite", "TemplateSelector","Login"], function($, Jcarousellite, TemplateSelector, Login) {
+require(["jquery", "Jcarousellite", "TemplateSelector","Login","Common"], function($, Jcarousellite, TemplateSelector, Login,Common) {
     $(function() {		
         Jcarousellite.carouselify();
         function isBrowserCanvasCompatible()
@@ -6,6 +6,7 @@ require(["jquery", "Jcarousellite", "TemplateSelector","Login"], function($, Jca
                 var canvas = document.createElement("canvas");
                 return !!canvas.getContext&&!!canvas.getContext("2d");
         };
+        Common.setBaseUrl(base);
         $("#lnkLogin").click(function()
         {
             //login = new Login("loginDiv");

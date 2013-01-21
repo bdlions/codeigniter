@@ -43,6 +43,15 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
             }
             liCounter++;
         });
+        
+        Common.setProjectId(project_id);
+        Common.setTemplateId(template_id);
+        Common.setPublishCode(publish_code);
+        Common.setBaseUrl(base);
+        Common.setFrom(from);
+        Common.setTo(to);
+        Common.setMessage(message);
+        
         if(project_id == "")
         {
             $("#buttonCreateText").hide();
@@ -75,12 +84,9 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
             $("#makeyourowntemplate").attr("style", "visibility: hidden");
             //$("#makeyourowntemplate").hide();
             textCreator = new TextCreator("textCreatorDiv");
-            textCreator.load("sprite-26-0.png", "images/");
+            textCreator.load();
         }
                 
-        Common.setProjectId(project_id);
-        Common.setTemplateId(template_id);
-        Common.setPublishCode(publish_code);
         headshowcase.init("headshowcase");	
         //headshowcase.setWorkspace();
         var fileUploader = new FileUploader("fileUploaderDiv");
@@ -92,7 +98,7 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         $("#buttonCreateText").click(function()
         {
             textCreator = new TextCreator("textCreatorDiv");
-            textCreator.load("sprite-26-0.png", "images/");                    
+            textCreator.load();                    
         });
         $("#buttonCreateHead").click(function()
         {

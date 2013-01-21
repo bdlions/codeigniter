@@ -59,9 +59,9 @@
 
 </style>
 <div id="outer">          
-    <div id="container">         
-        <div style="color:red"><?php echo $message; ?></div>
+    <div id="container">
         <div id="inner">
+            <div style="color:red"><?php echo $message; ?></div>
             <p>Forgot User Name?</p> 
             <?php echo form_open("auth/forgot_user_name"); ?>
             <div class ="tabular">                

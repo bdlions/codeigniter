@@ -1,3 +1,6 @@
+<script type="text/javascript">
+    base = '<?php echo $base ?>';
+</script>
 <div class="slider">
     <a title="previous" href="#" id="prevBtn" class="prev">Previous</a>
     <a title="next" href="#" id="nextBtn" class="next">Next</a>	

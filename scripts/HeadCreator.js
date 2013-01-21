@@ -38,7 +38,7 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
                             head1CroppedContext.putImageData(selectionHeadShape.getCroppedImage(), head1CroppedImage.width/2-20 ,head1CroppedImage.height/2-20);
                             var head1CroppedImageData = head1CroppedContext.getImageData(0,0, head1CroppedImage.width, head1CroppedImage.height);
                                     
-                            Common.saveImage(selectionHeadShape.getCroppedImage(), headCreatorContext, head1CroppedImageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-3-0',"");
+                            Common.saveImage(selectionHeadShape.getCroppedImage(), headCreatorContext, head1CroppedImageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-3-0');
                         //headCreatorCroppedImageContext.putImageData(selectionHeadShape.getCroppedImage(), 0, 0);
                         }
                         else if(selectedImage == "yellowballoon")
@@ -46,7 +46,7 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
                             head2CroppedContext.putImageData(selectionHeadShape.getCroppedImage(), head2CroppedImage.width/2-20 ,head2CroppedImage.height/2-20);
                             var head2CroppedImageData = head2CroppedContext.getImageData(0,0, head2CroppedImage.width, head2CroppedImage.height);
                             
-                            Common.saveImage(selectionHeadShape.getCroppedImage(), headCreatorContext, head2CroppedImageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-5-0',"");
+                            Common.saveImage(selectionHeadShape.getCroppedImage(), headCreatorContext, head2CroppedImageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-5-0');
                         //headCreatorCroppedImageContext.putImageData(selectionHeadShape.getCroppedImage(), 100, 0);
                         }
                         else if(selectedImage == "greenballon")
@@ -54,7 +54,7 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
                             head3CroppedContext.putImageData(selectionHeadShape.getCroppedImage(), head3CroppedImage.width/2-20 ,head3CroppedImage.height/2-20);
                             var head3CroppedImageData = head3CroppedContext.getImageData(0,0, head3CroppedImage.width, head3CroppedImage.height);
                            
-                            Common.saveImage(selectionHeadShape.getCroppedImage(), headCreatorContext, head3CroppedImageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-16-0',"");
+                            Common.saveImage(selectionHeadShape.getCroppedImage(), headCreatorContext, head3CroppedImageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-16-0');
                         //headCreatorCroppedImageContext.putImageData(selectionHeadShape.getCroppedImage(), 200, 0);
                         }					
                     //clearInterval(interval);

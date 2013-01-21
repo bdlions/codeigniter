@@ -28,7 +28,7 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
 				{   
                                     cloudCroppedContext.putImageData(selectionHeadShape.getCroppedImage(), cloudImage.width/2-20 ,cloudImage.height/2-20);
                                     var imageData = cloudCroppedContext.getImageData(0,0, cloudImage.width, cloudImage.height);
-                                    Common.saveImage(imageData, cloudCroppedContext, cloudImage, Common.get1xPath()+Common.getProjectId()+"/",'sprite-9-0',"");    
+                                    Common.saveImage(imageData, cloudCroppedContext, cloudImage, Common.get1xPath()+Common.getProjectId()+"/",'sprite-9-0');    
 				},
 				'Close': function() 
 				{

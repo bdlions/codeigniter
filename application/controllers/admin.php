@@ -1025,7 +1025,14 @@ class Admin extends CI_Controller
             else
             {
                 //loading user deletion confirmation page
-                $this->data['user_id'] = $user_id;                
+                $this->data['user_id'] = $user_id;   
+                $this->data['username'] = "";
+                
+                $user_infos = $this->ion_auth->where('id',$user_id)->get_user_info()->result_array();
+                if(count($user_infos) > 0)
+                {
+                    $this->data['username'] = $user_infos[0]['username'];
+                }
                 
                 $base = base_url();
                 if ($this->ion_auth->is_admin())

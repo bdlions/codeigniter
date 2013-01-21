@@ -275,23 +275,16 @@ class Auth extends CI_Controller
     //forgot password
     function forgot_password()
     {
-        $this->form_validation->set_rules('email', 'Email Address', 'required');
+        $this->form_validation->set_error_delimiters("<div style='color:red'>", '</div>');
+        $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email|callback_is_email_exists');
+        
         if ($this->form_validation->run() == false)
         {
             //setup the input
             $this->data['email'] = array('name' => 'email',
                 'id' => 'email',
-            );
-            //set any errors and display the form
-            /*$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-            //$this->load->view('auth/forgot_password', $this->data);
-            $base = base_url();
-            $css = "<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
-            //$this->template->set('css', $css);
-            $this->template->set('main_content', "auth/forgot_password");
-            $this->template->load("default_template", 'auth/forgot_password', $this->data);*/
-            
-            $this->data['message'] = "";
+            );            
+            $this->data['message'] = (validation_errors()) ? validation_errors() : '';
             $base = base_url(); 
             $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
             $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
@@ -319,7 +312,7 @@ class Auth extends CI_Controller
             }
             else
             {
-                $this->session->set_flashdata('message', $this->ion_auth->errors());
+                $this->session->set_flashdata('message', $this->ion_auth->messages());
                 redirect("auth/forgot_password", 'refresh');
             }
         }
@@ -335,7 +328,7 @@ class Auth extends CI_Controller
             $email_exists = true;
         }
         if (!$email_exists) {
-            $this->form_validation->set_message('is_email_exists', 'Error - There is no account associated to that email');
+            $this->form_validation->set_message('is_email_exists', 'Error - Email not found in our database. Try again.');
             return false;
         } 
         else 
@@ -356,17 +349,10 @@ class Auth extends CI_Controller
             $user_info = $user_infos[0];
             $forgotten = $this->ion_auth->forgotten_user_name($user_info);
             if ($forgotten)
-            { //if there were no errors
+            { 
+                //if there were no errors
                 $this->session->set_flashdata('message', "");
-                //redirect("auth/login", 'refresh');
-                //set any errors and display the form
                 $this->data['user_email'] = $user_info['email'];
-                /*$base = base_url();
-                $css ="<link rel='stylesheet' href='{$base}jstree_resource/menu_style.css' />";
-                $this->template->set('css', $css);
-                $this->template->set('menu_bar', 'design/menu_bar_external_user');
-                $this->template->set('main_content', "auth/forgot_user_name_successful");
-                $this->template->load("default_template", 'auth/forgot_user_name_successful', $this->data);*/
                 
                 $base = base_url(); 
                 $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
@@ -398,16 +384,8 @@ class Auth extends CI_Controller
                 'type' => 'text',
                 'value' => $this->form_validation->set_value('email'),
             );
-            //set any errors and display the form
-            /*$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-            //$this->load->view('auth/forgot_password', $this->data);
-            $base = base_url();
-            $css = "<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
-            //$this->template->set('css', $css);
-            $this->template->set('main_content', "auth/forgot_user_name");
-            $this->template->load("default_template", 'auth/forgot_user_name', $this->data);*/
             
-            $this->data['message'] = "";
+            $this->data['message'] = (validation_errors()) ? validation_errors() : '';
             $base = base_url(); 
             $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
             $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;

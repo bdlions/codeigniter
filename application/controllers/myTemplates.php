@@ -42,6 +42,9 @@ class Mytemplates extends CI_Controller
         $project_id = ""; 
         $publish_code = "";    
         $template_name = "";
+        $from = "";
+        $to = "";
+        $message = "";
         
         if(isset($_POST['selectedTemplateId']))
         {
@@ -81,6 +84,9 @@ class Mytemplates extends CI_Controller
                 else
                 {
                     $project_id = $project_template_infos[0]['project_id'];
+                    $from = $project_template_infos[0]['template_from'];
+                    $to = $project_template_infos[0]['template_to'];
+                    $message = $project_template_infos[0]['template_message'];
                 }
             }
             else
@@ -92,7 +98,10 @@ class Mytemplates extends CI_Controller
        
         $this->data['template_id'] = $template_id;  
         $this->data['project_id'] = $project_id;
-        $this->data['publish_code'] = $publish_code;        
+        $this->data['publish_code'] = $publish_code;   
+        $this->data['from'] = $from;  
+        $this->data['to'] = $to;  
+        $this->data['message'] = $message;  
         
         $base = base_url(); 
         $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
@@ -267,6 +276,10 @@ class Mytemplates extends CI_Controller
         $source = "./templates/".$template_id."/assets/graphics/1x/sprite-26-0.png";
         $destination = "./templates/".$template_id."/assets/graphics/1x/".$project_id."/sprite-26-0.png";
         copy($source, $destination);
+        
+        $source = "./templates/".$template_id."/assets/graphics/1x/sprite-26-0.png";
+        $destination = "./templates/".$template_id."/assets/graphics/1x/".$project_id."/original_sprite-26-0.png";
+        copy($source, $destination);
 
         $project_resources_path = "./templates/".$template_id."/assets/graphics/2x/".$project_id;
         if(!is_dir($project_resources_path))
@@ -293,6 +306,10 @@ class Mytemplates extends CI_Controller
         $source = "./templates/".$template_id."/assets/graphics/2x/sprite-26-0.png";
         $destination = "./templates/".$template_id."/assets/graphics/2x/".$project_id."/sprite-26-0.png";
         copy($source, $destination);
+        
+        $source = "./templates/".$template_id."/assets/graphics/2x/sprite-26-0.png";
+        $destination = "./templates/".$template_id."/assets/graphics/2x/".$project_id."/original_sprite-26-0.png";
+        copy($source, $destination);
 
         $project_resources_path = "./templates/".$template_id."/assets/graphics/4x/".$project_id;
         if(!is_dir($project_resources_path))
@@ -318,6 +335,10 @@ class Mytemplates extends CI_Controller
 
         $source = "./templates/".$template_id."/assets/graphics/4x/sprite-26-0.png";
         $destination = "./templates/".$template_id."/assets/graphics/4x/".$project_id."/sprite-26-0.png";
+        copy($source, $destination);
+        
+        $source = "./templates/".$template_id."/assets/graphics/4x/sprite-26-0.png";
+        $destination = "./templates/".$template_id."/assets/graphics/4x/".$project_id."/original_sprite-26-0.png";
         copy($source, $destination);
     }
     
@@ -358,6 +379,9 @@ class Mytemplates extends CI_Controller
         $image_name = $_REQUEST['imageNname'];
         $image_path = $_REQUEST['imagePath'];
         $message = $_REQUEST['message'];
+        $from = $_REQUEST['from'];
+        $to = $_REQUEST['to'];
+        $project_id = $_REQUEST['project_id'];
         $file = $image_path .$image_name.'.png';
 
         if ($this->ion_auth->logged_in())
@@ -365,9 +389,11 @@ class Mytemplates extends CI_Controller
             if($message != "")
             {
                 $data = array(
-                    'template_message' => $message
+                    'template_message' => $message,
+                    'template_from' => $from,
+                    'template_to' => $to
                 );
-                $this->ion_auth->where('project_id',$this->session->userdata('project_id'))->update_project($data); 
+                $this->ion_auth->where('project_id',$project_id)->update_project($data); 
             }
         }
         

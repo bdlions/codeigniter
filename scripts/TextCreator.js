@@ -30,6 +30,8 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
 					var to = document.getElementById("toText").value;
                                         var message = document.getElementById("messageText").value;
                                         
+                                        Common.setTo(to);
+                                        Common.setFrom(from);
                                         Common.setMessage(message);
                                         
 					//resetting the canvas
@@ -44,7 +46,7 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
 					textCreatorContext.fillText(to, 40, 33);
 					
 					var imageData = textCreatorContext.getImageData(0,0, textCreatorCanvas.width, textCreatorCanvas.height);
-					Common.saveImage(imageData, textCreatorContext, imageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-26-0', message);
+					Common.saveImage(imageData, textCreatorContext, imageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-26-0');
 					
 					$(this).dialog('destroy');
 					
@@ -62,11 +64,17 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
 		};
 		textCreatorDiv.dialog(dialogOpts);
 		
-		TextCreator.prototype.load = function( imageName, imagePath )
+		TextCreator.prototype.load = function()
 		{
 			textCreatorDiv.dialog(dialogOpts);
 			textCreatorDiv.dialog("open");
-			if(textCreatorCanvas.getContext)
+                        
+                        $('#fromText').val(Common.getFrom());
+                        $('#toText').val(Common.getTo());
+                        $('#messageText').val(Common.getMessage());
+
+                        var textImagePath = "../templates/"+Common.getTemplateId()+"/assets/graphics/1x/"+Common.getProjectId()+"/original_sprite-26-0.png";
+                        if(textCreatorCanvas.getContext)
 			{
 				textCreatorContext = textCreatorCanvas.getContext("2d")				
 				textImage.onload = function()
@@ -78,7 +86,8 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
 					textCreatorContext.drawImage(textImage, imageStartX, imageStartY, textImage.width, textImage.height);
 				};				
 				//set the image
-				textImage.src = "../"+imagePath + imageName;	
+				//textImage.src = "../"+imagePath + imageName+"?"+new Date().getTime();	
+                                textImage.src = textImagePath+"?"+new Date().getTime();
 			}
 		};		
 	};
