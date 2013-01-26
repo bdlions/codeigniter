@@ -299,7 +299,8 @@ class Ion_auth_model extends CI_Model {
         } else {
             $data = array(
                 'activation_code' => NULL,
-                'active' => 1
+                'active' => 1,
+                'is_inactivated_by_admin' => 0
             );
 
 
@@ -340,7 +341,7 @@ class Ion_auth_model extends CI_Model {
 
         $data = array(
             'activation_code' => $activation_code,
-            'is_inactivated_by_admin' => true,
+            'is_inactivated_by_admin' => false,
             'active' => 0
         );
 
@@ -567,7 +568,8 @@ class Ion_auth_model extends CI_Model {
             'ip_address' => $this->input->ip_address(),
             'created_on' => time(),
             'last_login' => time(),
-            'active' => 0
+            'active' => 0,
+            'is_inactivated_by_admin' => 0
         );
 
         if ($this->store_salt) {
@@ -1711,5 +1713,35 @@ class Ion_auth_model extends CI_Model {
 
         $this->response = $this->db->select('*')->from($this->tables['users'])->get();
         return $this;
+    } 
+    
+    ////////////////////////////////////////////Admin related queries
+    public function deactivate_by_admin($id = NULL) {
+        $this->trigger_events('deactivate');
+
+        if (!isset($id)) {
+            $this->set_error('deactivate_unsuccessful');
+            return FALSE;
+        }
+
+        $activation_code = sha1(md5(microtime()));
+        $this->activation_code = $activation_code;
+
+        $data = array(
+            'activation_code' => $activation_code,
+            'is_inactivated_by_admin' => true,
+            'active' => 0
+        );
+
+        $this->trigger_events('extra_where');
+        $this->db->update($this->tables['users'], $data, array('id' => $id));
+
+        $return = $this->db->affected_rows() == 1;
+        if ($return)
+            $this->set_message('deactivate_successful');
+        else
+            $this->set_error('deactivate_unsuccessful');
+
+        return $return;
     }
 }

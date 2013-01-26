@@ -793,7 +793,7 @@ class Auth extends CI_Controller
         $user_info = $user_infos[0];
         $email = $user_info['email'];
         $this->ion_auth->resend_activation_email($id, $email);
-        redirect("auth", 'refresh');
+        redirect("auth/signin", 'refresh');
     }
     
     function check_login()

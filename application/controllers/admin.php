@@ -521,7 +521,7 @@ class Admin extends CI_Controller
                 // do we have the right userlevel?
                 if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin())
                 {
-                    $this->ion_auth->deactivate($id);
+                    $this->ion_auth->deactivate_by_admin($id);
                 }
             }
 
