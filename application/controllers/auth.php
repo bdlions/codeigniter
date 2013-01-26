@@ -304,11 +304,31 @@ class Auth extends CI_Controller
         {
             //run the forgotten password method to email an activation code to the user
             $forgotten = $this->ion_auth->forgotten_password($this->input->post('email'));
-
+            
             if ($forgotten)
             { //if there were no errors
-                $this->session->set_flashdata('message', $this->ion_auth->messages());
-                redirect("auth/login", 'refresh'); //we should display a confirmation page here instead of the login page
+                //$this->session->set_flashdata('message', $this->ion_auth->messages());
+                //redirect("auth/login", 'refresh'); //we should display a confirmation page here instead of the login page
+                $user_infos = $this->ion_auth->where('users.email',$this->input->post('email'))->users()->result_array();
+                $user_info = $user_infos[0];
+                
+                $this->session->set_flashdata('message', "");
+                $this->data['user_email'] = $user_info['email'];
+
+                $base = base_url(); 
+                $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+                $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+                $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+                $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+                $this->template->set('css', $css);
+                $this->template->set('js', $js);
+                $this->template->set('base', $base);
+                $this->template->set('menu_bar', 'design/menu_bar_external_user');
+                if ($this->ion_auth->logged_in())
+                {
+                    $this->template->set('is_logged_in', 'true');
+                }
+                $this->template->load("main_template", 'auth/forgot_password_successful', $this->data);
             }
             else
             {
@@ -406,12 +426,36 @@ class Auth extends CI_Controller
     //reset password - final step for forgotten password
     public function reset_password($code)
     {
+        $user_infos = $this->ion_auth->where('users.forgotten_password_code',$code)->users()->result_array();
+        if(count($user_infos) > 0)
+        {
+            $user_info = $user_infos[0];
+        }
+        
         $reset = $this->ion_auth->forgotten_password_complete($code);
 
         if ($reset)
         {  //if the reset worked then send them to the login page
-            $this->session->set_flashdata('message', $this->ion_auth->messages());
-            redirect("auth/login", 'refresh');
+            //$this->session->set_flashdata('message', $this->ion_auth->messages());
+            //redirect("auth/login", 'refresh');
+            
+            $this->session->set_flashdata('message', "");
+            $this->data['user_email'] = $user_info['email'];
+
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_external_user');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template", 'auth/forgot_password_reset_successful', $this->data);
         }
         else
         { //if the reset didnt work then send them back to the forgot password page
