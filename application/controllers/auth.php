@@ -468,22 +468,53 @@ class Auth extends CI_Controller
     function activate($id, $code=false)
     {
         if ($code !== false)
-            $activation = $this->ion_auth->activate($id, $code);
-        else if ($this->ion_auth->is_admin())
-            $activation = $this->ion_auth->activate($id);
-
-        if ($activation)
         {
-            //redirect them to the auth page
-            $this->session->set_flashdata('message', $this->ion_auth->messages());
-            redirect("auth", 'refresh');
-        }
+            //checking whether this user is already active or not        
+            $user_infos = $this->ion_auth->where('users.id',$id)->users()->result_array();
+            if(count($user_infos) > 0)
+            {
+                $user_info = $user_infos[0];
+                if($user_info['active'] == 1)
+                {
+                    $this->data['message'] = "Account is already active.";
+                }
+                else
+                {
+                    $activation = $this->ion_auth->activate($id, $code);
+                    if ($activation)
+                    {
+                    $this->data['message'] = "Account is now active.";
+                    }
+                    else
+                    {
+                        $this->data['message'] = "Incorrect activation code.";
+                    }
+                }
+            }
+            else
+            {
+                $this->data['message'] = "You are not allowed to activate this user.";            
+            }            
+        }            
         else
         {
-            //redirect them to the forgot password page
-            $this->session->set_flashdata('message', $this->ion_auth->errors());
-            redirect("auth/forgot_password", 'refresh');
+            $this->data['message'] = "You are not allowed to activate this user.";            
         }
+        
+        $base = base_url(); 
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
+        $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
+        $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_external_user');
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template", 'auth/activation_message_user', $this->data);
     }
 
     //deactivate the user

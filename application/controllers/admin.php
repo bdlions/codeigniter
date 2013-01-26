@@ -513,10 +513,10 @@ class Admin extends CI_Controller
             if ($this->input->post('confirm') == 'yes')
             {
                 // do we have a valid request?
-                if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id'))
-                {
-                    show_404();
-                }
+                //if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id'))
+                //{
+                //    show_404();
+                //}
 
                 // do we have the right userlevel?
                 if ($this->ion_auth->logged_in() && $this->ion_auth->is_admin())
