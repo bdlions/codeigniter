@@ -44,10 +44,19 @@
                                 
                                 <ul>
                                     <li>
-                                        <a href="#">Projects</a>
+                                        <a href="#">
+                                            <?php if (empty($user_name)) { ?>
+                                                Guest
+                                            <?php                                            
+                                            } 
+                                            else
+                                            { 
+                                                echo $user_name;
+                                            } ?>
+                                        </a>
                                         <ul>
-                                            <a href='<?php echo $base ?>mytemplates/templates'>Show profile</a>
-                                            <a href='<?php echo $base ?>mytemplates/templates'>Edit profile</a>
+                                            <a href='<?php echo $base ?>auth/show_user'>Show profile</a>
+                                            <a href='<?php echo $base ?>auth/edit_user'>Edit profile</a>
                                             <a href='<?php echo $base ?>mytemplates/templates'>My cards</a>
                                             <a href='<?php echo $base ?>auth/logout'>Logout</a>
                                         </ul>

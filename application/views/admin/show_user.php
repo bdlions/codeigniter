@@ -62,10 +62,13 @@
     <div id="container">         
         <div id="inner">
             <div style="color:red"><?php echo $message; ?></div>
-            <p>Update User</p>
-            <p>Please enter the user information below to update</p>
-           <?php echo form_open('auth/edit_user/'.$user_id); ?>
+            <p>User Information</p> 
+            <?php echo form_open('admin'); ?>
             <div class ="tabular">                
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>User Name:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($user_name); ?></div>
+                </div>   
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>First Name:</label></div>
                     <div class="tabular-cell"><?php echo form_input($first_name); ?></div>
@@ -73,22 +76,30 @@
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>Last Name:</label></div>
                     <div class="tabular-cell"><?php echo form_input($last_name); ?></div>
-                </div>                
-                <div class="tabular-row">
-                    <div class="tabular-cell"><label>Password:</label></div>
-                    <div class="tabular-cell"><?php echo form_input($password); ?></div>
                 </div>
                 <div class="tabular-row">
-                    <div class="tabular-cell"><label>Confirm Password:</label></div>
-                    <div class="tabular-cell"><?php echo form_input($password_confirm); ?></div>
-                </div>                
+                    <div class="tabular-cell"><label>Email:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($email); ?></div>
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>Registration Date:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($created_date); ?></div>
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>IP Address:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($ip_address); ?></div>
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>Browser:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($browser); ?></div>
+                </div>
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>Country:</label></div>
                     <div class="tabular-cell"><?php echo form_dropdown('countries', $countries, $selected_country); ?></div>
                 </div>
                 <div class="tabular-row">
                     <div class="tabular-cell"></div>
-                    <div class="tabular-cell"><?php echo form_submit('submit', 'Update User'); ?></div>
+                    <div class="tabular-cell"><?php echo form_submit('submit', 'Ok'); ?></div>
                 </div>                              
             </div>
             <?php echo form_close(); ?>

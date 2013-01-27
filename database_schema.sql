@@ -350,7 +350,8 @@ CREATE TABLE IF NOT EXISTS `project_info` (
   `template_from` varchar(100) DEFAULT '',
   `template_to` varchar(100) DEFAULT '',
   `template_message` varchar(100) DEFAULT '',
-  `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`project_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

@@ -63,7 +63,7 @@
         <div id="inner">
             <div style="color:red"><?php echo $message; ?></div>
             <p>User Information</p> 
-            <?php echo form_open('admin'); ?>
+            <?php echo form_open('auth/index'); ?>
             <div class ="tabular">                
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>User Name:</label></div>

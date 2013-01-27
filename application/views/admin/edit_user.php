@@ -64,7 +64,7 @@
             <div style="color:red"><?php echo $message; ?></div>
             <p>Update User</p>
             <p>Please enter the user information below to update</p>
-           <?php echo form_open('auth/edit_user/'.$user_id); ?>
+           <?php echo form_open('admin/edit_user/'.$user_id); ?>
             <div class ="tabular">                
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>First Name:</label></div>
@@ -81,7 +81,11 @@
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>Confirm Password:</label></div>
                     <div class="tabular-cell"><?php echo form_input($password_confirm); ?></div>
-                </div>                
+                </div>
+                <div class="tabular-row">
+                    <div class="tabular-cell"><label>Group:</label></div>
+                    <div class="tabular-cell"><?php echo form_dropdown('groups', $groups, $selected_group); ?></div>
+                </div>
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>Country:</label></div>
                     <div class="tabular-cell"><?php echo form_dropdown('countries', $countries, $selected_country); ?></div>

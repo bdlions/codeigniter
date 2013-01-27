@@ -41,6 +41,7 @@ class Auth extends CI_Controller
                 if ($this->ion_auth->logged_in())
                 {
                     $this->template->set('is_logged_in', 'true');
+                    $this->template->set('user_name', $this->session->userdata('username'));
                 }
                 $this->template->load("main_template","templates/index");
             }
@@ -57,6 +58,7 @@ class Auth extends CI_Controller
                 if ($this->ion_auth->logged_in())
                 {
                     $this->template->set('is_logged_in', 'true');
+                    $this->template->set('user_name', $this->session->userdata('username'));
                 }
                 $this->template->load("main_template","templates/index");
             }
@@ -135,7 +137,7 @@ class Auth extends CI_Controller
                     //if the login was un-successful
                     //redirect them back to the login page
                     $this->session->set_flashdata('message', $this->ion_auth->errors());
-                    redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
+                    redirect('auth/index', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
                 }
             }
         }
@@ -864,5 +866,229 @@ class Auth extends CI_Controller
             $this->template->load("main_template","auth/login", $this->data);
             //$this->load->view('auth/login', $this->data);
         
+    }
+    
+    //load user info to show user
+    function show_user()
+    {
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('auth', 'refresh');
+        }
+        
+        $this->session->set_flashdata('message', "");
+        $this->data['title'] = "User profile";
+        $this->data['user_id'] = $this->session->userdata('user_id');
+        
+        $user_infos = $this->ion_auth->where('users.id',$this->session->userdata('user_id'))->users()->result_array();
+        if(count($user_infos) <= 0)
+        {
+            redirect('auth', 'refresh');
+        }
+        $user_info = $user_infos[0];
+
+        //set the flash data error message if there is one
+        $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+        $this->data['user_name'] = array('name' => 'user_name',
+            'id' => 'user_name',
+            'type' => 'text',
+            'value' => $user_info['username'],
+        );
+        $this->data['first_name'] = array('name' => 'first_name',
+            'id' => 'first_name',
+            'type' => 'text',
+            'value' => $user_info['first_name'],
+        );
+        $this->data['last_name'] = array('name' => 'last_name',
+            'id' => 'last_name',
+            'type' => 'text',
+            'value' => $user_info['last_name'],
+        );
+        $this->data['email'] = array('name' => 'email',
+            'id' => 'email',
+            'type' => 'text',
+            'value' => $user_info['email'],
+        );
+        $this->data['created_date'] = array('name' => 'created_date',
+            'id' => 'created_date',
+            'type' => 'text',
+            'value' => $user_info['created_date'],
+        );
+        $this->data['ip_address'] = array('name' => 'ip_address',
+            'id' => 'ip_address',
+            'type' => 'text',
+            'value' => $user_info['ip_address'],
+        );
+        $this->data['browser'] = array('name' => 'browser',
+            'id' => 'browser',
+            'type' => 'text',
+            'value' => $user_info['browser'],
+        );
+        $countries = $this->ion_auth->order_by('printable_name','asc')->get_all_countries()->result_array();
+        $this->data['countries'] = array();
+        foreach ($countries as $key => $country)
+        {
+            $this->data['countries'][$country['iso']] = $country['printable_name'];
+        }
+        $this->data['selected_country'] = $user_info['country'];
+        
+        $base = base_url();
+        if ($this->ion_auth->is_admin())
+        {
+            $this->template->set('menu_bar', 'design/menu_bar_admin');
+        }            
+        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+        $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+        $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+        $this->template->set('css', $css);
+        $this->template->set('js', $js);
+        $this->template->set('base', $base);
+        $this->template->set('menu_bar', 'design/menu_bar_home');
+        if ($this->ion_auth->logged_in())
+        {
+            $this->template->set('is_logged_in', 'true');
+        }
+        $this->template->load("main_template",'auth/show_user', $this->data);
+    }
+    
+    //edit user information
+    function edit_user()
+    {
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('auth', 'refresh');
+        }
+        
+        $user_id = $this->session->userdata('user_id');
+        
+        $this->session->set_flashdata('message', "");
+        $this->data['title'] = "Edit User";
+        $this->data['user_id'] = $user_id;
+        
+        $user_infos = $this->ion_auth->where('users.id',$user_id)->users()->result_array();
+        if(count($user_infos) <= 0)
+        {
+            redirect('auth', 'refresh');
+        }        
+        $user_info = $user_infos[0];
+        $groups = $this->ion_auth->groups()->result_array();        
+
+        $this->form_validation->set_error_delimiters("<div style='color:red'>", '</div>');
+        
+        //validate form input
+        $this->form_validation->set_rules('first_name', 'First Name', 'required|xss_clean');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'required|xss_clean');
+        $this->form_validation->set_rules('countries', 'Country', 'required|xss_clean');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]|callback_password_check');
+        $this->form_validation->set_rules('password_confirm', 'Password Confirmation', 'required');
+        
+        
+        if ($this->form_validation->run() == true && $this->input->post('submit'))
+        {
+            //user didn't change password field, so we dont need to update password
+            if($this->input->post('password') == $this->config->item('samply_dummy_password', 'ion_auth'))
+            {
+                $additional_data = array(
+                    'first_name' => $this->input->post('first_name'),
+                    'last_name' => $this->input->post('last_name'),
+                    'country' => $this->input->post('countries'),
+                );
+            }
+            else
+            {
+                $additional_data = array(
+                    'first_name' => $this->input->post('first_name'),
+                    'last_name' => $this->input->post('last_name'),
+                    'country' => $this->input->post('countries'),
+                    'password' => $this->input->post('password'),
+                );
+            }
+            
+        }
+        
+        if ($this->form_validation->run() == true && $this->input->post('submit') && $this->ion_auth->update($user_id, $additional_data))
+        { 
+            //$this->session->set_flashdata('message', "User account successfully updated.");
+            
+            //set the flash data error message if there is one
+            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            
+            //redirect('auth', 'refresh');
+            //loading user update confirmation page
+            $this->data['user_id'] = $user_id;            
+            
+            $base = base_url();
+            if ($this->ion_auth->is_admin())
+            {
+                $this->template->set('menu_bar', 'design/menu_bar_admin');
+            }            
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_home');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template","auth/edit_user_successful", $this->data);
+        }
+        else
+        { //display the create user form
+            //set the flash data error message if there is one
+            $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+            $this->data['first_name'] = array('name' => 'first_name',
+                'id' => 'first_name',
+                'type' => 'text',
+                'value' => $user_info['first_name'],
+            );
+            $this->data['last_name'] = array('name' => 'last_name',
+                'id' => 'last_name',
+                'type' => 'text',
+                'value' => $user_info['last_name'],
+            );
+            $this->data['password'] = array('name' => 'password',
+                'id' => 'password',
+                'type' => 'password',
+                'value' => $this->config->item('samply_dummy_password', 'ion_auth'),
+            );
+            $this->data['password_confirm'] = array('name' => 'password_confirm',
+                'id' => 'password_confirm',
+                'type' => 'password',
+                'value' => $this->config->item('samply_dummy_password', 'ion_auth'),
+            );
+            $countries = $this->ion_auth->order_by('printable_name','asc')->get_all_countries()->result_array();
+            $this->data['countries'] = array();
+            foreach ($countries as $key => $country)
+            {
+                $this->data['countries'][$country['iso']] = $country['printable_name'];
+            }
+            $this->data['selected_country'] = $user_info['country'];
+            
+            $base = base_url();
+            if ($this->ion_auth->is_admin())
+            {
+                $this->template->set('menu_bar', 'design/menu_bar_admin');
+            }            
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_home');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+            }
+            $this->template->load("main_template",'auth/edit_user', $this->data);
+        }
     }
 }

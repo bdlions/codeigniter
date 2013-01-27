@@ -681,59 +681,6 @@ class Admin extends CI_Controller
         }
     }
     
-    //load user info to edit user
-    function pre_edit_user($user_id)
-    {
-        //$this->session->set_flashdata('message', "");
-        //$this->data['title'] = "Edit User";
-        //$this->data['user_id'] = $user_id;
-        //only admin can edit an user within same session
-        //if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
-        //{
-        //    redirect('auth', 'refresh');
-        //}
-        
-        //$user_infos = $this->ion_auth->where('users.id',$user_id)->users()->result_array();
-        //$user_info = $user_infos[0];
-        
-        //$groups = $this->ion_auth->groups()->result_array();
-        
-        //set the flash data error message if there is one
-        //$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-
-        /*$this->data['first_name'] = array('name' => 'first_name',
-            'id' => 'first_name',
-            'type' => 'text',
-            'value' => $user_info['first_name'],
-        );
-        $this->data['last_name'] = array('name' => 'last_name',
-            'id' => 'last_name',
-            'type' => 'text',
-            'value' => $user_info['last_name'],
-        );
-        $countries = $this->ion_auth->order_by('printable_name','asc')->get_all_countries()->result_array();
-        $this->data['countries'] = array();
-        foreach ($countries as $key => $country)
-        {
-            $this->data['countries'][$country['iso']] = $country['printable_name'];
-        }
-        $this->data['selected_country'] = $user_info['country'];
-        
-        $this->data['groups'] = array();
-        foreach ($groups as $key => $group)
-        {
-            $this->data['groups'][$group['id']] = $group['name'];
-        }
-        $user_group = $this->ion_auth->get_users_groups($user_id)->result();
-        $this->data['selected_group'] = $user_group[0]->id;
-
-        $base = base_url();
-        $css = "<link rel='stylesheet' href='{$base}css/form_design.css' />" ;
-        $this->template->set('css', $css);
-        $this->template->set('main_content', "auth/edit_user");
-        $this->template->load("default_template", 'auth/edit_user', $this->data); */       
-    }
-    
     //edit user information
     function edit_user($user_id)
     {
@@ -812,7 +759,7 @@ class Admin extends CI_Controller
             {
                 $this->template->set('is_logged_in', 'true');
             }
-            $this->template->load("main_template","auth/edit_user_successful", $this->data);
+            $this->template->load("main_template","admin/edit_user_successful", $this->data);
         }
         else
         { //display the create user form
@@ -871,7 +818,7 @@ class Admin extends CI_Controller
             {
                 $this->template->set('is_logged_in', 'true');
             }
-            $this->template->load("main_template",'auth/edit_user', $this->data);
+            $this->template->load("main_template",'admin/edit_user', $this->data);
         }
     }
     
@@ -952,7 +899,7 @@ class Admin extends CI_Controller
         {
             $this->template->set('is_logged_in', 'true');
         }
-        $this->template->load("main_template",'auth/show_user', $this->data);
+        $this->template->load("main_template",'admin/show_user', $this->data);
     }
 
     function _get_csrf_nonce()
