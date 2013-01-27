@@ -17,12 +17,16 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
                 {
                     'Cancel': function() 
                     {
+                            window.location.reload();    
                             $(this).dialog('destroy');
                     }				
                 },
                 open: function() 
                 {
 
+                },
+                close: function() {
+                    window.location.reload();                
                 }
         };
         previewRenderDiv.dialog(dialogOpts);

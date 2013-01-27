@@ -1397,11 +1397,11 @@ class Ion_auth_model extends CI_Model {
             $this->_ion_order_by = NULL;
         }
 
-        $this->response = $this->db->select('*')->from($this->tables['PROJECT_INFO'])->join($this->tables['USER_PROJECTS'], 'project_info.project_id = users_projects.project_id')->join($this->tables['users'], 'users_projects.user_id = users.id')->get();
+        $this->response = $this->db->select('*')->from($this->tables['PROJECT_INFO'])->join($this->tables['USERS_PROJECTS'], 'project_info.project_id = users_projects.project_id')->join($this->tables['users'], 'users_projects.user_id = users.id')->get();
 
         return $this;
     }
-
+    
     public function check_project()
     {
         if (isset($this->_ion_where)) {
@@ -1461,7 +1461,7 @@ class Ion_auth_model extends CI_Model {
 
             $this->_ion_where = array();
         }
-        $this->db->delete($this->tables['USER_PROJECTS']);
+        $this->db->delete($this->tables['USERS_PROJECTS']);
     }
 
     function update_project($data) {        
@@ -1483,7 +1483,8 @@ class Ion_auth_model extends CI_Model {
 
             $this->_ion_where = array();
         }
-        $this->db->update($this->tables['PROJECT_INFO'], $data);
+        $this->response = $this->db->select('*')->from($this->tables['PROJECT_INFO'])->get();
+        return $this;
     }
 
     

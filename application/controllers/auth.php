@@ -949,6 +949,7 @@ class Auth extends CI_Controller
         if ($this->ion_auth->logged_in())
         {
             $this->template->set('is_logged_in', 'true');
+            $this->template->set('user_name', $this->session->userdata('username'));
         }
         $this->template->load("main_template",'auth/show_user', $this->data);
     }
@@ -1035,6 +1036,7 @@ class Auth extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('user_name', $this->session->userdata('username'));
             }
             $this->template->load("main_template","auth/edit_user_successful", $this->data);
         }
@@ -1087,6 +1089,7 @@ class Auth extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('user_name', $this->session->userdata('username'));
             }
             $this->template->load("main_template",'auth/edit_user', $this->data);
         }
