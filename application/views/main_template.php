@@ -19,10 +19,9 @@
                 <div id="main_nav_wrap">
                     <div id="main_nav">
                         <?php
-                            if(!empty($menu_bar))
-                            {
-                                $this->load->view($menu_bar);
-                            }
+                        if (!empty($menu_bar)) {
+                            $this->load->view($menu_bar);
+                        }
                         ?>
                         <!--<ul>
                             <li class="first"><a href="<?php echo $base ?>templates/template1" class="holidays">Template 1</a></li>
@@ -37,12 +36,25 @@
                     <div id="user-nav">
                         <ul>
                             <?php if (empty($is_logged_in)) { ?>
-                               <li><a href='<?php echo $base ?>auth/adduser'>Become a Member</a></li>
+                                <li><a href='<?php echo $base ?>auth/adduser'>Become a Member</a></li>
                             <?php } ?>                            
                             <?php if (empty($is_logged_in)) { ?>
                                 <li><a rel="nofollow" id="lnkLogin" href='<?php echo $base ?>auth/signin' name="lnkLogin">Login</a></li>
                             <?php } else { ?>
-                                <li><a rel="nofollow" id="lnkLogin" href='<?php echo $base ?>auth/logout' name="lnkLogin">Logout</a></li>
+                                
+                                <ul>
+                                    <li>
+                                        <a href="#">Projects</a>
+                                        <ul>
+                                            <a href='<?php echo $base ?>mytemplates/templates'>Show profile</a>
+                                            <a href='<?php echo $base ?>mytemplates/templates'>Edit profile</a>
+                                            <a href='<?php echo $base ?>mytemplates/templates'>My cards</a>
+                                            <a href='<?php echo $base ?>auth/logout'>Logout</a>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                
+                                
                             <?php } ?>
 
                         </ul>
@@ -53,13 +65,13 @@
 
         <div id="wwrap">
             <div id="wrap">
-                <?php
-                if (empty($main_content)) {
-                    $this->load->view("templates/index");
-                } else {
-                    $this->load->view($main_content);
-                }
-                ?>
+<?php
+if (empty($main_content)) {
+    $this->load->view("templates/index");
+} else {
+    $this->load->view($main_content);
+}
+?>
 
             </div><span class="not_semantic">&nbsp;</span>
         </div> 
@@ -88,30 +100,30 @@
                             )
                         </p>                        
                     </div>
-                    <?php echo form_open_multipart('auth/check_login', array('id' => 'loginForm', 'name' => 'loginForm')); ?>
-                        <div class="warnings">
-                            <span rel="global_errors"></span>
-                        </div>
-                        <div class="fl_error red" rel="email_error"> 
-                        </div>
-                        <div class="login_placeholdered_text">
-                            <fieldset class="login_fieldset" rel="email">
-                                <label class="login_label" for="modal_login_profile_email">Email Address</label>
-                                <input class="login_input" id="modal_login_profile_email" name="modal_login_profile_email" type="text" name="login_name"/>
-                            </fieldset>
-                        </div> 
-                        <div class="login_placeholdered_text">
-                            <fieldset class="login_fieldset" rel="password">
-                                <label class="login_label" for="modal_login_profile_email">Password</label>
-                                <input class="login_input" id="modal_login_profile_password" name="modal_login_profile_password" type="password" name="login_password"/>
-                            </fieldset>
-                        </div>                        
+<?php echo form_open_multipart('auth/check_login', array('id' => 'loginForm', 'name' => 'loginForm')); ?>
+                    <div class="warnings">
+                        <span rel="global_errors"></span>
+                    </div>
+                    <div class="fl_error red" rel="email_error"> 
+                    </div>
+                    <div class="login_placeholdered_text">
+                        <fieldset class="login_fieldset" rel="email">
+                            <label class="login_label" for="modal_login_profile_email">Email Address</label>
+                            <input class="login_input" id="modal_login_profile_email" name="modal_login_profile_email" type="text" name="login_name"/>
+                        </fieldset>
+                    </div> 
+                    <div class="login_placeholdered_text">
+                        <fieldset class="login_fieldset" rel="password">
+                            <label class="login_label" for="modal_login_profile_email">Password</label>
+                            <input class="login_input" id="modal_login_profile_password" name="modal_login_profile_password" type="password" name="login_password"/>
+                        </fieldset>
+                    </div>                        
                     </form>
                     <div class="login_b_signin">
                         <input id="button_login_submit" name="button_login_submit" class="login_submit" type="submit"/>
                     </div>
                 </div>
-                
+
 
             </div>
         </div>

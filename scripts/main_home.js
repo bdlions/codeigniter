@@ -1,4 +1,4 @@
-require(["jquery", "Jcarousellite", "TemplateSelector","Login","Common"], function($, Jcarousellite, TemplateSelector, Login,Common) {
+require(["jquery", "Jcarousellite", "TemplateSelector", "Common", "HomeBalloonsTT1"], function($, Jcarousellite, TemplateSelector, Common, HomeBalloonsTT1) {
     $(function() {		
         Jcarousellite.carouselify();
         function isBrowserCanvasCompatible()
@@ -16,25 +16,37 @@ require(["jquery", "Jcarousellite", "TemplateSelector","Login","Common"], functi
         {
             document.getElementById('selectedTemplateId').value = 1;
             templateSelector = new TemplateSelector("displaySelectedTemplateDiv");
-            templateSelector.load("template1.png", "images/"); 
+            templateSelector.load();
+            Common.setTemplateId(1);
+            Common.setProjectId("");
+            HomeBalloonsTT1.init();
         });
         $("#menu_bar_home_template1").click(function()
         {
             document.getElementById('selectedTemplateId').value = 1;
             templateSelector = new TemplateSelector("displaySelectedTemplateDiv");
-            templateSelector.load("template1.png", "images/"); 
+            templateSelector.load(); 
+            Common.setTemplateId(1);
+            Common.setProjectId("");
+            HomeBalloonsTT1.init();
         });
         $("#template2_home").click(function()
         {
             document.getElementById('selectedTemplateId').value = 2;
             templateSelector = new TemplateSelector("displaySelectedTemplateDiv");
-            templateSelector.load("template2.png", "images/");
+            templateSelector.load();
+            Common.setTemplateId(2);
+            Common.setProjectId("");
+            HomeBalloonsTT1.init();
         });
         $("#menu_bar_home_template2").click(function()
         {
             document.getElementById('selectedTemplateId').value = 2;
             templateSelector = new TemplateSelector("displaySelectedTemplateDiv");
-            templateSelector.load("template2.png", "images/");
+            templateSelector.load();
+            Common.setTemplateId(2);
+            Common.setProjectId("");
+            HomeBalloonsTT1.init();
         });
         if(!isBrowserCanvasCompatible())
         {

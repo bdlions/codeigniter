@@ -10,7 +10,7 @@
 		});
     });
 });*/
-require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Login","JoinToday"], function($, Common, TextCreator, headshowcase, FileUploader, Login, JoinToday) {
+require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Login","JoinToday","PreviewRender","PreviewBalloonsTT1"], function($, Common, TextCreator, headshowcase, FileUploader, Login, JoinToday, PreviewRender, PreviewBalloonsTT1) {
     
     $(function() {		
         function isBrowserCanvasCompatible()
@@ -51,6 +51,8 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         Common.setFrom(from);
         Common.setTo(to);
         Common.setMessage(message);
+        
+        //PreviewBalloonsTT1.init();
         
         if(project_id == "")
         {
@@ -141,7 +143,13 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         {
             document.getElementById('buttonPreviewTemplateProjectId').value = Common.getProjectId();
             document.getElementById('buttonPreviewTemplateMessage').value = Common.getMessage();
-            previewForm.setAttribute("target", "_blank");
+            previewForm.setAttribute("target", "_blank");            
         });
+        $("#testPreview").click(function()
+        {   
+            previewRender = new PreviewRender("previewRenderDiv");
+            previewRender.load();  
+            PreviewBalloonsTT1.init();
+        });        
     }); 
 });

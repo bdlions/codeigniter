@@ -111,10 +111,9 @@ class Mytemplates extends CI_Controller
         $this->template->set('css', $css);
         $this->template->set('js', $js);
         $this->template->set('base', $base);
-        $this->template->set('menu_bar', 'design/menu_bar_unregistered_user');
+        $this->template->set('menu_bar', 'design/menu_bar_home');
         if ($this->ion_auth->logged_in())
         {
-            $this->template->set('menu_bar', 'design/menu_bar_member_demo');
             $this->template->set('is_logged_in', 'true');
         }
         $this->template->load("second_template","templates/template", $this->data);
