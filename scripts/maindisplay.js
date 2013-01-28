@@ -20,7 +20,8 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader", "Bal
         };
         if(!isBrowserCanvasCompatible())
         {
-            window.location.href = "../../templates/redirect_path";
+            alert("Your browser doesn't support html5. Please update your browser.");
+            window.location.href = "../../mytemplates/redirect_path";
         }
         Common.setProjectId(project_id);
         Common.setTemplateId(template_id);

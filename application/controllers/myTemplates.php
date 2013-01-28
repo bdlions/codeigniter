@@ -88,6 +88,7 @@ class Mytemplates extends CI_Controller
                     $from = $project_template_infos[0]['template_from'];
                     $to = $project_template_infos[0]['template_to'];
                     $message = $project_template_infos[0]['template_message'];
+                    $publish_code = $project_template_infos[0]['publish_code'];
                 }
             }
             else

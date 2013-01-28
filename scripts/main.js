@@ -20,7 +20,7 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         };
         if(!isBrowserCanvasCompatible())
         {
-            window.location.href = "../../templates/redirect_path";
+            window.location.href = "../../mytemplates/redirect_path";
         }
         
         var liCounter = 1;
