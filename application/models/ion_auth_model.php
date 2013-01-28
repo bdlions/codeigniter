@@ -1745,4 +1745,51 @@ class Ion_auth_model extends CI_Model {
 
         return $return;
     }
+    
+    ///////////////////////////////////////User related queries
+    public function update_user($id, array $data) {
+        $this->trigger_events('pre_update_user');
+
+        $user = $this->user($id)->row();
+
+        $this->db->trans_begin();
+
+        if (array_key_exists($this->identity_column, $data) && $this->identity_check($data[$this->identity_column]) && $user->{$this->identity_column} !== $data[$this->identity_column]) {
+            $this->db->trans_rollback();
+            $this->set_error('account_creation_duplicate_' . $this->identity_column);
+
+            $this->trigger_events(array('post_update_user', 'post_update_user_unsuccessful'));
+            $this->set_error('update_unsuccessful');
+
+            return FALSE;
+        }
+
+        // Filter the data passed
+        $data = $this->_filter_data($this->tables['users'], $data);
+
+        if (array_key_exists('username', $data) || array_key_exists('password', $data) || array_key_exists('email', $data)) {
+            if (array_key_exists('password', $data)) {
+                $data['password'] = $this->hash_password($data['password'], $user->salt);
+            }
+        }
+
+        $this->trigger_events('extra_where');
+        $this->db->update($this->tables['users'], $data, array('id' => $user->id));
+        
+        $this->update_last_login($id);
+        
+        if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
+
+            $this->trigger_events(array('post_update_user', 'post_update_user_unsuccessful'));
+            $this->set_error('update_unsuccessful');
+            return FALSE;
+        }
+
+        $this->db->trans_commit();
+
+        $this->trigger_events(array('post_update_user', 'post_update_user_successful'));
+        $this->set_message('update_successful');
+        return TRUE;
+    }
 }

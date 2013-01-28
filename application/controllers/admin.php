@@ -137,6 +137,7 @@ class Admin extends CI_Controller
         if ($this->ion_auth->logged_in())
         {
             $this->template->set('is_logged_in', 'true');
+            $this->template->set('is_admin', 'true');
         }
         $this->template->load("main_template","auth/index", $this->data);
     }
@@ -245,6 +246,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template","auth/admin_login", $this->data);
             //$this->load->view('auth/login', $this->data);
@@ -504,6 +506,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template",'auth/deactivate_user', $this->data);
         }
@@ -612,6 +615,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template", 'auth/create_user_complete', $this->data);
         }
@@ -676,6 +680,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template", 'auth/admin_create_user', $this->data); 
         }
@@ -758,6 +763,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template","admin/edit_user_successful", $this->data);
         }
@@ -817,6 +823,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template",'admin/edit_user', $this->data);
         }
@@ -898,6 +905,7 @@ class Admin extends CI_Controller
         if ($this->ion_auth->logged_in())
         {
             $this->template->set('is_logged_in', 'true');
+            $this->template->set('is_admin', 'true');
         }
         $this->template->load("main_template",'admin/show_user', $this->data);
     }
@@ -961,6 +969,7 @@ class Admin extends CI_Controller
                 if ($this->ion_auth->logged_in())
                 {
                     $this->template->set('is_logged_in', 'true');
+                    $this->template->set('is_admin', 'true');
                 }
                 $this->template->load("main_template","auth/delete_user_successful", $this->data);
             }
@@ -996,6 +1005,7 @@ class Admin extends CI_Controller
                 if ($this->ion_auth->logged_in())
                 {
                     $this->template->set('is_logged_in', 'true');
+                    $this->template->set('is_admin', 'true');
                 }
                 $this->template->load("main_template","auth/delete_user_confirmation", $this->data);
             }   
@@ -1080,6 +1090,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template","auth/show_searched_user", $this->data);
            
@@ -1109,6 +1120,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template",'auth/search_user', $this->data);
         }
@@ -1192,6 +1204,7 @@ class Admin extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template","auth/admin_login", $this->data);
         

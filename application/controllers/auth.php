@@ -30,37 +30,39 @@ class Auth extends CI_Controller
         {
             if($this->ion_auth->is_member())
             {
-                $base = base_url(); 
+                redirect('mytemplates/templates', 'refresh');
+                /*$base = base_url(); 
                 $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
                 $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
                 $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
                 $this->template->set('css', $css);
                 $this->template->set('js', $js);
                 $this->template->set('base', $base);
-                $this->template->set('menu_bar', 'design/menu_bar_member_demo');
+                $this->template->set('menu_bar', 'design/menu_bar_home');
                 if ($this->ion_auth->logged_in())
                 {
                     $this->template->set('is_logged_in', 'true');
                     $this->template->set('user_name', $this->session->userdata('username'));
                 }
-                $this->template->load("main_template","templates/index");
+                $this->template->load("main_template","templates/index");*/
             }
             else if($this->ion_auth->is_demo())
             {
-                $base = base_url(); 
+                redirect('mytemplates/templates', 'refresh');
+                /*$base = base_url(); 
                 $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
                 $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
                 $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
                 $this->template->set('css', $css);
                 $this->template->set('js', $js);
                 $this->template->set('base', $base);
-                $this->template->set('menu_bar', 'design/menu_bar_member_demo');
+                $this->template->set('menu_bar', 'design/menu_bar_home');
                 if ($this->ion_auth->logged_in())
                 {
                     $this->template->set('is_logged_in', 'true');
                     $this->template->set('user_name', $this->session->userdata('username'));
                 }
-                $this->template->load("main_template","templates/index");
+                $this->template->load("main_template","templates/index");*/
             }
             else
             {
@@ -886,7 +888,7 @@ class Auth extends CI_Controller
             redirect('auth', 'refresh');
         }
         $user_info = $user_infos[0];
-
+        
         //set the flash data error message if there is one
         $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
@@ -1009,7 +1011,7 @@ class Auth extends CI_Controller
             
         }
         
-        if ($this->form_validation->run() == true && $this->input->post('submit') && $this->ion_auth->update($user_id, $additional_data))
+        if ($this->form_validation->run() == true && $this->input->post('submit') && $this->ion_auth->update_user($user_id, $additional_data))
         { 
             //$this->session->set_flashdata('message', "User account successfully updated.");
             

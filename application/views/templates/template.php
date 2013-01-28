@@ -46,8 +46,7 @@
     </tr>
     <tr align="center"  class="custombutton">
         <td style="float:left;">	    
-            <input style="visibility:hidden" type = "button" name = "buttonCreateText" id="buttonCreateText" value="Step 1: Prepare your text" class="custombuttonlightgreen"/>            
-            <img style="height:10px;" src="<?php echo $base?>images/correct.jpg"></img>
+            <input style="visibility:hidden" type = "button" name = "buttonCreateText" id="buttonCreateText" value="Step 1: Prepare your text" class="custombuttonlightgreen"/>
         </td>
         <td style="float:left;">	    
             <input style="visibility:hidden" type = "button" name = "buttonCreateHead" id="buttonCreateHead" value="Step 2: Create new head - upload file" class="custombuttonlightgreen"/>
@@ -72,14 +71,7 @@
             <?php echo form_close(); ?>
         </td>
         <td  style="float:right;">	    
-            <?php echo form_open_multipart("mytemplates/previewtemplate/" . $template_id, array('id' => 'previewForm', 'name' => 'previewForm')); ?>
-            <input type = "hidden" name = "buttonPreviewTemplateProjectId" id="buttonPreviewTemplateProjectId" value=""/>
-            <input type = "hidden" name = "buttonPreviewTemplateMessage" id="buttonPreviewTemplateMessage" value=""/>
-            <input style="visibility:hidden" type = "submit" name = "buttonPreviewTemplate" id="buttonPreviewTemplate" value="Preview" class="custombuttonlightred"/>
-            <?php echo form_close(); ?>
-        </td>
-        <td  style="float:right;">	    
-            <input type = "button" name = "testPreview" id="testPreview" value="TestPreview" class="custombuttonlightred"/>           
+            <input type = "button" name = "testPreview" id="testPreview" value="Preview" class="custombuttonlightred"/>           
         </td>
 
     </tr>

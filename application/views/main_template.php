@@ -37,14 +37,16 @@
                         <ul>
                             <?php if (empty($is_logged_in)) { ?>
                                 <li><a href='<?php echo $base ?>auth/adduser'>Become a Member</a></li>
-                            <?php } ?>                            
-                            <?php if (empty($is_logged_in)) { ?>
                                 <li><a rel="nofollow" id="lnkLogin" href='<?php echo $base ?>auth/signin' name="lnkLogin">Login</a></li>
-                            <?php } else { ?>
-                                
-                                <ul>
-                                    <li>
-                                        <a href="#">
+                            <?php } 
+                                else 
+                                { 
+                                if (empty($is_admin)) { ?>
+                                    <li><a href='<?php echo $base ?>auth/logout'>Logout</a></li>                                    
+                                    <li><a href='<?php echo $base ?>auth/show_user'>Show profile</a></li>
+                                    <li><a href='<?php echo $base ?>auth/edit_user'>Edit profile</a></li>
+                                    <li><a href='<?php echo $base ?>mytemplates/templates'>My cards</a></li>
+                                    <li><a href="#">
                                             <?php if (empty($user_name)) { ?>
                                                 Guest
                                             <?php                                            
@@ -53,17 +55,10 @@
                                             { 
                                                 echo $user_name;
                                             } ?>
-                                        </a>
-                                        <ul>
-                                            <a href='<?php echo $base ?>auth/show_user'>Show profile</a>
-                                            <a href='<?php echo $base ?>auth/edit_user'>Edit profile</a>
-                                            <a href='<?php echo $base ?>mytemplates/templates'>My cards</a>
-                                            <a href='<?php echo $base ?>auth/logout'>Logout</a>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                
-                                
+                                        </a></li>
+                                <?php } else { ?>
+                                    <li><a rel="nofollow" id="lnkLogin" href='<?php echo $base ?>admin/logout' name="lnkLogin">Logout</a></li>
+                                <?php } ?>
                             <?php } ?>
 
                         </ul>

@@ -66,10 +66,6 @@
             <?php echo form_open('auth/index'); ?>
             <div class ="tabular">                
                 <div class="tabular-row">
-                    <div class="tabular-cell"><label>User Name:</label></div>
-                    <div class="tabular-cell"><?php echo form_input($user_name); ?></div>
-                </div>   
-                <div class="tabular-row">
                     <div class="tabular-cell"><label>First Name:</label></div>
                     <div class="tabular-cell"><?php echo form_input($first_name); ?></div>
                 </div>
@@ -84,15 +80,7 @@
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>Registration Date:</label></div>
                     <div class="tabular-cell"><?php echo form_input($created_date); ?></div>
-                </div>
-                <div class="tabular-row">
-                    <div class="tabular-cell"><label>IP Address:</label></div>
-                    <div class="tabular-cell"><?php echo form_input($ip_address); ?></div>
-                </div>
-                <div class="tabular-row">
-                    <div class="tabular-cell"><label>Browser:</label></div>
-                    <div class="tabular-cell"><?php echo form_input($browser); ?></div>
-                </div>
+                </div>                
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>Country:</label></div>
                     <div class="tabular-cell"><?php echo form_dropdown('countries', $countries, $selected_country); ?></div>
