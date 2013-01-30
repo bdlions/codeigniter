@@ -596,6 +596,7 @@ class Mytemplates extends CI_Controller
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
+                $this->template->set('user_name', $this->session->userdata('username'));
             }
             $this->template->load("main_template","auth/template_list", $this->data);
         }
