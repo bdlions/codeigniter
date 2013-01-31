@@ -1209,4 +1209,134 @@ class Admin extends CI_Controller
             $this->template->load("main_template","auth/admin_login", $this->data);
         
     }
+    
+    function showtemplates()
+    {
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('admin/login', 'refresh');
+        }
+        else
+        {
+            $this->data['template_list'] = $this->ion_auth->user_template_list()->result();
+            
+            $this->data['message'] = "";
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_admin');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
+            }
+            $this->template->load("main_template","admin/template_list", $this->data);
+        }
+    }
+    
+    public function previewtemplate($project_id)
+    {
+        
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('admin/login', 'refresh');
+        }
+        else
+        {
+            $project_infos = $this->ion_auth->where('project_id', $project_id)->get_project_info()->result_array();
+            if(count($project_infos) > 0)
+            {
+                $project_info = $project_infos[0];            
+                $this->data['template_id'] = $project_info['template_id'];
+                $this->data['project_id'] = $project_info['project_id'];
+                $this->data['template_message'] = $project_info['template_message'];            
+                $this->load->view("publish/template", $this->data);
+            }
+            
+        }
+        
+    }
+    
+    public function delete_template($project_id)
+    {
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('admin/login', 'refresh');
+        }
+        
+        if ($this->input->post('delete_template_yes'))
+        {
+            $project_infos = $this->ion_auth->where('project_info.project_id',$project_id)->projects()->result_array();
+            $project_info = $project_infos[0];
+            $template_id = $project_info['template_id'];
+            $template_user_id = $project_info['id'];
+            $current_user_id = $this->session->userdata('user_id');
+
+            $message = "";
+            if($template_user_id != $current_user_id && !$this->ion_auth->is_admin())
+            {
+                $message = "You are not allowed to delete this template";
+            }
+            else
+            {
+                $this->ion_auth->where('project_id',$project_id)->delete_project();
+                $this->ion_auth->where('project_id',$project_id)->delete_user_project();
+                //deleting resource files from directory
+                $project_resources_path = "./templates/".$template_id."/assets/graphics/1x/".$project_id; 
+                delete_files($project_resources_path, TRUE);
+                $project_resources_path = "./templates/".$template_id."/assets/graphics/2x/".$project_id; 
+                delete_files($project_resources_path, TRUE);
+                $project_resources_path = "./templates/".$template_id."/assets/graphics/4x/".$project_id; 
+                delete_files($project_resources_path, TRUE);
+                
+                $message = "Your selected template is deleted successfully";
+            }
+            
+            $this->data['message'] = $message;
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_admin');   
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
+            }
+            $this->template->load("main_template","admin/delete_template_successful", $this->data);
+        }
+        else if ($this->input->post('delete_template_no'))
+        {
+            redirect('admin/showtemplates', 'refresh');
+        }
+        else
+        {
+            $this->data['message'] = "";
+            $this->data['project_id'] = $project_id;
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_admin');   
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
+            }
+            $this->template->load("main_template","admin/delete_template_confirmation", $this->data);
+        }
+    }
 }

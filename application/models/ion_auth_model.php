@@ -1746,6 +1746,18 @@ class Ion_auth_model extends CI_Model {
         return $return;
     }
     
+    public function user_template_list()
+    {
+        if (isset($this->_ion_where)) {
+            foreach ($this->_ion_where as $where) {
+                $this->db->where($where);
+            }
+            $this->_ion_where = array();
+        }
+        $this->response = $this->db->select('*')->from($this->tables['PROJECT_INFO'])->join($this->tables['USERS_PROJECTS'], 'project_info.project_id = users_projects.project_id')->join($this->tables['users'], 'users.id = users_projects.user_id')->get();
+        return $this;
+    }
+    
     ///////////////////////////////////////User related queries
     public function update_user($id, array $data) {
         $this->trigger_events('pre_update_user');
