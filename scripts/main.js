@@ -56,7 +56,7 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         Common.setStep3(step3);
         
         //PreviewBalloonsTT1.init();
-        
+        $("#testPreview").attr("style", "visibility: visible");            
         if(project_id == "")
         {
             $("#buttonCreateText").hide();

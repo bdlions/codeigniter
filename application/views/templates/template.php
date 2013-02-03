@@ -71,7 +71,7 @@
             <?php echo form_close(); ?>
         </td>
         <td  style="float:right;">	    
-            <input type = "button" name = "testPreview" id="testPreview" value="Preview" class="custombuttonlightred"/>           
+            <input style="visibility:hidden" type = "button" name = "testPreview" id="testPreview" value="Preview" class="custombuttonlightred"/>           
         </td>
 
     </tr>
