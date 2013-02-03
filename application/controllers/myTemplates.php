@@ -14,6 +14,7 @@ class Mytemplates extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->helper('array');
+        $this->tables = $this->config->item('tables', 'ion_auth');
     }
     public function index()
     {
@@ -46,6 +47,9 @@ class Mytemplates extends CI_Controller
         $from = "";
         $to = "";
         $message = "";
+        $step1 = 0;
+        $step2 = 0;
+        $step3 = 0;
         
         if(isset($_POST['selectedTemplateId']))
         {
@@ -103,7 +107,10 @@ class Mytemplates extends CI_Controller
         $this->data['publish_code'] = $publish_code;   
         $this->data['from'] = $from;  
         $this->data['to'] = $to;  
-        $this->data['message'] = $message;  
+        $this->data['message'] = $message; 
+        $this->data['step1'] = $step1;
+        $this->data['step2'] = $step2;  
+        $this->data['step3'] = $step3;  
         
         $base = base_url(); 
         $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
@@ -223,6 +230,9 @@ class Mytemplates extends CI_Controller
         $from = "";
         $to = "";
         $message = "";
+        $step1 = 0;
+        $step2 = 0;
+        $step3 = 0;
         
         $project_id = $this->session->userdata('project_id');
         if($project_id > 0)
@@ -237,6 +247,29 @@ class Mytemplates extends CI_Controller
             $from = $project_info['template_from'];
             $to = $project_info['template_to'];
             $message = $project_info['template_message'];
+            
+            $where = array();
+            $where[$this->tables['PROJECTS_STEPS'].'.project_id'] = $project_id;
+            $project_steps = $this->ion_auth->where($where)->get_project_steps()->result_array();
+            if(count($project_steps) > 0)
+            {
+                foreach ($project_steps as $project_step)
+                {
+                    if($project_step['step_id'] == 1)
+                    {
+                        $step1 = 1;
+                    }
+                    else if($project_step['step_id'] == 2)
+                    {
+                        $step2 = 1;
+                    }
+                    else if($project_step['step_id'] == 3)
+                    {
+                        $step3 = 1;
+                    }
+                }
+            }
+            
         }
         $this->data['template_id'] = $template_id;  
         $this->data['project_id'] = $project_id;
@@ -244,6 +277,9 @@ class Mytemplates extends CI_Controller
         $this->data['from'] = $from;  
         $this->data['to'] = $to;  
         $this->data['message'] = $message;  
+        $this->data['step1'] = $step1;
+        $this->data['step2'] = $step2;  
+        $this->data['step3'] = $step3;  
         
         $base = base_url(); 
         $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
@@ -527,12 +563,26 @@ class Mytemplates extends CI_Controller
         $from = $_REQUEST['from'];
         $to = $_REQUEST['to'];
         $project_id = $_REQUEST['project_id'];
+        $step_id = $_REQUEST['step_id'];
         $file = $image_path .$image_name.'.png';
 
         if ($this->ion_auth->logged_in())
         {
-            if($message != "")
+            $where = array();
+            $where[$this->tables['PROJECTS_STEPS'].'.project_id'] = $project_id;
+            $where[$this->tables['PROJECTS_STEPS'].'.step_id'] = $step_id;
+            if(!$this->ion_auth->where($where)->check_project_step())
             {
+                $data = array(
+                    'project_id' => $project_id,
+                    'step_id' => $step_id
+                );
+                $this->ion_auth->add_project_step($data); 
+            }
+            
+            if($message != "" || $from != "" || $to != "")
+            {
+                //adding step1 info into(from, to message) database                
                 $data = array(
                     'template_message' => $message,
                     'template_from' => $from,

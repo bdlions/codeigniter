@@ -26,9 +26,12 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
 			{
 				'Save': function() 
 				{   
+                                    Common.setStep3(1);
+                                    $("#buttonCreateCloudCheck").attr("style", "visibility: visible");
+                                    
                                     cloudCroppedContext.putImageData(selectionHeadShape.getCroppedImage(), cloudImage.width/2-20 ,cloudImage.height/2-20);
                                     var imageData = cloudCroppedContext.getImageData(0,0, cloudImage.width, cloudImage.height);
-                                    Common.saveImage(imageData, cloudCroppedContext, cloudImage, Common.get1xPath()+Common.getProjectId()+"/",'sprite-9-0');    
+                                    Common.saveImage(imageData, cloudCroppedContext, cloudImage, Common.get1xPath()+Common.getProjectId()+"/",'sprite-9-0',"3");    
 				},
 				'Close': function() 
 				{

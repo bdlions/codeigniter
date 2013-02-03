@@ -33,7 +33,8 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
                                         Common.setTo(to);
                                         Common.setFrom(from);
                                         Common.setMessage(message);
-                                        
+                                        Common.setStep1(1);
+                                        $("#buttonCreateTextCheck").attr("style", "visibility: visible");
 					//resetting the canvas
 					textCreatorCanvas.width = textImage.width;
 					textCreatorCanvas.height = textImage.height;
@@ -46,7 +47,7 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
 					textCreatorContext.fillText(to, 40, 33);
 					
 					var imageData = textCreatorContext.getImageData(0,0, textCreatorCanvas.width, textCreatorCanvas.height);
-					Common.saveImage(imageData, textCreatorContext, imageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-26-0');
+					Common.saveImage(imageData, textCreatorContext, imageData, Common.get1xPath()+Common.getProjectId()+"/",'sprite-26-0',"1");
 					
 					$(this).dialog('destroy');
 					

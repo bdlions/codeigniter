@@ -7,7 +7,10 @@ define(["jquery"], function($){
     var upload_category;
     var from = "";
     var to = "";
-    var message = "";        
+    var message = "";  
+    var step1 = 0;
+    var step2 = 0;
+    var step3 = 0;
     Common.setTransparency = function(canvasContext, transparency)
     {
         canvasContext.save();
@@ -19,7 +22,7 @@ define(["jquery"], function($){
         canvasContext.restore();
     };
 
-    Common.saveImage = function(croppedImage, savedImageCanvas, imageData, imagePath, imageName)
+    Common.saveImage = function(croppedImage, savedImageCanvas, imageData, imagePath, imageName, stepId)
     {
         var croppedImageCanvas = document.getElementById("croppedImageCanvas");
         var croppedImageCanvasContext = croppedImageCanvas.getContext('2d');
@@ -110,6 +113,13 @@ define(["jquery"], function($){
         + "\r\nContent-Disposition: form-data; name=to"
         + "\r\nContent-type: text"
         + "\r\n\r\n" + to + "\r\n";
+		
+        multipart += "--"+boundary+"--\r\n";
+        
+        multipart += "--" + boundary
+        + "\r\nContent-Disposition: form-data; name=step_id"
+        + "\r\nContent-type: text"
+        + "\r\n\r\n" + stepId + "\r\n";
 		
         multipart += "--"+boundary+"--\r\n";
                 
@@ -209,6 +219,33 @@ define(["jquery"], function($){
     Common.getBaseUrl = function()
     {
         return base_url;
+    }
+    Common.setStep1 = function(id)
+    {
+        step1 = id;
+    }
+	
+    Common.getStep1 = function()
+    {
+        return step1;
+    }
+    Common.setStep2 = function(id)
+    {
+        step2 = id;
+    }
+	
+    Common.getStep2 = function()
+    {
+        return step2;
+    }
+    Common.setStep3 = function(id)
+    {
+        step3 = id;
+    }
+	
+    Common.getStep3 = function()
+    {
+        return step3;
     }
     return Common;
 });

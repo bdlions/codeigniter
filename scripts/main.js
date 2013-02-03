@@ -51,14 +51,20 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         Common.setFrom(from);
         Common.setTo(to);
         Common.setMessage(message);
+        Common.setStep1(step1);
+        Common.setStep2(step2);
+        Common.setStep3(step3);
         
         //PreviewBalloonsTT1.init();
         
         if(project_id == "")
         {
             $("#buttonCreateText").hide();
+            $("#buttonCreateTextCheck").hide();
             $("#buttonCreateHead").hide();
+            $("#buttonCreateHeadCheck").hide();
             $("#buttonCreateCloud").hide();
+            $("#buttonCreateCloudCheck").hide();
             $("#buttonPreviewTemplate").hide();
             $("#buttonPublishTemplate").hide();
             $("#makeyourowntemplate").show();
@@ -78,7 +84,19 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
             {
                 $("#buttonCreateCloud").attr("style", "visibility: visible");
                 //$("#buttonCreateCloud").show();
-            }                    
+            }  
+            if(Common.getStep1() == 1)
+            {
+                $("#buttonCreateTextCheck").attr("style", "visibility: visible");
+            }
+            if(Common.getStep2() == 1)
+            {
+                $("#buttonCreateHeadCheck").attr("style", "visibility: visible");
+            }
+            if(Common.getStep3() == 1)
+            {
+                $("#buttonCreateCloudCheck").attr("style", "visibility: visible");
+            }
             $("#buttonPreviewTemplate").attr("style", "visibility: visible");
             //$("#buttonPreviewTemplate").show();
             $("#buttonPublishTemplate").attr("style", "visibility: visible");

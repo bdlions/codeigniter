@@ -1804,4 +1804,40 @@ class Ion_auth_model extends CI_Model {
         $this->set_message('update_successful');
         return TRUE;
     }
+    
+    /////////////////////////////////Project steps related queries
+    public function add_project_step($additional_data = array())
+    {
+        $this->trigger_events('pre_register');
+        $this->trigger_events('extra_set');
+        $this->db->insert($this->tables['PROJECTS_STEPS'], $additional_data);
+        $id = $this->db->insert_id();
+        return (isset($id)) ? $id : FALSE;
+    }
+    public function check_project_step()
+    {
+        if (isset($this->_ion_where)) {
+            foreach ($this->_ion_where as $where) {
+                $this->db->where($where);
+            }
+            $this->_ion_where = array();
+        }
+        $query = $this->db->select('*')->from($this->tables['PROJECTS_STEPS'])->get();
+        if($query->num_rows() == 0)
+        {
+            return false;
+        }
+        return true;
+    }
+    public function get_project_steps()
+    {
+        if (isset($this->_ion_where)) {
+            foreach ($this->_ion_where as $where) {
+                $this->db->where($where);
+            }
+            $this->_ion_where = array();
+        }
+        $this->response = $this->db->select('*')->from($this->tables['PROJECTS_STEPS'])->get();
+        return $this;
+    }
 }

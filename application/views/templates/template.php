@@ -11,6 +11,9 @@
                     from = '<?php echo $from ?>'; 
                     to = '<?php echo $to ?>'; 
                     message = '<?php echo $message ?>'; 
+                    step1 = '<?php echo $step1 ?>'; 
+                    step2 = '<?php echo $step2 ?>';
+                    step3 = '<?php echo $step3 ?>';
                                                     
                     var template1ImageCanvas = null;
                     var template1Image = null;
@@ -44,21 +47,18 @@
             </div> 
         </td>
     </tr>
-    <tr align="center"  class="custombutton">
+    <tr class="custombutton">
         <td style="float:left;">	    
             <input style="visibility:hidden" type = "button" name = "buttonCreateText" id="buttonCreateText" value="Step 1: Prepare your text" class="custombuttonlightgreen"/>
+            <input style="visibility:hidden" type = "button" name = "buttonCreateTextCheck" id="buttonCreateTextCheck" value="" class="custombuttoncheckimage"/>
         </td>
         <td style="float:left;">	    
             <input style="visibility:hidden" type = "button" name = "buttonCreateHead" id="buttonCreateHead" value="Step 2: Create new head - upload file" class="custombuttonlightgreen"/>
+            <input style="visibility:hidden" type = "button" name = "buttonCreateHeadCheck" id="buttonCreateHeadCheck" value="" class="custombuttoncheckimage"/>
         </td>
         <td style="float:left;">	    
             <input style="visibility:hidden" type = "button" name = "buttonCreateCloud" id="buttonCreateCloud" value="Step 3: Create new cloud - upload file" class="custombuttonlightgreen"/>
-        </td>
-        <td>
-            <?php echo form_open("mytemplates/template" . $template_id); ?>
-            <input type = "hidden" name = "buttonPreprocessTemplate" id="buttonPreprocessTemplate" value=""/>
-            <input type = "submit" name = "makeyourowntemplate" id="makeyourowntemplate" value="Make Your Own!" class="custombuttonlightgreen"/>
-            <?php echo form_close(); ?>
+            <input style="visibility:hidden" type = "button" name = "buttonCreateCloudCheck" id="buttonCreateCloudCheck" value="" class="custombuttoncheckimage"/>
         </td>
     </tr>
     <tr>
@@ -189,7 +189,7 @@
                     <h1 class="red">Join Today!</h1>
                     <h2>To send this card</h2>
                     <div id="ecard_preview_container_294673637">
-                        <img width="300" height="225" alt="template_thumb" src="http://aka.media.jibjab.com/assets/06/44/03/73/30h0qw.png">
+                        <img width="300" height="225" alt="template_thumb" src='<?php echo $base ?>images/30h0qw.png'>
                     </div>
                     <br>
                 </div>
@@ -199,7 +199,7 @@
                         <div id="two_ways" class="right_pane modal_holiday signin">
                             <div class="signin_foot">
                                 <div class="b_create">
-                                    <a class="button create_account_link" href='<?php echo $base ?>auth/create_user'>Create an account on JibJab</a>
+                                    <a class="button create_account_link" href='<?php echo $base ?>auth/adduser'>Create an account on JibJab</a>
                                 </div>
                                 <p>
                                 (already have a JibJab account?

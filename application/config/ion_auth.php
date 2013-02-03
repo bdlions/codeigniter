@@ -28,6 +28,7 @@
         $config['tables']['USERS_PROJECTS']    = 'users_projects';
         $config['tables']['VARIABLES_PROJECTS']    = 'variables_projects';
         $config['tables']['country']    = 'country';
+        $config['tables']['PROJECTS_STEPS']    = 'projects_steps';
 	
         /**
 	 * Default administrators group, use name

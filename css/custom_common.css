@@ -271,3 +271,9 @@
     color: white;
     font-size: 20px;
 }
+
+.custombuttoncheckimage
+{
+    background: url("../images/check.jpg");
+    width:25px;
+}
