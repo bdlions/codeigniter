@@ -35,7 +35,7 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
         {
             previewRenderDiv.dialog(dialogOpts);
             previewRenderDiv.dialog("open");    
-            
+            document.getElementById('messageInPreview').innerHTML = Common.getMessage();
         };		
     };
     return PreviewRender;

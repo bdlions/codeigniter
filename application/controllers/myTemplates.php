@@ -85,14 +85,15 @@ class Mytemplates extends CI_Controller
                     $project_id = $this->ion_auth->create_project($additional_data);
                     $this->session->set_userdata('project_id', $project_id);
                     $this->create_resources($template_id, $project_id);
+                    
+                    redirect('mytemplates/open_template', 'refresh');
                 }
                 else
                 {
                     $project_id = $project_template_infos[0]['project_id'];
-                    $from = $project_template_infos[0]['template_from'];
-                    $to = $project_template_infos[0]['template_to'];
-                    $message = $project_template_infos[0]['template_message'];
-                    $publish_code = $project_template_infos[0]['publish_code'];
+                    
+                    $this->session->set_userdata('project_id', $project_id);
+                    redirect('mytemplates/open_template', 'refresh');
                 }
             }
             else

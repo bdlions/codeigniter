@@ -237,7 +237,7 @@
                     template_id = '<?php echo $template_id ?>';
                     project_id = '<?php echo $project_id ?>';
                 </script>	 
-		<h3 style="color:#336699; font-family:Arial; border-bottom:1px solid #555555;">Your eCard <?php echo $message ?></h3>
+		<h3 style="color:#336699; font-family:Arial; border-bottom:1px solid #555555;">Your eCard <label id="messageInPreview"></label></h3>
 		<div id="haxe:jeash" style="border:1px solid #555555; background-color: #000000; width: 720px; height: 400px" data-framerate="65"></div>
 	</body>
     </div>
