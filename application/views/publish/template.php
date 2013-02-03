@@ -21,6 +21,18 @@
 			}
 			
 		</style>
+                <script type="text/javascript">
+                    function isBrowserCanvasCompatible()
+                    {
+                            var canvas = document.createElement("canvas");
+                            return !!canvas.getContext&&!!canvas.getContext("2d");
+                    };
+                    if(!isBrowserCanvasCompatible())
+                    {
+                        alert("Your browser doesn't support html5. Please update your browser.");
+                        window.location.href = "../../mytemplates/redirect_path";
+                    }
+                </script>
 	</head>	
 
 	<body style="padding:0px; margin:10px;">
