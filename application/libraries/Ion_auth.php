@@ -111,7 +111,7 @@ class Ion_auth
 					'identity'		=> $user->{$this->ci->config->item('identity', 'ion_auth')},
 					'forgotten_password_code' => $user->forgotten_password_code
 				);
-
+                                $data['base'] = base_url();        
 				$message = $this->ci->load->view($this->ci->config->item('email_templates', 'ion_auth').$this->ci->config->item('email_forgot_password', 'ion_auth'), $data, true);
 				$this->ci->email->clear();
 				$this->ci->email->set_newline("\r\n");
@@ -286,7 +286,7 @@ class Ion_auth
 				'email'      => $email,
 				'activation' => $activation_code,
 			);
-
+                        $data['base'] = base_url();         
 			$message = $this->ci->load->view($this->ci->config->item('email_templates', 'ion_auth').$this->ci->config->item('email_activate', 'ion_auth'), $data, true);
 
 			$this->ci->email->clear();
@@ -464,7 +464,7 @@ class Ion_auth
                     'email'      => $email,
                     'activation' => $activation_code,
             );
-
+            $data['base'] = base_url();         
             $message = $this->ci->load->view($this->ci->config->item('email_templates', 'ion_auth').$this->ci->config->item('email_activate', 'ion_auth'), $data, true);
 
             $this->ci->email->clear();
