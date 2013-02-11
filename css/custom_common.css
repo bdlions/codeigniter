@@ -277,3 +277,27 @@
     background: url("../images/check.jpg");
     width:25px;
 }
+.welcome
+{
+    background-position: left center;
+    background-repeat: no-repeat;
+    border: 0 none;
+    color: #00FF00;
+    display: block;
+    float: right;
+    font-family: Arial,Helvetica,'Helvetica Neue',sans-serif;
+    font-size: 11px;
+    font-size-adjust: none;
+    font-style: normal;
+    font-weight: 400;
+    height: 37px;
+    letter-spacing: normal;
+    line-height: 37px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    text-transform: none;
+    word-spacing: 0;
+}

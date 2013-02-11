@@ -7,7 +7,8 @@
         <thead>
             <tr>
                 <th>Template</th>
-                <th>Link to ecard</th>
+                <th>Edit ecard</th>
+                <th>Show ecard</th>
                 <th>Delete the ecard</th>
                 <th>Creation date</th>
             </tr>
@@ -16,7 +17,8 @@
             <?php foreach ($template_list as $template): ?>
                 <tr>
                     <td><?php echo $template->template_name; ?></td>
-                    <td><?php echo anchor("mytemplates/open_selected_template/".$template->project_id, 'Open'); ?></td>
+                    <td><?php echo anchor("mytemplates/open_selected_template/".$template->project_id, 'Edit'); ?></td>
+                    <td><?php echo anchor("auth/showecard/".$template->publish_code, 'Show',array('target'=>'_blank')); ?></td>
                     <td><?php echo anchor("mytemplates/delete_template/".$template->project_id, 'Delete'); ?></td>
                     <td><?php echo $template->created_date; ?></td>
                 </tr>

@@ -30,7 +30,8 @@ class Auth extends CI_Controller
         {
             if($this->ion_auth->is_member())
             {
-                redirect('mytemplates/templates', 'refresh');
+                //redirect('mytemplates/templates', 'refresh');
+                redirect('', 'location');
                 /*$base = base_url(); 
                 $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
                 $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
@@ -48,7 +49,8 @@ class Auth extends CI_Controller
             }
             else if($this->ion_auth->is_demo())
             {
-                redirect('mytemplates/templates', 'refresh');
+                //redirect('mytemplates/templates', 'refresh');
+                redirect('', 'location');
                 /*$base = base_url(); 
                 $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
                 $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
@@ -139,7 +141,7 @@ class Auth extends CI_Controller
                     //if the login was un-successful
                     //redirect them back to the login page
                     $this->session->set_flashdata('message', $this->ion_auth->errors());
-                    redirect('auth/index', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
+                    redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
                 }
             }
         }
@@ -593,7 +595,8 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('user_name', 'User Name', 'required|xss_clean');
         $this->form_validation->set_rules('first_name', 'First Name', 'required|xss_clean');
         $this->form_validation->set_rules('last_name', 'Last Name', 'required|xss_clean');
-        $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
+        $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email|matches[email_confirm]');
+        $this->form_validation->set_rules('email_confirm', 'Email Address Confirmation', 'required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]|callback_password_check');
         $this->form_validation->set_rules('password_confirm', 'Password Confirmation', 'required');
         $this->form_validation->set_rules('countries', 'Country', 'required|xss_clean');
@@ -675,7 +678,11 @@ class Auth extends CI_Controller
                 'type' => 'text',
                 'value' => $this->form_validation->set_value('email'),
             );            
-            
+            $this->data['email_confirm'] = array('name' => 'email_confirm',
+                'id' => 'email_confirm',
+                'type' => 'text',
+                'value' => $this->form_validation->set_value('email_confirm'),
+            );
             $this->data['password'] = array('name' => 'password',
                 'id' => 'password',
                 'type' => 'password',
@@ -735,7 +742,11 @@ class Auth extends CI_Controller
             'type' => 'text',
             'value' => $this->form_validation->set_value('email'),
         );            
-
+        $this->data['email_confirm'] = array('name' => 'email_confirm',
+            'id' => 'email_confirm',
+            'type' => 'text',
+            'value' => $this->form_validation->set_value('email_confirm'),
+        ); 
         $this->data['password'] = array('name' => 'password',
             'id' => 'password',
             'type' => 'password',
@@ -861,6 +872,7 @@ class Auth extends CI_Controller
             $this->template->set('css', $css);
             $this->template->set('js', $js);
             $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_external_user');
             if ($this->ion_auth->logged_in())
             {
                 $this->template->set('is_logged_in', 'true');
@@ -895,36 +907,43 @@ class Auth extends CI_Controller
         $this->data['user_name'] = array('name' => 'user_name',
             'id' => 'user_name',
             'type' => 'text',
+            'readonly' => 'true',
             'value' => $user_info['username'],
         );
         $this->data['first_name'] = array('name' => 'first_name',
             'id' => 'first_name',
             'type' => 'text',
+            'readonly' => 'true',
             'value' => $user_info['first_name'],
         );
         $this->data['last_name'] = array('name' => 'last_name',
             'id' => 'last_name',
             'type' => 'text',
+            'readonly' => 'true',
             'value' => $user_info['last_name'],
         );
         $this->data['email'] = array('name' => 'email',
             'id' => 'email',
             'type' => 'text',
+            'readonly' => 'true',
             'value' => $user_info['email'],
         );
         $this->data['created_date'] = array('name' => 'created_date',
             'id' => 'created_date',
             'type' => 'text',
+            'readonly' => 'true',
             'value' => $user_info['created_date'],
         );
         $this->data['ip_address'] = array('name' => 'ip_address',
             'id' => 'ip_address',
             'type' => 'text',
+            'readonly' => 'true',
             'value' => $user_info['ip_address'],
         );
         $this->data['browser'] = array('name' => 'browser',
             'id' => 'browser',
             'type' => 'text',
+            'readonly' => 'true',
             'value' => $user_info['browser'],
         );
         $countries = $this->ion_auth->order_by('printable_name','asc')->get_all_countries()->result_array();
@@ -1095,5 +1114,38 @@ class Auth extends CI_Controller
             }
             $this->template->load("main_template",'auth/edit_user', $this->data);
         }
+    }
+    
+    public function showecard($publish_code)
+    {
+        
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('auth/login', 'refresh');
+        }
+        else
+        {
+            $project_exists = 0;
+            $project_id = "";
+            $template_id = "";
+            $user_projects = $this->ion_auth->projects()->result();
+            foreach ($user_projects as $user_project):
+                if($publish_code == $user_project->publish_code)
+                {
+                    $project_exists = 1;
+                    $project_id = $user_project->project_id;
+                    $template_id = $user_project->template_id;
+                    $this->data['template_id'] = $template_id;
+                    $this->data['project_id'] = $project_id;
+                    $this->data['template_message'] = $user_project->template_message;
+                    $this->load->view("publish/template", $this->data);
+                }
+            endforeach;        
+            //if this template is deleted and user tries to preview it then we are redirecting to home page
+            if($project_exists == 0)
+            {
+                redirect('', 'location');
+            }
+        }        
     }
 }

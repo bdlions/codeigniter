@@ -46,16 +46,16 @@
                                     <li><a href='<?php echo $base ?>auth/show_user'>Show profile</a></li>
                                     <li><a href='<?php echo $base ?>auth/edit_user'>Edit profile</a></li>
                                     <li><a href='<?php echo $base ?>mytemplates/templates'>My cards</a></li>
-                                    <li><a href="#">
+                                    <li><div class="welcome" >
                                             <?php if (empty($user_name)) { ?>
-                                                Guest
+                                                Welcome:Guest
                                             <?php                                            
                                             } 
                                             else
                                             { 
-                                                echo $user_name;
+                                                echo "Welcome:".$user_name;
                                             } ?>
-                                        </a></li>
+                                        </div></li>
                                 <?php } else { ?>
                                     <li><a rel="nofollow" id="lnkLogin" href='<?php echo $base ?>admin/logout' name="lnkLogin">Logout</a></li>
                                 <?php } ?>

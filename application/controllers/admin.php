@@ -24,19 +24,31 @@ class Admin extends CI_Controller
         if (!$this->ion_auth->logged_in())
         {
             //redirect to the login page
-            redirect('admin/login', 'refresh');
+            redirect('admin/signin', 'refresh');
         }        
         else
         {
             if($this->ion_auth->is_admin())
             {
-                $this->user_render_pagination($this->config->item('pagination_page_range', 'ion_auth'),0);
+                $this->userlist();
             }
             else
             {
                 redirect('admin/login', 'refresh');
             }
             
+        }
+    }
+    
+    function userlist()
+    {        
+        if($this->ion_auth->is_admin())
+        {
+            $this->user_render_pagination($this->config->item('pagination_page_range', 'ion_auth'),0);
+        }
+        else
+        {
+            redirect('admin/login', 'refresh');
         }
     }
     
@@ -465,7 +477,7 @@ class Admin extends CI_Controller
         {
             //redirect them to the auth page
             $this->session->set_flashdata('message', $this->ion_auth->messages());
-            redirect("admin", 'refresh');
+            redirect("admin/userlist", 'refresh');
         }
         else
         {

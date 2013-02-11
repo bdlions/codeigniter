@@ -18,7 +18,7 @@
                 <tr>
                     <td><?php echo $template->username; ?></td>
                     <td><?php echo $template->template_name; ?></td>
-                    <td><?php echo anchor("admin/previewtemplate/".$template->project_id, 'Open'); ?></td>
+                    <td><?php echo anchor("admin/previewtemplate/".$template->project_id, 'Open',array('target'=>'_blank')); ?></td>
                     <td><?php echo anchor("admin/delete_template/".$template->project_id, 'Delete'); ?></td>
                     <td><?php echo $template->created_date; ?></td>
                 </tr>

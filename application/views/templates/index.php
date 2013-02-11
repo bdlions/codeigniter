@@ -24,7 +24,14 @@
 </div>
 <div style="visibility: hidden; height:0px;">
     <div id="displaySelectedTemplateDiv">
-        <table style="width:100%">					
+        <table style="width:100%">
+            <tr style="height:420px">
+                <td>
+                    <div style="padding:0px; margin:10px;">                                 
+                        <div id="haxe:jeash" style="border:1px solid #555555; background-color: #000000; width: 720px; height: 400px" data-framerate="65"></div>
+                    </div>
+                </td>
+            </tr>
             <tr align="center"  class="custombutton">
                 <td class="custombutton">
                     <?php echo form_open("mytemplates/load_template"); ?>
@@ -32,10 +39,8 @@
                     <input type = "submit" name = "makeyourowntemplate" id="makeyourowntemplate" value="Make Your Own!" class="custombuttonlightgreen"/>
                     <?php echo form_close(); ?>
                 </td>
-            </tr>            
+            </tr>
         </table>
-        <div style="padding:0px; margin:10px;">                                 
-            <div id="haxe:jeash" style="border:1px solid #555555; background-color: #000000; width: 720px; height: 400px" data-framerate="65"></div>
-        </div> 
+                
     </div>    
 </div>

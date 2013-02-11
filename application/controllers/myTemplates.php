@@ -66,10 +66,11 @@ class Mytemplates extends CI_Controller
             
             if ($this->ion_auth->logged_in())
             {
-                $where['users_projects.user_id'] = $this->session->userdata('user_id');
+                //each time user click make your own, we are creating a new project for this template
+                /*$where['users_projects.user_id'] = $this->session->userdata('user_id');
                 $where['project_info.template_id'] = $template_id;
                 $project_template_infos = $this->ion_auth->where($where)->check_project()->result_array();
-                if(count($project_template_infos) == 0)
+                if(count($project_template_infos) == 0)*/
                 {
                     $publish_code = uniqid();                     
                     $datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
@@ -88,13 +89,13 @@ class Mytemplates extends CI_Controller
                     
                     redirect('mytemplates/open_template', 'refresh');
                 }
-                else
+                /*else
                 {
                     $project_id = $project_template_infos[0]['project_id'];
                     
                     $this->session->set_userdata('project_id', $project_id);
                     redirect('mytemplates/open_template', 'refresh');
-                }
+                }*/
             }
             else
             {
@@ -194,7 +195,7 @@ class Mytemplates extends CI_Controller
         }
         else if ($this->input->post('delete_template_no'))
         {
-            redirect('mytemplates/index', 'refresh');
+            redirect('mytemplates/templates', 'refresh');
         }
         else
         {
@@ -629,7 +630,11 @@ class Mytemplates extends CI_Controller
     
     public function templates()
     {
-        if ($this->ion_auth->logged_in())
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('auth/login', 'refresh');
+        }
+        else
         {
             $where['users_projects.user_id'] = $this->session->userdata('user_id');
             $this->data['template_list'] = $this->ion_auth->where($where)->check_project()->result();
@@ -656,12 +661,14 @@ class Mytemplates extends CI_Controller
     /////////////////////Publish and Preview start////////////////////////////////
     public function publishtemplate($publish_code)
     {
+        $project_exists = 0;
         $project_id = "";
         $template_id = "";
         $user_projects = $this->ion_auth->projects()->result();
         foreach ($user_projects as $user_project):
             if($publish_code == $user_project->publish_code)
             {
+                $project_exists = 1;
                 $project_id = $user_project->project_id;
                 $template_id = $user_project->template_id;
                 $this->data['template_id'] = $template_id;
@@ -669,7 +676,12 @@ class Mytemplates extends CI_Controller
                 $this->data['template_message'] = $user_project->template_message;
                 $this->load->view("publish/template", $this->data);
             }
-        endforeach;        
+        endforeach;   
+        //if this template is deleted and user tries to preview it then we are redirecting to home page
+        if($project_exists == 0)
+        {
+            redirect('', 'location');
+        }
     }
     
     public function previewtemplate($template_id)
@@ -693,7 +705,7 @@ class Mytemplates extends CI_Controller
             redirect('templates', 'refresh');
         }
         
-    }
+    }    
     ////////////////////Publish and Preview end///////////////////////////////////
     
     /////////////////////Footer links start////////////////////////////////

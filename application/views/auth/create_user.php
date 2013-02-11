@@ -82,6 +82,10 @@
                     <div class="tabular-cell"><?php echo form_input($email); ?></div>
                 </div>
                 <div class="tabular-row">
+                    <div class="tabular-cell"><label>Confirm Email:</label></div>
+                    <div class="tabular-cell"><?php echo form_input($email_confirm); ?></div>
+                </div>
+                <div class="tabular-row">
                     <div class="tabular-cell"><label>Password:</label></div>
                     <div class="tabular-cell"><?php echo form_input($password); ?></div>
                 </div>

@@ -10,7 +10,7 @@ define(["jquery", "Common", "FileUploader"], function($, Common, FileUploader)
                 title: "",
                 modal: true,
                 autoOpen: false,
-                height: 570,
+                height: 540,
                 width: 770,
                 position: [0,0],
                 buttons: 
