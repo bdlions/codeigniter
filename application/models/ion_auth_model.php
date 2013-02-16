@@ -1840,4 +1840,12 @@ class Ion_auth_model extends CI_Model {
         $this->response = $this->db->select('*')->from($this->tables['PROJECTS_STEPS'])->get();
         return $this;
     }
+    /////////////////////projects of external users
+    public function external_user_create_project($additional_data = array()) {
+        $this->trigger_events('pre_register');
+        $this->trigger_events('extra_set');
+        $this->db->insert($this->tables['EXTERNAL_USER_PROJECT_INFO'], $additional_data);
+        $id = $this->db->insert_id();
+        return (isset($id)) ? $id : FALSE;
+    }
 }

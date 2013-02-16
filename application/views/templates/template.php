@@ -117,15 +117,15 @@
     </div> 
     <div id="fileUploaderDiv" title="Basic dialog">
         <?php echo form_open_multipart('mytemplates/upload', array('id' => 'fileUploadForm', 'name' => 'fileUploadForm')); ?>
-        <table>
+        <table style="width:100%">
             <tr>
-                <td colspan="3">
+                <td colspan="5">
                     <label>Upload a photo of you or yourrself</label>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <input type="text" name="fileName" id="fileName"/>
+                <td colspan="4">
+                    <input style="width:400px" type="text" name="fileName" id="fileName"/>
                 </td>
                 <td>
                     <div id='file_browse_wrapper'>

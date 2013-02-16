@@ -8,6 +8,7 @@ class Mytemplates extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->helper('cookie');
         $this->load->library('session'); 
         $this->load->library('ion_auth');        
         $this->load->helper('file');
@@ -65,70 +66,79 @@ class Mytemplates extends CI_Controller
             }
             
             if ($this->ion_auth->logged_in())
-            {
-                //each time user click make your own, we are creating a new project for this template
-                /*$where['users_projects.user_id'] = $this->session->userdata('user_id');
-                $where['project_info.template_id'] = $template_id;
-                $project_template_infos = $this->ion_auth->where($where)->check_project()->result_array();
-                if(count($project_template_infos) == 0)*/
-                {
-                    $publish_code = uniqid();                     
-                    $datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
-                    $time = time();
-                    $created_date = mdate($datestring, $time);
-                    
-                    $additional_data = array(
-                        'template_id' => $template_id,
-                        'template_name' => $template_name,
-                        'publish_code' => $publish_code,
-                        'modified_date' => $created_date,
-                    );
-                    $project_id = $this->ion_auth->create_project($additional_data);
-                    $this->session->set_userdata('project_id', $project_id);
-                    $this->create_resources($template_id, $project_id);
-                    
-                    redirect('mytemplates/open_template', 'refresh');
-                }
-                /*else
-                {
-                    $project_id = $project_template_infos[0]['project_id'];
-                    
-                    $this->session->set_userdata('project_id', $project_id);
-                    redirect('mytemplates/open_template', 'refresh');
-                }*/
+            {                
+                $publish_code = uniqid();                     
+                $datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
+                $time = time();
+                $created_date = mdate($datestring, $time);
+
+                $additional_data = array(
+                    'template_id' => $template_id,
+                    'template_name' => $template_name,
+                    'publish_code' => $publish_code,
+                    'modified_date' => $created_date,
+                );
+                $project_id = $this->ion_auth->create_project($additional_data);
+                $this->session->set_userdata('project_id', $project_id);                
             }
             else
             {
                 $project_id = "external_".uniqid();  
-                $this->create_resources($template_id, $project_id);
+                $additional_data = array(
+                    'template_id' => $template_id,
+                    'template_name' => $template_name,
+                    'project_id' => $project_id,
+                );
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_project_id',
+                    'value' => $project_id,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_id',
+                    'value' => $template_id,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_name',
+                    'value' => $template_name,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));    
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_from',
+                    'value' => $from,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_to',
+                    'value' => $to,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_message',
+                    'value' => $message,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_step1',
+                    'value' => $step1,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_step2',
+                    'value' => $step2,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_step3',
+                    'value' => $step3,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->ion_auth->external_user_create_project($additional_data);
             }
+            $this->create_resources($template_id, $project_id);
+            redirect('mytemplates/open_template', 'refresh');
         }
-       
-        $this->data['template_id'] = $template_id;  
-        $this->data['project_id'] = $project_id;
-        $this->data['publish_code'] = $publish_code;   
-        $this->data['from'] = $from;  
-        $this->data['to'] = $to;  
-        $this->data['message'] = $message; 
-        $this->data['step1'] = $step1;
-        $this->data['step2'] = $step2;  
-        $this->data['step3'] = $step3;  
-        
-        $base = base_url(); 
-        $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
-        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
-        $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/subscribe.css'/>" ;
-        $js = "";
-        $this->template->set('css', $css);
-        $this->template->set('js', $js);
-        $this->template->set('base', $base);
-        $this->template->set('menu_bar', 'design/menu_bar_home');
-        if ($this->ion_auth->logged_in())
-        {
-            $this->template->set('is_logged_in', 'true');
-            $this->template->set('user_name', $this->session->userdata('username'));
-        }
-        $this->template->load("second_template","templates/template", $this->data);
     }
     
     public function open_selected_template($project_id)
@@ -221,10 +231,7 @@ class Mytemplates extends CI_Controller
     
     public function open_template()
     {
-        if (!$this->ion_auth->logged_in())
-        {
-            redirect('auth/login', 'refresh');
-        }
+        
         $template_id = "";
         $project_id = 1; 
         $publish_code = "";    
@@ -235,44 +242,62 @@ class Mytemplates extends CI_Controller
         $step1 = 0;
         $step2 = 0;
         $step3 = 0;
-        
-        $project_id = $this->session->userdata('project_id');
-        if($project_id > 0)
+        if (!$this->ion_auth->logged_in())
         {
-            //$this->session->set_userdata('project_id', ""); 
-            $where['project_id'] = $project_id;
-            $project_infos = $this->ion_auth->where($where)->get_project_info()->result_array();
-            $project_info = $project_infos[0];
-            $template_id = $project_info['template_id'];
-            $publish_code = $project_info['publish_code'];
-            $template_name = $project_info['template_name'];
-            $from = $project_info['template_from'];
-            $to = $project_info['template_to'];
-            $message = $project_info['template_message'];
-            
-            $where = array();
-            $where[$this->tables['PROJECTS_STEPS'].'.project_id'] = $project_id;
-            $project_steps = $this->ion_auth->where($where)->get_project_steps()->result_array();
-            if(count($project_steps) > 0)
+            if ($this->input->cookie('cookie_project_id'))
             {
-                foreach ($project_steps as $project_step)
+                $project_id = $this->input->cookie('cookie_project_id');
+                $template_id = $this->input->cookie('cookie_template_id');
+                $template_name = $this->input->cookie('cookie_template_name');
+                $from = $this->input->cookie('cookie_template_from');
+                $to = $this->input->cookie('cookie_template_to');
+                $message = $this->input->cookie('cookie_template_message');
+                $step1 = $this->input->cookie('cookie_template_step1');
+                $step2 = $this->input->cookie('cookie_template_step2');
+                $step3 = $this->input->cookie('cookie_template_step3');
+            }
+        }
+        else
+        {
+            $project_id = $this->session->userdata('project_id');
+            if($project_id > 0)
+            {
+                //$this->session->set_userdata('project_id', ""); 
+                $where['project_id'] = $project_id;
+                $project_infos = $this->ion_auth->where($where)->get_project_info()->result_array();
+                $project_info = $project_infos[0];
+                $template_id = $project_info['template_id'];
+                $publish_code = $project_info['publish_code'];
+                $template_name = $project_info['template_name'];
+                $from = $project_info['template_from'];
+                $to = $project_info['template_to'];
+                $message = $project_info['template_message'];
+
+                $where = array();
+                $where[$this->tables['PROJECTS_STEPS'].'.project_id'] = $project_id;
+                $project_steps = $this->ion_auth->where($where)->get_project_steps()->result_array();
+                if(count($project_steps) > 0)
                 {
-                    if($project_step['step_id'] == 1)
+                    foreach ($project_steps as $project_step)
                     {
-                        $step1 = 1;
-                    }
-                    else if($project_step['step_id'] == 2)
-                    {
-                        $step2 = 1;
-                    }
-                    else if($project_step['step_id'] == 3)
-                    {
-                        $step3 = 1;
+                        if($project_step['step_id'] == 1)
+                        {
+                            $step1 = 1;
+                        }
+                        else if($project_step['step_id'] == 2)
+                        {
+                            $step2 = 1;
+                        }
+                        else if($project_step['step_id'] == 3)
+                        {
+                            $step3 = 1;
+                        }
                     }
                 }
+
             }
-            
         }
+        
         $this->data['template_id'] = $template_id;  
         $this->data['project_id'] = $project_id;
         $this->data['publish_code'] = $publish_code;   
@@ -592,6 +617,32 @@ class Mytemplates extends CI_Controller
                 );
                 $this->ion_auth->where('project_id',$project_id)->update_project($data); 
             }
+        }
+        else
+        {
+            if($message != "" || $from != "" || $to != "")
+            {
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_from',
+                    'value' => $from,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_to',
+                    'value' => $to,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                $this->input->set_cookie(array(
+                    'name' => 'cookie_template_message',
+                    'value' => $message,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+            }
+            $this->input->set_cookie(array(
+                'name' => 'cookie_template_step'.$step_id,
+                'value' => '1',
+                'expire' => $this->config->item('user_expire', 'ion_auth'),
+            ));
         }
         
         $imageData = $_REQUEST['data'];

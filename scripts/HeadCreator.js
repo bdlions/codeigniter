@@ -64,10 +64,16 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
                     //$(this).dialog('destroy');
                                         
                     },
+                    'Use another image': function() 
+                    {
+                        clearInterval(interval);
+                        $(this).dialog('destroy');
+                    },
                     'Close': function() 
                     {
                         clearInterval(interval);
                         $(this).dialog('destroy');
+                        $("#fileUploaderDiv").dialog('destroy');
                     }
                 },
                 open: function() 
@@ -76,7 +82,8 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
                 },                        
                 close: function()
                 {
-                    clearInterval(interval);          
+                    clearInterval(interval); 
+                    $("#fileUploaderDiv").dialog('destroy');
                 }
             };
             headCreatorDiv.dialog(dialogOpts);

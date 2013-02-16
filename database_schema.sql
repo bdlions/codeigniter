@@ -362,5 +362,28 @@ CREATE TABLE IF NOT EXISTS `users_projects` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+CREATE TABLE IF NOT EXISTS `projects_steps` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `project_id` mediumint(8) unsigned NOT NULL,  
+  `step_id` mediumint(8) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (project_id) REFERENCES project_info(project_id) ON DELETE CASCADE
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `external_user_project_info` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `project_id` varchar(100) DEFAULT '',
+  `project_name` varchar(100) DEFAULT '',
+  `template_id` mediumint(8) unsigned NOT NULL,
+  `template_name` varchar(100) DEFAULT '',
+  `publish_code` varchar(500) DEFAULT '',
+  `template_from` varchar(100) DEFAULT '',
+  `template_to` varchar(100) DEFAULT '',
+  `template_message` varchar(100) DEFAULT '',
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 
 

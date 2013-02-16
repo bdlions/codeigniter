@@ -14,10 +14,15 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
 		modal: true,
 		autoOpen: false,
 		height: 260,
-		width: 400,
+		width: 550,
 		buttons: 
 		{
-			'Upload': function() 
+			'Upload a file': function() 
+			{   
+				//$("form").submit();
+                                $('#fileUploadForm').submit();				
+			},
+                        'Use our image gallery': function() 
 			{   
 				//$("form").submit();
                                 $('#fileUploadForm').submit();				

@@ -19,6 +19,11 @@
 				padding: 10px 0 0;
 				position: relative;
 			}
+                        .facebooksharebutton
+                        {
+                            background: url("../../images/fb.png");
+                            background-repeat:repeat-x;
+                        }
 			
 		</style>
                 <script type="text/javascript">
@@ -32,6 +37,12 @@
                         alert("Your browser doesn't support html5. Please update your browser.");
                         window.location.href = "../../mytemplates/redirect_path";
                     }
+                    
+                    function shareInFacebook()
+                    {
+                        var browser_url = document.location.href;
+                        window.open('https://www.facebook.com/dialog/feed?%20%20%20app_id=161414874010559&%20%20%20link='+browser_url+'&%20%20%20picture=http://apurbogroup.net/mtea/images/jibjab_logo.png&%20%20%20name='+browser_url+'&%20%20%20caption=Ecard&%20%20%20description=Custom%20ecards.&%20%20%20redirect_uri=http://apurbogroup.net/mtea','','width=600,height=400');
+                    }
                 </script>
 	</head>	
 
@@ -41,13 +52,35 @@
                     project_id = '<?php echo $project_id ?>';
                 </script>
 	 
-		<h3 style="color:#336699; font-family:Arial; border-bottom:1px solid #555555;">Your eCard <?php echo $template_message ?></h3>
+		<table style="width:100%; height:100%">
+                    <tr style="height:50px;">
+                        <td>
+                            <h3 style="color:#336699; font-family:Arial; border-bottom:1px solid #555555;">Your eCard <?php echo $template_message ?></h3>            
+                        </td>
+                    </tr>
+                    <tr style="height:400px;">
+                        <td>
+                            <div id="haxe:jeash" style="border:1px solid #555555; background-color: #000000; width: 720px; height: 400px; top:55px;" data-framerate="65"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Share this page
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type = "button" name = "facebookShare" id="facebookShare" onclick="shareInFacebook()" value="" class="facebooksharebutton"/>            
+                        </td>
+                    </tr>
+                </table>
+                
 		
 		<!-- <div id="haxe:trace" style="position: absolute; z-index: 2147483647; display: none;"></div> -->
 		
 		
-		<div id="haxe:jeash" style="border:1px solid #555555; background-color: #000000; width: 720px; height: 400px" data-framerate="65"></div>
 		
+                
 		
 	</body>
 </html>

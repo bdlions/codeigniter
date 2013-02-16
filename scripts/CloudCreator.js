@@ -33,10 +33,16 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
                                     var imageData = cloudCroppedContext.getImageData(0,0, cloudImage.width, cloudImage.height);
                                     Common.saveImage(imageData, cloudCroppedContext, cloudImage, Common.get1xPath()+Common.getProjectId()+"/",'sprite-9-0',"3");    
 				},
+                                'Use another image': function() 
+                                {
+                                    clearInterval(interval);
+                                    $(this).dialog('destroy');
+                                },
 				'Close': function() 
 				{
-                                        clearInterval(interval);
-					$(this).dialog('destroy');
+                                    clearInterval(interval);
+                                    $(this).dialog('destroy');
+                                    $("#fileUploaderDiv").dialog('destroy');
 				}
 			},
 			open: function() 
@@ -45,7 +51,8 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
 			},                        
                         close: function()
                         {
-                           clearInterval(interval);          
+                           clearInterval(interval);   
+                           $("#fileUploaderDiv").dialog('destroy');
                         }
 		};
 		cloudCreatorDiv.dialog(dialogOpts);

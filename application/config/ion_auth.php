@@ -29,6 +29,7 @@
         $config['tables']['VARIABLES_PROJECTS']    = 'variables_projects';
         $config['tables']['country']    = 'country';
         $config['tables']['PROJECTS_STEPS']    = 'projects_steps';
+        $config['tables']['EXTERNAL_USER_PROJECT_INFO']    = 'external_user_project_info';
 	
         /**
 	 * Default administrators group, use name
