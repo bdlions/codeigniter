@@ -241,6 +241,11 @@
 		<div id="haxe:jeash" style="border:1px solid #555555; background-color: #000000; width: 720px; height: 400px" data-framerate="65"></div>
 	</body>
     </div>
+    <div id="publishSelectionStored">
+        <?php echo form_open_multipart("mytemplates/publishselection/", array('id' => 'publishSelectionForm', 'name' => 'publishSelectionForm')); ?>
+        
+        <?php echo form_close(); ?>
+    </div>
 </div>
 <canvas id="croppedImageCanvas" style="visibility: hidden;"> 
     Sorry, your browser doesn't support HTML5.

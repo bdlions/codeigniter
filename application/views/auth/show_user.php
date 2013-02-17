@@ -83,7 +83,7 @@
                 </div>                
                 <div class="tabular-row">
                     <div class="tabular-cell"><label>Country:</label></div>
-                    <div class="tabular-cell"><?php echo form_dropdown('countries', $countries, $selected_country); ?></div>
+                    <div class="tabular-cell"><?php echo form_dropdown('countries', $countries, $selected_country, 'disabled="disabled"'); ?></div>
                 </div>
                 <div class="tabular-row">
                     <div class="tabular-cell"></div>

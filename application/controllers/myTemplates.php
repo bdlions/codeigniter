@@ -106,17 +106,17 @@ class Mytemplates extends CI_Controller
                 ));    
                 $this->input->set_cookie(array(
                     'name' => 'cookie_template_from',
-                    'value' => $from,
+                    'value' => '',
                     'expire' => $this->config->item('user_expire', 'ion_auth'),
                 ));
                 $this->input->set_cookie(array(
                     'name' => 'cookie_template_to',
-                    'value' => $to,
+                    'value' => '',
                     'expire' => $this->config->item('user_expire', 'ion_auth'),
                 ));
                 $this->input->set_cookie(array(
                     'name' => 'cookie_template_message',
-                    'value' => $message,
+                    'value' => '',
                     'expire' => $this->config->item('user_expire', 'ion_auth'),
                 ));
                 $this->input->set_cookie(array(
@@ -132,6 +132,12 @@ class Mytemplates extends CI_Controller
                 $this->input->set_cookie(array(
                     'name' => 'cookie_template_step3',
                     'value' => $step3,
+                    'expire' => $this->config->item('user_expire', 'ion_auth'),
+                ));
+                
+                $this->input->set_cookie(array(
+                    'name' => 'is_publish_selected',
+                    'value' => 'false',
                     'expire' => $this->config->item('user_expire', 'ion_auth'),
                 ));
                 $this->ion_auth->external_user_create_project($additional_data);
@@ -733,6 +739,14 @@ class Mytemplates extends CI_Controller
         {
             redirect('', 'location');
         }
+    }
+    public function publishselection()
+    {
+        $this->input->set_cookie(array(
+            'name' => 'is_publish_selected',
+            'value' => 'true',
+            'expire' => $this->config->item('user_expire', 'ion_auth'),
+        ));
     }
     
     public function previewtemplate($template_id)

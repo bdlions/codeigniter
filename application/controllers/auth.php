@@ -30,48 +30,145 @@ class Auth extends CI_Controller
         {
             if($this->ion_auth->is_member())
             {
-                //redirect('mytemplates/templates', 'refresh');
-                redirect('', 'location');
-                /*$base = base_url(); 
-                $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
-                $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
-                $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
-                $this->template->set('css', $css);
-                $this->template->set('js', $js);
-                $this->template->set('base', $base);
-                $this->template->set('menu_bar', 'design/menu_bar_home');
-                if ($this->ion_auth->logged_in())
+                if ($this->input->cookie('is_publish_selected'))
                 {
-                    $this->template->set('is_logged_in', 'true');
-                    $this->template->set('user_name', $this->session->userdata('username'));
+                    if ($this->input->cookie('is_publish_selected') == 'true')
+                    {
+                        $this->load_existing_project();
+                                                $this->input->set_cookie(array(
+                            'name' => 'is_publish_selected',
+                            'value' => 'false',
+                            'expire' => $this->config->item('user_expire', 'ion_auth'),
+                        ));
+                    }
+                    else
+                    {
+                        redirect('', 'location');    
+                    }
                 }
-                $this->template->load("main_template","templates/index");*/
+                else
+                {
+                    redirect('', 'location');  
+                }           
             }
             else if($this->ion_auth->is_demo())
             {
-                //redirect('mytemplates/templates', 'refresh');
-                redirect('', 'location');
-                /*$base = base_url(); 
-                $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
-                $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
-                $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
-                $this->template->set('css', $css);
-                $this->template->set('js', $js);
-                $this->template->set('base', $base);
-                $this->template->set('menu_bar', 'design/menu_bar_home');
-                if ($this->ion_auth->logged_in())
+                if ($this->input->cookie('is_publish_selected'))
                 {
-                    $this->template->set('is_logged_in', 'true');
-                    $this->template->set('user_name', $this->session->userdata('username'));
+                    if ($this->input->cookie('is_publish_selected') == 'true')
+                    {
+                        $this->load_existing_project();
+                        $this->input->set_cookie(array(
+                            'name' => 'is_publish_selected',
+                            'value' => 'false',
+                            'expire' => $this->config->item('user_expire', 'ion_auth'),
+                        ));
+                    }
+                    else
+                    {
+                        redirect('', 'location');    
+                    }
                 }
-                $this->template->load("main_template","templates/index");*/
+                else
+                {
+                    redirect('', 'location');  
+                }
             }
             else
             {
                 redirect('auth/login', 'refresh');
+            }            
+        }
+    }
+    
+    function load_existing_project()
+    {
+        $template_id = "";
+        $project_id = ""; 
+        $publish_code = uniqid();    
+        $template_name = "";
+        $from = "";
+        $to = "";
+        $message = "";
+        $step1 = 0;
+        $step2 = 0;
+        $step3 = 0;
+        if ($this->input->cookie('cookie_project_id'))
+        {
+            $project_id = $this->input->cookie('cookie_project_id');
+            $template_id = $this->input->cookie('cookie_template_id');
+            $template_name = $this->input->cookie('cookie_template_name');
+            if($this->input->cookie('cookie_template_from') != "0")
+            {
+                $from = $this->input->cookie('cookie_template_from');
+            }
+            if($this->input->cookie('cookie_template_to') != "0")
+            {
+                $to = $this->input->cookie('cookie_template_to');
+            }
+            if($this->input->cookie('cookie_template_message') != "0")
+            {
+                $message = $this->input->cookie('cookie_template_message');
             }
             
+            $step1 = $this->input->cookie('cookie_template_step1');
+            $step2 = $this->input->cookie('cookie_template_step2');
+            $step3 = $this->input->cookie('cookie_template_step3');
+            
+            $additional_data = array(
+                'template_id' => $template_id,
+                'template_name' => $template_name,
+                'publish_code' => $publish_code,
+                'template_from' => $from,
+                'template_to' => $to,
+                'template_message' => $message,
+            );
+            $new_project_id = $this->ion_auth->create_project($additional_data);
+            $this->session->set_userdata('project_id', $new_project_id);  
+            
+            if($step1 > 0)
+            {
+                $data = array(
+                    'project_id' => $new_project_id,
+                    'step_id' => $step1
+                );
+                $this->ion_auth->add_project_step($data); 
+            }
+            if($step2 > 0)
+            {
+                $data = array(
+                    'project_id' => $new_project_id,
+                    'step_id' => $step2
+                );
+                $this->ion_auth->add_project_step($data); 
+            }
+            if($step3 > 0)
+            {
+                $data = array(
+                    'project_id' => $new_project_id,
+                    'step_id' => $step3
+                );
+                $this->ion_auth->add_project_step($data); 
+            }
+            
+            $previous_project_path = "./templates/".$template_id."/assets/graphics/1x/".$project_id;
+            $current_project_path = "./templates/".$template_id."/assets/graphics/1x/".$new_project_id;            
+            rename($previous_project_path , $current_project_path); 
+            
+            $previous_project_path = "./templates/".$template_id."/assets/graphics/2x/".$project_id;
+            $current_project_path = "./templates/".$template_id."/assets/graphics/2x/".$new_project_id;            
+            rename($previous_project_path , $current_project_path);
+            
+            $previous_project_path = "./templates/".$template_id."/assets/graphics/4x/".$project_id;
+            $current_project_path = "./templates/".$template_id."/assets/graphics/4x/".$new_project_id;            
+            rename($previous_project_path , $current_project_path);
+            
+            //since we have copied the project from EXTERNAL_USER_PROJECT_INFO table to PROJECT_INFO table so we are removing the entry from EXTERNAL_USER_PROJECT_INFO table
+            $this->ion_auth->where('project_id',$project_id)->delete_project_external_user();
+            
+            redirect('mytemplates/open_template', 'refresh');
         }
+        
     }
     
     //log the user in

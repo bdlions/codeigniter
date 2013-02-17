@@ -147,15 +147,25 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         {
             if(Common.getPublishCode() == "")
             {
+                $('#publishSelectionForm').submit();	
                 joinToday = new JoinToday("joinTodayDiv");
                 joinToday.load();
-                //alert("Please log in to publish");
                 return false;
             }
             else
             {
                 publishForm.setAttribute("target", "_blank");
             }
+        });
+        $('#publishSelectionForm').submit(function() { 
+            $(this).ajaxSubmit(
+            {
+                success: function(resp) 
+                {
+                    
+                }
+            });
+            return false;
         });
         $("#buttonPreviewTemplate").click(function()
         {

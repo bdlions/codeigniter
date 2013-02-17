@@ -151,7 +151,7 @@ class Admin extends CI_Controller
             $this->template->set('is_logged_in', 'true');
             $this->template->set('is_admin', 'true');
         }
-        $this->template->load("main_template","auth/index", $this->data);
+        $this->template->load("main_template","admin/index", $this->data);
     }
 
     //log the user in
@@ -1349,6 +1349,35 @@ class Admin extends CI_Controller
                 $this->template->set('is_admin', 'true');
             }
             $this->template->load("main_template","admin/delete_template_confirmation", $this->data);
+        }
+    }
+    function user_ecards($user_id)
+    {
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('admin/login', 'refresh');
+        }
+        else
+        {
+            $where['users_projects.user_id'] = $user_id;
+            $this->data['template_list'] = $this->ion_auth->where($where)->check_project()->result();
+            
+            $this->data['message'] = "";
+            $base = base_url(); 
+            $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
+            $css = $css."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/jquery-ui.css'/>" ;
+            $css = $css."<link rel='stylesheet' href='{$base}css/menu_style.css' />"."<link rel='stylesheet' href='{$base}css/bluedream.css' />" ;
+            $js = "<script data-main='{$base}scripts/main_home' src='{$base}scripts/require-jquery.js'></script>";
+            $this->template->set('css', $css);
+            $this->template->set('js', $js);
+            $this->template->set('base', $base);
+            $this->template->set('menu_bar', 'design/menu_bar_admin');
+            if ($this->ion_auth->logged_in())
+            {
+                $this->template->set('is_logged_in', 'true');
+                $this->template->set('is_admin', 'true');
+            }
+            $this->template->load("main_template","admin/user_template_list", $this->data);
         }
     }
 }

@@ -1848,4 +1848,15 @@ class Ion_auth_model extends CI_Model {
         $id = $this->db->insert_id();
         return (isset($id)) ? $id : FALSE;
     }
+    
+    public function delete_project_external_user()
+    {
+        if (isset($this->_ion_where)) {
+            foreach ($this->_ion_where as $where) {
+                $this->db->where($where);
+            }
+            $this->_ion_where = array();
+        }
+        $this->db->delete($this->tables['EXTERNAL_USER_PROJECT_INFO']);
+    }
 }
