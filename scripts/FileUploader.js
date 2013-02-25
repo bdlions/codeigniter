@@ -6,7 +6,7 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
 	var headCreator;
         var cloudCreator;
         var galleryImageSelection;
-	
+	galleryImageSelection = new GalleryImageSelection("galleryImageSelectionDiv");
 	$("#displayer").hide();
 	
 	dialogOpts = 
@@ -25,7 +25,7 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
 			},
                         'Use our image gallery': function() 
 			{   
-				galleryImageSelection = new GalleryImageSelection("galleryImageSelectionDiv");
+				
                                 galleryImageSelection.load();			
 			},
 			'Cancel': function() 
