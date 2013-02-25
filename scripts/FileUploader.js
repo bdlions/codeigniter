@@ -1,11 +1,12 @@
-define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreator"], function($, jqueryui, jqueryform, HeadCreator, Common, CloudCreator) 
+define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreator", "GalleryImageSelection"], function($, jqueryui, jqueryform, HeadCreator, Common, CloudCreator, GalleryImageSelection) 
 {
 	var FileUploader = function(){};
 	var dialogOpts, file;
 	var uploadFileName, uploadFilePath;
 	var headCreator;
         var cloudCreator;
-		
+        var galleryImageSelection;
+	
 	$("#displayer").hide();
 	
 	dialogOpts = 
@@ -24,8 +25,8 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
 			},
                         'Use our image gallery': function() 
 			{   
-				//$("form").submit();
-                                $('#fileUploadForm').submit();				
+				galleryImageSelection = new GalleryImageSelection("galleryImageSelectionDiv");
+                                galleryImageSelection.load();			
 			},
 			'Cancel': function() 
 			{

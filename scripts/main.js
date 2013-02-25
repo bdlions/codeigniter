@@ -10,7 +10,7 @@
 		});
     });
 });*/
-require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Login","JoinToday","PreviewRender","PreviewBalloonsTT1"], function($, Common, TextCreator, headshowcase, FileUploader, Login, JoinToday, PreviewRender, PreviewBalloonsTT1) {
+require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Login","JoinToday"], function($, Common, TextCreator, headshowcase, FileUploader, Login, JoinToday) {
     
     $(function() {		
         function isBrowserCanvasCompatible()
@@ -169,15 +169,12 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         });
         $("#buttonPreviewTemplate").click(function()
         {
-            document.getElementById('buttonPreviewTemplateProjectId').value = Common.getProjectId();
-            document.getElementById('buttonPreviewTemplateMessage').value = Common.getMessage();
             previewForm.setAttribute("target", "_blank");            
         });
-        $("#testPreview").click(function()
-        {   
-            previewRender = new PreviewRender("previewRenderDiv");
-            previewRender.load();  
-            PreviewBalloonsTT1.init();
-        });        
+        $('li').click(
+            function(){
+                $('.highlight').removeClass('highlight');
+                $(this).addClass('highlight');
+            });
     }); 
 });

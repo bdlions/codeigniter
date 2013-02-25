@@ -18,7 +18,7 @@
 				margin: 0 0 20px 10px;
 				padding: 10px 0 0;
 				position: relative;
-			}			
+			}
 		</style>
                 <script type="text/javascript">
                     function isBrowserCanvasCompatible()
@@ -41,9 +41,7 @@
 	</head>	
 
 	<body style="padding:0px; margin:10px;">
-            
-               
-                <script type="text/javascript"> 
+		<script type="text/javascript"> 
                     template_id = '<?php echo $template_id ?>';
                     project_id = '<?php echo $project_id ?>';
                 </script>
@@ -58,21 +56,15 @@
                         <td>
                             <div id="haxe:jeash" style="border:1px solid #555555; background-color: #000000; width: 720px; height: 400px; top:55px;" data-framerate="65"></div>
                         </td>
-                    </tr>                    
+                    </tr>                   
                 </table>
                 
-                 <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-            <a class="addthis_button_preferred_1"></a>
-            <a class="addthis_button_preferred_2"></a>
-            <a class="addthis_button_preferred_3"></a>
-            <a class="addthis_button_preferred_4"></a>
-            <a class="addthis_button_compact"></a>
-            <a class="addthis_counter addthis_bubble_style"></a>
-            </div>
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5128ad3c22b8d6c5"></script>
-            <!-- AddThis Button END -->
-            
+		
 		<!-- <div id="haxe:trace" style="position: absolute; z-index: 2147483647; display: none;"></div> -->
+		
+		
+		
+                
+		
 	</body>
 </html>

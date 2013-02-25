@@ -262,6 +262,10 @@ class Mytemplates extends CI_Controller
                 $step2 = $this->input->cookie('cookie_template_step2');
                 $step3 = $this->input->cookie('cookie_template_step3');
             }
+            else
+            {
+                redirect('', 'location');   
+            }
         }
         else
         {
@@ -770,7 +774,51 @@ class Mytemplates extends CI_Controller
             redirect('templates', 'refresh');
         }
         
-    }    
+    } 
+    
+    public function preview($template_id)
+    {
+        if($template_id <= 0)
+        {
+            redirect('mytemplates', 'refresh');
+        }
+        //$template_id = "";
+        $project_id = ""; 
+        $message = "";
+        if (!$this->ion_auth->logged_in())
+        {
+            if ($this->input->cookie('cookie_project_id'))
+            {
+                $project_id = $this->input->cookie('cookie_project_id');
+                $template_id = $this->input->cookie('cookie_template_id');
+                $message = $this->input->cookie('cookie_template_message');
+            }
+        }
+        else
+        {
+            $project_id = $this->session->userdata('project_id');
+            if($project_id > 0)
+            {
+                $where['project_id'] = $project_id;
+                $project_infos = $this->ion_auth->where($where)->get_project_info()->result_array();
+                $project_info = $project_infos[0];
+                $template_id = $project_info['template_id'];
+                $message = $project_info['template_message'];
+            }
+        }
+        if($project_id != "")
+        {
+            $this->data['template_id'] = $template_id;
+            $this->data['project_id'] = $project_id;
+            $this->data['template_message'] = $message;
+            
+            $this->load->view("preview/template", $this->data);
+        }
+        else
+        {
+            redirect('mytemplates', 'refresh');
+        }      
+    }
     ////////////////////Publish and Preview end///////////////////////////////////
     
     /////////////////////Footer links start////////////////////////////////

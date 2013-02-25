@@ -71,9 +71,10 @@
             <?php echo form_close(); ?>
         </td>
         <td  style="float:right;">	    
-            <input style="visibility:hidden" type = "button" name = "testPreview" id="testPreview" value="Preview" class="custombuttonlightred"/>           
+            <?php echo form_open_multipart("mytemplates/preview/" . $template_id, array('id' => 'previewForm', 'name' => 'previewForm')); ?>
+            <input style="visibility:hidden" type = "submit" name = "buttonPreviewTemplate" id="buttonPreviewTemplate" value="Preview" class="custombuttonlightred"/>
+            <?php echo form_close(); ?>
         </td>
-
     </tr>
     <!--<tr>
         <td colspan="4">
@@ -202,9 +203,9 @@
                                     <a class="button create_account_link" href='<?php echo $base ?>auth/adduser'>Create an account on JibJab</a>
                                 </div>
                                 <p>
-                                (already have a JibJab account?
-                                <a class="log_in_link" rel="nofollow" title="Log In" href='<?php echo $base ?>auth/signin'>Log in</a>
-                                )
+                                    (already have a JibJab account?
+                                    <a class="log_in_link" rel="nofollow" title="Log In" href='<?php echo $base ?>auth/signin'>Log in</a>
+                                    )
                                 </p>
                             </div>                         
                         </div>        
@@ -215,36 +216,35 @@
             </div>
         </div>
     </div>
-    <div id="previewRenderDiv">
-        <meta charset="UTF-8">
-        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"> 
-        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"> 
-        <meta content="Ecards, image, processing" name="keywords">
-        <meta content="mtea" name="author">
-        <style type="text/css">
-                .main {
-                        margin-left: 40px;
-                }
-                .headshowcase {
-                        margin: 0 0 20px 10px;
-                        padding: 10px 0 0;
-                        position: relative;
-                }
-
-        </style>
-        <body style="padding:0px; margin:10px;">
-		<script type="text/javascript"> 
-                    template_id = '<?php echo $template_id ?>';
-                    project_id = '<?php echo $project_id ?>';
-                </script>	 
-		<h3 style="color:#336699; font-family:Arial; border-bottom:1px solid #555555;">Your eCard <label id="messageInPreview"></label></h3>
-		<div id="haxe:jeash" style="border:1px solid #555555; background-color: #000000; width: 720px; height: 400px" data-framerate="65"></div>
-	</body>
-    </div>
     <div id="publishSelectionStored">
         <?php echo form_open_multipart("mytemplates/publishselection/", array('id' => 'publishSelectionForm', 'name' => 'publishSelectionForm')); ?>
-        
+
         <?php echo form_close(); ?>
+    </div>
+    <div id="galleryImageSelectionDiv">
+        <table align="center" style="width:450px;height:150px">
+            <tr>
+                <td colspan="3">
+                    <div class="carousel" style="height: 150px; width: 400px; display: block; margin-left: auto; margin-right: auto;">
+                        <ul style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1;  left: -340px;">
+                            <?php
+                            for ($counter=1; $counter <= 10; $counter++)
+                                {
+                            ?>
+                                <li style="overflow: hidden; float: left; width: 50px; height: 50px;"><img src="../images/gallery/<?php echo $template_id ?>/balloons/<?php echo $counter?>.png" alt="1"></li>
+                            
+                            <?php
+                                }
+                            ?>                            
+                        </ul>
+                    </div>
+                </td>
+                <td>	    
+                    <button class="prev">&lt;&lt;</button>
+                    <button class="next">&gt;&gt;</button>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
 <canvas id="croppedImageCanvas" style="visibility: hidden;"> 

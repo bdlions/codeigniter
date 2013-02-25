@@ -12,7 +12,7 @@ define(["jquery", "Common"], function($, Common) {
 			centerX = canvasContext.canvas.width / 2 ;
 			centerY = canvasContext.canvas.height / 2 ;
 			
-			//saving default image
+                        //saving default image
 			var canvasImage = canvasContext.getImageData(0, 0, canvasContext.canvas.width, canvasContext.canvas.height);
 			
 			this.drawCircle();
@@ -28,7 +28,7 @@ define(["jquery", "Common"], function($, Common) {
 			Common.setTransparency(canvasContext, "0");
 			//draw the saved image
 			canvasContext.putImageData( canvasImage , 0, 0);
-			this.drawCircle();
+                        this.drawCircle();
 			
 			Common.setTransparency(canvasContext, 0.5);
 
@@ -67,7 +67,7 @@ define(["jquery", "Common"], function($, Common) {
 				}
 			}
 			return cropImage;
-		};
+		};                
 	};
 	return Circle;
 	//return function Circle(){};

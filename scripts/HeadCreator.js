@@ -107,7 +107,7 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
                             head1CroppedContext.canvas.height = head1CroppedImage.height;
                             head1CroppedContext.canvas.width = head1CroppedImage.width;
                             head1CroppedContext.drawImage(head1CroppedImage, 0, 0, head1CroppedImage.width, head1CroppedImage.height);
-
+                                                        
                         };				
                         //set the image
                         head1CroppedImage.src = head1CroppedPath+"?"+new Date().getTime();				
@@ -186,7 +186,10 @@ define(["jquery", "Circle", "Square", "Common"], function($, Circle, Square, Com
 						
                             //draw the selection object
                             if(selectionHeadShape)
+                            {
                                 selectionHeadShape.draw();
+                            }
+                                
 						
                         }, 10);
                     };
