@@ -13,6 +13,7 @@ define(["jquery"], function($){
     var step3 = 0;
     var total_head_images = 0;
     var total_cloud_images = 0;
+    var gallery_selected_image_name = "";
     Common.setTransparency = function(canvasContext, transparency)
     {
         canvasContext.save();
@@ -266,6 +267,15 @@ define(["jquery"], function($){
     Common.getTotalCloudImages = function()
     {
         return total_cloud_images;
+    }
+    Common.setGallerySelectedName = function(id)
+    {
+        gallery_selected_image_name = id;
+    }
+	
+    Common.getGallerySelectedName = function()
+    {
+        return gallery_selected_image_name;
     }
     return Common;
 });

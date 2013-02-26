@@ -1,4 +1,4 @@
-define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreator", "GalleryImageSelection"], function($, jqueryui, jqueryform, HeadCreator, Common, CloudCreator, GalleryImageSelection) 
+define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreator", "GalleryImageSelection","GalleryCloudImageSelection"], function($, jqueryui, jqueryform, HeadCreator, Common, CloudCreator, GalleryImageSelection, GalleryCloudImageSelection) 
 {
 	var FileUploader = function(){};
 	var dialogOpts, file;
@@ -7,6 +7,9 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
         var cloudCreator;
         var galleryImageSelection;
 	galleryImageSelection = new GalleryImageSelection("galleryImageSelectionDiv");
+        
+        var galleryCloudImageSelection;
+	galleryCloudImageSelection = new GalleryCloudImageSelection("galleryCloudImageSelectionDiv");
 	$("#displayer").hide();
 	
 	dialogOpts = 
@@ -26,7 +29,14 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
                         'Use our image gallery': function() 
 			{   
 				
-                                galleryImageSelection.load();			
+                                if(Common.getUploadCategory() == "head")
+                                {
+                                    galleryImageSelection.load();                                
+                                }
+                                else if(Common.getUploadCategory() == "cloud")
+                                {
+                                    galleryCloudImageSelection.load();                                
+                                }
 			},
 			'Cancel': function() 
 			{

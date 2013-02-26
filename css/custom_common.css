@@ -301,3 +301,9 @@
     text-transform: none;
     word-spacing: 0;
 }
+
+
+.highlight
+{
+    background: yellow;
+}

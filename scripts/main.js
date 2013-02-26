@@ -177,6 +177,7 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
             function(){
                 $('.highlight').removeClass('highlight');
                 $(this).addClass('highlight');
+                Common.setGallerySelectedName($(this).attr("id")+".png");
             });
     }); 
 });

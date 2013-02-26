@@ -1,15 +1,16 @@
-define(["jquery", "Common", "imageSelector", "HeadCreator"], function($, Common, imageSelector, HeadCreator) 
+define(["jquery", "Common", "imageSelector", "HeadCreator", "CloudCreator"], function($, Common, imageSelector, HeadCreator, CloudCreator) 
     {
 	
-        function GalleryImageSelection(div)
+        function GalleryCloudImageSelection(div)
         {
             var a = $(".carousel").imageSelector({
 				btnNext: ".next",
 				btnPrev: ".prev"
 			});
-            var galleryImageSelectionDiv = $("#"+div );
+            var galleryCloudImageSelection = $("#"+div );
             
             var headCreator;
+            var cloudCreator;
             
             var dialogOpts = 
             {
@@ -33,8 +34,8 @@ define(["jquery", "Common", "imageSelector", "HeadCreator"], function($, Common,
                         }
                         else if(Common.getUploadCategory() == "cloud")
                         {
-                            headCreator = new HeadCreator("headCreatorDiv");
-                            headCreator.load(Common.getGallerySelectedName(), "images/gallery/"+Common.getTemplateId()+"/clouds/");
+                            cloudCreator = new CloudCreator("cloudCreatorDiv");
+                            cloudCreator.load(Common.getGallerySelectedName(), "images/gallery/"+Common.getTemplateId()+"/clouds/");
                         }
                         $(this).dialog('destroy');
                     },
@@ -48,14 +49,14 @@ define(["jquery", "Common", "imageSelector", "HeadCreator"], function($, Common,
 				
                 }
             };
-            galleryImageSelectionDiv.dialog(dialogOpts);		
-            GalleryImageSelection.prototype.load = function()
+            galleryCloudImageSelection.dialog(dialogOpts);		
+            GalleryCloudImageSelection.prototype.load = function()
             {
-                galleryImageSelectionDiv.dialog(dialogOpts);
-                galleryImageSelectionDiv.dialog("open");
+                galleryCloudImageSelection.dialog(dialogOpts);
+                galleryCloudImageSelection.dialog("open");
                     
                     
             };		
         };
-        return GalleryImageSelection;
+        return GalleryCloudImageSelection;
     });
