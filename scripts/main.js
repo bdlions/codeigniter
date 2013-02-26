@@ -54,6 +54,8 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         Common.setStep1(step1);
         Common.setStep2(step2);
         Common.setStep3(step3);
+        Common.setTotalHeadImages(total_head_images);
+        Common.setTotalCloudImages(total_cloud_images);
         
         //PreviewBalloonsTT1.init();
         $("#testPreview").attr("style", "visibility: visible");            

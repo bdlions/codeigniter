@@ -11,6 +11,8 @@ define(["jquery"], function($){
     var step1 = 0;
     var step2 = 0;
     var step3 = 0;
+    var total_head_images = 0;
+    var total_cloud_images = 0;
     Common.setTransparency = function(canvasContext, transparency)
     {
         canvasContext.save();
@@ -246,6 +248,24 @@ define(["jquery"], function($){
     Common.getStep3 = function()
     {
         return step3;
+    }
+    Common.setTotalHeadImages = function(id)
+    {
+        total_head_images = id;
+    }
+	
+    Common.getTotalHeadImages = function()
+    {
+        return total_head_images;
+    }
+    Common.setTotalCloudImages = function(id)
+    {
+        total_cloud_images = id;
+    }
+	
+    Common.getTotalCloudImages = function()
+    {
+        return total_cloud_images;
     }
     return Common;
 });

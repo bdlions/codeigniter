@@ -16,8 +16,8 @@ define(["jquery", "Common", "imageSelector", "HeadCreator"], function($, Common,
                 title: "Select an image",
                 modal: true,
                 autoOpen: false,
-                height: 320,
-                width: 500,
+                height: 250,
+                width: 520,
                 buttons: 
                 {
                     'Upload a file': function() 
@@ -28,6 +28,7 @@ define(["jquery", "Common", "imageSelector", "HeadCreator"], function($, Common,
                     {
                         headCreator = new HeadCreator("headCreatorDiv");
                         headCreator.load("1.png", "images/gallery/1/balloons/");
+                        $(this).dialog('destroy');
                     },
                     'Cancel': function() 
                     {

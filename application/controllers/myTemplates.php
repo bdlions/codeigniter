@@ -248,6 +248,8 @@ class Mytemplates extends CI_Controller
         $step1 = 0;
         $step2 = 0;
         $step3 = 0;
+        $total_head_images = 0;
+        $total_cloud_images = 0;
         if (!$this->ion_auth->logged_in())
         {
             if ($this->input->cookie('cookie_project_id'))
@@ -308,6 +310,20 @@ class Mytemplates extends CI_Controller
             }
         }
         
+        if($template_id == 1)
+        {
+            $gallery_images_path = "./images/gallery/".$template_id."/balloons";  
+            $total_head_images = $this->total_files_gallery($gallery_images_path);
+        }
+        else if($template_id == 2)
+        {
+            $gallery_images_path = "./images/gallery/".$template_id."/balloons";  
+            $total_head_images = $this->total_files_gallery($gallery_images_path);
+            
+            $cloud_images_path = "./images/gallery/".$template_id."/clouds";  
+            $total_cloud_images = $this->total_files_gallery($cloud_images_path);
+        }
+        
         $this->data['template_id'] = $template_id;  
         $this->data['project_id'] = $project_id;
         $this->data['publish_code'] = $publish_code;   
@@ -316,7 +332,9 @@ class Mytemplates extends CI_Controller
         $this->data['message'] = $message;  
         $this->data['step1'] = $step1;
         $this->data['step2'] = $step2;  
-        $this->data['step3'] = $step3;  
+        $this->data['step3'] = $step3;
+        $this->data['total_head_images'] = $total_head_images;  
+        $this->data['total_cloud_images'] = $total_cloud_images;  
         
         $base = base_url(); 
         $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css'/>" ;
@@ -333,6 +351,17 @@ class Mytemplates extends CI_Controller
             $this->template->set('user_name', $this->session->userdata('username'));
         }
         $this->template->load("second_template","templates/template", $this->data);
+    }
+    
+    public function total_files_gallery($path)
+    {
+        $c = 0;
+        $g = glob( realpath( $path ) . '/*' );
+        foreach( $g as $i ) 
+        {            
+            $c++;
+        }
+        return $c;
     }
     
     public function template1()

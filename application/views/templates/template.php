@@ -14,6 +14,8 @@
                     step1 = '<?php echo $step1 ?>'; 
                     step2 = '<?php echo $step2 ?>';
                     step3 = '<?php echo $step3 ?>';
+                    total_head_images = '<?php echo $total_head_images ?>';
+                    total_cloud_images = '<?php echo $total_cloud_images ?>';
                                                     
                     var template1ImageCanvas = null;
                     var template1Image = null;
@@ -222,16 +224,16 @@
         <?php echo form_close(); ?>
     </div>
     <div id="galleryImageSelectionDiv">
-        <table align="center" style="width:450px;height:150px">
+        <table align="center" style="width:450px;height:60px">
             <tr>
                 <td colspan="3">
-                    <div class="carousel" style="height: 150px; width: 400px; display: block; margin-left: auto; margin-right: auto;">
+                    <div class="carousel" style="height: 60px; width: 400px; margin-left: auto; margin-right: auto;">
                         <ul style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1;  left: -340px;">
                             <?php
-                            for ($counter=1; $counter <= 10; $counter++)
+                            for ($counter=1; $counter <= $total_head_images; $counter++)
                                 {
                             ?>
-                                <li style="overflow: hidden; float: left; width: 50px; height: 50px;"><img src="../images/gallery/<?php echo $template_id ?>/balloons/<?php echo $counter?>.png" alt="1"></li>
+                                <li style="overflow: hidden; float: left; width: 50px; height: 50px;"><img src="../images/gallery/<?php echo $template_id ?>/balloons/<?php echo $counter?>.png"></li>
                             
                             <?php
                                 }
