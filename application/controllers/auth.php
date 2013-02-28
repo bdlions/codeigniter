@@ -34,12 +34,12 @@ class Auth extends CI_Controller
                 {
                     if ($this->input->cookie('is_publish_selected') == 'true')
                     {
-                        $this->load_existing_project();
-                                                $this->input->set_cookie(array(
+                        $this->input->set_cookie(array(
                             'name' => 'is_publish_selected',
                             'value' => 'false',
                             'expire' => $this->config->item('user_expire', 'ion_auth'),
                         ));
+                        $this->load_existing_project();                        
                     }
                     else
                     {
@@ -57,12 +57,12 @@ class Auth extends CI_Controller
                 {
                     if ($this->input->cookie('is_publish_selected') == 'true')
                     {
-                        $this->load_existing_project();
                         $this->input->set_cookie(array(
                             'name' => 'is_publish_selected',
                             'value' => 'false',
                             'expire' => $this->config->item('user_expire', 'ion_auth'),
                         ));
+                        $this->load_existing_project();                        
                     }
                     else
                     {
@@ -130,7 +130,7 @@ class Auth extends CI_Controller
             {
                 $data = array(
                     'project_id' => $new_project_id,
-                    'step_id' => $step1
+                    'step_id' => 1
                 );
                 $this->ion_auth->add_project_step($data); 
             }
@@ -138,7 +138,7 @@ class Auth extends CI_Controller
             {
                 $data = array(
                     'project_id' => $new_project_id,
-                    'step_id' => $step2
+                    'step_id' => 2
                 );
                 $this->ion_auth->add_project_step($data); 
             }
@@ -146,7 +146,7 @@ class Auth extends CI_Controller
             {
                 $data = array(
                     'project_id' => $new_project_id,
-                    'step_id' => $step3
+                    'step_id' => 3
                 );
                 $this->ion_auth->add_project_step($data); 
             }

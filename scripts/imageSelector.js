@@ -44,7 +44,7 @@ $.fn.imageSelector = function( o )
 
         li.css({width: li.width(), height: li.height()});
         ul.css(sizeCss, ulSize+"px").css(animCss, -(curr*liSize));
-
+        
         div.css(sizeCss, divSize+"px");                    
 
         if(btnPrev)

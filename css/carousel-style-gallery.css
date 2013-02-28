@@ -1,0 +1,46 @@
+.prev{
+	background-image: url("../images/left-arrow.png");
+	background-repeat: no-repeat;
+	height: 40px;
+	left: 0;
+	position: absolute;
+	text-indent: -9999px;
+	top: 15px;
+	width: 40px;
+}
+.next{
+	background-image: url("../images/right-arrow.png");
+	background-repeat: no-repeat;
+	height: 40px;
+	position: absolute;
+	right: 0;
+	text-indent: -9999px;
+	top: 15px;
+	width: 40px;
+}
+.slider{
+	height: auto;
+	left: 0;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+	width: 320px;
+}
+.carousel
+{
+	height: auto;
+	margin-left: 50px;
+	overflow: hidden;
+	padding-top: 14px;
+	position: relative;
+	width: 800px;
+}
+.carousel ul
+{
+	width: 6580px; 
+	left: 0px;
+}
+.carousel ul li
+{
+	overflow: hidden; float: left; width: 800px; height: auto;
+}

@@ -5,11 +5,9 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
 	var uploadFileName, uploadFilePath;
 	var headCreator;
         var cloudCreator;
-        var galleryImageSelection;
-	galleryImageSelection = new GalleryImageSelection("galleryImageSelectionDiv");
-        
-        var galleryCloudImageSelection;
-	galleryCloudImageSelection = new GalleryCloudImageSelection("galleryCloudImageSelectionDiv");
+        var galleryImageSelection = null;
+	galleryImageSelection = new GalleryImageSelection("galleryImageSelectionDiv");        
+        var galleryCloudImageSelection = null;        
 	$("#displayer").hide();
 	
 	dialogOpts = 
@@ -35,6 +33,10 @@ define(["jquery", 'jqueryui', "jqueryform", "HeadCreator", "Common", "CloudCreat
                                 }
                                 else if(Common.getUploadCategory() == "cloud")
                                 {
+                                    if(galleryCloudImageSelection == null)
+                                    {
+                                        galleryCloudImageSelection = new GalleryCloudImageSelection("galleryCloudImageSelectionDiv");
+                                    }
                                     galleryCloudImageSelection.load();                                
                                 }
 			},

@@ -227,24 +227,25 @@
         <table align="center" style="width:450px;height:60px">
             <tr>
                 <td colspan="3">
-                    <div class="carousel" style="height: 60px; width: 400px; margin-left: auto; margin-right: auto;">
-                        <ul style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1;  left: -340px;">
-                            <?php
-                            for ($counter=1; $counter <= $total_head_images; $counter++)
-                                {
-                            ?>
-                                <li name="<?php echo "head_".$template_id."_".$counter ?>" id="<?php echo "head_".$template_id."_".$counter ?>" style="overflow: hidden; float: left; width: 50px; height: 50px;"><img src="../images/gallery/<?php echo $template_id ?>/balloons/<?php echo "head_".$template_id."_".$counter?>.png"></li>
-                            
-                            <?php
-                                }
-                            ?>                            
-                        </ul>
+                    <div class="slider">
+                        <a id="prevBtn" class="prev" href="#" title="previous">Previous</a>
+                        <div class="carousel" style="height: 60px; margin-left: auto; margin-right: auto;">
+                            <ul style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1;  left: -340px;">
+                                <?php
+                                for ($counter=1; $counter <= $total_head_images; $counter++)
+                                    {
+                                ?>
+                                    <li name="<?php echo "head_".$template_id."_".$counter ?>" id="<?php echo "head_".$template_id."_".$counter ?>" style="overflow: hidden; float: left; width: 50px; height: 50px;"><img src="../images/gallery/<?php echo $template_id ?>/balloons/<?php echo "head_".$template_id."_".$counter?>.png"></li>
+
+                                <?php
+                                    }
+                                ?>                            
+                            </ul>
+                        </div>
+                        <a id="nextBtn" class="next" href="#" title="next">Next</a>                        
                     </div>
-                </td>
-                <td>	    
-                    <button class="prev">&lt;&lt;</button>
-                    <button class="next">&gt;&gt;</button>
-                </td>
+                    
+                </td>                
             </tr>
         </table>
     </div>
@@ -252,24 +253,24 @@
         <table align="center" style="width:450px;height:60px">
             <tr>
                 <td colspan="3">
-                    <div class="carousel" style="height: 60px; width: 400px; margin-left: auto; margin-right: auto;">
-                        <ul style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1;  left: -340px;">
-                            <?php
-                            for ($counter=1; $counter <= $total_cloud_images; $counter++)
-                                {
-                            ?>
-                                <li name="<?php echo "cloud_".$template_id."_".$counter ?>" id="<?php echo "cloud_".$template_id."_".$counter ?>" style="overflow: hidden; float: left; width: 50px; height: 50px;"><img src="../images/gallery/<?php echo $template_id ?>/clouds/<?php echo "cloud_".$template_id."_".$counter?>.png"></li>
-                            
-                            <?php
-                                }
-                            ?>                            
-                        </ul>
+                    <div class="slider">
+                        <a id="prevBtn" class="prev" href="#" title="previous">Previous</a>
+                        <div class="carousel" style="height: 60px; margin-left: auto; margin-right: auto;">
+                            <ul style="margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1;  left: -340px;">
+                                <?php
+                                for ($counter=1; $counter <= $total_head_images; $counter++)
+                                    {
+                                ?>
+                                    <li name="<?php echo "head_".$template_id."_".$counter ?>" id="<?php echo "cloud_".$template_id."_".$counter ?>" style="overflow: hidden; float: left; width: 50px; height: 50px;"><img src="../images/gallery/<?php echo $template_id ?>/balloons/<?php echo "head_".$template_id."_".$counter?>.png"></li>
+
+                                <?php
+                                    }
+                                ?>                            
+                            </ul>
+                        </div>
+                        <a id="nextBtn" class="next" href="#" title="next">Next</a>                        
                     </div>
-                </td>
-                <td>	    
-                    <button class="prev">&lt;&lt;</button>
-                    <button class="next">&gt;&gt;</button>
-                </td>
+                </td>                
             </tr>
         </table>
     </div>

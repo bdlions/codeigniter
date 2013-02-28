@@ -173,7 +173,7 @@ require(["jquery", "Common", "TextCreator", "headshowcase", "FileUploader","Logi
         {
             previewForm.setAttribute("target", "_blank");            
         });
-        $('li').click(
+        $('.carousel ul li').click(
             function(){
                 $('.highlight').removeClass('highlight');
                 $(this).addClass('highlight');

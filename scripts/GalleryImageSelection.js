@@ -26,16 +26,32 @@ define(["jquery", "Common", "imageSelector", "HeadCreator"], function($, Common,
                     },
                     'Use selected image': function() 
                     {
-                        if(Common.getUploadCategory() == "head")
+                        if(Common.getGallerySelectedName() == "")
                         {
-                            headCreator = new HeadCreator("headCreatorDiv");
-                            headCreator.load(Common.getGallerySelectedName(), "images/gallery/"+Common.getTemplateId()+"/balloons/");
+                            alert("Please select an image fist.");
+                            return;
                         }
-                        else if(Common.getUploadCategory() == "cloud")
+                        if(Common.getTemplateId() == 1)
                         {
-                            headCreator = new HeadCreator("headCreatorDiv");
-                            headCreator.load(Common.getGallerySelectedName(), "images/gallery/"+Common.getTemplateId()+"/clouds/");
+                            if(Common.getUploadCategory() == "head")
+                            {
+                                headCreator = new HeadCreator("headCreatorDiv");
+                                headCreator.load(Common.getGallerySelectedName(), "images/gallery/"+Common.getTemplateId()+"/balloons/");
+                            }                            
                         }
+                        else if(Common.getTemplateId() == 2)
+                        {
+                            if(Common.getUploadCategory() == "head")
+                            {
+                                headCreator = new HeadCreator("headCreatorDiv");
+                                headCreator.load(Common.getGallerySelectedName(), "images/gallery/"+Common.getTemplateId()+"/balloons/");
+                            }
+                            else if(Common.getUploadCategory() == "cloud")
+                            {
+                                headCreator = new HeadCreator("headCreatorDiv");
+                                headCreator.load(Common.getGallerySelectedName(), "images/gallery/"+Common.getTemplateId()+"/clouds/");
+                            }
+                        }                        
                         $(this).dialog('destroy');
                     },
                     'Cancel': function() 
