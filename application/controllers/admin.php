@@ -1362,6 +1362,12 @@ class Admin extends CI_Controller
             $where['users_projects.user_id'] = $user_id;
             $this->data['template_list'] = $this->ion_auth->where($where)->check_project()->result();
             
+            $user_infos = $this->ion_auth->where('id',$user_id)->get_user_info()->result_array();
+            if(count($user_infos) > 0)
+            {
+                $this->data['username'] = $user_infos[0]['username'];
+            }
+            
             $this->data['message'] = "";
             $base = base_url(); 
             $css ="<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/main.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/carousel-style.css' />"."<link type='text/css' media='screen' rel='stylesheet' href='{$base}css/custom_common.css' />" ;
